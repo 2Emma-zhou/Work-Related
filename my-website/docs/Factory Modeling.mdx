@@ -1,0 +1,2092 @@
+<>
+
+  ## Introduction
+
+  
+  <p>
+    Through the object model management provided by the supOS platform, the
+    digital modeling of production units such as workshops, staff, equipment,
+    products and materials in the factory is realized.
+  </p>
+  
+
+  <ul>
+    <li>
+      Create models based on the features of equipment in the factory, to manage
+      and apply the business information such as attributes, operating status,
+      maintenance records and fault records.
+    </li>
+    <li>
+      The object models describe the job responsibilities of different roles in
+      the factory, and features of various materials.
+    </li>
+  </ul>
+ 
+
+  ## Object Model
+
+  
+  <p>
+    A complete object model contains an object template, an object instance and
+    a function set, representing the corresponding product type, specific
+    product and product functions respectively. For each model, you need to
+    configure the following parameters.
+  </p>
+  
+
+  <ul>
+    <li>
+      <strong>Basic Information</strong>: Describes the model name, aliases,
+      parent templates, function sets, and details.
+    </li>
+  </ul>
+ 
+  
+  <p className="info">
+    Object aliases must be unique under one name space (APP or system).
+  </p>
+  
+
+  <ul>
+    <li>
+      <strong>Attributes</strong>: Describes attributes of object instances.{" "}
+      <ul className="li-ul">
+    <li>
+      <strong>Attribute Info</strong>: Displays the current status of an object
+      instance, such as device name, device number, temperature, pressure and
+      speed.
+    </li>
+    <li>
+      <strong>Alarm</strong> <strong>rules</strong>: Defines rules of alarm
+      events. When the collected data is updated, the supOS platform judges
+      whether to trigger an alarm based on the rules.
+    </li>
+  </ul>
+    </li>
+  </ul>
+ 
+
+  
+ 
+
+  <ul>
+    <li>
+      <strong>Services</strong>: Functions that you can use instance properties
+      to realize.
+      <ul className="li-ul">
+    <li>You can define one or more services for each object instance.</li>
+    <li>Services can be used by other features on the platform.</li>
+  </ul>
+    </li>
+  </ul>
+ 
+
+  <ul>
+    <li>
+      <strong>Events</strong>: Messages sent by object instances and subscribed
+      by external parties.
+      <ul className="li-ul">
+    <li>
+      An event is triggered when the data source changes or the configured logic
+      applies.
+    </li>
+    <li>
+      A subscriber who listens to the event should be created during modeling.
+    </li>
+    <li>
+      A data set containing the event-triggering field must be linked with the
+      event.
+    </li>
+  </ul>
+    </li>
+  </ul>
+
+:::info
+
+Field names in the data set must be the same as aliases of the instance
+    properties.
+:::
+
+  <ul>
+    <li>
+      <strong>Subscriptions</strong>: Receives and responses to events.
+      <ul className="li-ul">
+    <li>
+      Uses data set linked with the event to define reactions based on business
+      logic.
+    </li>
+    <li>The same event can be subscribed by multiple subscribers.</li>
+  </ul>
+    </li>
+  </ul>
+ 
+
+  
+ 
+
+  ### Operation Process
+
+ 
+  <figure className="wp-block-image size-full is-resized">
+    <img
+      src="https://freezonex.io/wp-content/uploads/2022/07/1.png"
+      alt=""
+      className="wp-image-553"
+      width={596}
+      height={348}
+    />
+  </figure>
+  
+
+  ### Object Template Creation
+
+  
+  <p>
+    Object templates integrate basic and common features of a type of object
+    instances. A sub object template and an object instance inherit all
+    information from their parent template. When the parent template changes,
+    the object instance and the sub template changes too.
+  </p>
+  
+
+  <ul>
+    <li>
+      You can create hierarchical object templates by analyzing the commonality
+      of similar equipment and staff, thereby improving modeling efficiency.
+    </li>
+    <li>
+      Object templates can derive one or more additional features through
+      function sets. Therefore, modeling can be maintained easily and quickly.
+    </li>
+  </ul>
+
+:::info
+
+<ul className="note-list">
+    <li>
+      You can search for, copy, edit, import, export and delete custom object
+      templates. Fuzzy match is available.
+    </li>
+    <li>Embedded templates can only be copied.</li>
+    <li>
+      Inherited templates can only be deleted after you cancel inheritance, and
+      the deletion cannot be undone.
+    </li>
+  </ul>
+:::
+  #### Embedded Template
+
+
+  <ul>
+    <li>
+      <strong>Entity Template</strong>: Object templates that match with the
+      entities in the factory, such as workers, workshops, equipment, products
+      and materials.
+      <ul className="li-ul">
+    <li>
+      <strong>Collector Template</strong>: Automatically inherited by collectors
+      connected to the supOS platform.
+    </li>
+    <li>
+      <strong>Link Template</strong>: Automatically inherited by the third party
+      data connected to the supOS platform.
+    </li>
+    <li>
+      <strong>Video Template</strong>: Automatically inherited by real-time
+      video sources connected to collectors.
+    </li>
+    <li>
+      <strong>History Video Template</strong>: Automatically inherited by
+      history video sources connected to collectors.
+    </li>
+    <li>
+      <strong>AE Collector Template</strong>:{" "}
+    </li>
+  </ul>
+    </li>
+  </ul>
+ 
+
+  
+ 
+
+  <ul>
+    <li>
+      <strong>Form Template</strong>: You can manually create a form structure
+      of relational data under the form template. Each property is a column
+      header, and each object instance is a row of data.
+    </li>
+    <li>
+      <strong>Relation</strong> <strong>Template</strong>: Builds the relations
+      between object models.
+       <p className="info">
+    For example, associate the attribute <strong>company name</strong> under the
+    company template with the attribute <strong>staff name</strong> under the
+    staff template to build an employment relation template. Subsequently, you
+    can filter the corresponding staff by company name.
+  </p>
+    </li>
+  </ul>
+
+
+:::info
+
+**Foreign Relation Template** is generated by default.
+
+:::
+  
+  
+#### Creating Entity Template
+
+  
+  <p className="li-title">Procedure</p>
+  
+  
+  <ol>
+    <li>
+      Log in to the supOS platform, and then click{" "}
+      <img src="https://freezonex.io/wp-content/uploads/2022/06/7.png" alt="" />{" "}
+      to go to the design center.
+    </li>
+    <li>
+      Select <strong>Object Model</strong> <strong>Management</strong> &gt;{" "}
+      <strong>Object Template</strong>&gt;
+      <strong>Entity Template</strong>.
+    </li>
+    <li>
+      Select a template, and then click{" "}
+      <img
+        src="https://freezonex.io/wp-content/uploads/2022/06/26.png"
+        alt=""
+      />
+      .  <p className="info">
+    Property, service, event and subscription of the parent template are
+    inherited to sub templates, and are displayed on the lower section of the
+    corresponding page.
+  </p>
+    </li>
+  </ol>
+
+:::info
+  
+Sub templates under embedded templates are unavailable.
+
+:::
+  
+  
+  <ol start={4}>
+    <li>
+      Enter the basic information of the template, and then click{" "}
+      <strong>Save</strong>.
+    </li>
+  </ol>
+ 
+ 
+  <figure className="wp-block-image size-large is-resized">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/7-557x1024.png"
+      alt=""
+      className="wp-image-1919"
+      width={470}
+      height={864}
+    />
+  </figure>
+  
+  
+  <p className="table-title"> Table 1 Entity template parameter description</p>
+  
+  
+  <figure id="general-parameter" className="wp-block-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Alias</td>
+          <td>
+            The unique ID of the template. Generated by default and can be
+            customized.
+          </td>
+        </tr>
+        <tr>
+          <td>Tags</td>
+          <td>
+            Add labels to the template from <strong>Label Management </strong>
+            &gt; <strong>Object Label</strong>
+            for easy search and categorization.
+          </td>
+        </tr>
+        <tr>
+          <td>Main Display Fields</td>
+          <td>
+            Used as key words when searching for instances under the template
+            during instance property linkage.
+          </td>
+        </tr>
+        <tr>
+          <td>APP</td>
+          <td>
+            Indicates the client where the template is created.{" "} 
+            <strong>system</strong> means the template is created on the supOS
+            platform.
+          </td>
+        </tr>
+        <tr>
+          <td>Visible to Other APPs</td>
+          <td>
+            Select whether to allow creating object template, instance and
+            property under different APPs.
+          </td>
+        </tr>
+        <tr>
+          <td>Function Sets</td>
+          <td>Select function sets to inherit their features.</td>
+        </tr>
+      </tbody>
+    </table>
+  </figure>
+  
+ 
+  <ol start={5}>
+    <li>
+      Click <strong>Attributes </strong>on the left, and then click{" "}
+      <strong>New</strong> under <strong>My Attributes</strong>.
+      
+     <ol className="li-ol">
+    <li>Set the basic information of the template property.
+    <figure className="wp-block-image size-large">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/8-620x1024.png"
+      alt=""
+      className="wp-image-1920"
+    />
+  </figure>
+   <p className="table-title">Table 2 Entity template property parameter description</p>
+  
+  
+  <figure className="wp-block-table is-style-regular">
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>
+            Data type of template property. Make sure it is the same as the data
+            source.
+          </td>
+        </tr>
+        <tr>
+          <td>Data Sources</td>
+          <td>
+            Click <strong>Binding Relationship</strong> to link with an
+            inherited property with custom formula.
+          </td>
+        </tr>
+        <tr>
+          <td>Read and Write Status</td>
+          <td>
+            Select whether the property value can be changed by script. If{" "}
+            <strong>Read Only</strong> is selected, you can only change the
+            value through <strong>Default Value</strong>.
+          </td>
+        </tr>
+        <tr>
+          <td>Persistence</td>
+          <td>
+            Select whether to synchronize the property value when it changes to
+            the supOS platform.
+          </td>
+        </tr>
+        <tr>
+          <td>History</td>
+          <td>
+            Select whether to keep all change records of the property value for
+            future analysis.
+          </td>
+        </tr>
+        <tr>
+          <td>Compression Parameters</td>
+          <td>
+            When <strong>History</strong> is enabled, enable{" "}
+            <strong>Compression Parameters</strong>, set
+            <strong>Compression Value </strong>and{" "}
+            <strong>Maximum Upload Cycle </strong>to reduce the space that
+            history records take up.
+          </td>
+        </tr>
+        <tr>
+          <td>Upper Range Limit/Lower Range Limit/Unit/Decimal</td>
+          <td>
+            Attributes of different types of data. Click{" "}
+            <strong>Configure</strong> can customize units.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </figure>
+
+
+:::tip
+
+Click <strong>Binding</strong> <strong>Relationship </strong>on the <strong>Attributes </strong>page, drag attributes from the right side to the left to bind them.
+
+:::
+
+
+:::info
+
+<ul className="note-list">
+<li>
+The higher the <strong>Compression Parameters</strong>, the heavier the
+      data is compressed.
+    </li>
+    <li>
+      <strong>
+        <strong>Maximum Upload Cycle</strong>
+      </strong>{" "}
+      defines the maximum interval between 2 time points when the corresponding
+      data will still be recorded no matter how high the{" "}
+      <strong>
+        <strong>Compression Parameters</strong>
+      </strong>{" "}
+      is.
+    </li>
+</ul>
+:::
+
+</li>
+    <li>
+      Click the <strong>Alarm rules </strong>tab, and then click{" "}
+      <strong>New</strong>.
+    </li>
+    <li>
+      Set the rules, dead zone and priority of the alarm, select whether to
+      enable it and then click
+      <strong>OK</strong>.
+      <ul className="li-li-li">
+    <li>
+      Set alarm rules based on data type of the property. For example, set{" "}
+      <strong>Condition</strong> to
+      <strong>&gt;</strong> and <strong>Limit</strong> to 90, meaning an alarm
+      will be triggered when the property value is higher than 90.
+    </li>
+    <li>
+      <strong>Dead Zone Type</strong> can be percentage or value.{" "}
+      <strong>
+        <strong>Dead Zone</strong>
+      </strong>
+      <strong>Value</strong> is used to filter false alarms. For example, set{" "}
+      <strong>
+        <strong>Dead Zone</strong>
+      </strong>{" "}
+      <strong>Type </strong>to <strong>Value </strong>and{" "}
+      <strong>
+        <strong>Dead Zone</strong>
+      </strong>{" "}
+      <strong>Value </strong>to <strong>10</strong>, when the property value is
+      higher than 90, an alarm goes off, and then the alarm will only be
+      cancelled when the property value goes back to below 80, which means{" "}
+      <strong>Limit </strong>-{" "}
+      <strong>
+        <strong>Dead Zone</strong>
+      </strong>{" "}
+      <strong>Value </strong>(90 - 10) = 80.<figure className="wp-block-image size-large">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/9-798x1024.png"
+      alt=""
+      className="wp-image-1961"
+    />
+  </figure>
+    </li>
+  </ul>
+    </li>
+
+  </ol></li>
+  </ol>
+ 
+ 
+  
+ 
+  
+  
+  
+  
+  <ol start={6}>
+    <li>
+      Click <strong>Services</strong>, and then click <strong>New</strong>.
+    <ol className="li-ol">
+    <li>Enter necessary information of the service.<ul className="li-li-li">
+    <li>
+      <strong>Information Input</strong>: Click <strong>New</strong>, enter
+      parameter name and data type based on business scenario to add multiple
+      input parameters.
+    </li>
+    <li>
+      <strong>Information Output</strong>: Select a data type for the output
+      parameter.
+
+:::info
+When setting **Information Output** data type to **JSON**, you need to set return value format.
+:::
+  
+  
+  <figure className="wp-block-image size-large">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/10-1-584x1024.png"
+      alt=""
+      className="wp-image-1930"
+    />
+  </figure></li>
+  </ul></li>
+
+<li>
+      Click the <strong>Script</strong> tab, you can directly enter a JS script
+      or click <strong>Object Selector</strong> to select objects from existing
+      properties, services and events of other templates or instances.
+
+:::info
+
+The supOS platform converts data groups in JS script to JSON and then to MAP
+on the back-end. When JS data groups are included in parameters or results,
+you can either convert them to strings or use
+**Java.type("java.util.ArrayList")** to convert.
+
+:::
+
+</li>
+<li>
+      Click <strong>OK</strong>.
+</li>
+  </ol></li>
+  </ol>
+
+ 
+  
+  <ol start={7}>
+    <li>
+      Click <strong>Events</strong>, and then click <strong>New</strong>.
+
+:::info
+
+<ul className="note-list">
+    <li>
+      Make sure you have created data sets, containing fields that trigger
+      events. For details, see <a href="#dataSet">Creating Data Set</a>.
+    </li>
+    <li>
+      Make sure the event-triggering field name is the same as the instance
+      property alias.{" "}
+    </li>
+</ul>
+:::
+  
+  <ol className="li-ol">
+    <li>
+      Enter basic information of the event, and then select a data set where the
+      event-triggering field is included.
+    </li>
+    <li>
+      Click <strong>OK</strong>.
+    </li>
+  </ol></li>
+  </ol>
+ 
+
+  <ol start={8}>
+    <li>
+      Click <strong>Subscriptions</strong>, and then click <strong>New</strong>.
+    <ol className="li-ol">
+    <li>
+      Enter basic information of the subscription, and then select{" "}
+      <strong>Subscription Sources</strong>.
+    <ul className="li-li-li">
+    <li>
+      <strong>Event Trigger</strong>: Click <strong>Subscription Source</strong>
+      , and then select an event of an instance.
+    </li>
+    <li>
+      <strong>Timing Trigger</strong>: Enable it, and set the start time, end
+      time and time interval.{" "}
+      <figure className="wp-block-image size-large">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/11-769x1024.png"
+      alt=""
+      className="wp-image-1932"
+    />
+  </figure></li>
+   
+  </ul><li>
+      Click the <strong>Script</strong> tab, you can directly enter a script or
+      click <strong>Object Selector</strong>
+      to select events from existing instances.
+    </li>
+    <li>
+      Click <strong>OK</strong>.
+    </li></li>
+  </ol>
+ 
+  
+  </li>
+  </ol>
+ 
+ 
+  
+  <p className="li-title">Related Operations</p>
+  
+
+  <ul>
+    <li>
+      You can view properties, services, events and subscriptions under
+      different categories such as
+      <strong>Tag</strong>, <strong>APP</strong> and{" "}
+      <strong>Function Set</strong>.
+    </li>
+    <li>Property
+    <ul className="li-ul">
+    <li>
+      Click <strong>Binding</strong> <strong>Relationship</strong> on{" "}
+      <strong>Attributes </strong>page to quickly bind properties and view the
+      relations between them.
+    </li>
+    <li>
+      Under <strong>Operate</strong>, you can <strong>Move</strong>,{" "}
+      <strong>Copy </strong>the property to another template or{" "}
+      <strong>Delete </strong>it.
+    </li>
+    <li>
+      Click{" "}
+      <img
+        className="wp-image-644"
+        style={{ width: 31 }}
+        src="https://freezonex.io/wp-content/uploads/2022/07/2.png"
+        alt=""
+      />{" "}
+      to refresh the property value and click{" "}
+      <img
+        className="wp-image-645"
+        style={{ width: 27 }}
+        src="https://freezonex.io/wp-content/uploads/2022/07/3.png"
+        alt=""
+      />{" "}
+      to change the value.
+    </li>
+    <li>
+      Click <strong>History Settings</strong> or <strong>Cancel History</strong>{" "}
+      to start or stop saving history values of the selected properties.
+    </li>
+  </ul>
+ </li>
+  </ul>
+ 
+
+:::info
+  
+
+<ul className="note-list">
+    <li>Bound properties cannot be deleted.</li>
+    <li>
+      When deleting properties in batches, one of them is bound with another
+      template, you can select <strong>Skip Dependency</strong> to skip the
+      bound property and delete others.
+    </li>
+  </ul>
+
+:::
+  
+ 
+
+  <ul>
+    <li>Service
+    <ol className="li-ol">
+    <li>
+      On <strong>Service</strong> page, click a service and select the{" "}
+      <strong>Script</strong> tab.
+    </li>
+    <li>
+      Click <strong>Debug</strong>, enter parameters for debugging, and then
+      click <strong>Debug</strong>.
+    </li>
+    <li>
+      Return to <strong>Property</strong> page, click{" "}
+      <img
+        className="wp-image-644"
+        style={{ width: 31 }}
+        src="https://freezonex.io/wp-content/uploads/2022/07/2.png"
+        alt=""
+      />{" "}
+      next to the corresponding property to see the set value in{" "}
+      <strong>Script</strong>.
+    </li>
+  </ol></li>
+  </ul>
+ 
+  
+  
+ 
+
+  <ul>
+    <li>
+      Click <strong>Delete</strong> to delete the corresponding service, event
+      and subscription.
+    </li>
+  </ul>
+ 
+  
+  #### Creating Form Template
+
+  
+  <p>
+    Form template contains basic information, property and service only. For
+    detailed configuration, see{" "}
+    <a href="#entity_template">Creating Entity Template</a>.
+  </p>
+  
+  
+  #### Creating Relation Template
+
+  
+  <p>
+    Relation template contains basic information, property and service only. For
+    detailed configuration, see{" "}
+    <a href="#entity_template">Creating Entity Template</a>. Special parameters
+    are described as follows:
+  </p>
+  
+
+  <ul>
+    <li>
+      <strong>Association Mode</strong>: Select{" "}
+      <strong>Binary Association </strong>or{" "}
+      <strong>
+        Multivariate
+        <strong>Association </strong>
+      </strong>
+      to link 2 or more object templates.
+    </li>
+    <li>
+      <strong>
+        <strong>Association</strong>
+      </strong>{" "}
+      <strong>Type</strong>: Select relation template type from
+      <strong>Normal</strong>, <strong>Combination </strong>and{" "}
+      <strong>Polymerization</strong>.
+    </li>
+    <li>
+      <strong>Connection Relation</strong>: Click{" "}
+      <strong>Add Relationship</strong> to select 2 or more templates to link
+      them together.
+    </li>
+  </ul>
+ 
+
+
+:::info
+
+Multiple groups can be created under a relation template.
+
+:::
+    
+  
+
+  ### Object Instance Creation
+
+  
+  <p>Object instance is a specific instance of an object template.</p>
+  
+  
+  <div className="wp-block-group">
+  
+    <ul>
+      <li>
+        Multiple instances can inherit from a same template and link one or more
+        function sets.
+      </li>
+      <li>
+        Each instance can have its own property, service, event and subscription
+        aside from those inherited from the parent template and function set.
+      </li>
+    </ul>
+   
+    
+#### Creating Entity Instance
+  
+    
+    <p>
+      Create an instance of a specific entity such as a collector source point
+      or a tag to inherit from the parent template, and then obtain required
+      data from custom script or bound data source and service.
+    </p>
+    
+
+    
+<ol>
+      <li>
+        Log in to the supOS platform, and then click{" "}
+        <img
+          src="https://freezonex.io/wp-content/uploads/2022/06/7.png"
+          alt=""
+        />{" "}
+        to go to the design center.
+      </li>
+      <li>
+        Select <strong>Object Model</strong> <strong>Management</strong> &gt;{" "}
+        <strong>Object Instance</strong>&gt;
+        <strong>Entity Template</strong>.
+      </li>
+      <li>
+        Select a template, and then click <strong>New</strong> to add an
+        instance.
+      </li>
+      <li>
+        Enter the basic information of the instance and then click{" "}
+        <strong>Save</strong>.
+      <ul className="li-ul">
+      <li>
+        <strong>Alias</strong>: Unique ID of the instance. Tag number is
+        generally used for factory equipment.
+      </li>
+      <li>
+        <strong>Code</strong>: Code of the instance. Keep it the same as the
+        actual equipment code.
+      </li>
+    </ul></li>
+    </ol>
+   
+
+
+:::info
+  
+Sub templates under embedded templates are unavailable.
+Parameters of basic information are similar to those of an entity template. For details, see <a href="#general-parameter">General Parameter</a>.
+
+:::
+
+    
+  
+
+   
+  </div>
+
+  <figure className="wp-block-image size-large">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/12-642x1024.png"
+      alt=""
+      className="wp-image-1936"
+    />
+  </figure>
+  
+ 
+  <ol start={5}>
+    <li>
+      Configure property, service, event and subscription of the instance.
+
+:::info
+
+Refer to 
+<a href="http://entity-template" data-type="URL" data-id="entity-template">
+Creating Entity Template
+</a>{" "}
+for details. Following procedures explain the operation of binding data
+source and obtaining calculated data.
+
+:::
+  
+  
+  <ol className="li-ol">
+    <li>
+      Click <strong>Attributes</strong>, and then select an attribute.
+    </li>
+    <li>
+      Click <strong>Setup </strong>next to <strong>Data Sources </strong>under{" "}
+      <strong>Attribute Info</strong>, and then select a{" "}
+      <strong>Type of Data Processing</strong>.
+    <ul className="li-li-li">
+    <li>
+      <strong>Associative Binding</strong>: Link one or more embedded properties
+      or external properties from instances as data source, and then set a
+      custom expression to get the property value.
+    <figure className="wp-block-image size-large">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/13-910x1024.png"
+      alt=""
+      className="wp-image-1937"
+    />
+  </figure></li>
+  <li>
+      <strong>Attribute Aggregation Statistics</strong>: Select a property from
+      an instance, and set rules of aggregate statistics to get the property
+      value.
+    
+    <figure className="wp-block-image size-full">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/14.png"
+      alt=""
+      className="wp-image-1938"
+    />
+  </figure>
+  
+  
+  <p className="table-title">Table 3 Entity instance data binding description</p>
+  
+  
+  <figure className="wp-block-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Start Time/End Time</td>
+          <td>
+            Begin and end time of a calculation. The calculation continues if
+            you leave the end time empty till you manually clear the data
+            source.
+          </td>
+        </tr>
+        <tr>
+          <td>Statistical Period</td>
+          <td>
+            Calculation runs at each cycle.
+            <br />
+            For example, set it to 1 hour, the calculation returns a result
+            every hour and the return time is displayed as the beginning of a
+            cycle.
+          </td>
+        </tr>
+        <tr>
+          <td>Marking Cycle</td>
+          <td>
+            Changes return time of results.
+            <br />
+            For example, the maximum value is returned at 12:00:00, set
+            <strong>Marking</strong> <strong>Cycle</strong> to{" "}
+            <strong>Delay 1 Statistical Period</strong>, and then the result is
+            returned at 13:00:00 in display.
+          </td>
+        </tr>
+        <tr>
+          <td>Statistical Methods</td>
+          <td>
+            You can calculate the instant, maximum, minimum, average, sum and
+            difference value of the selected property.
+          </td>
+        </tr>
+        <tr>
+          <td>Statistics Configuration</td>
+          <td>
+            Only available when calculating instant value. <br />
+            Select <strong>Calculation</strong>
+            <strong>Begin</strong>, the first instant value calculated in each
+            cycle is returned; select
+            <strong>Calculation</strong> <strong>End</strong>, the last instant
+            value calculated in each cycle is returned.
+          </td>
+        </tr>
+        <tr>
+          <td>Instantaneous Time</td>
+          <td>
+            Only available when calculating instant value. Changes return time
+            of results to the exact time.
+            <br />
+            For example, an instant value is returned at 12:31:09, select{" "}
+            <strong>Instantaneous Time</strong>, and then the result is returned
+            at 12:31:09 instead of the begin time of a calculate cycle.
+          </td>
+        </tr>
+        <tr>
+          <td>Max. Time/Min. Time</td>
+          <td>
+            Only available when calculating maximum or minimum value. Select it
+            to change the return time of results to the exact time.
+          </td>
+        </tr>
+        <tr>
+          <td>Back to 0 Rule</td>
+          <td>
+            Enable it, and the platform returns difference after restore the
+            value to original. For example, the value on a meter goes to 0, and
+            a difference will be returned after the meter value is restored to
+            original. Otherwise, the difference will be negative.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </figure>
+
+:::info
+  
+<strong>Instantaneous Time</strong>, <strong>Max. Time</strong> and{" "}
+<strong>Min. Time</strong> are mutually exclusive with{" "}
+<strong>Marking Cycle</strong>.
+
+:::
+
+</li>
+  </ul>
+ 
+</li>
+  <li>
+      Set related expressions or rules of data process, and then click{" "}
+      <strong>OK</strong>.
+    </li></ol></li>
+  </ol>
+ 
+
+  
+
+
+  <ol start={3} className="li-ol">
+    
+  </ol>
+ 
+  
+  <p className="li-title">Related Operations</p>
+  
+
+  <ul>
+    <li>
+      You can search for, import, export, move, copy and delete instances, and
+      view instance details.
+    </li>
+    <li>
+      On <strong>Attributes </strong>list, hover over the attribute{" "}
+      <strong>Value</strong> to view its
+      <strong>Value</strong>, <strong>Status</strong> <strong>Code</strong> and{" "}
+      <strong>Generation Time</strong>.
+      <p className="table-title">Table 4 Status code description</p>
+  
+  
+  <figure className="wp-block-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Status Code</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0</td>
+          <td>Normal</td>
+        </tr>
+        <tr>
+          <td>8000000000000000</td>
+          <td>Data connection error</td>
+        </tr>
+        <tr>
+          <td>4000000000000000</td>
+          <td>Calculation error</td>
+        </tr>
+        <tr>
+          <td>2000000000000000</td>
+          <td>Data quality error</td>
+        </tr>
+        <tr>
+          <td>1000000000000000</td>
+          <td>
+            Time series data exceeds authorized limit and the current tag does
+            not have authorized quota
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </figure>
+  </li>
+  </ul>
+ 
+  
+
+  
+  #### Creating Form Instance
+
+
+  
+  <ol id="block-1a2b4e53-c179-4cf2-a869-688098086df3">
+    <li>
+      Log in to the supOS platform, and then click{" "}
+      <img src="https://freezonex.io/wp-content/uploads/2022/06/7.png" alt="" />{" "}
+      to go to the design center.
+    </li>
+    <li>
+      Select <strong>Object Model</strong> <strong>Management</strong> &gt;{" "}
+      <strong>Object Instance</strong>&gt;
+      <strong>Form Template</strong>.
+    </li>
+    <li>
+      Select a template, and then click <strong>New </strong>to add an instance.
+    </li>
+    <li>
+      Enter the basic information of the instance and then click{" "}
+      <strong>Save</strong>.
+    <p className="info">
+    Refer to <a href="#create-entity-instance">Creating Entity Instance</a> for
+    details of form instance creation.
+  </p></li>
+  </ol>
+ 
+  
+  
+  
+  
+  <p className="li-title">Related Operations</p>
+  
+
+  <ul>
+    <li>You can import, export and delete form instances and view details.</li>
+    <li>
+      Refer to <em>jsql</em> <em>Query Manua</em>l for detailed grammar of form
+      template data query.
+    </li>
+  </ul>
+ 
+  
+  #### Creating Relation Instance
+
+  
+  <ol id="block-1a2b4e53-c179-4cf2-a869-688098086df3">
+    <li>
+      Log in to the supOS platform, and then click{" "}
+      <img src="https://freezonex.io/wp-content/uploads/2022/06/7.png" alt="" />{" "}
+      to go to the design center.
+    </li>
+    <li>
+      Select <strong>Object Model</strong> <strong>Management</strong> &gt;{" "}
+      <strong>Object Instance</strong>&gt;
+      <strong>Relation Template</strong>.
+    </li>
+    <li>
+      Select a template, and then click <strong>New</strong> to add an instance.
+    </li>
+    <li>
+      Enter the basic information of the instance, select a{" "}
+      <strong>Link Group</strong> and instances from the linked templates.
+    </li>
+    <li>
+      Select <strong>Status </strong>of the relation instance, and then click{" "}
+      <strong>OK</strong>.
+    </li>
+  </ol>
+ 
+
+  <figure className="wp-block-image size-full">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/15.png"
+      alt=""
+      className="wp-image-1940"
+    />
+  </figure>
+  
+
+  ### Creating Function Set
+
+  
+  <ol>
+    <li>
+      Log in to the supOS platform, and then click{" "}
+      <img src="https://freezonex.io/wp-content/uploads/2022/06/7.png" alt="" />{" "}
+      to go to the design center.
+    </li>
+    <li>
+      Select <strong>Object Model</strong> <strong>Management</strong> &gt;{" "}
+      <strong>Function Set </strong>&gt;
+      <strong>Function Set</strong>.
+    </li>
+    <li>
+      Select a template, and then click{" "}
+      <img
+        src="https://freezonex.io/wp-content/uploads/2022/06/26.png"
+        alt=""
+      />{" "}
+      to add a function set.
+    </li>
+    <li>
+      Enter the basic information of the function set and then click{" "}
+      <strong>OK</strong>.
+    <ul className="li-ul">
+    <li>
+      Operations of creating a function set are similar to template creation.
+      For details, see{" "}
+      <a
+        href="#entity_template"
+        data-type="internal"
+        data-id="#entity_template"
+      >
+        Creating Entity Template
+      </a>
+      .
+    </li>
+    <li>
+      A function set can be bound with templates and instances during creation.
+    </li>
+    <li>
+      Select a function set, and then click{" "}
+      <strong>Sync Reference Template</strong> to synchronize changes of the
+      function set to bound templates and instances.
+    </li>
+  </ul></li>
+  </ol>
+ 
+
+  
+ 
+
+
+:::info
+  
+When a function set is updated, the supOS platform will not synchronize changes to templates and instances that have bound with it.
+
+:::
+    
+
+  
+
+  ### Creating Tag
+
+  
+  <p>
+    Create tags to filter and search for templates, instances, properties,
+    services, events and subscriptions.
+  </p>
+  
+  
+  <p className="li-title">Procedure</p>
+  
+  
+  <ol>
+    <li>
+      Log in to the supOS platform, and then click{" "}
+      <img src="https://freezonex.io/wp-content/uploads/2022/06/7.png" alt="" />{" "}
+      to go to the design center.
+    </li>
+    <li>
+      Select <strong>Object Model</strong> <strong>Management</strong> &gt;{" "}
+      <strong>
+        <strong>Tag</strong>Management
+      </strong>
+      .
+    </li>
+    <li>
+      Click{" "}
+      <img
+        src="https://freezonex.io/wp-content/uploads/2022/06/26.png"
+        alt=""
+      />{" "}
+      next to <strong>Tag Management</strong>.
+    </li>
+    <li>
+      Enter name, alias and remarks of the tag category, select whether the tag
+      is visible to other APPs on the prompted window, and then click{" "}
+      <strong>OK</strong>.
+    </li>
+    <li>
+      Select a label category, and then click <strong>New </strong>on the right.
+    </li>
+    <li>
+      Enter basic information of the label, and then click <strong>OK</strong>.
+    </li>
+  </ol>
+ 
+
+  <figure className="wp-block-image size-large">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/16-819x1024.png"
+      alt=""
+      className="wp-image-1944"
+    />
+  </figure>
+  
+  
+  <p className="li-title">Related Operations</p>
+  
+  
+  <p>
+    Click <strong>Edit</strong> or <strong>Delete</strong> under{" "}
+    <strong>Operate</strong> to edit or delete the corresponding label.
+  </p>
+  
+
+### Creating Data Set
+
+  
+  <p>
+    You can define data sets to bind with events in object models, and receive
+    messages related to the bound data set when events are triggered.
+  </p>
+  
+  
+  <p className="li-title">Procedure</p>
+  
+  
+  <ol>
+    <li>
+      Log in to the supOS platform, and then click{" "}
+      <img src="https://freezonex.io/wp-content/uploads/2022/06/7.png" alt="" />{" "}
+      to go to the design center.
+    </li>
+    <li>
+      Select <strong>Object Model</strong> <strong>Management</strong> &gt;{" "}
+      <strong>Data Set</strong>.
+    </li>
+    <li>
+      Click <strong>New</strong>.
+    </li>
+    <li>
+      Enter basic information of the data set, and then click{" "}
+      <strong>OK</strong>.
+    </li>
+    <li>
+      Click the data set again, and then click the{" "}
+      <strong>Field Definition</strong> tab.
+    </li>
+    <li>
+      Click <strong>New</strong>, enter field property information such as name,
+      alias, data type and default value, and then click <strong>OK</strong>.
+    </li>
+  </ol>
+
+:::info
+  
+<ul className="note-list">
+    <li>Multiple fields are available.</li>
+    <li>
+      Add fields to bound data sets that have generated data by event
+      triggering, data belongs to new fields will be empty.
+    </li>
+  </ul>
+
+:::
+  
+
+  <figure className="wp-block-image size-full">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/17.png"
+      alt=""
+      className="wp-image-1945"
+    />
+  </figure>
+  
+  
+  <ol start={7}>
+    <li>
+      Click <strong>OK</strong>.
+    </li>
+  </ol>
+ 
+  
+  <p className="li-title">Related Operations</p>
+  
+
+  <ul>
+    <li>
+      Click <strong>Delete</strong> or <strong>View</strong> under{" "}
+      <strong>Operate </strong>to delete or view the details of data sets.
+    </li>
+    <li>
+      Click <strong>Edit</strong> or <strong>Delete </strong>under{" "}
+      <strong>Operate </strong>on <strong>Field Definition</strong> page to edit
+      or delete fields.
+    </li>
+  </ul>
+ 
+
+
+:::info
+  
+Bound data sets cannot be deleted.
+
+:::
+
+  
+
+  ### Creating Data Group
+
+  
+  <p>
+    Group and manage data permission of object instance properties. When you
+    select different groups, you can get different permissions on instance
+    property.
+  </p>
+  
+
+  <ul>
+    <li>
+      You cannot see object properties that you have no permission of in design
+      center or object selector.
+    </li>
+    <li>
+      You cannot see corresponding data of properties that you have no
+      permission of in operation center.
+    </li>
+  </ul>
+
+
+
+:::info
+  
+Data groups can only be applied to entity instances.
+
+:::
+
+  
+  
+  <p className="li-title">Procedure</p>
+  
+  
+  <ol>
+    <li>
+      Log in to the supOS platform, and then click{" "}
+      <img src="https://freezonex.io/wp-content/uploads/2022/06/7.png" alt="" />{" "}
+      to go to the design center.
+    </li>
+    <li>
+      Select <strong>Object Model</strong> <strong>Management</strong> &gt;{" "}
+      <strong>Data Group</strong>.
+    </li>
+    <li>
+      Click <strong>New</strong>.
+    </li>
+    <li>
+      Enter basic information of the data set, and then click{" "}
+      <strong>Save</strong>.
+    </li>
+    <li>
+      Select the <strong>Permission Config</strong> tab, click{" "}
+      <img
+        src="https://freezonex.io/wp-content/uploads/2022/06/26.png"
+        alt=""
+      />{" "}
+      next to <strong>Template Config</strong>to select a template.
+    <p className="info">
+    Select templates of instances that contain properties you need.
+  </p></li>
+  </ol>
+ 
+  
+  
+  
+  
+  <ol start={6}>
+    <li>
+      Click the <strong>Base Object</strong> tab, and then select a template to
+      configure property permissions.
+    <ul className="li-ul">
+    <li>
+      On the right side, select <strong>All</strong> <strong>Instances </strong>
+      to grant permissions to properties of all instances under the template.
+    </li>
+    <li>
+      Click <strong>Partial Instances</strong> to grant permissions to
+      properties of selected instances under the template.
+    <ol className="li-li-li">
+    <li>
+      Click <strong>New </strong>to select instances, and then click{" "}
+      <strong>OK</strong>.
+    </li>
+    <li>
+      Click <strong>Attributes </strong>under <strong>Operate </strong>to select
+      all or partial properties of the instance.
+    </li>
+    <li>
+      Click <strong>OK </strong>after selecting needed properties.
+    </li>
+    <li>
+      Click<strong> Alarm Permission</strong> under <strong>Operate </strong>of
+      selected property to configure alarm permissions, and then click{" "}
+      <strong>OK</strong>.
+    </li>
+    <li>
+      Click <strong>Close</strong>.
+    </li>
+  </ol>
+</li>
+  </ul></li>
+  </ol>
+ 
+
+  
+ 
+
+  
+
+:::info
+  
+Alarm data can be viewed in operation center, but not used to build templates.
+
+::: 
+    
+  
+
+  <figure className="wp-block-image size-large">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/18-1024x606.png"
+      alt=""
+      className="wp-image-1946"
+    />
+  </figure>
+  
+  
+  <p className="li-title">Related Operations</p>
+  
+
+  <ul>
+    <li>
+      You can grant permissions under <strong>Configured </strong>tab.
+    </li>
+    <li>
+      Click <strong>Delete</strong> corresponds to property, instance and data
+      groups to delete them.
+    </li>
+    <li>
+      Click <strong>Details</strong> to view data group details.
+    </li>
+    <li>Cancel selections of alarms to cancel granting alarm permissions.</li>
+  </ul>
+ 
+
+
+:::info
+
+<ul className="note-list">
+    <li>Bound data sets cannot be deleted.</li>
+    <li>
+      Data groups are used to grant permissions to users or roles. For details,
+      see{" "}
+      <strong>User Security Management</strong> in{" "}
+      <em>supOS Platform User Manual.</em>
+    </li>
+</ul>
+
+::: 
+ 
+ 
+
+  ### Managing Tasks
+
+  
+  <p>
+    View information of subscription tasks in <strong>Task Management</strong>,
+    such as last execution and failure log.
+  </p>
+  
+  
+  <ol>
+    <li>
+      Log in to the supOS platform, and then click{" "}
+      <img src="https://freezonex.io/wp-content/uploads/2022/06/7.png" alt="" />{" "}
+      to go to the design center.
+    </li>
+    <li>
+      Select <strong>Object Model</strong> <strong>Management</strong> &gt;{" "}
+      <strong>Task Management</strong>.
+    </li>
+    <li>
+      Click{" "}
+      <img
+        className="wp-image-955"
+        style={{ width: 33 }}
+        src="https://freezonex.io/wp-content/uploads/2022/07/4.png"
+        alt=""
+      />{" "}
+      and enter key words of subscription, and then press Enter.
+    <p className="info">You can view the task records of each subscription.</p></li><li>
+      (Optional) Click <strong>Failed Execution History </strong>under{" "}
+      <strong>Operate </strong>for failed tasks, and then check the failure
+      reason and click <strong>Run Again </strong>to manually execute the task
+      again.
+    </li>
+  </ol>
+ 
+  
+  
+  
+  
+  <ol start={4}>
+    
+  </ol>
+ 
+
+  <figure className="wp-block-image size-large">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/19-1024x80.png"
+      alt=""
+      className="wp-image-1947"
+    />
+  </figure>
+  
+
+  ## Enterprise Organization
+
+  
+  <p>
+    Independently manage subsidiaries, departments and staff by creating
+    hierarchical organizations.
+  </p>
+  
+
+  ### Adding Company
+
+  
+  <p className="li-title">Procedure</p>
+  
+  
+  <ol>
+    <li>
+      Log in to the supOS platform, and then click{" "}
+      <img src="https://freezonex.io/wp-content/uploads/2022/06/7.png" alt="" />{" "}
+      to go to the design center.
+    </li>
+    <li>
+      Select <strong>Organizational Structure</strong> &gt;{" "}
+      <strong>Company Management</strong>.
+    </li>
+    <li>
+      Click{" "}
+      <img
+        className="wp-image-299"
+        style={{ width: 14 }}
+        src="https://freezonex.io/wp-content/uploads/2022/06/28.png"
+        alt=""
+      />{" "}
+      , and then enter basic information of the company.
+    <p className="info">
+    Select a company and then click{" "}
+    <img
+      className="wp-image-299"
+      style={{ width: 14 }}
+      src="https://freezonex.io/wp-content/uploads/2022/06/28.png"
+      alt=""
+    />{" "}
+    to create a subsidiary.
+  </p></li><li>
+      Set system admin account for the company, and then click{" "}
+      <strong>OK</strong>.
+    <p className="info">
+    You can use the admin account to log in to the supOS platform with
+    permissions available to the company.
+  </p></li>
+  </ol>
+ 
+
+ 
+  
+  
+  
+
+  <figure className="wp-block-image size-full">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/20.png"
+      alt=""
+      className="wp-image-1948"
+    />
+  </figure>
+  
+  
+  <p className="li-title">Related Operations</p>
+  
+
+  <ul>
+    <li>
+      Select a company, and then click{" "}
+      <img
+        className="wp-image-317"
+        style={{ width: 18 }}
+        src="https://freezonex.io/wp-content/uploads/2022/06/46.png"
+        alt=""
+      />{" "}
+      next to the company name to edit its information.
+    </li>
+    <li>
+      Hover over a subsidiary, and then click{" "}
+      <img
+        className="wp-image-295"
+        style={{ width: 15 }}
+        src="https://freezonex.io/wp-content/uploads/2022/06/24.png"
+        alt=""
+      />{" "}
+      to delete it.
+    </li>
+  </ul>
+ 
+
+
+:::info
+  
+You cannot delete default company or edit company code and admin accounts.
+
+::: 
+
+  
+
+  ### Adding Organization
+
+  
+  <p className="li-title">Procedure</p>
+  
+  
+  <ol>
+    <li>
+      Log in to the supOS platform, and then click{" "}
+      <img src="https://freezonex.io/wp-content/uploads/2022/06/7.png" alt="" />{" "}
+      to go to the design center.
+    </li>
+    <li>
+      Select{" "}
+      <strong>
+        <strong>Organizational Structure</strong>
+      </strong>{" "}
+      &gt; <strong>Organization Management</strong>
+      &gt; <strong>Department</strong>.
+    </li>
+    <li>
+      Select a company or a department, and then click{" "}
+      <img
+        className="wp-image-299"
+        style={{ width: 14 }}
+        src="https://freezonex.io/wp-content/uploads/2022/06/28.png"
+        alt=""
+      />
+      .
+     <p className="info">
+    Click{" "}
+    <img
+      className="wp-image-961"
+      style={{ width: 26 }}
+      src="https://freezonex.io/wp-content/uploads/2022/07/5.png"
+      alt=""
+    />{" "}
+    next to a company to switch between parent company and subsidiaries.
+  </p></li> <li>
+      Enter information of the department, and then click <strong>OK</strong>.
+    <figure className="wp-block-image size-full">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/21.png"
+      alt=""
+      className="wp-image-1949"
+    />
+  </figure></li><li>
+      Click <strong>Post</strong> tab, select a company or post, and then click{" "}
+      <img
+        src="https://freezonex.io/wp-content/uploads/2022/06/28.png"
+        alt=""
+      />
+      .
+    </li>
+    <li>
+      Enter post information, select a department to which the post belongs, and
+      then click <strong>OK</strong>.
+    </li>
+  </ol>
+ 
+
+ 
+
+  <figure className="wp-block-image size-full">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/22.png"
+      alt=""
+      className="wp-image-1950"
+    />
+  </figure>
+  
+  
+  <p className="li-title">Related Operations</p>
+  
+
+  <ul>
+    <li>
+      Select a company/department/post, and then click{" "}
+      <img
+        className="wp-image-317"
+        style={{ width: 18 }}
+        src="https://freezonex.io/wp-content/uploads/2022/06/46.png"
+        alt=""
+      />{" "}
+      next to the name to edit its information.
+    </li>
+    <li>
+      Hover over a company/department/post, click{" "}
+      <img
+        className="wp-image-962"
+        style={{ width: 32 }}
+        src="https://freezonex.io/wp-content/uploads/2022/07/6.png"
+        alt=""
+      />{" "}
+      to select <strong>Delete</strong> or
+      <strong>Export</strong> to delete or export it.
+    </li>
+  </ul>
+ 
+
+
+:::info
+  
+You cannot delete default company or edit department or post code.
+
+::: 
+
+  
+
+  <ul>
+    <li>
+      Click <strong>Template</strong> at the bottom, fill in the template and
+      then click<strong> Import</strong> to import department or post to the
+      supOS platform in batches.
+    </li>
+  </ul>
+
+
+
+:::info
+  
+
+<ul className="note-list">
+    <li>You cannot delete department or post bound with personnels.</li>
+    <li>Import data is for the selected company or department only.</li>
+    <li>
+      When department code exists in the current company or department, the
+      corresponding department will be updated; when department code exists in
+      other company or department, import will fail.
+    </li>
+    <li>When importing posts, make sure upper level post codes exist.</li>
+  </ul>
+
+::: 
+  
+ 
+
+  <ul>
+    <li>
+      Select a department or post, under{" "}
+      <strong>Association Information</strong> &gt;{" "}
+      <strong>Related Role</strong>, you can view the linked post or staff and
+      link roles to post for corresponding permissions.
+    </li>
+    <li>Drag department or post to adjust their hierarchy.</li>
+  </ul>
+ 
+
+  <figure className="wp-block-image size-large">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/23-1024x847.png"
+      alt=""
+      className="wp-image-1951"
+    />
+  </figure>
+  
+
+  ### Adding Staff
+
+  
+  <p>
+    All staff needs to bind with posts. A staff can be bound with multiple
+    companies, departments and posts. During login, you can select which company
+    to log in to, and after login, you can switch companies by clicking company
+    name at the upper-left corner.
+  </p>
+  
+  
+  <p className="li-title">Procedure</p>
+  
+  
+  <ol>
+    <li>
+      Log in to the supOS platform, and then click{" "}
+      <img src="https://freezonex.io/wp-content/uploads/2022/06/7.png" alt="" />{" "}
+      to go to the design center.
+    </li>
+    <li>
+      Select{" "}
+      <strong>
+        <strong>Organizational Structure</strong>
+      </strong>{" "}
+      &gt; <strong>Personnel Management</strong>
+      &gt; <strong>Post</strong>.
+    </li>
+    <li>
+      Select a post, and then click <strong>New </strong>on the right side.
+    </li>
+    <li>
+      Enter information of the staff, and then click <strong>OK</strong>.
+    <p className="info">
+    Select <strong>Create User Account</strong> to set a username and password
+    for the staff.
+  </p></li>
+  </ol>
+ 
+  
+  
+  
+
+  <figure className="wp-block-image size-full">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/24.png"
+      alt=""
+      className="wp-image-1952"
+    />
+  </figure>
+  
+  
+  <ol start={5} id="block-17f21962-48f3-41a2-9da0-e0a1e163ea47">
+    <li>
+      Click <strong>Department </strong>tab, select a company or department.
+    </li>
+    <li>
+      Select staff in the company or department, and then click{" "}
+      <strong>Export</strong> to export them.
+    <p className="info">
+    You can view or delete each staff by clicking corresponding button under{" "}
+    <strong>Operat</strong>e.
+  </p></li>
+  </ol>
+ 
+  
+  
+  
+
+  <figure className="wp-block-image size-large">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/25-1024x281.png"
+      alt=""
+      className="wp-image-1953"
+    />
+  </figure>
+  
+  
+  <ol start={7}>
+    <li>
+      (Optional) Click <strong>Template</strong> at the bottom, fill in the
+      template and then click
+      <strong>Import</strong> to import staff to the supOS platform in batches.
+    </li>
+  </ol>
+ 
+  
+
+:::info
+
+Import staff with the same code as one already exists on the post, the staff information will be updated but post will be added.
+
+::: 
+    
+  
+  
+  <p className="li-title">Related Operations</p>
+  
+
+  <ul>
+    <li>
+      Select a post, and then click <strong>Transfer In</strong> to select staff
+      to be transferred in to the post and set whether the post is the main post
+      of the staff.
+    </li>
+  </ul>
+ 
+  
+
+
+:::info
+  
+After transfer in, you can click <strong>Transfer Out</strong> to transfer the staff out.
+
+::: 
+
+
+  
+
+  <figure className="wp-block-image size-large">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/26-1024x709.png"
+      alt=""
+      className="wp-image-1954"
+    />
+  </figure>
+  
+
+  <ul>
+    <li>
+      Click <strong>Export</strong> to export posts.
+    </li>
+    <li>
+      Click <strong>Delete</strong> or <strong>Edit</strong> under{" "}
+      <strong>Operate </strong>to delete or edit it.
+    </li>
+  </ul>
+ 
+
+
+:::info
+  
+If a staff is bound with a user, and the staff has resigned, you cannot view information of the staff and the bound user.
+
+::: 
+
+  
+
+  ### Assigning Permissions to Subsidiary Admin
+
+  
+  <ol>
+    <li>
+      Create a subsidiary and department, post and staff under it. For details,
+      see{" "}
+      <a
+        href="#enterprise-organization"
+        data-type="internal"
+        data-id="#enterprise-organization"
+      >
+        Enterprise Organization
+      </a>
+      .
+    </li>
+    <li>
+      Create a user under <strong>User Security Management </strong>&gt;{" "}
+      <strong>User Management</strong>. For details, see{" "}
+      <strong>User Security Management</strong> in{" "}
+      <em>supOS Platform User Manual.</em>
+    </li>
+    <li>
+      Under <strong>System Management </strong>&gt;{" "}
+      <strong>Menu Configuration</strong>, select an app menu and then add the
+      subsidiary to its application when editing.
+     <p className="info">
+    Subsidiary admin can assign APP page permissions to users in the subsidiary.
+  </p></li>
+  </ol>
+ 
+  
+ 
+  
+
+  <figure className="wp-block-image size-large">
+    <img
+      src="https://www.freezonex.io/wp-content/uploads/2022/08/27-1024x688.png"
+      alt=""
+      className="wp-image-1957"
+    />
+  </figure>
+  
+  
+  <ol start={4}>
+    <li>
+      Log in to the supOS platform and go to the design center, under{" "}
+      <strong>User Security Management </strong>&gt;
+      <strong>User Management</strong> or <strong>Role Management</strong>,
+      assign permissions to specific user or role. For details, see{" "}
+      <strong>Assigning Permission</strong> in{" "}
+      <em>supOS Platform User Manual.</em>
+    </li>
+  </ol>
+ 
+</>
