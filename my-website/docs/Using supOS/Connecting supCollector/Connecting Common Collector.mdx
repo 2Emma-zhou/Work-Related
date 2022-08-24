@@ -3,7 +3,15 @@ sidebar_position: 3
 
 ---
 
-## Adding Common Collector
+To connect a real-time data collector, video collector or an alarm collector to supOS platform, you need to perform operations shown as figure below.
+<img
+              id="authorizing_analog_collector__image_qdt_tgd_ytb"
+              src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/platform/
+77.png"
+            />
+
+## Adding Collector
+Add a collector on the supOS platform, and supOS provides a UUID for supCollector authentication. 
 
 <div>
   <section>
@@ -76,11 +84,202 @@ sidebar_position: 3
         </div>
       </li></ol>
 
-## Connecting to supOS
+## Authenticating Collector
+Use the UUID generated on the supOS platform, authenticate and connect supOS with the collector.
 
-Enter the UUID generated on supOS and supOS server information in supCOllector to complete connection.
+1. Log in to supCollector, and then select **RTD Collector > Connection Info**.<br />
+One collector can upload data to up to 5 supOS platforms. There is a default supOS platform on the list under **Connection Info**.
+2. Click **Add**, and then enter information of the collector and the supOS platform on which the collector is created.
+ ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supCollector/Snap4.png) 
+
+<table id="test__table_ykz_ddc_q5b" className="frame-all">
+          <caption>
+            <span className="table--title-label">Table 1. </span>
+            <span id="test__title_zkz_ddc_q5b">
+              Collector authentication information
+            </span>
+          </caption>
+          <colgroup>
+            <col style={{ width: "21.097046413502106%" }} />
+            <col style={{ width: "25.52742616033755%" }} />
+            <col style={{ width: "53.37552742616033%" }} />
+          </colgroup>
+          <thead>
+            <tr>
+              <th id="test__table_ykz_ddc_q5b__entry__1">Section</th>
+              <th id="test__table_ykz_ddc_q5b__entry__2">Parameter</th>
+              <th id="test__table_ykz_ddc_q5b__entry__3">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td headers="test__table_ykz_ddc_q5b__entry__1" rowSpan={3}>
+                Server configuration
+              </td>
+              <td headers="test__table_ykz_ddc_q5b__entry__2">
+                supOS server address
+              </td>
+              <td headers="test__table_ykz_ddc_q5b__entry__3">
+                <ul id="test__ul_qhf_4dc_q5b">
+                  <li>
+                    For standalone deployment, enter the supOS server address.
+                  </li>
+                  <li>
+                    For cluster deployment, you can click{" "}
+                    <img
+                      id="test__image_fv3_5dc_q5b"
+                      src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/platform/28.png"
+                    />{" "}
+                    to add and enter up to 5 server addresses in the cluster.
+                    Node server addresses of 8s workermain and k8s worker are
+                    preferred.
+
+:::info
+
+Only TCP protocol is supported.
+
+:::
+
+</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td headers="test__table_ykz_ddc_q5b__entry__2">
+                Communication port
+              </td>
+              <td headers="test__table_ykz_ddc_q5b__entry__3">
+                Leave it as default. Ports are different depending on data
+                upload method.
+              </td>
+            </tr>
+            <tr>
+              <td headers="test__table_ykz_ddc_q5b__entry__2">
+                Data upload method
+              </td>
+              <td headers="test__table_ykz_ddc_q5b__entry__3">
+                Select from <strong>TCP</strong> and <strong>UDP</strong>.
+              </td>
+            </tr>
+            <tr>
+              <td headers="test__table_ykz_ddc_q5b__entry__1" rowSpan={3}>
+                Node info
+              </td>
+              <td headers="test__table_ykz_ddc_q5b__entry__2">
+                Authentication node name
+              </td>
+              <td headers="test__table_ykz_ddc_q5b__entry__3">
+                Enter the collector name you created on the supOS platform.
+              </td>
+            </tr>
+            <tr>
+              <td headers="test__table_ykz_ddc_q5b__entry__2">UUID</td>
+              <td headers="test__table_ykz_ddc_q5b__entry__3">
+                Enter the collector UUID generated on the supOS platform.
+              </td>
+            </tr>
+            <tr>
+              <td headers="test__table_ykz_ddc_q5b__entry__2">
+                Connection status
+              </td>
+              <td headers="test__table_ykz_ddc_q5b__entry__3">
+                Displays the connection status between the collector and supOS. It is <b>Success</b> after authorization on supOS.
+              </td>
+            </tr>
+            <tr>
+              <td headers="test__table_ykz_ddc_q5b__entry__1" rowSpan={4}>
+                Other configuration
+              </td>
+              <td headers="test__table_ykz_ddc_q5b__entry__2">R/W status</td>
+              <td headers="test__table_ykz_ddc_q5b__entry__3">
+                Set the global read and write status of the collector. You can
+                set different status for each supOS.
 
 
+:::tip
+
+To write data back to equipment, set it to <strong>R/W</strong>.
+
+:::
+</td>
+            </tr>
+            <tr>
+              <td headers="test__table_ykz_ddc_q5b__entry__2">
+                Redundancy setup
+              </td>
+              <td headers="test__table_ykz_ddc_q5b__entry__3">
+                Set whether to enable redundancy for the collector and enter
+                group ID and number if enabled.
+                <ul id="test__ul_hvp_bgc_q5b">
+                  <li>Redundancy ID of both collectors must be the same.</li>
+                  <li>
+                    Redundancy number of both collectors must be different.
+                  </li>
+                </ul>
+
+
+:::info
+
+Make sure other information such as server address, port, authentication node and UUID are the same for both collectors.
+
+:::
+
+</td>
+            </tr>
+            <tr>
+              <td headers="test__table_ykz_ddc_q5b__entry__2">Cache</td>
+              <td headers="test__table_ykz_ddc_q5b__entry__3">
+                Automatic network replenishment. Enable it and set a path for
+                data storage during network failure.
+
+                
+:::info
+
+<ul id="test__ul_syc_mkc_q5b">
+                    <li>
+                      It is unavailable when <strong>Data upload method</strong>{" "}
+                      is set to <strong>UDP</strong>.
+                    </li>
+                    <li>
+                      Storage path must be different for different supOS
+                      platforms.
+                    </li>
+                    <li>
+                      Make sure the disk size is enough. For example, data that
+                      changes by the second of 10,000 tags takes up 7 GB in a
+                      day.
+                    </li>
+                  </ul>
+:::
+
+</td>
+            </tr>
+            <tr>
+              <td headers="test__table_ykz_ddc_q5b__entry__2">
+                Communication encryption
+              </td>
+              <td headers="test__table_ykz_ddc_q5b__entry__3">
+                Enter the key generated after enabling encryption during adding
+                collector on supOS to encrypt communication information between
+                supOS and supCollector.
+
+
+:::info
+When the key is changed on supOS, the change takes effect after changing it on supCollector.
+:::
+
+</td>
+            </tr>
+          </tbody>
+        </table>
+
+ 
+3. Click **Save**.
+
+:::info
+
+You can click **Delete** to delete connected supOS platform. Deletion is prohibited when there is only one supOS platform connected.
+:::
 
 ## Authorizing Collector
 
@@ -108,12 +307,14 @@ Enter the UUID generated on supOS and supOS server information in supCOllector t
       </li>
       <li className="stepexpand">
         <span>
-          Select the common collector you just added, view the details and then
+          Select the collector you just added, view the details and then
           click <strong>OK</strong>.
         </span>
         <div>
-          The common collector is connected, and you can call the collected time series data in the
-          object selector.
+          <ul><li>The collector is connected, and a new instance under <b>Object Model Management > Object Instance > Collector Template</b> is created.</li>
+          <li>An <b>Online</b> property with data type as <b>Bool</b> is generated under the instance, and you can use it in APP designing to indicate collector status (true means online and false is offline).
+          </li>
+          </ul>
         </div>
       </li>
     </ol>

@@ -1,0 +1,355 @@
+---
+sidebar_position: 4
+
+---
+
+<article
+  className="nested3"
+  aria-labelledby="unique_598277289__title_bb2_zgv_35b"
+  id="unique_598277289"
+>
+
+  <div>
+    <p>
+      Data linkage is necessary for data requests between linking sources and
+      linking targets.
+    </p>
+    <section className="section" id="unique_598277289__context_z1x_hkr_j5b">
+      <ul id="unique_598277289__ul_mpz_b2x_j5b">
+        <li>
+          Trigger condition
+          <table id="unique_598277289__table_lgt_l5f_k5b" className="frame-all">
+            <caption>
+              <span className="table--title-label">Table 13. </span>
+              <span id="unique_598277289__title_mgt_l5f_k5b">
+                Trigger condition description
+              </span>
+            </caption>
+            <colgroup>
+              <col style={{ width: "27.47252747252747%" }} />
+              <col style={{ width: "72.52747252747253%" }} />
+            </colgroup>
+            <thead>
+              <tr>
+                <th id="unique_598277289__table_lgt_l5f_k5b__entry__1">
+                  Condition
+                </th>
+                <th id="unique_598277289__table_lgt_l5f_k5b__entry__2">
+                  Description
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td headers="unique_598277289__table_lgt_l5f_k5b__entry__1">
+                  Initialization
+                </td>
+                <td headers="unique_598277289__table_lgt_l5f_k5b__entry__2">
+                  Triggers linked actions when initialization.
+                </td>
+              </tr>
+              <tr>
+                <td headers="unique_598277289__table_lgt_l5f_k5b__entry__1">
+                  Value Change
+                </td>
+                <td headers="unique_598277289__table_lgt_l5f_k5b__entry__2">
+                  Triggers linked actions when element value changes.
+                </td>
+              </tr>
+              <tr>
+                <td headers="unique_598277289__table_lgt_l5f_k5b__entry__1">
+                  Lose Focus
+                </td>
+                <td headers="unique_598277289__table_lgt_l5f_k5b__entry__2">
+                  Triggers linked actions when moving away from the element.
+                </td>
+              </tr>
+              <tr>
+                <td headers="unique_598277289__table_lgt_l5f_k5b__entry__1">
+                  Click/Double-click
+                </td>
+                <td headers="unique_598277289__table_lgt_l5f_k5b__entry__2">
+                  Triggers linked actions when clicking/double-clicking the
+                  element.
+                </td>
+              </tr>
+              <tr>
+                <td headers="unique_598277289__table_lgt_l5f_k5b__entry__1">
+                  Click Row
+                </td>
+                <td headers="unique_598277289__table_lgt_l5f_k5b__entry__2">
+                  Triggers linked actions when clicking a table row. Available
+                  for tables only.
+                </td>
+              </tr>
+              <tr>
+                <td headers="unique_598277289__table_lgt_l5f_k5b__entry__1">
+                  Click Cell
+                </td>
+                <td headers="unique_598277289__table_lgt_l5f_k5b__entry__2">
+                  Triggers linked actions when clicking a table cell. Available
+                  for tables only.
+                </td>
+              </tr>
+              <tr>
+                <td headers="unique_598277289__table_lgt_l5f_k5b__entry__1">
+                  Area Selection
+                </td>
+                <td headers="unique_598277289__table_lgt_l5f_k5b__entry__2">
+                  Triggers linked actions when dragging to select an area.
+                  Available for tables only.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>
+          Linked actions
+          <ul id="unique_598277289__ul_szq_lxf_k5b">
+            <li>
+              <strong>Search</strong>: The output value of linked source is used as input
+              parameters to run queries on linked target. When the data source
+              of linked target is a form template, the input parameter is
+              corresponding table filed, and when the data source of linked
+              target is a service, the input parameter is also used for the
+              service.
+            </li>
+            <li>
+              <strong>Store value</strong>: Stores values entered through linked sources, and
+              then associates events such as click or double-click to realize
+              queries. Generally used for manual query.
+            </li>
+            <li>
+              <strong>Set value</strong>: Displays values entered through linked sources on
+              linked targets. The set value is only available on the current
+              page and will be invalid after refreshing.
+            </li>
+            <li>
+              <strong>Set selected</strong>: Selects values in linked targets that corresponds to
+              values entered through linked sources.
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </div>
+  <article
+    className="nested4"
+    aria-labelledby="ariaid-title20"
+    id="storing_value"
+  >
+
+
+## Demonstrating Query
+
+<div>
+      <section className="display" id="storing_value__prereq_tgp_xzf_k5b">
+        <p>
+          Drag a table, 2 input boxes and a button to the canvas, and then
+          select a data source for the table and set table headers based on the
+          data source.
+        </p>
+
+:::info
+
+In this example, a form template is used as the table data source.
+:::
+
+</section>
+      <section>
+        <ol className="display">
+          <li className="stepexpand">
+            <span>
+              Press ctrl and select both input boxes, and then click <strong>Choose a target</strong> at the
+              upper-right corner.
+            </span>
+          </li>
+          <li className="stepexpand">
+            <span>
+              Select the button as the target, and then configure the linkage.
+            </span>
+            <div>
+              <ul id="storing_value__ul_frc_1cg_k5b">
+                <li>
+                  Select <strong>Value Change</strong> as
+                  trigger sources for both boxes.
+                </li>
+                <li>
+                  Select <strong>Store Value</strong> as
+                  linked actions.
+                </li>
+              </ul>
+            </div>
+            <div>
+              <figure className="fignone" id="storing_value__fig_akv_wbg_k5b">
+                <img
+                  id="storing_value__image_ig2_xbg_k5b"
+                  src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/appDesign/42.png"
+                />
+              </figure>
+            </div>
+          </li>
+          <li className="stepexpand">
+            <span>
+              Click <strong>Submit</strong>.
+            </span>
+          </li>
+          <li className="stepexpand">
+            <span>
+              Click the button, and then click{" "}
+              <img
+                id="storing_value__image_pff_gcg_k5b"
+                src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/appDesign/43.png"
+              />
+              under <strong>Linkage</strong>.
+            </span>
+          </li>
+          <li className="stepexpand">
+            <span>
+              Select <strong>Click</strong> from the drop-down
+              list, and then click <strong>Choose a target</strong> to select the
+              table.
+            </span>
+            <div>
+              <ul id="storing_value__ul_sbl_5cg_k5b">
+                <li>
+                  Select <strong>Search</strong> from <strong>Action</strong> list.
+                </li>
+                <li>
+                  Click{" "}
+                  <strong>Configuration Structure</strong>,
+                  and then select input field for each input boxes. For example,
+                  select <strong>name1</strong> for the first box,
+                  you can enter a name in the first box to search for
+                  corresponding data.
+                </li>
+              </ul>
+            </div>
+            <div>
+              <figure className="fignone" id="storing_value__fig_pzj_tcg_k5b">
+                <img
+                  id="storing_value__image_qzj_tcg_k5b"
+                  src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/appDesign/44.png"
+                />
+              </figure>
+            </div>
+          </li>
+          <li className="stepexpand">
+            <span>
+              Click <strong>Save</strong> and{" "}
+              <strong>Preview</strong> at the upper-right
+              corner, and then enter search text in input boxes, click the
+              button to view corresponding results.
+            </span>
+            <div>
+              <figure className="fignone" id="storing_value__fig_a4p_c2g_k5b">
+                <img
+                  id="storing_value__image_b4p_c2g_k5b"
+                  src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/appDesign/45.png"
+                />
+              </figure>
+            </div>
+          </li>
+        </ol>
+      </section>
+    </div>
+  </article>
+  <article
+    className="nested4"
+    aria-labelledby="ariaid-title21"
+    id="unique_1134615537"
+  >
+
+
+## Demonstrating Value Selection
+
+
+<div>
+      <section className="display" id="unique_1134615537__prereq_tgp_xzf_k5b">
+        <p>Drag a drop-down box and a radio to the canvas.</p>
+
+
+:::info
+
+In this example, a form template is used as data sources.
+
+:::
+
+
+</section>
+      <section>
+        <ol className="display">
+          <li className="stepexpand">
+            <span>
+              Click the drop-down box, and then select{" "}
+              <strong>Dynamic Options</strong> under <strong>Options</strong>.
+            </span>
+          </li>
+          <li className="stepexpand">
+            <span>
+              Select the form template as the data source and then set option
+              text and value.
+            </span>
+            <div>
+              <figure
+                className="fignone"
+                id="unique_1134615537__fig_ekl_gfg_k5b"
+              >
+                <img
+                  id="unique_1134615537__image_fkl_gfg_k5b"
+                  src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/appDesign/46.png"
+                />
+              </figure>
+            </div>
+          </li>
+          <li className="stepexpand">
+            <span>
+              Click <strong>Linkage</strong>, and then select <strong>Value Change</strong> to be the trigger
+              event.
+            </span>
+          </li>
+          <li className="stepexpand">
+            <span>
+              Select the radio to be the linked target, and then set <strong>Action</strong> to{" "}
+              <strong>Set Checked</strong> and <strong>Source Field</strong> to either option
+              value or label.
+            </span>
+            <div>
+              <figure
+                className="fignone"
+                id="unique_1134615537__fig_v11_wfg_k5b"
+              >
+                <img
+                  id="unique_1134615537__image_w11_wfg_k5b"
+                  src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/appDesign/47.png"
+                />
+              </figure>
+            </div>
+          </li>
+          <li className="stepexpand">
+            <span>Select the radio, and then select the same data source.</span>
+          </li>
+          <li className="stepexpand">
+            <span>
+              Click <strong>Save</strong> and{" "}
+              <strong>Preview</strong> at the upper-right
+              corner, and then select a value from the drop-down list and check
+              whether the radio selects the same option.
+            </span>
+            <div>
+              <figure
+                className="fignone"
+                id="unique_1134615537__fig_a4p_c2g_k5b"
+              >
+                <img
+                  id="unique_1134615537__image_b4p_c2g_k5b"
+                  src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/appDesign/48.png"
+                />
+              </figure>
+            </div>
+          </li>
+        </ol>
+      </section>
+    </div>
+  </article>
+</article>
