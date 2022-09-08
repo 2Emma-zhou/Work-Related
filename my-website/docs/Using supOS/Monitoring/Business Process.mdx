@@ -1,0 +1,101 @@
+---
+sidebar_position: 2
+
+---
+
+
+<div>
+      <p>
+        In design center, you can use different elements to form a diagram to
+        demonstrate the full process. The diagram changes based on equipment
+        running status in real time.
+      </p>
+      <p>
+        The process diagram in below figure contains multiple graphic elements,
+        connections, video elements and data connection elements with dynamic
+        effects configured.
+      </p>
+
+:::info
+
+Dynamic effects allow you to
+        directly view equipment status through graphic element colors, flashing status and fluid volume.
+
+:::
+
+<figure className="fignone" id="business_process__fig_kwr_vl4_s5b">
+        <img id="business_process__image_wh1_wl4_s5b" src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/monitoring/8.png" />
+      </figure>
+      <ul id="business_process__ul_czs_gm4_s5b">
+        <li>
+          Status of data connection element
+          <ul id="business_process__ul_u4z_hm4_s5b">
+            <li>
+              <strong>?????</strong>: Data connection failed.
+            </li>
+            <li>
+              <strong>#####</strong>: The bound data source does not exist.
+            </li>
+            <li>
+              <strong>!</strong>: No data permission.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Operations on data connection element
+          <ul id="business_process__ul_np5_wm4_s5b">
+            <li>
+              Trend chart: Right-click the element, and then click{" "}
+              <strong>View Trend Graph</strong>. For details, see{" "}
+              <a
+                href="#trend_chart"
+                title="You can view trend charts through right-clicking data connection element and graphic element with dynamic effect configured."
+              >
+                Trend Chart
+              </a>
+              .
+            </li>
+            <li>
+              Data source details: Hover over the element, and then click <strong>Details</strong> on the floating window.
+              <fig><img id="business_process__image_vt2_pn4_s5b" src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/monitoring/9.png" /></fig>
+            </li>
+            <li>
+              Write back data: Change the data collected and displayed through
+              the element, and then click{" "}
+              <img
+                id="business_process__image_avq_vn4_s5b"
+                src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/monitoring/10.png"
+              /> next to <strong>Value</strong> to change and send the new value to
+              equipment.
+
+
+:::info
+
+<ul id="business_process__ul_dr1_r44_s5b">
+                  <li>
+                    Collector driver types that support writing back data
+                    include ModBus TCP, ModBusRTU, OPC DA and OPC UA.
+                  </li>
+                  <li>
+                    IOT gateway supports writing data back when setting{" "}
+                    <strong>R/W status</strong> of corresponding object property
+                    and gateway to <strong>R/W</strong>.
+                  </li>
+                </ul>
+
+:::
+
+<figure
+                className="fignone"
+                id="business_process__fig_jqd_n44_s5b"
+              >
+                <img
+                  id="business_process__image_btc_zn4_s5b"
+                  src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/monitoring/11.png"
+                />
+              </figure>
+            </li>
+          </ul>
+        </li>
+      </ul>
+</div>

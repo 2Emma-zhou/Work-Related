@@ -16,21 +16,13 @@ The operation is similar for different types of collector, and this section uses
 
 1.  Log in to supCollector, and then select **RTD Collector** > **Source**.
 2.  Click **Add** and then enter the collector information.<br />
-Different types of driver corresponds to different information. For details, see...
+Different types of driver corresponds to different information. For details, see <a href="Supported Driver">Supported Driver</a>.
 * **Source name**: The source name must be starting with a letter, and only letters, numbers or underscores. The length should be no more than 50 characters.
 * **Driver name**: Select a driver type.
 * **Description**: Description of the source. The maximum length is 200 characters.
 ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supCollector/add1.png) 
-3.  Select the source you just added, and then click **Import tags in batch** to synchronize tags connected to the source. <br />
-:::tip 
-Under **Source point information configuration** tab, you can edit the source information. Fields that are grayed out cannot be edited.
-:::
+3.  Click **Import tags in batch** tab to synchronize tags connected to the source, and then click **Save**.
 
-:::info
-- Some types of collector do not support tag synchronization.
-- Interfaces of tag synchronization are different depending on the driver type. This section uses **Simulator** as an example.
-:::
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supCollector/import.png)
 <ul><ul><li>Click <strong>Synchronize</strong> to only synchronize new tags.
 
 
@@ -43,6 +35,19 @@ For first time synchronization, all related tags will be synchronized.
 <li>Select tags, and then click <strong>Import</strong> or <strong>Export CSV</strong> to import selected tags to supCollector or export to local computer in .csv file.</li>
 <li>Select a tag, you can edit its parameters on the right side.</li>
 </ul></ul>
+
+![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supCollector/import.png)
+:::info
+- Some types of collector do not support tag synchronization.
+- Interfaces of tag synchronization are different depending on the driver type. This section uses **Simulator** as an example.
+:::
+
+:::tip 
+- Select an added source, under **Source point information configuration** tab, you can edit the source information. Fields that are grayed out cannot be edited.
+- Under **Import tags in batch**, you can synchronize tags connected to the source as well.
+:::
+
+
 
 4. (Optional) With the added sourcea, you can import sources in batches.
 <ol>
@@ -59,7 +64,7 @@ For first time synchronization, all related tags will be synchronized.
 ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supCollector/2.png)
 
 :::info
-For writing data back to equipment, you need to set **R/W status** to **R/W**. For details on data writing back, see...
+For writing data back to equipment, you need to set **R/W status** to **R/W**. For details on data writing back, see <a href="Data Write Back">Data Write Back</a>.
 :::
 
 3. Select the tag you just added, click **Export**.

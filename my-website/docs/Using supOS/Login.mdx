@@ -5,7 +5,6 @@ sidebar_position: 1
 
 <>
 
-## Login
 
   <div>
     <p>After authorization, you can log in to the supOS platform.</p>
@@ -16,7 +15,7 @@ sidebar_position: 1
       </li>
       <li>
         Within 30 days after the expiration date, the platform notifies you that
-        the number of online users is reduced by 10%.
+        the number of online users is reduced by 10%.<span id="operation-center"></span>
       </li>
       <li>
         30 days after the expiration date, the platform notifies you that only
@@ -30,7 +29,7 @@ sidebar_position: 1
     id="logging_in_to_the_platform"
   >
 
-## Logging in to Operation Center
+## Logging in to Operation Center 
 
 <div>
       <section>
@@ -117,10 +116,22 @@ sidebar_position: 1
 <li>Function menu: Contains main functions of
               the supOS platform in the operation center.
               <ul id="logging_in_to_the_platform__ul_y2f_z3x_xtb">
-                <li>Check the ongoing workflows and to-do tasks.</li>
+                <li>Switch to check workflows, processes and tasks. Hover over each tab, and you can click <img
+               src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/platform/78.png"
+                /> to add the selected tab to <strong>Favorites</strong>.
+
+:::info
+
+Menus added to <strong>Favorites</strong> are only available for the current user.
+
+:::
+</li>
                 <li>Search for workflows or tasks by key words.</li>
                 <li>
                   Quickly find workflows and tasks in <strong>Favorites</strong>.
+                </li>
+                 <li>
+                  Displays all published applications in design center with permission granted. You can select applications to view corresponding effects and details.
                 </li>
               </ul>
 
@@ -161,7 +172,7 @@ For details of the supOS platform operation center, see <em>SupOS Operation Moni
                   Click <img
                     id="logging_in_to_the_platform__image_o2q_hjx_xtb"
                     src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/platform/7.png"
-                  /> to go to the design center. For details, see <a href="login.html#app_design__title_aff_vkx_xtb">
+                  /> to go to the design center. For details, see <a href="#design-center">
                     Design Center
                   </a>
                   .
@@ -193,10 +204,15 @@ For details of the supOS platform operation center, see <em>SupOS Operation Moni
               </ul>
               </li>
 
-<li>Display: Displays the status of the current running workflow.
+<li>Display: Displays the list of workflows, processes and tasks.
+<ul><li>On <strong>Workflow</strong>, you can manage all workflows published on design center and view their details, perform operations such as rename, upgrade, delete, import, export and stop or restart workflows.</li>
+<li>On <strong>Process</strong>, you can view progress of each process, pause and restart or stop processes.</li>
+<li>On <strong>Task</strong>, you can see all to-do tasks from ongoing workflow, and you can either delete or delegate each task.<span id="design-center"></span></li>
+</ul>
 </li>
 </ul> 
 <>
+
 
 ## Getting to Know Design Center
 
@@ -212,7 +228,7 @@ For details of the supOS platform operation center, see <em>SupOS Operation Moni
     </figure>
 <ul>
 <li>Function menu: Contains main functions of the design
-    center the supOS platform. For details, see <a href="login.html#function_menu__title_lzx_5mx_xtb">Function Menu</a>.</li>
+    center the supOS platform. For details, see <a href="#function-menu">Function Menu</a>.</li>
 <li>Toolbar
     <ul id="app_design__ul_yws_2jx_xtb">
       <li>
@@ -220,7 +236,7 @@ For details of the supOS platform operation center, see <em>SupOS Operation Moni
       </li>
       <li>
         Click <img id="app_design__image_mzm_hjx_xtb" src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/platform/6.png" /> to configure the system and view the information of the platform. For
-        details, see  <a href="login.html#system_settings__title_xdb_gnx_xtb"> System Settings </a>.
+        details, see  <a href="#system-settings"> System Settings </a>.
       </li>
       <li>
         Click <img id="app_design__image_hbq_3jx_xtb" src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/platform/8.png" /> to exit the current account.
@@ -234,7 +250,7 @@ For details of the supOS platform operation center, see <em>SupOS Operation Moni
       </li>
       <li>
         Click <img id="app_design__image_g32_j4x_xtb" src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/platform/11.png" /> to view the full screen.
-      </li>
+      </li><span id="function-menu"></span>
     </ul>
     </li>
 <li>Display: Displays the details of the current module.</li>
@@ -471,7 +487,7 @@ For details of the supOS platform operation center, see <em>SupOS Operation Moni
       </ul>
     </section>
     <section classname="section" id="function_menu__section_tns_lcy_xtb">
-      <h4 classname="sectiontitle">Global Configuration</h4>
+      <h4 classname="sectiontitle">Global Configuration</h4><span id="system-settings"></span>
       <p>Configures the data source access and local storage resources.</p>
     </section>
   </div>
@@ -529,7 +545,11 @@ The title is displayed on the browser tab during platform operation and manageme
     background of the supOS platform. The configuration is effective for all
     users.</li>
 <li><strong>Login Page Configuration</strong>: Set the copyright, logo, background, slogan
-    and login title (image) of the login page. See <a href="login.html#system_settings__fig_bhz_thy_xtb">Figure 4</a>.</li>
+    and login title (image) of the login page.
+
+<figure classname="fignone">
+      <img id="system_settings__image_sh4_5hy_xtb" src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/platform/13.png" />
+    </figure> </li>
 <li><strong>Storage policy configuration of time series data</strong>: Set the storage duration of the
     time series data history. When the duration exceeds the set value, the
     platform deletes the earliest data and keep the latest.
@@ -547,8 +567,8 @@ The title is displayed on the browser tab during platform operation and manageme
 :::
 </li>
 
-<li><strong>Cascading Setup</strong>: Set the cascade information. For details, see <a href="operation_process.html#authorizing_cascading_data_collector__title_p22_ctw_ztb">
-      Authorizing Cascading Data Collector</a>.</li> 
+<li><strong>Cascading Setup</strong>: Set the cascade information. For details, see <a href="Connecting supCollector/Connecting Cascading Collector">
+      Connecting Cascading Data Collector</a>.</li> 
 <li><strong>Global Function Configuration</strong>: Set the global function that automatically
     runs when the supOS backend service is started.
     <ul id="system_settings__ul_hqx_kjy_xtb">
@@ -575,15 +595,12 @@ We recommend to hide it for servers with low-level configurations.</li>
  <li><strong>App Settings</strong>: Set whether to display the <strong>DataLink Tooltip</strong>
     along with the collected data when running the APP.</li>
  <li><strong>Configure Alarm Colors</strong>: Set the alarm color based on the alarm level. The supOS platform supports up
-    to 10 levels with 1 as the lowest.</li>
+    to 10 levels with 1 as the lowest.</li><span id="system_settings__fig_bhz_thy_xtb"></span>
     </ul>
-
   </div>
 </>
 
-<figure classname="fignone" id="system_settings__fig_bhz_thy_xtb">
-      <img id="system_settings__image_sh4_5hy_xtb" src="https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/platform/13.png" />
-    </figure>
+
 
 <>
 
