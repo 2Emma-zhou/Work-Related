@@ -3,3 +3,740 @@ sidebar_position: 8
 
 ---
 
+## Overview
+ScriptUtil is packed APIs that you can use to design the interactions between elements through scripts in application design.
+## Basic rules
+- The namespace of form templates created under an application is the current application namespace. Its format is **developer_app name**. Namespace of form templates created on the supOS system is **system**.
+:::tip
+You can check the namespace of object templates on their basic information page, and properties on the property list.
+:::
+- When using scriptUtil APIs, with repeated alias, we recommend adding namespace to differentiate them from each other during calling. Otherwise, objects with same aliases will be called at the order of starting from the application, to supOS platform and to other applications.
+- When using scriptUtil APIs (callFunction excluded) on supOS V2.80.01.02 and later versions, add a parameter **version: 'V2'**. Older versions like V2.70.01.00 uses **version: 'V1'** (embedded).
+- When using scriptUtil APIs that are related to form templates (add, delete, insert and search) supOS V2.80.01.02 and later versions, we recommend using callFunction instead to unify service calling.
+## API Description
+### Service Execution
+- executeSrciptService
+<ul><li>Usage: Call embedded services of object templates or custom services.</li>
+    <li>Parameter
+        <ul><li>objName: Required. Locate the corresponding template or instance.</li>
+        <li>serviceName: Required. Service name that you want to call.</li>
+        <li>params: Optional. Input parameters of the service.</li>
+        <li>cb[callback]: Callback function.</li>
+        <li>version: Version number. Mostly for differentiating V2.7 and V3.0.</li>
+        </ul>
+    </li>
+ <li>Example
+```
+// call service under a template
+var objName = 'namespace.templateName';
+// call service under an instance of a template
+var objName = 'namespace.templateName/instanceName';
+scriptUtil.executeScriptService({
+objName, // template or instance
+serviceName:"namespace.querySQLExec",  // service namespace and service alias
+// input parameters of service
+params:{ },
+version: 'V2',
+// callback function
+cb:function(res){
+    console.log('res', res);
+}
+// custom request parameters
+});
+```
+</li>
+</ul>
+
+- getRequestUrl
+<ul><li>Usage: Get the string after ? in a URL link and return it as an object.</li>
+ <li>Example
+
+
+```
+// url is https://www.baidu.com?id=123&code=456
+var data = scriptUtil.getRequestUrl();
+console.log(data)
+// return data
+{
+  id: 123,
+  code:456
+}
+```
+</li>
+</ul>
+
+- getTimeZone
+<ul><li>Usage: Get current timezone and return it as an object.</li>
+ <li>Example
+
+
+```
+// 东八区为 -8
+var Offset = scriptUtil.getTimeZone();
+console.log(Offset)
+```
+</li>
+</ul>
+
+- reload
+<ul><li>Usage: Refresh current page after the set delay.</li>
+<li>Parameter: (number) refers to the delay time with millisecond as unit.</li>
+<li>Example
+
+
+```
+// refresh the page in 50 ms
+scriptUtil.reload(50);
+```
+</li>
+</ul>
+
+- refreshWorkflow
+<ul><li>Usage: Refresh workflow.</li>
+<li>Example
+
+
+```
+var Offset = scriptUtil.refreshWorkflow();
+```
+</li>
+</ul>
+
+- copy
+<ul><li>Usage: Copy data to clipboard.</li>
+<li>Parameter: (any) refers to the data to be copied.</li>
+<li>Example
+
+
+```
+
+scriptUtil.copy(any);
+```
+</li>
+</ul>
+
+- request
+<ul><li>Usage: Call third-party service or openAPI interface of supOS.</li>
+<li>Parameter
+<ul><li>(string): Refers to the request url.</li>
+<li>(object): Refers to input parameters.
+<ul><li>method: Request method such as <strong>POST/GET/DELETE/PUT</strong>.</li>
+<li>body: Input parameters.</li></ul>
+</li>
+</ul>
+</li>
+<li>Example
+
+
+```
+var url = '/api/openapi/notification/v1/message';
+var param = {
+  method: 'POST', //request method such as GET, POST, PUT and DELETE
+  body: {} //optional
+  headers: {} //optional
+};
+scriptUtil.request(url, param).then(res=>{
+  console.log(res)
+});
+```
+</li>
+</ul>
+
+### scriptUtilReact Component
+- registerReactDom
+<ul><li>Usage: Register as a **ReactDom** in **Programmable Component**, and then can be called by using the component in business designer.</li>
+<li>Parameter
+<ul><li>(component): Component instance.</li>
+<li>(object): Props.</li>
+</ul>
+</li>
+<li>Example
+
+
+```
+scriptUtil.registerReactDom(this, this.props);
+```
+</li>
+</ul>
+- logoutReactDom
+<ul><li>Usage: Logout the registered **ReactDom** instance in **Programmable Component**, and often can be called in the lifecycle of **componentWillUnmount** to release storage.</li>
+<li>Parameter
+<ul><li>(component): Component instance.</li>
+<li>(object): Props.</li>
+</ul>
+</li>
+<li>Example
+
+
+```
+scriptUtil.logoutReactDom(this, this.props);
+```
+</li>
+</ul>
+
+- getRegisterReactDom
+<ul><li>Usage: Get registered component instance to call the embedded functions.</li>
+<li>Parameter: (string) refers to component ID and returns the registered component instance.</li>
+<li>Example
+
+
+```
+var reactInstance = scriptUtil.getRegisterReactDom('htdiv-xxxx');
+reactInstance.getValue()
+```
+</li>
+</ul>
+
+- getFormData
+<ul><li>Usage: Get component value to obtain form data after submitted.</li>
+<li>Parameter: (array) refers to component name and returns corresponding component value as an object.</li>
+<li>Example
+
+
+```
+scriptUtil.getFormData(['title', 'name', 'age']);
+```
+</li>
+</ul>
+
+- setFormData
+<ul><li>Usage: Set component value to fill in the form and change form data.</li>
+<li>Parameter: (object): component name: component valule.</li>
+<li>Example
+
+
+```
+scriptUtil.setFormData({ title: 'test data' });
+```
+</li>
+</ul>
+
+- submitDefaultValue
+<ul><li>Usage: Bind form component to trigger data search.</li>
+<li>Parameter
+<ul><li>(component): Form component instance.</li>
+<li>(string): To-be-set values of form component instance.</li>
+<li>(string): Tag. **1** means automatically submit the form and **0** means manual submit.
+
+:::info
+Automatic submit is only valid when setting **Linkage** to **Automatic** in **Page Configuration** in free layout.
+:::
+
+</li>
+</ul>
+</li>
+<li>Example
+
+
+```
+const component = scriptUtil.getRegisterReactDom('ctrlId');
+scriptUtil.submitDefaultValue(component, 'search value', '1');
+```
+</li>
+</ul>
+
+### General Tool of scriptUtil
+- Alert
+<ul><li>Usage: pop-up window.</li>
+<li>Parameter
+<ul>
+<li>(string): Message.</li>
+<li>(function): Callback
+
+:::info
+Callback is only triggered when clicking **ok** on the pop-up window.
+:::
+
+</li>
+</ul>
+</li>
+<li>Example
+
+
+```
+scriptUtil.Alert('Prompted Successfully', () => {
+  console.log('Click OK');
+});
+```
+</li>
+</ul>
+
+- showMessage
+<ul>
+<li>Parameter
+<ul>
+<li>(string): Message.</li>
+<li>(string): Message type, including **success/warning/info/error**.
+</li>
+</ul>
+</li>
+<li>Example
+
+
+```
+scriptUtil.showMessage('Message', 'success');
+```
+</li>
+</ul>
+
+- timestampFormat
+<ul><li>Usage: Formats timestamp and returns time string with the set formatting.</li>
+<li>Parameter
+<ul>
+<li>(number): Timestamp.</li>
+<li>(string): Time format.
+</li>
+</ul>
+</li>
+<li>Example
+
+
+```
+scriptUtil.timestampFormat(1587109353040, 'YYYY-MM-DD HH:mm:ss');
+// "2020-04-17 15:42:33"
+```
+</li>
+</ul>
+
+- timestampAntiFormat
+<ul><li>Usage: Deformats time strings and returns corresponding timestamp.</li>
+<li>Parameter: (string) refers to general time string.</li>
+<li>Example
+
+
+```
+scriptUtil.timestampAntiFormat('2021-05-01 01:00:00');
+// 1619802000000
+```
+</li>
+</ul>
+
+- regRexGroup
+<ul><li>Usage: Checks whether the corresponding variable matches the regualr expressions and returns it.</li>
+<li>Parameter: (string) refers to regular expression type, including **mobilePhone/telephone/zipCode/idCard/number/email/ip**.</li>
+<li>Example
+
+
+```
+const reg = scriptUtil.regRexGroup('mobilePhone');
+const variable_1 = '18866668888';
+const variable_3 = '1886666777';
+reg.test(variable_1); //true;
+reg.test(variable_3); //false;
+```
+</li>
+</ul>
+
+- isVaild
+<ul><li>Usage: Checks whether the component value formatting conforms to the set rules when submitting the form and returns result as **true** or **false**.</li>
+<li>Parameter: (array) refers to component IDs.</li>
+<li>Example
+
+
+```
+scriptUtil.isVaild(['ctrlId1','ctrlId2','ctrlId3']);
+```
+</li>
+</ul>
+
+- getFormatterMap
+<ul><li>Usage: Get component title and name according to its ID and return an object.</li>
+<li>Parameter: (array) refers to component IDs.</li>
+<li>Example
+
+
+```
+scriptUtil.getFormatterMap(['ctrlId1','ctrlId2','ctrlId3']);
+```
+</li>
+</ul>
+
+- parseTableMap
+<ul><li>Usage: Replace object keys inside an array and return a new array.</li>
+<li>Parameter
+<ul>
+<li>(array): Data source.</li>
+<li>(object): Map.</li>
+<li>(string): Index.</li>
+</ul>
+</li>
+<li>Example
+
+```
+// parseTableMap(data, map, index = 'number')
+const data = [{name:'Emma',age: 123},{name:'Judy',age: 33}];
+const map = {name: 'name',age: 'age'}
+const result = scriptUtil.parseTableMap(data,map, 'number')
+console.log(result)
+[
+    {
+        "number": 1,
+        "name": "Emma",
+        "age": 123
+    },
+    {
+        "number": 2,
+        "name": "Judy",
+        "age": 33
+    }
+]
+```
+</li>
+</ul>
+
+- objKeySort
+<ul><li>Usage: Sort the object keys and return and new object.</li>
+<li>Parameter
+<ul>
+<li>(object): Data source.</li>
+<li>(array): Field array that needs to be sorted.</li>
+</ul>
+</li>
+<li>Example
+
+```
+const data = {name:'Emma',age: 123, sex: 'F'}
+const sort = ['sex', 'age', 'name']
+const result = scriptUtil.objKeySort(data,sort)
+console.log(result)
+{
+    sex: 'F'
+    age: 123,
+    name:'Emma',
+}
+```
+</li>
+</ul>
+
+- getEditRow
+<ul><li>Usage: Get data of the clicked table row and return an object.</li>
+<li>Parameter: (string) refers to table component ID.</li>
+<li>Example
+
+
+```
+var result = scriptUtil.getEditRow('table component id')
+```
+</li>
+</ul>
+
+- JSONToExcelConvertor
+<ul><li>Usage: Export data to excel tables.</li>
+<li>Parameter
+<ul>
+<li>(array): Data source.</li>
+<li>(array): Data title.</li>
+<li>(array): Data key, corresponding to data title.</li>
+<li>(string): Exported file name.</li>
+<li>(string): Exported file extension, including csv/xls.</li>
+</ul>
+</li>
+<li>Example
+
+```
+scriptUtil.JSONToExcelConvertor({
+  data: [{ name: 'Emma', age: '12', sex: 'F' }],
+  dataTitle: ['name', 'age', 'sex'],
+  dataKey: ['name', 'age', 'sex'],
+  fileName: 'test file',
+  extension: 'xls',
+});
+```
+</li>
+</ul>
+
+### scriptUtil Page Operation
+- closeCurrentPage
+<ul><li>Usage: Close current page.</li>
+<li>Example
+
+```
+scriptUtil.closeCurrentPage();
+```
+</li>
+</ul>
+
+- openPage
+<ul><li>Usage: Open a new page or search for a named page.</li>
+<li>Parameter
+<ul>
+<li>(string): Url of the target page and if no targets, open a new page.</li>
+<li>(string): Name of target property or page. You can select from **blank (new page)/parent (parent page)/self (replace current page)/top (any locadable page)/name (page name)</li>
+<li>(array): Data key, corresponding to data title.</li>
+<li>(boolean): Feature. Whether or not support customization.</li>
+<li>(string): openConfig[JSON]. Page configruation. </li>
+</ul>
+:::info
+- openConfig is only valid when setting **feature** to **true**.
+- openConfig is JSON.
+- You can refer to https://www.runoob.com/jsref/met-win-open.html for functions of Window.open.
+</li>
+<li>Example
+
+```
+// blank page
+scriptUtil.openPage('url', '_black');
+
+// replace current page
+scriptUtil.openPage('url', '_self');
+
+// empty page with set size
+scriptUtil.openPage('url', '_black'， true, '{"height":400,"width":400}');
+```
+</li>
+</ul>
+
+- showModal
+<ul><li>Usage: Open a new modal window.</li>
+<li>Parameter: (string) refers to pop-up window configuration. You can select from **modalVisible/modalWidth/modalHeight/modalTitle**.</li>
+<li>Example
+
+
+```
+scriptUtil.showModal(`{
+"width":800,
+"height":600,
+"padding":{"paddingTop":24,"paddingBottom":24,"paddingLeft":24,"paddingRight":24},
+"modelTitle":"title",
+"needTitle":true,
+"fontSize":14,
+"fontColor":"#000000",
+"titleBgColor":"#ebeef5",
+"contentBgColor":"#ffffff",
+"modalIsCenter":true,
+"url":"/#/runtime-fullscreen/runtime-fullscreen/Page_401bf68ecd634809a7cf36fe44b73f59",
+"sandbox":"allow-forms allow-same-origin allow-scripts allow-popups allow-downloads",
+"isSandbox":true
+}`)
+```
+</li>
+</ul>
+
+- closeModal
+<ul><li>Usage: Close modal window.</li>
+<li>Example
+
+
+```
+scriptUtil.closeModal();
+```
+</li>
+</ul>
+
+- closeParentModal
+<ul><li>Usage: Close modal window of parent page.</li>
+<li>Example
+
+
+```
+window.parent.scriptUtil.closeModal();
+```
+</li>
+</ul>
+
+### scriptUtil Database Operation
+- addDataTable
+<ul><li>Usage: Add data to data table.</li>
+<li>Parameter
+<ul>
+<li>dataSource: Table name.</li>
+<li>properties: Specific data to be added to the database.</li>
+<li>version: Version number.</li>
+<li>function: Callback parameter. Only accept one result parameter.</li>
+</ul>
+
+:::info
+- V2.8.1.2 and later versions are compatible with 'V1'(embedded) and new functions must add 'V2'.
+- Peoperties must be **array** type, and key must appear with namespace.
+- Table name in **dataSource** must appear with namespace.
+:::
+
+</li>
+<li>Example
+
+```
+const param = {
+  'namespace.p1': 'p1',
+  'namespace.p2': 'p2',
+};
+scriptUtil.addDataTable(
+  {
+    dataSource: 'namespace.tableName',
+    properties: [param], //must be array type
+    version: 'V2',
+  },
+  function (res) {
+    console.log('res', res);
+  }
+);
+```
+</li>
+</ul>
+
+- delDataTable
+<ul><li>Usage: Delete data from data table.</li>
+<li>Parameter
+<ul>
+<li>dataSource: Table name.</li>
+<li>properties: Specific data to be deleted from the database. ID needs to be specified.</li>
+<li>version: Version number.</li>
+<li>function: Callback parameter. Only accept one result parameter.</li>
+</ul>
+</li>
+<li>Example
+
+```
+const param = {
+  id: 'xxx', //can only delete data based on id.
+};
+scriptUtil.delDataTable(
+  {
+    dataSource: 'namespace.tableName',
+    properties: [param], //must be array type
+    version: 'V2',
+  },
+  function (res) {
+    console.log('res', res);
+  }
+);
+```
+</li>
+</ul>
+
+- updateDataTable
+<ul><li>Usage: Update data to data table.</li>
+<li>Parameter
+<ul>
+<li>dataSource: Table name.</li>
+<li>properties: Specific data to be updated to the database.</li>
+<li>keys: Object. Similar to **where** conditions.</li>
+<li>version: Version number.</li>
+<li>function: Callback parameter. Only accept one result parameter.</li>
+</ul>
+
+:::info
+Keys must appear with namespace.
+:::
+
+</li>
+<li>Example
+
+```
+//Update condition: code is 1623219467408
+//Update result: comDetailAdd is Ningbo, Zhejiang Province
+var dataSource = 'supyoung_companyreg.company_reg';
+var param = {
+  comDetailAdd: 'Ningbo, Zhejiang Province', //field to be updated
+};
+var keys = {
+  'supyoung_companyreg.code': '1623219467408',//key must appear with namespace
+};
+scriptUtil.updateDataTable(
+  {
+    dataSource,
+    properties: [param], // must be array type
+    keys,
+    version: 'V2',
+  },
+  function (res) {
+    console.log('res', res);
+  }
+);
+```
+</li>
+</ul>
+
+- queryDataTable
+<ul><li>Usage: Search for data from data table.</li>
+<li>Parameter
+<ul>
+<li>dataSource: Table name.</li>
+<li>filters: Object.
+<ul><li>fields: Array. Optional. Column array and **;** is used to separate multiple columns. When fields are empty, all columns are returned.</li>
+<li>order: Optional. Sorting order.</li>
+<li>distinct: Optional. Whether to deduplicate data. It is false when no input parameters by default and only valid when **fields** is not empty.</li>
+<li>pageIndex: optional. Start page of the query. It is **1** by default.</li>
+<li>pageSize: Optional. Page size of the query. It is 50 by default.</li>
+<li>Custom search conditions: Optional. Union set. ’%xxx%’ represents fuzzy matching.</li>
+</ul>
+</li>
+<li>version: Version number.</li>
+<li>function: Callback parameter. Only accept one result parameter.</li>
+</ul>
+
+:::info
+Keys must appear with namespace.
+:::
+
+</li>
+<li>Example
+
+```
+/Update condition: code is 1623219467408
+//Update result: comDetailAdd is Ningbo, Zhejiang Province
+var namespace = "supyoung_companyreg"
+var dataSource = namespace+'.company_reg';
+scriptUtil.queryDataTable(
+  {
+    dataSource,
+    filters: {
+      fields:['desc'],//search for specified field
+      order: [
+        {
+          "order": "code",//field to be sorted
+          "sort": "desc" //desc -descending order  asc-ascending order
+        }
+      ],
+      distinct: true,
+      pageIndex: 1,
+      pageSize: 5,
+      "supyoung_companyreg.company":"%xx%",//search for company named xx (namespace is required)
+    },
+    version: 'V2'
+  },
+  function(res)  {
+    console.log('res', res);
+  }
+);
+```
+</li>
+</ul>
+
+### scriptUtil User Information
+
+- getUserInfo
+<ul><li>Usage: Get user information.</li>
+<li>Parameter: (function) refers to callback function.</li>
+<li>Example
+
+
+```
+scriptUtil.getUserInfo(function (res) {
+  // res is current user information
+  console.log('res', res);
+});
+```
+</li>
+</ul>
+
+- getSessionUserInfo
+<ul><li>Usage: Get user session information from **sessionStorage** and return an object.</li>
+<li>Example
+
+
+```
+scriptUtil.getSessionUserInfo();
+```
+</li>
+</ul>
+
+- setAuthority
+<ul><li>Usage: Logout.</li>
+<li>Example
+
+
+```
+scriptUtil.setAuthority();
+```
+</li>
+</ul>
