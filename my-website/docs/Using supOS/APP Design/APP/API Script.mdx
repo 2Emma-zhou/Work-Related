@@ -71,7 +71,6 @@ console.log(data)
 
 
 ```
-// 东八区为 -8
 var Offset = scriptUtil.getTimeZone();
 console.log(Offset)
 ```
@@ -109,7 +108,6 @@ var Offset = scriptUtil.refreshWorkflow();
 
 
 ```
-
 scriptUtil.copy(any);
 ```
 </li>
@@ -144,7 +142,7 @@ scriptUtil.request(url, param).then(res=>{
 
 ### scriptUtilReact Component
 - registerReactDom
-<ul><li>Usage: Register as a **ReactDom** in **Programmable Component**, and then can be called by using the component in business designer.</li>
+<ul><li>Usage: Register as a <strong>ReactDom</strong> in <strong>Programmable Component</strong>, and then can be called by using the component in business designer.</li>
 <li>Parameter
 <ul><li>(component): Component instance.</li>
 <li>(object): Props.</li>
@@ -158,8 +156,9 @@ scriptUtil.registerReactDom(this, this.props);
 ```
 </li>
 </ul>
+
 - logoutReactDom
-<ul><li>Usage: Logout the registered **ReactDom** instance in **Programmable Component**, and often can be called in the lifecycle of **componentWillUnmount** to release storage.</li>
+<ul><li>Usage: Logout the registered <strong>ReactDom</strong> instance in <strong>Programmable Component</strong>, and often can be called in the lifecycle of <strong>componentWillUnmount</strong> to release storage.</li>
 <li>Parameter
 <ul><li>(component): Component instance.</li>
 <li>(object): Props.</li>
