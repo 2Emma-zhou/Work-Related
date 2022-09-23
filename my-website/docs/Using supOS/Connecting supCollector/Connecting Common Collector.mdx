@@ -10,6 +10,10 @@ To connect a real-time data collector, video collector or an alarm collector to 
 77.png"
             />
 
+:::info
+Add a local storage under **Global Configuration** > **Local Storage** to store alarm data before adding an alarm collector.
+:::
+
 ## Adding Collector
 Add a collector on the supOS platform, and supOS provides a UUID for supCollector authentication. 
 
@@ -311,10 +315,13 @@ You can click **Delete** to delete connected supOS platform. Deletion is prohibi
           click <strong>OK</strong>.
         </span>
         <div>
-          <ul><li>The collector is connected, and a new instance under <b>Object Model Management > Object Instance > Collector Template</b> is created.</li>
+          <ul><li>The collector is connected, and a new instance under <b>Object Model Management > Object Instance > Entity Template > Collector Template</b> is created.</li>
           <li>An <b>Online</b> property with data type as <b>Bool</b> is generated under the instance, and you can use it in APP designing to indicate collector status (true means online and false is offline).
           </li>
           </ul>
+:::info
+- Video collector that is added to supOS platform generates a new instance under <b>Object Model Management > Object Instance > Entity Template > Video Template</b>.
+- Alarm collector that is added to supOS platform generates a new instance under <b>Object Model Management > Object Instance > Entity Template > AE Template</b>.
         </div>
       </li>
     </ol>

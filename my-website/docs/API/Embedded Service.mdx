@@ -1,0 +1,1225 @@
+---
+sidebar_position: 7
+slug: Embedded Service
+---
+
+## Embedded Service in Entity Template
+Entity services can only apply to entity instances. Entity template, corresponding properties and instance used in following examples are listed below:
+- Template: device. Namespace is **factory**.
+- Property:
+<ul><li>code: string. Represents device code.</li></ul>
+<ul><li>name: string. Represents device name.</li></ul>
+<ul><li>workshop: string. Represents workshop of the device.</li></ul>
+<ul><li>first_use_time: Date. Represents the time when the device is first used.</li></ul>
+<ul><li>temperature: Float. Represents device temperature.</li></ul>
+<ul><li>pressure: Float. Represents device pressure.</li></ul>
+- Instance: Alias is **boiler1**.
+:::info
+Namespaces in examples can be left without when there is no duplicated namespaces. 
+### getPropertyValue
+- Usage: Get real-time value of the property.
+- Input parameter: propName is the namespace and alias of the property to be searched for.
+```
+{
+    "propName": "namespace.propertyName"
+}
+```
+- Output parameter: Snapshot value of the property.
+- Used in custom service
+```
+var inputs = {
+    "propName": "factory.temperature"
+}
+
+var propValue = objects.boiler1.getPropertyValue(inputs)
+```
+- Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/getPropertyValue**.
+```
+{
+    //post body
+    "propName": "factory.temperature"
+}
+```
+### getPropertyValues
+- Usage: Get real-time value of the property in batches.
+- Input parameter: propNames is the namespace and alias of the property to be searched for. Multiple properties are separated by commas.
+```
+{
+    "propName": "propNames": "namespace.propertyName1,namespace.propertyName2"
+}
+```
+- Output parameter
+```
+{
+    "/templateNamespace/templateName/instanceName/propertyNamespace/propertyName1": 50,
+    "/templateNamespace/templateName/instanceName/propertyNamespace/propertyName2": 150
+}
+```
+- Used in custom service
+```
+var inputs = {
+    "propNames": "factory.pressure,factory.temperature"
+}
+
+var propValues = objects.boiler1.getPropertyValues(inputs)
+```
+- Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/getPropertyValues**.
+```
+{
+    //post body
+    "propNames": "factory.pressure,factory.temperature"
+}
+```
+### getPropertyVQTValue
+- Usage: Get real-time value of the property and return the data in VQT format.
+- Input parameter: propName is the namespace and alias of the property to be searched for.
+```
+{
+    "propName": "namespace.propertyName"
+}
+```
+- Output parameter
+```
+{
+    "value": 18,
+    "tags": {
+        "name": "/templateNamespace/templateName/instanceName/propertyNamespace/propertyName",
+        "value": 50,
+        "status": "0",
+        "timeStamp": 1612355987068
+    }
+}
+```
+- Used in custom service
+```
+var inputs = {
+    "propName": "factory.temperature"
+}
+
+var propValue = objects.boiler1.getPropertyVQTValue(inputs)
+```
+- Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/getPropertyVQTValue**.
+```
+{
+    //post body
+    "propNames": "namespace.propertyName1,namespace.propertyName2"
+}
+```
+### getPropertyVQTValues
+- Usage: Get real-time value of the property in batches and return the data in VQT format.
+- Input parameter: propNames is the namespace and alias of the property to be searched for. Multiple properties are separated by commas.
+```
+{
+    "propNames": "namespace.propertyName"
+}
+```
+- Output parameter
+```
+{
+    "/templateNamespace/templateName/instanceName/propertyNamespace/propertyName1": {
+        "name": "/templateNamespace/templateName/instanceName/propertyNamespace/propertyName1",
+        "value": 50,
+        "status": "0",
+        "timeStamp": 1612356497037
+    },
+    "/templateNamespace/templateName/instanceName/propertyNamespace/propertyName2": {
+        "name": "/templateNamespace/templateName/instanceName/propertyNamespace/propertyName2",
+        "value": 150,
+        "status": "0",
+        "timeStamp": 1612356497037
+    }
+}
+```
+- Used in custom service
+```
+var inputs = {
+    "propNames": "factory.pressure,factory.temperature"
+}
+
+var propValues = objects.boiler1.getPropertyVQTValues(inputs)
+```
+- Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/getPropertyVQTValues**.
+```
+{
+    //post body
+    "propNames": "factory.pressure,factory.temperature"
+}
+```
+### getPropertyLastValue
+- Usage: Get the last normal history value of the property.
+- Input parameter: propName is the namespace and alias of the property to be searched for.
+```
+{
+    "propName": "namespace.propertyName"
+}
+```
+- Output parameter: Outputs the last normal history value.
+- Used in custom service
+```
+var inputs = {
+    "propName": "factory.temperature"
+}
+
+var propValue = objects.boiler1.getPropertyLastValue(inputs)
+```
+- Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/getPropertyLastValue**.
+```
+{
+    //post body
+    "propName": "factory.temperature"
+}
+```
+### getPropertyLastVQTValue
+- Usage: Get the last normal history value of the property and return the data in VQT format.
+- Input parameter: propName is the namespace and alias of the property to be searched for.
+```
+{
+    "propName": "namespace.propertyName"
+}
+```
+- Output parameter
+```
+{
+    "time": "2021-02-03T13:16:17Z",
+    "value": 50,
+    "status": "0"
+}
+```
+- Used in custom service
+```
+var inputs = {
+    "propName": "factory.temperature"
+}
+
+var propValue = objects.boiler1.getPropertyLastValue(inputs)
+```
+- Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/getPropertyLastVQTValue**.
+```
+{
+    //post body
+    "propName": "factory.temperature"
+}
+```
+### getPropertiesHistory
+- Usage: Get history value of the property.
+- Input parameter
+<ul><li>fill: strategy of filling values.</li></ul>
+<ul><li>groupBy: Group query in time sequence.</li></ul>
+<ul><li>limit: Rerturn data volume.</li></ul>
+<ul><li>offset: Offset value.</li></ul>
+<ul><li>select: Required. Search for full names of tags. You can define query strategy before tags such as first, max, sum and more.</li></ul>
+<ul><li>where: Required. Search time period. The minimum time is required. </li></ul>
+```
+{
+    "fill": {
+        "strategy": "previous"
+    },
+    "groupBy": {
+        "time": "300s"
+    },
+    "limit": 5,
+    "offset": 0,
+    "select": [
+        "first(\"templateNamespace.templateName.instanceName.propertyNamespace.propertyName\")"
+    ],
+    "where": {
+        "and": {
+            "timestamp": {
+                "ge": "",
+                "gt": "2020-05-26T05:30:00Z",
+                "le": "",
+                "lt": "2020-05-26T06:15:01Z"
+            }
+        }
+    }
+}
+```
+- Used in custom service
+```
+var inputs = {
+    "fill": {
+        "strategy": "previous"
+    },
+    "groupBy": {
+        "time": "300s"
+    },
+    "limit": 5,
+    "offset": 0,
+    "select": [
+        "first(\"factory.device.boiler1.factory.temperature\")"
+    ],
+    "where": {
+        "and": {
+            "timestamp": {
+                "ge": "",
+                "gt": "2020-05-26T05:30:00Z",
+                "le": "",
+                "lt": "2020-05-26T06:15:01Z"
+            }
+        }
+    }
+}
+
+var param = {
+    "inputs": JSON.stringify(inputs)
+}
+
+var propValue = objects.boiler1.getPropertiesHistory(param)
+```
+- Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/getPropertiesHistory**.
+```
+{
+    //post body
+    "fill": {
+        "strategy": "previous"
+    },
+    "groupBy": {
+        "time": "300s"
+    },
+    "limit": 5,
+    "offset": 0,
+    "select": [
+        "first(\"factory.device.boiler1.factory.temperature\")"
+    ],
+    "where": {
+        "and": {
+            "timestamp": {
+                "ge": "",
+                "gt": "2020-05-26T05:30:00Z",
+                "le": "",
+                "lt": "2020-05-26T06:15:01Z"
+            }
+        }
+    }
+}
+}
+```
+### getCertainHistory
+- Usage: Get the latest history value of the property according to the defined time and processing strategy.
+- Input parameter
+<ul><li>propNames: Namespace and alias of the property to be searched for.</li></ul>
+<ul><li>time: Query time.</li></ul>
+<ul><li>strategy: Query strategy. <strong>pre</strong> is the former value of the set query time and <strong>next</strong> is the next one.</li></ul>
+```
+{
+    "propNames": [
+        "namespace.propertyName1",
+        "namespace.propertyName2"
+    ],
+    "time": "2021-01-01T12:00:00Z",
+    "strategy": "pre/next"
+}
+```
+- Output parameter
+```
+{
+    "map": {
+        "/templateNamespace/templateName/instanceName/propertyNamespace/propertyName1": 50,
+        "/templateNamespace/templateName/instanceName/propertyNamespace/propertyName2": 150
+    }
+}
+```
+- Used in custom service
+```
+var inputs = {
+    "propNames": [
+        "factory.temperature",
+        "factory.pressure"
+    ],
+    "time": "2021-01-01T12:00:00Z",
+    "strategy": "pre"
+}
+var param = {
+    "inputs": JSON.stringify(inputs)
+}
+
+var propValue = objects.boiler1.getCertainHistory(param)
+```
+- Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/getCertainHistory**.
+```
+{
+    //post body
+    "propNames": [
+        "factory.temperature",
+        "factory.pressure"
+    ],
+    "time": "2021-01-01T12:00:00Z",
+    "strategy": "next"
+}
+```
+### setPropertyValue
+- Usage: Set the real-time value of the property.
+- Input parameter
+<ul><li>propName: Namespace and alias of the property to be searched for.</li></ul>
+<ul><li>propValue: Property value to be set.</li></ul>
+```
+{
+    "propName": "namespace.propertyName",
+    "propValue": 123
+}
+```
+- Output parameter
+```
+{
+    "success":true
+}
+```
+- Used in custom service
+```
+var inputs = {
+    "propName": "factory.temperature",
+    "propValue": 123
+}
+
+var result = objects.boiler1.setPropertyValue(inputs)
+```
+- Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/setPropertyValue**.
+```
+{
+    //post body
+    "propName": "factory.temperature",
+    "propValue": 123
+}
+```
+### setPropertyValues
+- Usage: Set the real-time value of the property in batches.
+- Input parameter
+<ul><li>key: Namespace and alias of the property to be searched for.</li></ul>
+<ul><li>value: Property value to be set.</li></ul>
+```
+{
+    "namsapace.propertyName1": "11",  // key1: value1
+    "namsapace.propertyName2": "zhangsan"  // key2: value2
+}
+```
+- Output parameter
+```
+{
+    "success":true
+}
+```
+- Used in custom service
+```
+var inputs = {
+    "factory.temperature": 50,
+    "factory.pressure": 150
+}
+
+objects.boiler1.setPropertyValues(inputs)
+```
+- Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/setPropertyValues**.
+```
+{
+    //post body
+    "factory.temperature": 50,
+    "factory.pressure": 150
+}
+```
+### setPropertyVQTValues
+- Usage: Set the real-time VQT value of the property in batches.
+- Input parameter
+<ul><li>key: Namespace and alias of the property to be searched for.</li></ul>
+<ul><li>value: Property value set to be configured.</li></ul>
+```
+{
+    "namespace.propertyName": [  //  key
+        { // value
+            "value": 234, 
+            "timestamp": 1612408661716
+        }
+    ]
+}
+```
+- Output parameter
+```
+{
+    "success":true
+}
+```
+- Used in custom service
+```
+var param = {
+    "factory.temperature": [
+        {
+            "value": 50,
+            "timestamp": 1612408661716
+        }
+    ],
+    "factory.pressure": [
+        {
+            "value": 150,
+            "timestamp": 1612408661716
+        }
+    ]
+}
+
+var inputs = {
+    inputs: JSON.stringify(param)
+}
+
+objects.boiler1.setPropertyVQTValues(inputs)
+```
+- Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/setPropertyVQTValues**.
+```
+{
+    //post body
+     "factory.temperature": [
+        {
+            "value": 50,
+            "timestamp": 1612408661716
+        }
+    ],
+    "factory.pressure": [
+        {
+            "value": 150,
+            "timestamp": 1612408661716
+        }
+    ]
+}
+```
+### setPropertyDefaultValue
+- Usage: Set the real-time VQT value of the property in batches.
+- Input parameter
+<ul><li>propName: Namespace and alias of the property to be searched for.</li></ul>
+<ul><li>propValue: Property value to be set.</li></ul>
+```
+{
+    "propName": "namespace.propertyName",
+    "propValue": 123
+}
+```
+- Output parameter
+```
+{
+    "success":true
+}
+```
+- Used in custom service
+```
+var inputs = {
+    "propName": "factory.temperature",
+    "propValue": 123
+}
+
+var result = objects.boiler1.setPropertyDefaultValue(inputs)
+```
+- Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/setPropertyVQTValues**.
+```
+{
+    //post body
+    "propName": "factory.temperature",
+    "propValue": 123
+}
+```
+## Embedded Service in Form Template
+Form template services can only apply to form templates. Template and corresponding properties used in following examples are listed below:
+- Template: user. Namespace is **work**.
+- Property:
+<ul><li>uid: string. Represents staff code.</li></ul>
+<ul><li>name: string. Represents staff name.</li></ul>
+<ul><li>dep: string. Represents the department to which the staff belongs.</li></ul>
+<ul><li>age: Integer. Represents satff age.</li></ul>
+<ul><li>employ_time: Date. Represents the start date of the staff.</li></ul>
+### AddDataTableEntry
+- Usage: Insert an entry to the template.
+- OpenAPI input parameter
+<ul><li>key: Property alias.</li></ul>
+<ul><li>value: Property value to be set.</li></ul>
+```
+{   //key: value
+   "uid": "01",
+   "name": "Emma",
+   "age": 30
+}
+```
+- Whether is required: If the property is set to be the primary key, the property is required and cannot duplicate.
+- Output parameter: Integer. The number of inserted data entries.
+- Used in custom service
+```
+// input parameter is an object
+var inputs = {
+   uid: "01",
+   name: "Emma",
+   age: 30
+};
+
+templates["work.user"].AddDataTableEntry(inputs);
+```
+- Used by openAPI: Service path is **{domain}/runtime/work/template/user/service/system/AddDataTableEntry**.
+```
+{
+    //post body
+   "uid": "01",
+   "name": "Emma",
+   "age": 30
+}
+```
+### AddDataTableEntries
+- Usage: Insert multiple entries to the template.
+- OpenAPI input parameter: **list** contains all data to be inserted with the format of **property alias: property value**.
+```
+{
+   "list":[
+      {
+         "name": "Emma",
+         "age": 30
+      },
+      {
+         "system.name": "Jason",
+         "system.age": 40
+      }
+   ]
+}
+```
+- Output parameter: Integer. The number of inserted data entries.
+- Used in custom service
+```
+var param = {
+   list: [
+      {
+         name: "Emma",
+         age: 30
+      },
+      {
+         name: "Jason",
+         age: 40
+      }
+   ]
+};
+var params = {
+    params: JSON.stringify(param)
+}
+
+// 访问模板是省略命名空间
+templates["work.user"].AddDataTableEntries(params);
+```
+- Used by openAPI: Service path is **{domain}/runtime/work/template/user/service/system/AddDataTableEntry**.
+```
+{
+    //post body
+   "list":[
+      {
+         "name": "Emma",
+         "age": 30
+      },
+      {
+         "system.name": "Jason",
+         "system.age": 40
+      }
+   ]
+}
+```
+### UpdateDataTableEntry
+- Usage: Update an entry of the template.
+- OpenAPI input parameter
+<ul><li>update: Alias and value of the property to be updated.</li></ul>
+<ul><li>where: Conditions of the property. Multiple conditions are separated by commas.</li></ul>
+
+:::info
+Only properties that conform to the defined conditions will be updated with set values and conditions cannot be empty.
+:::
+```
+{
+    "update": {
+        "age": 40,
+        "grade": 3
+    },
+    "where": {
+        "name": "Emma",
+        "dep": "Dev"
+    }
+}
+```
+- Output parameter: Integer. The number of updated data entries.
+- Used in custom service
+```
+var inputs = {
+    update: {
+        age: 40,
+        grade: 3
+    },
+    where: {
+        name: "Emma",
+        dep: "Dev"
+    }
+}
+templates["work.user"].UpdateDataTableEntry(inputs);
+```
+- Used by openAPI: Service path is **{domain}/runtime/work/template/user/service/system/UpdateDataTableEntry**.
+```
+{
+    //post body
+  "update": {
+        "age": 40,
+        "grade": 3
+    },
+    "where": {
+        "name": "Emma",
+        "dep": "研发"
+    }
+}
+```
+### DeleteDataTableEntries
+- Usage: Delete multiple entries of the template.
+- OpenAPI input parameter: Conditions of properties to be deleted. Multiple conditions are separated by commas.
+:::info
+At least one condition is necessary.
+:::
+```
+{
+    "name": "Emma",
+    "dep": "研发"
+}
+```
+- Output parameter: Integer. The number of deleted data entries.
+- Used in custom service
+```
+var inputs = {
+    name: "Emma",
+    dep: "研发"
+};
+
+templates.user.DeleteDataTableEntries(inputs);
+```
+- Used by openAPI: Service path is **{domain}/runtime/work/template/user/service/system/DeleteDataTableEntries**.
+```
+{
+    //post body
+    "name": "Emma",
+    "dep": "研发"
+}
+```
+### GetDataTableEntries
+- Usage: Get multiple data entries of the template.
+- OpenAPI input parameter
+<ul><li>fields: Return fields.</li></ul>
+<ul><li>distinct: Whether to deduplicate.</li></ul>
+<ul><li>pageIndex: Start page of the query. It is 1 by default.</li></ul>
+<ul><li>pageSize: Page size of the query. It is 50 by default.</li></ul>
+<ul><li>order: Sort the data. <strong>order</strong> means sorting field, <strong>sort</strong> is sorting method, <strong>desc</strong>/<strong>asc</strong> is descending or ascending order.</li></ul>
+<ul><li>condition: Search conditions.</li></ul>
+
+:::info
+When using fuzzy match, you can only use **and** and **or** as operator.
+:::
+```
+{
+    "fields": [],
+    "distinct":false,
+    "pageIndex":1,
+    "pageSize":50,
+    "order": [
+        {
+            "order": "name",
+            "sort": "desc"
+        }
+    ],
+    "condition": { //both "and" and "or" conditions need to be met.
+        "and": { // conditions are: name is Emma and age is 20
+            "name": "Emma",
+            "age": 20
+        },
+        "or": { // conditions are: name is Jason or age is 30
+            "name": "Jason",
+            "age": 30
+        }
+    }
+}
+```
+- Output parameter
+```
+{
+    "pagination": {
+        "current": 1,
+        "total": 1,
+        "pageSize": 10
+    },
+    "list": [
+        {
+            "work.uid": "user_fdbaa34tbvs",
+            "work.name": "zhangsan",
+            "work.age": 32,
+            "work.dep": "销售部",
+            "work.app_name": "system",
+            "work.creator_id": "1025876580291488",
+            "work.last_modifier_id": "1025876580291488",
+            "work.created_time": "2021-02-03 12:32:12",
+            "work.last_modified_time": "2021-02-03 12:32:12"
+        }
+    ]
+}
+```
+- Used in custom service
+```
+var param = {
+    "fields": ["name", "age"],
+    "pageIndex":1,
+    "pageSize":10,
+    "order": [
+        {
+            "order": "name",
+            "sort": "desc"
+        }
+    ],
+    "condition": {
+        "and": {
+            "name": "Emma",
+            "age": 20
+        }
+    }
+}
+var params = {
+    params: JSON.stringify(param)
+}
+
+var data = templates["work.user"].GetDataTableEntries(params);
+```
+- Used by openAPI: Service path is **{domain}/runtime/work/template/user/service/system/GetDataTableEntries**.
+```
+{
+    //post body
+    "fields": ["name", "age"],
+    "pageIndex":1,
+    "pageSize":10,
+    "order": [
+        {
+            "order": "name",
+            "sort": "desc"blog/default/
+        }
+    ],
+    "condition": {
+        "and": {
+            "name": "Emma",
+            "age": 20
+        }
+    }
+}
+```
+### getDatatableDetails
+Usage: Get table structure of DataTable object.
+:::info
+**dataCategory** in return value is a field added by the system, which applies no impact on business.
+:::
+```
+{
+    "data": [
+        {
+            "columns": [
+                {
+                    "name": "name",
+                    "type": "varchar"
+                },
+                {
+                    "name": "age",
+                    "type": "int"
+                },
+                {
+                    "name": "code",
+                    "type": "varchar"
+                },
+                {
+                    "name": "dataCategory",
+                    "type": "varchar"
+                }
+            ],
+            "tableName": "tbl_weiqyTableObj_weiqyTableDataStruct"
+        }
+    ],
+    "error": false
+}
+```
+### querySQLTest
+- Usage: Execute SQL commands and return corresponding data.
+- Input parameter: SQL commands.
+- Return value: Field information on the table.
+```
+{
+    "data": [
+		"system_id", 
+		"system_created_time", 
+		"system_last_modified_time", 
+		"system_creator_id", 
+		"system_last_modifier_id", 
+		"system_app_name", 
+		"system_app_access_mode", 
+		"zhuzh_za_name", 
+		"zhuzh_za_age"
+	]
+}
+```
+### querySQLExec
+- Usage: Execute SQL commands to search for DataTable object data.
+- Input parameter
+```
+{
+    "sql": "select * from table1 where name=${name} and age=${age}",
+    "params": [{
+            "name": "name",
+            "value": "zhangsan"
+        }, {
+            "name": "age",
+            "value": 10
+        }
+    ],
+    "pageSize": 200
+}
+```
+- Return value: Field information on the table.
+```
+{
+    "total": 2,
+    "data": {
+        "columnNames": ["system_id", "system_created_time", "system_last_modified_time", "system_creator_id", "system_last_modifier_id", "system_app_name", "system_app_access_mode", "scp_scp_names", "scp_scp_ages", "scp_scp_xx"],
+        "dataSource": [{
+                "scp_scp_xx": "123",
+                "system_creator_id": "1376878722077440",
+                "system_app_name": "App_2467085462006d991209bd7597024b28",
+                "system_id": 10773,
+                "system_last_modifier_id": "1376878722077440",
+                "system_app_access_mode": "PUBLIC",
+                "scp_scp_names": "Jay",
+                "system_created_time": "2021-06-11 01:17:32",
+                "system_last_modified_time": "2021-06-11 01:17:32",
+                "scp_scp_ages": "123"
+            }, {
+                "scp_scp_xx": "33",
+                "system_creator_id": "1376878722077440",
+                "system_app_name": "App_2467085462006d991209bd7597024b28",
+                "system_id": 10776,
+                "system_last_modifier_id": "1376878722077440",
+                "system_app_access_mode": "PUBLIC",
+                "scp_scp_names": "Jason2",
+                "system_created_time": "2021-06-11 01:19:41",
+                "system_last_modified_time": "2021-06-11 01:19:41",
+                "scp_scp_ages": "33"
+            }
+        ]
+    }
+}
+```
+## Common Services
+This chapter introduces some common services you can use by writing script.
+### HTTP Request
+- GET
+```
+var baseUrl = "http://App_c22ea5a725264786b1c873febe2dfd7c.apps:8080/health";
+var httpservice= services["HttpClientService"];// create hidden service object
+//3000 is the maximum timeout period with millisecond as unit. When no data returned after the set time, the request is timed out
+var result = httpservice.getString(baseUrl,3000);
+result;    
+```
+- PUT/POST
+```
+var param = {
+    "name": 'Emma',
+    "age": 12
+}
+var headers = {}
+var httpService= services["HttpClientService"];
+httpService.post("http://metadata-service:8080/api/metadata/features", JSON.stringify(param), headers, 10000)
+httpService.put("http://metadata-service:8080/api/metadata/objects/", JSON.stringify(param), headers, 10000)
+```
+### Get Auto-increment Value
+System embedded object provides service to get auto-increment serial number to generate flow number.
+:::info
+The generated serial number is global auto-increment.
+:::
+```
+var result =  services['SerialNumberService'].acquire();
+result;
+```
+### Get Aggregated Result in InfluxDB
+- Usage <br/>
+Get the history value sum of an object property in set period.
+```
+function influxDbDataFun(expressStr, objName, propName, startTimeUtcStr, endTimeUtcStr) {
+       // '2019-04-28T19:00:00Z','2019-04-29T19:00:00Z'
+          var objProp = objName + '.' + propName;
+          log.debug("objProp=" + objProp);
+          var query = {
+           "select": [expressStr + "(\"" + objProp + "\")"
+           ],
+           "where": {
+               "and": {
+                   "timestamp": {
+                       "ge": startTimeUtcStr,
+                       "lt": endTimeUtcStr
+                   }
+               }
+           }
+       }
+       var resultHistoryJsonStr = ObjectPool.get('testInstance').executeService('getPropertiesHistory', {inputs: JSON.stringify(query)});
+       //{"results":{"0":{"name":"weiqy.p3","function":"last","fields":{"0":"time","1":"value","2":"status","3":"originalTime"},"datas":{"0":{"0":"2019-04-28T19:00:00Z","1":5,"2":"0","3":1559116870536000000}}}}}
+       log.debug('resultHistoryJsonStr = ' + resultHistoryJsonStr);
+       // var dataJSon = JSON.parse(resultHistoryJsonStr);
+       // var datasArray = dataJSon['results']['0']['datas'];
+       // var value = 0;
+       // if (null != datasArray && datasArray.length > 0) {
+       //     log.debug('xxxxdatasArray====' + JSON.stringify(datasArray));
+       //     value = datasArray['0']['1'];
+       // }
+       return resultHistoryJsonStr.results[0].datas[0];
+    }
+    var result = influxDbDataFun('sum', 'syetem.testTemplate', 'system.p1', '2021-04-10T00:00:00Z', '2021-04-15T00:00:00Z');
+    result;
+```
+
+- Field description
+
+<table>
+              <caption>Table 1. Field description</caption>
+              <colgroup>
+                <col style={{ width: "30%" }} />
+                <col style={{ width: "70%" }} />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>expressStr</td>
+                  <td>Expressions such as sum/mean/first/last/max/min</td>
+                </tr>
+                <tr>
+                  <td>objName</td>
+                  <td>Template namespace.template alias.instance alias</td>
+                </tr>
+                <tr>
+                  <td>propName</td>
+                  <td>Property namespace.property alias</td>
+                </tr>
+                <tr>
+                  <td>startTimeUtcStr</td>
+                  <td>Start time such as '2019-07-10T17:08:47Z'</td>
+                </tr>
+                <tr>
+                  <td>endTimeUtcStr</td>
+                  <td>End time such as '2019-07-12T17:11:47Z'</td>
+                </tr>
+              </tbody>
+</table>
+
+### History Value Query
+- Script example
+```
+var query = {
+           select: [
+           "first(\"system.testTemplate.testInstance.system.p4\")"
+       ],
+           where: {
+               and: {
+                   timestamp: {
+                   "ge": "2021-04-10T00:00:00Z",
+                   "le": "2021-04-15T00:00:00Z"
+               }
+           }
+       },
+           groupBy: {
+               time: "1s,1s"
+       },
+           fill: {
+           "strategy": "previous"
+       },
+           offset: 0,
+           limit: 5
+   }
+    var result = ObjectPool.get('testInstance').executeService('getPropertiesHistory',{inputs: JSON.stringify(query)});
+    result;
+```
+- Script parameter description
+:::info
+**>** and **>>** are marks for nesting.
+:::
+
+<table>
+              <caption>Table 2. Script parameter description</caption>
+              <colgroup>
+                <col style={{ width: "10%" }} />
+                <col style={{ width: "40%" }} />
+                <col style={{ width: "10%" }} />
+                <col style={{ width: "40%" }} />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Key</th>
+                  <th>Value</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>select</td>
+                  <td>["function("template namespace.template alias.instance alias.property namespace.property alias")"] or [""template namespace.template alias.instance alias.property namespace.property alias""]</td>
+                  <td>String array</td>
+                <td>Required. The selected object property and aggregation methods (mean/sum/max/min) only support numberic parameters, and <strong>first/last/count</strong> supports all types of data.</td>
+                </tr>
+                <tr>
+                  <td>where</td>
+                  <td>("and":())</td>
+                  <td>Object</td>
+                <td>Required. Filter conditions. Presently only <strong>and</strong> is available.</td>
+                </tr>
+                <tr>
+                  <td>>and</td>
+                  <td>("timestamp":())</td>
+                  <td>Object</td>
+                <td>Filter conditions. Presently only <strong>timestamp</strong> is available.</td>
+                </tr>
+                <tr>
+                  <td>>>timestamp</td>
+                  <td>("ge":"2020-04-01T00:00:00Z,"le":"2020-04-01T00:00:00Z"")</td>
+                  <td>Object</td>
+                <td>Time period. <strong>ge, gt, lt</strong> and <strong>le</strong> are available.</td>
+                </tr>
+                <tr>
+                  <td>groupBy</td>
+                  <td>("time":"")</td>
+                  <td>Object</td>
+                <td>Grouping conditions. Only <strong>time</strong> is available.</td>
+                </tr>
+                <tr>
+                <td>>time</td>
+                <td>"1s,1s"</td>
+                <td>String</td>
+                <td>Data granularity. Supports s, m, h, d, w and m. The first parameter is data granularity and the last is grouping offset.</td>
+                </tr>
+                <tr>
+                <td>fill</td>
+                <td>("strategy":"")</td>
+                <td>Object</td>
+                <td>Fill strategy. Only <strong>previous</strong> is available.</td>
+                </tr>
+                <tr>
+                <td>>strategy</td>
+                <td>"previous"</td>
+                <td>Get the data from previous group when current group is empty</td>
+                <td>-</td>
+                </tr>
+                <tr>
+                <td>offset</td>
+                <td>Positive integer</td>
+                <td>Integer</td>
+                <td>Value offset.</td>
+                </tr>
+                <tr>
+                <td>limit</td>
+                <td>Positive integer</td>
+                <td>Integer</td>
+                <td>Pieces of data.</td>
+                </tr>
+              </tbody>
+</table>
+
+- Result
+```
+ {
+       "unauthorized": [],
+       "results": [
+           {
+               "datas": [
+                   [
+                       "2021-04-10T00:00:00Z",
+                       null,
+                       null
+                   ],
+                   [
+                       "2021-04-10T00:00:01Z",
+                       null,
+                       null
+                   ],
+                   [
+                       "2021-04-10T00:00:02Z",
+                       null,
+                       null
+                   ],
+                   [
+                       "2021-04-10T00:00:03Z",
+                       null,
+                       null
+                   ],
+                   [
+                       "2021-04-10T00:00:04Z",
+                       null,
+                       null
+                   ]
+               ],
+               "authorized": true,
+               "function": "first",
+               "name": "/system/testTemplate/testInstance/system/p4",
+               "fields": [
+                   "time",
+                   "value",
+                   "status"
+               ]
+           }
+       ]
+    }
+```
+- Result parameter description
+:::info
+**>** and **>>** are marks for nesting.
+:::
+
+<table>
+              <caption>Table 2. Result parameter description</caption>
+              <colgroup>
+                <col style={{ width: "10%" }} />
+                <col style={{ width: "40%" }} />
+                <col style={{ width: "10%" }} />
+                <col style={{ width: "40%" }} />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Key</th>
+                  <th>Value</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>name</td>
+                  <td>/template namespace/template alias/instance alias/property namespace/property alias</td>
+                  <td>String</td>
+                <td>Full path of the selected object property.</td>
+                </tr>
+                <tr>
+                  <td>function</td>
+                  <td>Aggregation function</td>
+                  <td>String</td>
+                <td>Aggregation methods such as <strong>mean/sum/max/min</strong> only support numberic parameters, and <strong>first/last/count</strong> supports all types of data.</td>
+                </tr>
+                <tr>
+                  <td>>fields</td>
+                  <td>["time","value","status"]</td>
+                  <td>String array</td>
+                <td>Return fields such as <strong>time/value/status</strong>.</td>
+                </tr>
+                <tr>
+                  <td>>datas</td>
+                  <td>	["2021-04-10T00:00:04Z",null,null]</td>
+                  <td>2D array</td>
+                <td>Value after grouping (<strong>null</strong> means empty).</td>
+                </tr>
+              </tbody>
+</table>
+
+### Service Calls Service
+Services can call each other in script.
+- Example 1: Call the property value setting service of <strong>testInstance</strong>. You need to define input parameters of <strong>setPropertyValue</strong> service in <strong>inputs</strong>.
+```
+   var inputs = {
+    propValue:'test111', //String   property value
+    propName:'p1' //String  property name
+   };
+   ObjectPool.get('testInstance').executeService('setPropertyValue',inputs);
+```
+- Example 2: Define other objects in the script to call services.
+```
+     var httservice = services["HttpClientService"];
+     var result = httpservice.getString(baseUrl,3000);
+```

@@ -215,16 +215,16 @@ scriptUtil.setFormData({ title: 'test data' });
 <li>Parameter
 <ul><li>(component): Form component instance.</li>
 <li>(string): To-be-set values of form component instance.</li>
-<li>(string): Tag. **1** means automatically submit the form and **0** means manual submit.
+<li>(string): Tag. <strong>1</strong> means automatically submit the form and <strong>0</strong> means manual submit.
 
 :::info
-Automatic submit is only valid when setting **Linkage** to **Automatic** in **Page Configuration** in free layout.
+Automatic submit is only valid when setting <strong>Linkage</strong> to <strong>Automatic</strong> in <strong>Page Configuration</strong> in free layout.
 :::
 
 </li>
 </ul>
-</li>
-<li>Example
+</li></ul>
+<ul><ul><li>Example
 
 
 ```
@@ -232,7 +232,7 @@ const component = scriptUtil.getRegisterReactDom('ctrlId');
 scriptUtil.submitDefaultValue(component, 'search value', '1');
 ```
 </li>
-</ul>
+</ul></ul>
 
 ### General Tool of scriptUtil
 - Alert
@@ -248,8 +248,8 @@ Callback is only triggered when clicking **ok** on the pop-up window.
 
 </li>
 </ul>
-</li>
-<li>Example
+</li></ul>
+<ul><ul><li>Example
 
 
 ```
@@ -258,14 +258,14 @@ scriptUtil.Alert('Prompted Successfully', () => {
 });
 ```
 </li>
-</ul>
+</ul></ul>
 
 - showMessage
 <ul>
 <li>Parameter
 <ul>
 <li>(string): Message.</li>
-<li>(string): Message type, including **success/warning/info/error**.
+<li>(string): Message type, including <strong>success/warning/info/error</strong>.
 </li>
 </ul>
 </li>
@@ -312,7 +312,7 @@ scriptUtil.timestampAntiFormat('2021-05-01 01:00:00');
 
 - regRexGroup
 <ul><li>Usage: Checks whether the corresponding variable matches the regualr expressions and returns it.</li>
-<li>Parameter: (string) refers to regular expression type, including **mobilePhone/telephone/zipCode/idCard/number/email/ip**.</li>
+<li>Parameter: (string) refers to regular expression type, including <strong>mobilePhone/telephone/zipCode/idCard/number/email/ip</strong>.</li>
 <li>Example
 
 
@@ -327,7 +327,7 @@ reg.test(variable_3); //false;
 </ul>
 
 - isVaild
-<ul><li>Usage: Checks whether the component value formatting conforms to the set rules when submitting the form and returns result as **true** or **false**.</li>
+<ul><li>Usage: Checks whether the component value formatting conforms to the set rules when submitting the form and returns result as <strong>true</strong> or <strong>false</strong>.</li>
 <li>Parameter: (array) refers to component IDs.</li>
 <li>Example
 
@@ -460,17 +460,20 @@ scriptUtil.closeCurrentPage();
 <li>Parameter
 <ul>
 <li>(string): Url of the target page and if no targets, open a new page.</li>
-<li>(string): Name of target property or page. You can select from **blank (new page)/parent (parent page)/self (replace current page)/top (any locadable page)/name (page name)</li>
+<li>(string): Name of target property or page. You can select from <strong>blank (new page)/parent (parent page)/self (replace current page)/top (any locadable page)/name (page name)</strong></li>
 <li>(array): Data key, corresponding to data title.</li>
 <li>(boolean): Feature. Whether or not support customization.</li>
 <li>(string): openConfig[JSON]. Page configruation. </li>
 </ul>
+
 :::info
 - openConfig is only valid when setting **feature** to **true**.
 - openConfig is JSON.
 - You can refer to https://www.runoob.com/jsref/met-win-open.html for functions of Window.open.
-</li>
-<li>Example
+:::
+
+</li></ul>
+<ul><ul><li>Example
 
 ```
 // blank page
@@ -483,11 +486,11 @@ scriptUtil.openPage('url', '_self');
 scriptUtil.openPage('url', '_black'， true, '{"height":400,"width":400}');
 ```
 </li>
-</ul>
+</ul></ul>
 
 - showModal
 <ul><li>Usage: Open a new modal window.</li>
-<li>Parameter: (string) refers to pop-up window configuration. You can select from **modalVisible/modalWidth/modalHeight/modalTitle**.</li>
+<li>Parameter: (string) refers to pop-up window configuration. You can select from <strong>modalVisible/modalWidth/modalHeight/modalTitle</strong>.</li>
 <li>Example
 
 
@@ -546,12 +549,12 @@ window.parent.scriptUtil.closeModal();
 
 :::info
 - V2.8.1.2 and later versions are compatible with 'V1'(embedded) and new functions must add 'V2'.
-- Peoperties must be **array** type, and key must appear with namespace.
-- Table name in **dataSource** must appear with namespace.
+- Peoperties must be <strong>array</strong> type, and key must appear with namespace.
+- Table name in <strong>dataSource</strong> must appear with namespace.
 :::
 
-</li>
-<li>Example
+</li></ul>
+<ul><ul><li>Example
 
 ```
 const param = {
@@ -570,7 +573,7 @@ scriptUtil.addDataTable(
 );
 ```
 </li>
-</ul>
+</ul></ul>
 
 - delDataTable
 <ul><li>Usage: Delete data from data table.</li>
@@ -608,7 +611,7 @@ scriptUtil.delDataTable(
 <ul>
 <li>dataSource: Table name.</li>
 <li>properties: Specific data to be updated to the database.</li>
-<li>keys: Object. Similar to **where** conditions.</li>
+<li>keys: Object. Similar to <strong>where</strong> conditions.</li>
 <li>version: Version number.</li>
 <li>function: Callback parameter. Only accept one result parameter.</li>
 </ul>
@@ -617,7 +620,8 @@ scriptUtil.delDataTable(
 Keys must appear with namespace.
 :::
 
-</li>
+</li></ul>
+<ul><ul>
 <li>Example
 
 ```
@@ -642,7 +646,7 @@ scriptUtil.updateDataTable(
   }
 );
 ```
-</li>
+</li></ul>
 </ul>
 
 - queryDataTable
@@ -651,10 +655,10 @@ scriptUtil.updateDataTable(
 <ul>
 <li>dataSource: Table name.</li>
 <li>filters: Object.
-<ul><li>fields: Array. Optional. Column array and **;** is used to separate multiple columns. When fields are empty, all columns are returned.</li>
+<ul><li>fields: Array. Optional. Column array and <strong>;</strong> is used to separate multiple columns. When fields are empty, all columns are returned.</li>
 <li>order: Optional. Sorting order.</li>
-<li>distinct: Optional. Whether to deduplicate data. It is false when no input parameters by default and only valid when **fields** is not empty.</li>
-<li>pageIndex: optional. Start page of the query. It is **1** by default.</li>
+<li>distinct: Optional. Whether to deduplicate data. It is false when no input parameters by default and only valid when <strong>fields</strong> is not empty.</li>
+<li>pageIndex: optional. Start page of the query. It is <strong>1</strong> by default.</li>
 <li>pageSize: Optional. Page size of the query. It is 50 by default.</li>
 <li>Custom search conditions: Optional. Union set. ’%xxx%’ represents fuzzy matching.</li>
 </ul>
@@ -667,8 +671,8 @@ scriptUtil.updateDataTable(
 Keys must appear with namespace.
 :::
 
-</li>
-<li>Example
+</li></ul>
+<ul><ul><li>Example
 
 ```
 /Update condition: code is 1623219467408
@@ -699,6 +703,36 @@ scriptUtil.queryDataTable(
 );
 ```
 </li>
+</ul></ul>
+
+- callFunction
+<ul><li>Usage: Call services under object template or instance.</li>
+<li>Parameter
+<ul>
+<li>path: Required. Service path, which can be <strong>template alias/template namespace.template alias</strong> for service under object template and <strong>template alias/instance alias</strong> or <strong>template namespace.template alias/instance alias</strong> for service under object instance.</li>
+<li>service: Required. Service alias or service namespace.service alias.</li>
+<li>params: Optional. Input parameters of the service.</li>
+</ul>
+</li>
+<li>Example
+<ul><li>
+Calling service under object template
+
+```
+scriptUtil.callFunction('templateNamespace.templateName', 'callService', {a: 1});
+```
+</li></ul>
+<ul><ul><li>
+Calling service under object instance
+
+```
+scriptUtil.callFunction('templateNamespace.templateName/instanceName', 'callService', {a: 1})
+.then(function(res){
+    console.log('then:res');
+});
+```
+</li></ul></ul>
+</li>
 </ul>
 
 ### scriptUtil User Information
@@ -719,7 +753,7 @@ scriptUtil.getUserInfo(function (res) {
 </ul>
 
 - getSessionUserInfo
-<ul><li>Usage: Get user session information from **sessionStorage** and return an object.</li>
+<ul><li>Usage: Get user session information from <strong>sessionStorage</strong> and return an object.</li>
 <li>Example
 
 

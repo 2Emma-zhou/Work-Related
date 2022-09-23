@@ -1,0 +1,19 @@
+---
+slug: my-2-blog
+title: Simple regular expressions used in VScode
+authors: [emma]
+tags: [VScode, regular expression]
+---
+
+
+## Background Information
+Trying to replace certain phrases in the document that was converted from Oxygen as html file, because some self-defined tags in Oxygen do not apply to general html display or docusaurus.<br/>
+Tags includes **uicontrol**, **h1/2/3...** and more.
+## Actions Taken
+1. To fix **uicontrol** tags not displaying as bold font, search for uicontrol span tags with **(.*)** to represent any content between tags, and replace it with strong tags and **$1** to be the content.
+2. To fix **h1/2/3** tags not displaying as titles in Docusaurus, search for title tags with **.*(.*)** to represent any content between tags, and replace it with **## $1**.
+
+:::info
+- **(.*)** searches for all content and indicates that content inside the brackets might be kept the same if **$1** is used in the replacement.
+- Since Oxygen converts document to html with custom classes and unreasonable spaces and new lines, **\n** and **\s** is very useful to search for new lines and spaces.
+:::

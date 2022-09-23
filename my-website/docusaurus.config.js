@@ -26,10 +26,10 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
-  presets: [
-    [
-      'classic',
+  // themes: ['@docusaurus/theme-search-algolia'],
+  presets: [ 
+     [
+       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
@@ -40,16 +40,21 @@ const config = {
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: false, /**{
+        blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        }, */
+        }, 
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        // pages: {
+        //   path: 'src/pages',
+        //   include: ['**/*.{js,jsx,ts,tsx,md,mdx}'],
+        // },
+        
       }),
     ],
   ],
@@ -68,9 +73,22 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Doc Tutorial',
           },
-          /**{to: '/blog', label: 'Blog', position: 'left'},*/
+          {
+            type: 'docSidebar',
+            sidebarId: 'video',
+            position: 'left',
+            label: 'Video Tutorial',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'api',
+            position: 'left',
+            label: 'API Description',
+          },
+          
+          {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
@@ -78,6 +96,29 @@ const config = {
           },
         ],
       },
+      // algolia: {
+      //   // The application ID provided by Algolia
+      //   appId: 'YOUR_APP_ID',
+  
+      //   // Public API key: it is safe to commit it
+      //   apiKey: 'YOUR_SEARCH_API_KEY',
+  
+      //   indexName: 'YOUR_INDEX_NAME',
+  
+      //   // Optional: see doc section below
+      //   contextualSearch: true,
+  
+      //   // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+      //   externalUrlRegex: 'external\\.com|domain\\.com',
+  
+      //   // Optional: Algolia search parameters
+      //   searchParameters: {},
+  
+      //   // Optional: path for search page that enabled by default (`false` to disable it)
+      //   searchPagePath: 'search',
+  
+      //   //... other Algolia params
+      // },
       footer: {
         style: 'dark',
         links: [
