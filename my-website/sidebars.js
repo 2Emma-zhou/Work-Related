@@ -191,14 +191,14 @@ const sidebars = {
         items: [
           'Low Code Development/Gas Monitoring Process Demo',
           'Low Code Development/Sales Order Demo',
-          'Low Code Development/Order Approval Workflow Demo',
+          'Low Code Development/Sales Order Approval Workflow Demo',
           'Low Code Development/Sales Order Dashboard Demo',
           'Low Code Development/Sales Order Report Demo',
         ]
       },
   ],
   video: [
-    'Video/Dashoboard'
+    'Video/Dashboard Development Step by Step'
   ]
 
 };
