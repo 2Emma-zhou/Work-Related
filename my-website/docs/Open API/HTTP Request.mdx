@@ -1,0 +1,37 @@
+
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) GET
+```
+var baseUrl = "http://App_c22ea5a725264786b1c873febe2dfd7c.apps:8080/health";
+var httpservice= services["HttpClientService"];// create hidden service object
+//3000 is the maximum timeout period with millisecond as unit. When no data returned after the set time, the request is timed out
+var result = httpservice.getString(baseUrl,3000);
+result;    
+```
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) PUT
+```
+var param = {
+    "name": 'Emma',
+    "age": 12
+}
+var headers = {}
+var httpService= services["HttpClientService"];
+httpService.put("http://metadata-service:8080/api/metadata/objects/", JSON.stringify(param), headers, 10000)
+```
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) POST
+```
+var param = {
+    "name": 'Emma',
+    "age": 12
+}
+var headers = {}
+var httpService= services["HttpClientService"];
+httpService.post("http://metadata-service:8080/api/metadata/features", JSON.stringify(param), headers, 10000)
+```
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/3.png) DELETE
+```
+var baseUrl = "http://App_c22ea5a725264786b1c873febe2dfd7c.apps:8080/health";
+var httpservice= services["HttpClientService"];// create hidden service object
+//3000 is the maximum timeout period with millisecond as unit. When no data returned after the set time, the request is timed out
+var result = httpservice.delete(baseUrl,3000);
+result;    
+```

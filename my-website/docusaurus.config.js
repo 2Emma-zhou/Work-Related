@@ -73,22 +73,27 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Doc Tutorial',
+            label: 'Doc',
           },
           {
             type: 'docSidebar',
             sidebarId: 'video',
             position: 'left',
-            label: 'Video Tutorial',
+            label: 'Demo',
           },
           {
             type: 'docSidebar',
             sidebarId: 'api',
             position: 'left',
-            label: 'API Description',
+            label: 'API',
           },
-          
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            type: 'docSidebar',
+            sidebarId: 'class',
+            position: 'left',
+            label: 'supOS Class Series',
+          },
+          //{to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',

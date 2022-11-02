@@ -180,27 +180,111 @@ const sidebars = {
  
   api: [
     'API/Embedded Service',
-    'API/API Script',
+    'API/Global APIs',
     'API/Jsql Guide',
-      {
-        type: 'category',
-        label: 'Low Code Development',
-        link: {
-            type: 'generated-index',
-        },
-        items: [
-          'Low Code Development/Gas Monitoring Process Demo',
-          'Low Code Development/Sales Order Demo',
-          'Low Code Development/Sales Order Approval Workflow Demo',
-          'Low Code Development/Sales Order Dashboard Demo',
-          'Low Code Development/Sales Order Report Demo',
-        ]
+    'API/Element Script',
+    {
+      type: 'category',
+      label: 'OpenAPI',
+      link: {
+          type: 'generated-index',
       },
+      items: [
+        'Open API/HTTP Request',
+  {
+    type: 'category',
+      label: 'Factory Modeling',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/Object Modeling/Network',
+    'Open API/Object Modeling/Alarm',
+'Open API/Object Modeling/Event',
+'Open API/Object Modeling/History Alarm',
+'Open API/Object Modeling/Instance',
+'Open API/Object Modeling/Label',
+'Open API/Object Modeling/Property',
+'Open API/Object Modeling/Relation',
+'Open API/Object Modeling/Running Functions',
+'Open API/Object Modeling/Template',
+    ]
+  },
+  {
+    type: 'category',
+      label: 'Identity Authentication',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/Identity Authentication/2.8.1',
+    'Open API/Identity Authentication/oauth2',
+    ]
+  }, 
+  {
+    type: 'category',
+      label: 'Identity Authentication',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/Identity Authentication/2.8.1',
+    'Open API/Identity Authentication/oauth2',
+    ]
+  }, 
+      ]
+    },
+      
   ],
   video: [
-    'Video/Dashboard Development Step by Step'
+    'Video/Dashboard Development Step by Step',
+    
+    {
+      type: 'category',
+      label: 'Low Code Development',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        'Low Code Development/Gas Monitoring Process Demo',
+        'Low Code Development/Sales Order Demo',
+        'Low Code Development/Sales Order Approval Workflow Demo',
+        'Low Code Development/Sales Order Dashboard Demo',
+        'Low Code Development/Sales Order Report Demo',
+      ]
+    },
+    {
+      type: 'category',
+      label: 'supCollector Connection Demo',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        'supCollector Connection Demo/OPC DA',
+        'supCollector Connection Demo/Modbus',
+      
+      ]
+    },
+    'API/Common OpenAPI Demo',
+  ],
+  class: [
+    {
+      type: 'category',
+      label: 'Data Collection',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        'class series/Data Collection/Collecting Data through Modbus',
+        'class series/Data Collection/Collecting Data through OPC DA',
+        'class series/Data Collection/Collecting Video Data through RTSP',
+        'class series/Data Collection/Collecting Data through MQTT',
+      
+      ]
+    },
+      
   ]
-
+   
 };
 
 module.exports = sidebars;

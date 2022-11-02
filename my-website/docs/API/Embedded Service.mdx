@@ -899,26 +899,6 @@ Usage: Get table structure of DataTable object.
 ```
 ## Common Services
 This chapter introduces some common services you can use by writing script.
-### HTTP Request
-- GET
-```
-var baseUrl = "http://App_c22ea5a725264786b1c873febe2dfd7c.apps:8080/health";
-var httpservice= services["HttpClientService"];// create hidden service object
-//3000 is the maximum timeout period with millisecond as unit. When no data returned after the set time, the request is timed out
-var result = httpservice.getString(baseUrl,3000);
-result;    
-```
-- PUT/POST
-```
-var param = {
-    "name": 'Emma',
-    "age": 12
-}
-var headers = {}
-var httpService= services["HttpClientService"];
-httpService.post("http://metadata-service:8080/api/metadata/features", JSON.stringify(param), headers, 10000)
-httpService.put("http://metadata-service:8080/api/metadata/objects/", JSON.stringify(param), headers, 10000)
-```
 ### Get Auto-increment Value
 System embedded object provides service to get auto-increment serial number to generate flow number.
 :::info

@@ -1,0 +1,676 @@
+
+The return code of each API represents its operation state. The following items list the general error of OODM, which can be useful when you receive such code and resolve bugs according to the explaination.
+<ul>
+<li>10001001: Server unknown error</li>
+<li>10001002: Invalid parameter value</li>
+<li>10001003: Failed to generate ID</li>
+<li>10001004: Database operation failed</li>
+<li>10001005: Instance ID cannot be empty</li>
+<li>10001006: Date parse failed, unmatched format</li>
+<li>10001007: Remote call error</li>
+<li>10001008: Failed to copy object</li>
+<li>10001009: Not found (template/property/event/service/subscription/alarm)</li>
+<li>10001010: Unsupported operation</li>
+<li>10001011: No permission</li>
+<li>10001012: Duplicate field</li>
+<li>10001013: Does not conform to specifications</li>
+<li>10001014: Dependencies exist in metadata</li>
+<li>10001015: Metadata already exists</li>
+<li>90200000: Metadata does not belong to xx template</li>
+<li>90200001: Metadata does not belong to xx instance</li>
+<li>90200002: Metadata does not belong to xx function set</li>
+<li>90200003: Metadata does not belong to xx app</li>
+<li>90200004: Function set source of metadata is xx</li>
+<li>90200005: Parse instance text error</li>
+<li>90200006: Database type not supported</li>
+<li>90200007: Field value already exists</li>
+<li>90200008: Property value conversion error</li>
+<li>90200009: Alias and namespace of metadata excess maximum character length</li>
+<li>90200010: Instance exists, cannot delete,</li>
+<li>90200011: Node exists, cannot delete network,network</li>
+<li>90200012: Illegal paremt node IDId</li>
+<li>90200013: Uncertain name</li>
+<li>90300000: Service not found</li>
+<li>90300001: Service execution failed</li>
+<li>90300002: Service field cannot be empty</li>
+<li>90300003: Incorrect input parameter format</li>
+<li>90300004: Data processing error</li>
+<li>90300005: Alarm confirmation status mpdification error</li>
+<li>90300006: History alarm export error</li>
+<li>90300007: Matching data not found</li>
+<li>90300008: Failed to execute script</li>
+<li>90500000: Incorrect property format. Template namespace.template alias.property namespace.property alias</li>
+<li>90500001: Incorrect property format. Template namespace.template alias.instance alias.property namespace.property alias</li>
+<li>90500002: Incorrect property format. Function set namespace.function set alias.property namespace.property alias</li>
+<li>90500003: Template not found</li>
+<li>90500004: Function set not found</li>
+<li>90500005: Instance not found</li>
+<li>90500006: Property not found</li>
+<li>90800000: Data source not found</li>
+<li>90800001: Fialed to execute sqlsql</li>
+<li>90800002: Parse instance range property to JSON errorjson</li>
+<li>90800003: Parse instance range property value to JSON errorjson</li>
+<li>90800004: Alarm confirmation status mpdification error</li>
+<li>90800005: History alarm export error</li>
+<li>90800006: Parse string to date error</li>
+<li>90900002: Alarm info list cannot be empty</li>
+<li>90900003: Excessed alarm query limit (100)</li>
+<li>90900004: Incorrect alarm format</li>
+<li>90900005: Incorrect time format</li>
+<li>90900006: Invalid history alarm code</li>
+</ul>
+
+## Create Instance
+
+- Path Example code
+```
+http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance
+```
+<ul>
+<ul>
+<li>templateNamespace: Namespace of the template under which the instance is located.</li>
+<li>templateName: Name of the template under which the instance is located.</li>
+</ul>
+</ul>
+
+- Request body example code
+```
+{
+"appAccessMode": "PUBLIC", //whether can be seen in all applications (PUBLIC or PRIVATE). Required
+"appName": "system", //application name. Required
+"attributeValues": [ //array of objects. Existing attributes of the parent template
+{
+"attributeName": "p1",
+"attributeNamespace": "system",
+"attributeValue": "123"
+}
+],
+"code": "xxxxx", //string. Instance code
+"comment": "create test instance", //string. Instance description
+"displayName": "instance1", //string. Display name of the instance. Required for entity instance
+"enName": "instance1", //string. Instance alias. Required
+"functionSetIds": [
+12222
+],
+"iconPath": "/api/config/download?fileName=2021-03-02/1614673872183/boatxxx.png", //path of the instance icon
+"labelIds": [
+13333
+]
+}
+```
+
+- Response
+<ul>
+<li>200: Successful.
+
+```
+{
+  "code" : 200,
+  "data" : "13456",
+  "detail" : "string",
+  "message" : "ok"
+}
+```
+<ul>
+<ul>
+<li>code: Return code when the request is successful</li>
+<li>data: ID of the created instance</li>
+<li>detail: Details</li>
+<li>message: Message</li>
+</ul>
+</ul>
+</li>
+</ul>
+<ul>
+<ul>
+<li>500: General internal error of OODM.</li>
+</ul>
+</ul>
+
+## Incementally Update Instance
+Update properties of template instances when the instance exists, if not, create a new instance. The API can update up to 1000 instances at the same time. Situations such as non-existing template properties, 
+unmatch value types and unique identifier of form is null, trigger an error and rollback data. If exceptions happen during setting real-time values, error pops up and request is terminated.
+
+- Path Example code
+```
+http://192.168.31.125:1235/open-api/supos/oodm/v2/templates/{templateNamespace}/{templateName}/instances/create-or-update
+```
+<ul>
+<ul>
+<li>templateNamespace: Namespace of the template under which the instance is located.</li>
+<li>templateName: Name of the template under which the instance is located.</li>
+</ul>
+</ul>
+
+- Request body example code
+```
+[
+{
+  //attributeNameapce.attributeEnName:attributeValue
+"system.en_name": "zhangsan"
+}
+]
+```
+
+- Response
+<ul>
+<li>200: Successful.</li>
+<li>400: General internal error of OODM.</li>
+</ul>
+
+```
+{
+  "code": 10001001,
+  "data": {},
+  "detail": "string",
+  "message": "string"
+}
+```
+
+## Inquire Instances under General Template
+
+- Path Example code
+```
+http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/query
+```
+<ul>
+<ul>
+<li>templateNamespace: Namespace of the template under which the instance is located.</li>
+<li>templateName: Name of the template under which the instance is located.</li>
+</ul>
+</ul>
+
+- Query parameters
+<ul>
+<li>pageIndex: Integer. Page number</li>
+<li>pageSize: Integer. Pieces of data on one page. At most 500.</li>
+<li>needExtAttribute: Boolean. Whether need to extend property static values</li>
+</ul>
+
+- Request body example code
+```
+{
+  "distinct": true, //boolean. Whether to deduplicate data
+  "orderBys": [ //array of objects. Set the sorting order of data
+    {
+      "by": [
+        "time"
+      ],
+      "order": "ASC"
+    }
+  ],
+  "selectAttributeNames": [ //array of attribute name strings
+    "p1"
+  ],
+  "where": { //object. Search conditions
+    "conditions": [
+      {
+        "attributeName": "p1",
+        "operator": "=",
+        "value": {}
+      }
+    ],
+    "logicOperator": "AND"
+  }
+}
+```
+
+- Response
+<ul>
+<li>200: Successful.
+
+```
+{
+  "code": 200,
+  "data": {
+    "data": [
+      {
+        "system_app_name": "system",
+        "system_last_modified_time": "2021-03-02 03:15:24"
+      }
+    ],
+    "pageIndex": 1,
+    "pageSize": 20,
+    "total": 100
+  },
+  "detail": "string",
+  "message": "ok"
+}
+```
+</li>
+</ul>
+<ul>
+<ul>
+<li>500: General internal error of OODM.
+
+```
+{
+  "code": 10001001,
+  "data": {},
+  "detail": "string",
+  "message": "string"
+}
+```
+
+</li>
+</ul>
+</ul>
+
+
+
+## Change Instance under General Template
+
+- Path Example code
+```
+http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/{instanceName}
+```
+<ul>
+<ul>
+<li>templateNamespace: Namespace of the template under which the instance is located.</li>
+<li>templateName: Name of the template under which the instance is located.</li>
+<li>instanceName: Name of the instance to be changed.</li>
+</ul>
+</ul>
+
+- Request body example code
+```
+{
+  "appAccessMode": "PUBLIC", ////whether can be seen in all applications (PUBLIC or PRIVATE). Required
+  "attributeValues": [ //existing attributes of the parent template
+    {
+      "attributeName": "p1",
+      "attributeNamespace": "system",
+      "attributeValue": "123"
+    }
+  ],
+  "code": "xxxxx",
+  "comment": "modify entity instance",
+  "displayName": "updateInsatnce1",
+  "functionSetIds": [
+    12222
+  ],
+  "iconPath": "/api/config/download?fileName=2021-03-02/1614673872183/boatxxx.png",
+  "labelIds": [
+    12223
+  ],
+  "needSetPropertyVqtValue": false, //boolean. Whether to set real-time values. When set it to true, you can get corresponding balue on pages and services. The default is only update values in the database
+  "needSetMetadata": false //boolean. Whether to only update metadata. When set it to false, functionSetIDs and labelIds and other instance field avlues will be invalid and all be written under attributeValues
+}
+```
+
+- Response
+<ul>
+<li>200: Successful.
+
+```
+{
+  "code" : 200,
+  "data" : "13456",
+  "detail" : "string",
+  "message" : "ok"
+}
+```
+<ul>
+<ul>
+<li>code: Return code when the request is successful</li>
+<li>data: ID of the created instance</li>
+<li>detail: Details</li>
+<li>message: Message</li>
+</ul>
+</ul>
+</li>
+</ul>
+<ul>
+<ul>
+<li>500: General internal error of OODM.
+
+```
+{
+  "code": 10001001,
+  "data": {},
+  "detail": "string",
+  "message": "string"
+}
+```
+
+</li>
+</ul>
+</ul>
+
+## Delete Entity Instance
+
+- Path Example code
+```
+http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/{instanceName}
+```
+<ul>
+<ul>
+<li>templateNamespace: Namespace of the template under which the instance is located.</li>
+<li>templateName: Name of the template under which the instance is located.</li>
+<li>instanceName: Name of the instance to be deleted.</li>
+
+</ul>
+</ul>
+
+- Response
+<ul>
+<li>200: Successful.
+
+```
+{
+  "code": 200,
+  "message": "ok",
+  "data": null,
+  "detail": null
+}
+```
+<ul>
+<ul>
+<li>code: Return code when the request is successful</li>
+<li>data: ID of the created instance</li>
+<li>detail: Details</li>
+<li>message: Message</li>
+</ul>
+</ul>
+</li>
+</ul>
+<ul>
+<ul>
+<li>500: General internal error of OODM.
+
+```
+{
+  "code": 10001001,
+  "data": {},
+  "detail": "string",
+  "message": "string"
+}
+```
+
+</li>
+</ul>
+</ul>
+
+## Search Instance under General Template
+
+- Path Example code
+```
+http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instances
+```
+<ul>
+<ul>
+<li>templateNamespace: Namespace of the template under which the instance is located.</li>
+<li>templateName: Name of the template under which the instance is located.</li>
+</ul>
+</ul>
+
+- Query parameters
+
+<ul>
+<ul>
+<li>labelIds: Array of integers. Page number</li>
+<li>keyword: String</li>
+<li>pageIndex: Integer. Page number. Required</li>
+<li>pageSize: Integer. Pieces of data on one page. At most 500. Required</li>
+<li>searchAttributeId: Integer. Searching field</li>
+<li>containDerivedInstances: Boolean. Whether contains derived instances</li>
+<li>needSystemSttributeValues: Boolean. Whether need system property value</li>
+<li>needNormalSttributeValues: Boolean. Whether need normal property value (non-system, non primary key). The default is only primary key field</li>
+</ul>
+</ul>
+
+- Response
+
+<ul>
+<ul>
+<li>200: Successful.
+
+```
+{
+  "code": 200,
+  "data": {
+    "data": [
+      {
+        "system_app_name": "system",
+        "system_last_modified_time": "2021-03-02 03:15:24"
+      }
+    ],
+    "titles": [
+      {
+        "name": "system_en_name",
+        "value": "alias",
+        "namespace": "system",
+        "enName": "enName"
+      }
+    ],
+    "total": 1000,
+    "pageIndex": 1,
+    "pageSize": 20
+  },
+  "detail": "string",
+  "message": "ok"
+}
+```
+
+<ul>
+<li>code: Return code when the request is successful</li>
+<li>data: ID of the created instance</li>
+<li>detail: Details</li>
+<li>message: Message</li>
+</ul>
+</li>
+<li>500: General internal error of OODM.
+
+```
+{
+  "code": 10001001,
+  "data": {},
+  "detail": "string",
+  "message": "string"
+}
+```
+</li>
+</ul>
+</ul>
+
+
+## ⬅️Get Instance Details by Alias
+- Example code
+```
+http://supOS platform IP/open-api/supos/oodm/v2/templates/{templateNamespace}/{templateName}/instances/{instanceName}/value
+```
+<ul>
+<ul>
+<li>templateNamespace: Namespace of the template under which the instance is located.</li>
+<li>templateName: Name of the template under which the instance is located.</li>
+<li>instanceName: Nameof the instance.</li>
+</ul>
+</ul>
+
+- Response
+
+<ul>
+<ul>
+<li>200: Successful.
+
+```
+{ //attributeNameapce.attributeEnName:attributeValue
+  "system.enName": "zhangsan"
+}
+```
+
+<ul>
+<li>code: Return code when the request is successful</li>
+<li>data: ID of the created instance</li>
+<li>detail: Details</li>
+<li>message: Message</li>
+</ul>
+</li>
+<li>400: General internal error of OODM.
+
+```
+{
+  "code": 10001001,
+  "data": {},
+  "detail": "string",
+  "message": "string"
+}
+```
+</li>
+</ul>
+</ul>
+
+
+## Get Instance Details under General Template
+
+- Path Example code
+```
+http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instances/{instanceName}
+```
+<ul>
+<ul>
+<li>templateNamespace: Namespace of the template under which the instance is located.</li>
+<li>templateName: Name of the template under which the instance is located.</li>
+<li>instanceName: Name of the instance.</li>
+</ul>
+</ul>
+
+- Request body example code
+```
+
+```
+
+- Response
+<ul>
+<li>200: Successful.
+
+```
+{
+  "code": 200,
+  "data": {
+    "appAccessMode": "PUBLIC", //whether can be seen in all applications (PUBLIC or PRIVATE). Required
+    "appName": "system",
+    "displayAttributeValues": [ //value of primary key field
+      "456"
+    ],
+    "id": "11111",
+    "labels": [ //label name and id
+      {
+        "displayName": "data1",
+        "id": 11119
+      }
+    ],
+    "template": { //template basic information
+      "editable": true, //whether enable user to change template metadata
+      "deletable": true, //whether enable user to delete template metadata
+      "instanceCreatable": true, //whether enable user to create instances
+      "instanceQueryable": true, //whether enable user to inquire instances
+      "supportInstanceMetadata": true, //whether enable user to operate on instance metadata
+      "templateCreatable": true, //whether enable user to create templates
+      "templateEditable": true, //whether enable user to edit template metadata
+      "templateQueryable": true, //whether enable user to inquire templates
+      "comment": "this is a test template",
+      "displayName": "t1", //Required
+      "enName": "t1", //alias. Required
+      "id": 12345,
+      "namespace": "system"
+    }
+  },
+  "detail": "string",
+  "message": "ok"
+}
+```
+<ul>
+<ul>
+<li>code: Return code when the request is successful</li>
+<li>data: Template information</li>
+<li>detail: Details</li>
+<li>message: Message</li>
+</ul>
+</ul>
+</li>
+</ul>
+<ul>
+<ul>
+<li>500: General internal error of OODM.</li>
+</ul>
+</ul>
+
+## Search Instance under Relation Template
+
+- Path Example code
+```
+http://192.168.31.125:1235/open-api/supos/oodm/v2alpha/templates/{templateNamespace}/{templateName}/relations/{relationNamespace}/{relationName}/instances
+```
+<ul>
+<ul>
+<li>templateNamespace: Namespace of the template under which the instance is located.</li>
+<li>templateName: Name of the template under which the instance is located.</li>
+<li>relationNamespace: Name of the relation template under which the instance is located.</li>
+<li>relationName: Alias of the relation template under which the instance is located.</li>
+</ul>
+</ul>
+
+- Query parameters
+
+<ul>
+<ul>
+<li>labelFullName: Array of strings. label namespace.label alias</li>
+<li>keyword: String. Used together with searchAttributeNameWithNamespace to fuzzy match values of the set attribute.
+
+:::info
+- 0 timezone is saved when dateTime type of data is doing fuzzy match. You need to manually convert the timezone.
+- This field does not support fuzzy match for boolean type of data.
+:::
+
+
+</li>
+<li>pageIndex: Integer. Page number. Required</li>
+<li>pageSize: Integer. Pieces of data on one page. At most 500. Required</li>
+<li>searchAttributeNameWithNamespace: String. Searching field namespace.alias</li>
+<li>containDerivedInstances: Boolean. Whether contains derived instances</li>
+<li>needSystemSttributeValues: Boolean. Whether need system property value</li>
+<li>needNormalSttributeValues: Boolean. Whether need normal property value (non-system, non primary key). The default is only primary key field</li>
+</ul>
+</ul>
+
+- Response
+<ul>
+<li>200: Successful.
+
+```
+{
+  "data": [
+    {
+      "system_app_name": "system",
+      "system_last_modified_time": "2021-03-02 03:15:24"
+    }
+  ],
+  "titles": [ //search result in a form
+    {
+      "name": "system_en_name",
+      "value": "alias",
+      "namespace": "system",
+      "enName": "enName"
+    }
+  ],
+  "total": 1000, //instance number
+  "pageIndex": 1,
+  "pageSize": 20
+}
+```
+<ul>
+<ul>
+<li>code: Return code when the request is successful</li>
+<li>data: ID of the created instance</li>
+<li>detail: Error details</li>
+<li>message: Message</li>
+</ul>
+</ul>
+</li>
+</ul>
+<ul>
+<ul>
+<li>400: General internal error of OODM.</li>
+</ul>
+</ul>
