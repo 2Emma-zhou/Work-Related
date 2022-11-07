@@ -183,6 +183,7 @@ const sidebars = {
     'API/Global APIs',
     'API/Jsql Guide',
     'API/Element Script',
+    'API/Workflow Script',
     {
       type: 'category',
       label: 'OpenAPI',
@@ -276,9 +277,20 @@ const sidebars = {
       },
       items: [
         'class series/Data Collection/Collecting Data through Modbus',
-        'class series/Data Collection/Collecting Data through OPC DA',
+        // 'class series/Data Collection/Collecting Data through OPC DA',
         'class series/Data Collection/Collecting Video Data through RTSP',
-        'class series/Data Collection/Collecting Data through MQTT',
+        // 'class series/Data Collection/Collecting Data through MQTT',
+      
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Low Code Development',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        'class series/Low Code Development/Sales Order Workflow',
       
       ]
     },

@@ -17,10 +17,15 @@ The service can also be created under an entity instance or a form template.
 :::
 ```
 var formDataJson = JSON.parse(data);
+var auditDataJson = JSON.parse(auditData)
+
 delete formDataJson.ctrlIndex;
 delete formDataJson.ctrlType;
 
-templates["emma_sales.sales_order"].addDataTableEntry(formDataJson);
+if(auditDataJson.reject===false){  //save approved data
+    templates["emma_sales.sales_order"].addDataTableEntry(formDataJson);
+}
+
 var result = {
     "code":200,
     "message":"Success"
