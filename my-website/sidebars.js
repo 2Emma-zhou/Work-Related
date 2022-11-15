@@ -205,7 +205,7 @@ const sidebars = {
 'Open API/Object Modeling/History Alarm',
 'Open API/Object Modeling/Instance',
 'Open API/Object Modeling/Label',
-'Open API/Object Modeling/Property',
+'Open API/Object Modeling/Attribute',
 'Open API/Object Modeling/Relation',
 'Open API/Object Modeling/Running Functions',
 'Open API/Object Modeling/Template',
@@ -224,7 +224,7 @@ const sidebars = {
   }, 
   {
     type: 'category',
-      label: 'Identity Authentication',
+      label: 'APP Design Management',
       link: {
           type: 'generated-index',
       },
@@ -233,6 +233,116 @@ const sidebars = {
     'Open API/Identity Authentication/oauth2',
     ]
   }, 
+  {
+    type: 'category',
+      label: 'APP Management',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/Identity Authentication/2.8.1',
+    'Open API/Identity Authentication/oauth2',
+    ]
+  },
+  {
+    type: 'category',
+      label: 'Big Data Model Analysis',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/Identity Authentication/2.8.1',
+    'Open API/Identity Authentication/oauth2',
+    ]
+  },
+  {
+    type: 'category',
+      label: 'Big Data Model Training',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/Identity Authentication/2.8.1',
+    'Open API/Identity Authentication/oauth2',
+    ]
+  },
+  {
+    type: 'category',
+      label: 'Configuration Information',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/Identity Authentication/2.8.1',
+    'Open API/Identity Authentication/oauth2',
+    ]
+  },
+  {
+    type: 'category',
+      label: 'Data Push',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/Identity Authentication/2.8.1',
+    'Open API/Identity Authentication/oauth2',
+    ]
+  },
+  {
+    type: 'category',
+      label: 'Authentication Management',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/Identity Authentication/2.8.1',
+    'Open API/Identity Authentication/oauth2',
+    ]
+  },
+  {
+    type: 'category',
+      label: 'Notification Center',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/Identity Authentication/2.8.1',
+    'Open API/Identity Authentication/oauth2',
+    ]
+  },
+  {
+    type: 'category',
+      label: 'System Code',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/Identity Authentication/2.8.1',
+    'Open API/Identity Authentication/oauth2',
+    ]
+  },
+  {
+    type: 'category',
+      label: 'User Management',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/Identity Authentication/2.8.1',
+    'Open API/Identity Authentication/oauth2',
+    ]
+  },
+  {
+    type: 'category',
+      label: 'Workflow',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/Identity Authentication/2.8.1',
+    'Open API/Identity Authentication/oauth2',
+    ]
+  },
       ]
     },
       
@@ -277,7 +387,7 @@ const sidebars = {
       },
       items: [
         'class series/Data Collection/Collecting Data through Modbus',
-        // 'class series/Data Collection/Collecting Data through OPC DA',
+         'class series/Data Collection/Collecting Data through OPC DA',
         'class series/Data Collection/Collecting Video Data through RTSP',
         // 'class series/Data Collection/Collecting Data through MQTT',
       
@@ -291,6 +401,8 @@ const sidebars = {
       },
       items: [
         'class series/Low Code Development/Sales Order Workflow',
+        'class series/Low Code Development/OpenAPI Example',
+
       
       ]
     },

@@ -1,1 +1,476 @@
-xxx
+The return code of each API represents its operation state. The following items list the general error of OODM, which can be useful when you receive such code and resolve bugs according to the explaination.
+<ul>
+<li>10001001: Server unknown error</li>
+<li>10001002: Invalid parameter value</li>
+<li>10001003: Failed to generate ID</li>
+<li>10001004: Database operation failed</li>
+<li>10001005: Instance ID cannot be empty</li>
+<li>10001006: Date parse failed, unmatched format</li>
+<li>10001007: Remote call error</li>
+<li>10001008: Failed to copy object</li>
+<li>10001009: Not found (template/property/event/service/subscription/alarm)</li>
+<li>10001010: Unsupported operation</li>
+<li>10001011: No permission</li>
+<li>10001012: Duplicate field</li>
+<li>10001013: Does not conform to specifications</li>
+<li>10001014: Dependencies exist in metadata</li>
+<li>10001015: Metadata already exists</li>
+<li>90200000: Metadata does not belong to xx template</li>
+<li>90200001: Metadata does not belong to xx instance</li>
+<li>90200002: Metadata does not belong to xx function set</li>
+<li>90200003: Metadata does not belong to xx app</li>
+<li>90200004: Function set source of metadata is xx</li>
+<li>90200005: Parse instance text error</li>
+<li>90200006: Database type not supported</li>
+<li>90200007: Field value already exists</li>
+<li>90200008: Property value conversion error</li>
+<li>90200009: Alias and namespace of metadata excess maximum character length</li>
+<li>90200010: Instance exists, cannot delete,</li>
+<li>90200011: Node exists, cannot delete network,network</li>
+<li>90200012: Illegal paremt node IDId</li>
+<li>90200013: Uncertain name</li>
+<li>90300000: Service not found</li>
+<li>90300001: Service execution failed</li>
+<li>90300002: Service field cannot be empty</li>
+<li>90300003: Incorrect input parameter format</li>
+<li>90300004: Data processing error</li>
+<li>90300005: Alarm confirmation status mpdification error</li>
+<li>90300006: History alarm export error</li>
+<li>90300007: Matching data not found</li>
+<li>90300008: Failed to execute script</li>
+<li>90500000: Incorrect property format. Template namespace.template alias.property namespace.property alias</li>
+<li>90500001: Incorrect property format. Template namespace.template alias.instance alias.property namespace.property alias</li>
+<li>90500002: Incorrect property format. Function set namespace.function set alias.property namespace.property alias</li>
+<li>90500003: Template not found</li>
+<li>90500004: Function set not found</li>
+<li>90500005: Instance not found</li>
+<li>90500006: Property not found</li>
+<li>90800000: Data source not found</li>
+<li>90800001: Fialed to execute sqlsql</li>
+<li>90800002: Parse instance range property to JSON errorjson</li>
+<li>90800003: Parse instance range property value to JSON errorjson</li>
+<li>90800004: Alarm confirmation status mpdification error</li>
+<li>90800005: History alarm export error</li>
+<li>90800006: Parse string to date error</li>
+<li>90900002: Alarm info list cannot be empty</li>
+<li>90900003: Excessed alarm query limit (100)</li>
+<li>90900004: Incorrect alarm format</li>
+<li>90900005: Incorrect time format</li>
+<li>90900006: Invalid history alarm code</li>
+</ul>
+
+## Confirm Alarm Information
+
+- Path Example code
+```
+http://192.168.31.125:1235/open-api/supos/oodm/v2/alerts/ack
+```
+
+- Request Example Code
+```
+{
+  "ackAll": false,
+  "userName": "Emma",
+  "fullNames": [
+    "11401uuid08fb884b9a4743d08464e95c64074d09"
+  ]
+}
+```
+<ul>
+<ul>
+<li>ackAll: Boolean. Whether to confirm all</li>
+<li>ackAll: Boolean. Whether to confirm all</li>
+<li>fullName: Array of strings. Instance ID triggered by the alarm and alarm alias</li>
+</ul>
+</ul>
+
+- Response
+400: General internal error of OODM.
+```
+{
+  "code": 10001001,
+  "data": {},
+  "detail": "string",
+  "message": "string"
+}
+```
+
+## Create Alarms in Batches
+
+- Path Example code
+```
+http://192.168.31.125:1235/open-api/supos/oodm/v2/alarms
+```
+
+- Request Example Code
+```
+{
+  "dtos": [
+    {
+      "templateName": "system.employee", //Required. Template namespace.template alias. String.
+      "attributeName": "system.p1", //Required. Attribute name space.attribute alias. String.
+      "instanceName": "zhangsan", //String. Instance name.
+      "displayName": "alarm1", //Required. String. Alarm name.
+      "priority": 2, //Required. Integer. Alarm priority from 1-10.
+      "enable": false, //Boolean. Whether to enable the alarm. The default is false.
+      "operator": "EQ", //Required. String.
+      "limitValue": "11", //Required. String. Limit value of the property (value if the property is a number and true/false if the property is boolean)
+      "deadBand": 12, //Required. Double. Deadband value.
+      "deadBandType": "NUMERIC", //Required. String. Numeric or percent.
+      "comment": "test data", //String. Alarm description.
+      "alarmType": "test alarm" 
+    }
+  ]
+}
+```
+
+- Response
+400: General internal error of OODM.
+```
+{
+  "code": 10001001,
+  "data": {},
+  "detail": "string",
+  "message": "string"
+}
+```
+
+## Get Alarms
+Run complex filtering on alarms.
+
+- Path Example code
+```
+http://192.168.31.125:1235/open-api/supos/oodm/v2/alarms
+```
+- Query Parameter
+
+<table>
+<caption>Table 1. Query parameter description</caption>
+                <colgroup>
+                  <col style={{ width: "25%" }} />
+                  <col style={{ width: "25%" }} />
+                  <col style={{ width: "50%" }} />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>Parameter</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>instanceEnName</td>
+                    <td>string</td>
+                    <td>Instance alias.</td>
+                    </tr>
+                    <tr>
+                    <td>instanceDisplayName</td>
+                    <td>string</td>
+                    <td>Instance name. Get all instances with the same name under multiple namespaces.</td>
+                    </tr>
+                    <tr>
+                    <td>instanceLabelNames</td>
+                    <td>array of strings</td>
+                    <td>List of instance labels. Get all instance labels with the same name under multiple namespaces.</td>
+                    </tr>
+                    <tr>
+                    <td>attributeEnName</td>
+                    <td>string</td>
+                    <td>Attribute alias. Get all attributes with the same alias under multiple namespaces.</td>
+                    </tr>
+                    <tr>
+                    <td>attributeDisplayName</td>
+                    <td>string</td>
+                    <td>Attribure name. Get all attributes with the same name under multiple namespaces.</td>
+                    </tr>
+                    <tr>
+                    <td>attributeComment</td>
+                    <td>string</td>
+                    <td>Attribute description. Fuzzy matching is available.</td>
+                    </tr>
+                    <tr>
+                    <td>attributeLabelNames</td>
+                    <td>array of strings</td>
+                    <td>List of attribute labels.Get all labels with the same name under multiple namespaces.</td>
+                    </tr>
+                    <tr>
+                    <td>alarmEnName</td>
+                    <td>string</td>
+                    <td>Alarm alias. Use comma to separate multiple aliases.</td>
+                    </tr>
+                    <tr>
+                    <td>alarmDisplayName</td>
+                    <td>string</td>
+                    <td>Alarm name. Fuzzy matching is available.</td>
+                    </tr>
+                    <tr>
+                    <td>alarmComment</td>
+                    <td>string</td>
+                    <td>Alarm description. Fuzzy matching is available.</td>
+                    </tr>
+                    <tr>
+                    <td>alarmPriority</td>
+                    <td>integer</td>
+                    <td>Alarm priority between 1-10.</td>
+                    </tr>
+                    <tr>
+                    <td>alarmEnabled</td>
+                    <td>boolean</td>
+                    <td>Whether the alarm is enabled.</td>
+                    </tr>
+                    <tr>
+                    <td>alarmType</td>
+                    <td>string</td>
+                    <td>Alarm type.</td>
+                    </tr>
+                    <tr>
+                    <td>page</td>
+                    <td>integer</td>
+                    <td>The starting page number. The default is 1.</td>
+                    </tr>
+                    <tr>
+                    <td>perPage</td>
+                    <td>integer</td>
+                    <td>The number of returned data on every page. The default is 20 per page and the maximum is 500.</td>
+                    </tr>
+                    <tr>
+                    <td>excludeFunctionSetAlarm	</td>
+                    <td>boolean</td>
+                    <td>Whether to exclude function set alarms.</td>
+                    </tr>
+                    </tbody>
+                    </table>
+- Request Example Code
+```
+instanceEnName=employee&attributeLabelNames=system.aaa&
+alarmDisplayName=xxx&alarmEnable=true //search for enabled alarms with "xxx" in its name under a property bound with the label system.aaa inside the instance employee
+```
+
+- Response
+<ul>
+<li>200: Successful.
+
+```
+{
+  "list": [
+    {
+      "displayName": "alarm1",
+      "priority": 2,
+      "enable": false,
+      "operator": "EQ",
+      "limitValue": "11",
+      "deadBand": 12,
+      "deadBandType": "NUMERIC",
+      "comment": "test data",
+      "alarmType": "test alarm",
+      "id": 11145,
+      "enName": "uuid08fb884b9a4743d08464e95c64074d09",
+      "templateEnName": "testTemplate",
+      "templateDisplayName": "test template",
+      "instanceEnName": "testEntity",
+      "instanceDisplayName": "test instance",
+      "attributeEnName": "p1",
+      "attributeDisplayName": "p1",
+      "attributeComment": "teat property p1",
+      "instanceLabels": [
+        {
+          "displayName": "data1",
+          "id": 11119,
+          "enName": "metadata1"
+        }
+      ],
+      "attributeLabels": [
+        {
+          "displayName": "data1",
+          "id": 11119,
+          "enName": "metadata1"
+        }
+      ]
+    }
+  ],
+  "pagination": {}
+}
+```
+
+</li>
+<li>400: General internal error of OODM.
+
+```
+{
+  "code": 10001001,
+  "data": {},
+  "detail": "string",
+  "message": "string"
+}
+```
+
+</li>
+</ul>
+
+## Edit Alarm Information
+
+- Path Example code
+```
+http://192.168.31.125:1235/open-api/supos/oodm/v2/alarms/{name} //name is alarm alias. Presently is the automatically generated UUID during creation
+```
+
+- Request Example Code
+```
+{
+  "displayName": "boiler overheating alarm",
+  "priority": 8,
+  "enable": true,
+  "operator": "GE",
+  "limitValue": "100",
+  "deadBand": 10,
+  "deadBandType": "NUMERIC",
+  "comment": "trigger alarm when the boiler temperature is over 100°C.",
+  "alarmType": "temperature alarm"
+}
+```
+
+- Response
+<ul>
+<li>200: Successful.
+
+```
+{
+  "code": 200,
+  "message": "ok",
+  "data": null,
+  "detail": null
+}
+```
+
+</li>
+<li>400: General internal error of OODM.
+
+```
+{
+  "code": 10001013,
+  "message": "priority:0 illegal: must integer from 1-10",
+  "data": {},
+  "detail": "string"
+}
+```
+
+</li>
+</ul>
+
+## Delete Alarms
+Delete alarm metadata. Returns successful when alarms not found as well.
+
+- Path Example code
+```
+http://192.168.31.125:1235/open-api/supos/oodm/v2/alarms/{name} //name is alarm alias. Presently is the automatically generated UUID during creation
+```
+
+- Request Example Code
+```
+{
+  "displayName": "boiler overheating alarm",
+  "priority": 8,
+  "enable": true,
+  "operator": "GE",
+  "limitValue": "100",
+  "deadBand": 10,
+  "deadBandType": "NUMERIC",
+  "comment": "trigger alarm when the boiler temperature is over 100°C.",
+  "alarmType": "temperature alarm"
+}
+```
+
+- Response
+204 OK
+
+## Get Alarms under Specified Attribute
+
+- Path Example code
+```
+http://192.168.31.125:1235/open-api/supos/oodm/v2/attributes/{attributeFullName}/alarms
+```
+**attributeFullName**: Full path of the attribute. Template namespace.template alias.instance alias.attribute namesoace.attribure alias.
+
+- Response
+<ul>
+<li>200: Successful.
+
+```
+[
+  {
+    "displayName": "alarm1",
+    "priority": 2,
+    "enable": false,
+    "operator": "EQ",
+    "limitValue": "11",
+    "deadBand": 12,
+    "deadBandType": "NUMERIC",
+    "comment": "test data",
+    "alarmType": "test alarm",
+    "enName": "alarm1",
+    "id": 11145,
+    "instanceId": "11234"
+  }
+]
+```
+
+</li>
+<li>400: General internal error of OODM.
+
+```
+{
+  "code": 10001001,
+  "data": {},
+  "detail": "string",
+  "message": "string"
+}
+```
+
+</li>
+</ul>
+
+## Get Authorized Alarm Receivers
+Corresponding empty array will be returned when alarm full path does not exist or no authorized users.
+To handle high concurrency, user list of each alarm is saved in cache for 5 minutes (user data changes may be delayed).
+
+- Path Example code
+```
+http://192.168.31.125:1235/open-api/supos/oodm/v2/alarms/authorized-users
+```
+
+- Query parameters
+
+**alarmFullPaths**: Full path of the attribute. Template namespace.template alias.instance alias.alarm alias. Use comma to separate multiple alarms.
+:::info
+The maximum number of alarms is 100. Error happens when exceeding 100.
+:::
+
+- Response
+<ul>
+<li>200: Successful.
+
+```
+{
+  "system.Template_823.msa_test_05.p1_a1": [
+    "admin",
+    "test"
+  ],
+  "system.Template_829.msa_test_09.p1_a2": []
+}
+```
+
+</li>
+<li>400: General internal error of OODM.
+
+```
+{
+  "code": 90900002,
+  "message": "alarmFullPaths cannot be empty",
+  "data": {},
+  "detail": "string"
+}
+```
+
+</li>
+</ul>
