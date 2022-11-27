@@ -389,6 +389,7 @@ const sidebars = {
         'class series/Data Collection/Collecting Data through Modbus',
          'class series/Data Collection/Collecting Data through OPC DA',
         'class series/Data Collection/Collecting Video Data through RTSP',
+        'class series/Data Collection/Collecting Data from External Database',
         // 'class series/Data Collection/Collecting Data through MQTT',
       
       ]
@@ -402,7 +403,7 @@ const sidebars = {
       items: [
         'class series/Low Code Development/Sales Order Workflow',
         'class series/Low Code Development/OpenAPI Example',
-
+        'class series/Low Code Development/Staff Information Demo',
       
       ]
     },
