@@ -402,8 +402,20 @@ const sidebars = {
       },
       items: [
         'class series/Low Code Development/Sales Order Workflow',
-        'class series/Low Code Development/OpenAPI Example',
         'class series/Low Code Development/Staff Information Demo',
+      
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Open API',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        // 'class series/Low Code Development/Sales Order Workflow',
+        'class series/Open API/OpenAPI Internal Usage',
+        // 'class series/Low Code Development/Staff Information Demo',
       
       ]
     },
