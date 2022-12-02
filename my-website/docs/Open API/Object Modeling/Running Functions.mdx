@@ -59,7 +59,7 @@ The return code of each API represents its operation state. The following items 
 <li>90900006: Invalid history alarm code</li>
 </ul>
 
-## Get Real-time Alarms
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Real-time Alarms
 
 
 - Path Example code
@@ -152,7 +152,7 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/alert/current
 </li>
 </ul>
 
-## Set Real-time Value of Entity Instance
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Set Real-time Value of Entity Instance
 
 
 - Path Example code
@@ -218,7 +218,7 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/attributes/current
 </li>
 </ul>
 
-## Get Real-time Data of Object Attribute
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Get Real-time Data of Object Attribute
 :::info
 You can get up to 1000 attributes.
 :::
@@ -283,21 +283,37 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/attribute/current
 </li>
 </ul>
 
-## Get Real-time Data of Object Attribute
-:::info
-You can get up to 1000 attributes.
-:::
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Get History Data of Object Attribute
 
 
 - Path Example code
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/attribute/current
+http://192.168.31.125:1235/open-api/supos/oodm/v2/attribute/histories
 ```
 
 - Request Example Code
 ```
 {
-  "inputs" : [ "system.t1.instance.system.p1" ] //template namespace.template alias.instance alias.attribute namespace.attribute alias
+  "fill" : { //filter conditions of history data
+    "strategy" : "previous"
+  },
+  "groupBy" : { //grouping conditions of history data
+    "time" : "5s,1s"
+  },
+  "limit" : 1, //number of returned data
+  "offset" : 23, //start query after the set number of data
+  "order" : "DESC", //sorting rule
+  "select" : [ "system.testExcel.Instance_53.system.p1" ],
+  "where" : { //query conditions
+    "and" : {
+      "timestamp" : {
+        "ge" : "2021-03-04T05:04:11Z",
+        "gt" : "2021-03-04T05:04:11Z",
+        "le" : "2021-03-04T05:14:11Z",
+        "lt" : "2021-03-04T05:14:11Z"
+      }
+    }
+  }
 }
 ```
 
@@ -309,24 +325,103 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/attribute/current
 {
   "code" : 200,
   "data" : {
-    "additionalProp1" : {
-      "name" : "system.testExcel.Instance_53.system.p1",
-      "status" : "0",
-      "timeStamp" : 1614736757547,
-      "value" : { }
-    },
-    "additionalProp2" : {
-      "name" : "system.testExcel.Instance_53.system.p1",
-      "status" : "0",
-      "timeStamp" : 1614736757547,
-      "value" : { }
-    },
-    "additionalProp3" : {
-      "name" : "system.testExcel.Instance_53.system.p1",
-      "status" : "0",
-      "timeStamp" : 1614736757547,
-      "value" : { }
-    }
+    "results" : [ {
+      "datas" : [ [ { } ] ],
+      "fields" : [ "time" ],
+      "function" : "first",
+      "hasNext" : false,
+      "name" : "system.testExcel.Instance_53.system.p1"
+    } ]
+  },
+  "detail" : "string",
+  "message" : "ok"
+}
+```
+
+</li>
+<li>500: General internal error of OODM.
+
+```
+{
+  "code": 10001001,
+  "data": {},
+  "detail": "string",
+  "message": "string"
+}
+```
+
+</li>
+</ul>
+
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Execute Entity Instance Service
+
+
+- Path Example code
+```
+http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/{instanceName}/service/{serviceNamespace}/{serviceName}
+```
+
+- Request Example Code
+```
+{
+  "propName" : "p1"
+}
+```
+
+- Response
+<ul>
+<li>200: Successful.
+
+```
+{
+  "code" : 200,
+  "data" : {
+    "result" : 44
+  },
+  "detail" : "string",
+  "message" : "ok"
+}
+```
+
+</li>
+<li>500: General internal error of OODM.
+
+```
+{
+  "code": 10001001,
+  "data": {},
+  "detail": "string",
+  "message": "string"
+}
+```
+
+</li>
+</ul>
+
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Execute Form Template Service
+
+
+- Path Example code
+```
+http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/service/{serviceNamespace}/{serviceName}
+```
+
+- Request Example Code
+```
+{
+  "propName" : "p1"
+}
+```
+
+- Response
+<ul>
+<li>200: Successful.
+
+```
+{
+  "code" : 200,
+  "data" : {
+    "result" : 44
   },
   "detail" : "string",
   "message" : "ok"

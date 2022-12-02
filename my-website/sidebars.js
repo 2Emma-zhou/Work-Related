@@ -376,7 +376,18 @@ const sidebars = {
       
       ]
     },
-    'API/Common OpenAPI Demo',
+    {
+      type: 'category',
+      label: 'Open API Demo',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        'OpenAPI demo/OpenAPI Internal Usage Demo',
+        'OpenAPI demo/OpenAPI External Usage Demo',
+      
+      ]
+    }, 
   ],
   class: [
     {
@@ -415,6 +426,23 @@ const sidebars = {
       items: [
         // 'class series/Low Code Development/Sales Order Workflow',
         'class series/Open API/OpenAPI Internal Usage',
+        'class series/Open API/OpenAPI External Usage',
+        // 'class series/Low Code Development/Staff Information Demo',
+      
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Factory Modeling',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        // 'class series/Low Code Development/Sales Order Workflow',
+        'class series/Factory Modeling/Object Model Introduction',
+        'class series/Factory Modeling/Embedded Service Video',
+        'class series/Factory Modeling/JSQL',
+
         // 'class series/Low Code Development/Staff Information Demo',
       
       ]
