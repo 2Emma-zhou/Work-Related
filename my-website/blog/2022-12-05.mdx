@@ -1,0 +1,23 @@
+---
+slug: my-4-blog
+title: Ways of Learning
+authors: [emma]
+tags: [HTTP request, Bluetron OpenAPI]
+---
+
+Bluetron has provided example code for calling GET types of openAPI in node.js, but not POST/PUT/DELTE which are necessary if you want to go through all types of APIs on their website.
+But I didn't know how to change the code to make it available for calling other types of APIs.
+One of our interns, who is pretty smart, told me that I can directly add a **body** key and give it the value of the request body parameter. I did't right on the spot because I was at home.
+Tried today, worked but not sure about its logic.
+Checked with him, I was told to review the library the example code has called and found out that the author of the library had considered all kinds of possibilities and listed all the answers.
+That is where I got to know the body key.
+This opens another door for me, I didn't even thought about checking original doc when it comes to imported libraries. I didn't know there was anything to see back then.
+The libraries, once you have installed into your node modules, you can go inside and check its package.json file (normally), the author will list its origianl file locations and all necessary info.
+It's useful, I could use that in the future.
+:::info
+When sending a POST request, what defines the body parameter type is the accepted data format on the backend. They are:
+- form-data: corresponds to **Content-Type=multipart/form-data** in the header. Uploads files and **kv** type of data with boundary. For example: Content-Type: multipart/form-data; boundary=---------------------------21317247322879
+- x-www-form-urlencoded: corresponds to **Content-Type=application/x-www-from-urlencoded** in the header. Only send **kv** type of data. Default type.
+- raw: corresponds to **Content-Type=application/json** in the header. Sends any type of data such as text, json, xml, html, js.
+- binary: corresponds to **Content-Type=application/octet-stream** in the header. Only binary data and one file at a time. No **kv** available.
+:::

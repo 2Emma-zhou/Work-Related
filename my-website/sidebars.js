@@ -29,8 +29,22 @@ const sidebars = {
         'Getting Started/System Requirements',
         'Getting Started/Installing supCollector',
         'Getting Started/Installing supOS Platform',
+
+        {type: 'category',
+        label: 'Appendix',
+        link: {
+          type: 'generated-index',
+        },
+        items: [
+          'Getting Started/Appendix/Disable Windows Update Service',
+        'Getting Started/Appendix/Update Error Solution',
+        'Getting Started/Appendix/Net Program Installation',
+        ],
+      },
       ],
+      
     },
+    
     {
       type: 'category',
       label: 'Using supOS',
