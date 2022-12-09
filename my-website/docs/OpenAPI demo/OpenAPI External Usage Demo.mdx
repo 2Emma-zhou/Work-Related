@@ -227,12 +227,16 @@ signature：Sign 993034575ceaf0e166ad9a73fcf3c469-fb17c1b737f768a6153e2b69ce0f5c
 ### Calling API to get Data
 1. In your IDE, create another file, and then copy the following code.
 - Node.js version
+
+<ul><ul>
+<li>GET/DELETE request</li></ul></ul>
+
 ```
 const hosted = require('./hosted.js')
 const rp = require('request-promise');
 function test() {
     let openApiUri = '/open-api/organization/v2/companies';
-    methodName = 'GET'
+    methodName = 'GET' //or DELETE, depends on the openAPI
     let queryJson = {
         "current": "1",
         "pageSize": "500"
@@ -264,6 +268,59 @@ function test() {
 }
 test()
 ```
+
+<ul>
+<ul>
+<li>POST/PUT request</li>
+</ul></ul>
+
+```
+const hosted = require('./hosted.js')
+const rp = require('request-promise');
+function test() {
+    let openApiUri = '/open-api/supos/oodm/v2/template/emma_sales/sales/instance/sales1'; //emma_sales=template namespace, sales=template alias, sales1=instance alias
+    methodName = 'POST' //or PUT, depends on the openAPI
+    let queryJson = {};
+    let headerJson = {
+        'Content-Type': 'application/json;charset=utf-8'
+    };
+ let wholeUrl=hosted.supos+openApiUri;
+    //queryJson contributes to the url but not the body
+    hosted.signHeader(openApiUri, methodName, queryJson, headerJson);
+    var options = {
+        method: methodName,
+        uri: wholeUrl,
+        headers: headerJson,
+        body: { //body parameters of the openAPI
+            "appAccessMode" : "PUBLIC",
+            "attributeValues" : [ {
+              "attributeName" : "test",
+              "attributeNamespace" : "emma_sales",
+              "attributeValue" : "123"
+            } ],
+            "code" : "xxxxx",
+            "comment" : "edit entity instance",
+            "displayName" : "updateInsatnce1",
+          },
+        json: true
+    };
+    if (queryJson != null) {
+        wholeUrl += "?" + hosted.json2query(queryJson);
+        options['uri'] = wholeUrl;
+    }
+    rp(options)
+        .then(function (response) {
+            console.log('response:', response);
+        })
+        .catch(function (err) {
+            console.error(err)
+        });
+
+}
+test()
+```
+
+
 - Python version
 ```
 from integrates import SignRequest

@@ -27,9 +27,9 @@ You can check the namespace of object templates on their basic information page,
     </li>
  <li>Example
 ```
-// call service under a template
+// call service under a form template
 var objName = 'namespace.templateName';
-// call service under an instance of a template
+// call service under an instance of an entity template
 var objName = 'namespace.templateName/instanceName';
 scriptUtil.executeScriptService({
 objName, // template or instance
@@ -477,13 +477,13 @@ scriptUtil.closeCurrentPage();
 
 ```
 // blank page
-scriptUtil.openPage('url', '_black');
+scriptUtil.openPage('url', '_blank');
 
 // replace current page
 scriptUtil.openPage('url', '_self');
 
 // empty page with set size
-scriptUtil.openPage('url', '_black'， true, '{"height":400,"width":400}');
+scriptUtil.openPage('url', '_blank'， true, '{"height":400,"width":400}');
 ```
 </li>
 </ul></ul>

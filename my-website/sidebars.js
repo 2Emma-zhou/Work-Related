@@ -363,7 +363,18 @@ const sidebars = {
   ],
   video: [
     'Video/Dashboard Development Step by Step',
-    
+    {
+      type: 'category',
+      label: 'supCollector Connection Demo',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        'supCollector Connection Demo/OPC DA',
+        'supCollector Connection Demo/Modbus',
+      
+      ]
+    },
     {
       type: 'category',
       label: 'Low Code Development',
@@ -378,18 +389,7 @@ const sidebars = {
         'Low Code Development/Sales Order Report Demo',
       ]
     },
-    {
-      type: 'category',
-      label: 'supCollector Connection Demo',
-      link: {
-          type: 'generated-index',
-      },
-      items: [
-        'supCollector Connection Demo/OPC DA',
-        'supCollector Connection Demo/Modbus',
-      
-      ]
-    },
+    
     {
       type: 'category',
       label: 'Open API Demo',
@@ -421,6 +421,22 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'Factory Modeling',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        // 'class series/Low Code Development/Sales Order Workflow',
+        'class series/Factory Modeling/Object Model Introduction',
+        'class series/Factory Modeling/Embedded Service Video',
+        'class series/Factory Modeling/JSQL',
+
+        // 'class series/Low Code Development/Staff Information Demo',
+      
+      ]
+    },
+    {
+      type: 'category',
       label: 'Low Code Development',
       link: {
           type: 'generated-index',
@@ -445,22 +461,7 @@ const sidebars = {
       
       ]
     },
-    {
-      type: 'category',
-      label: 'Factory Modeling',
-      link: {
-          type: 'generated-index',
-      },
-      items: [
-        // 'class series/Low Code Development/Sales Order Workflow',
-        'class series/Factory Modeling/Object Model Introduction',
-        'class series/Factory Modeling/Embedded Service Video',
-        'class series/Factory Modeling/JSQL',
-
-        // 'class series/Low Code Development/Staff Information Demo',
-      
-      ]
-    },
+    
       
   ]
    

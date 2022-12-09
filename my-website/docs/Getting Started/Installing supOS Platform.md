@@ -4,66 +4,55 @@ sidebar_position: 3
 
 ---
 
-# Installing supOS Platform
-
 ## Preparation
 
-### ✅What you''ll need
-
-- a Ubuntu 20.04.2 server for supOS
-- a Windows server for supCollector 
-- a USB dongle or Auth file
+✅A Ubuntu 20.04.2 server for supOS<br/>
+✅A Windows server for supCollector <br/>
+✅A USB dongle burned with authorization file or just an authorization file<br/>
 
 
 
-### ✅Authorization Management
+## Authorization Management
 
 The platform can authorize the dongle through a USB or an authorization file.
 
 
-#### Generating Authorization Files
+### Generating Authorization Files
 
 :::warning
-
-The authorization file collects the server fingerprint and is bound with the current ubuntu system and network environment. Reinstall the system will invalidate it, contact technical support before reinstalling the system.
-
+- The authorization file collects the server fingerprint and is bound with the current ubuntu system and network environment.
+- Reinstall the system will invalidate it, migrate the authorization before reinstalling the system. For details, see <a href="Appendix/Migrate Authorization">Migrate Authorization</a>.
 :::
 
 1. Access "http://server IP:1947" through a browser, and then log in to the authorization back-end.
-2. Click the Sentinel Keys tab on the left to get the authorization file.
-
-3. Click Fingerprint to generate and download fingerprint_xxx.c2v the authorization file.
-
-4. Click the .c2v file to download if the fingerprint information has already been collected.
+2. Click the **Sentinel Keys** tab on the left, and then click **Fingerprint** to generate and download fingerprint_xxx.c2v the authorization file.
 
 ![Authorization file](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/install/90..png)
 
-5. Send the file to technical support for authorization and then get the authorized .v2c file.
+3. Send the file to technical support for authorization and then get the authorized .v2c file.
 
-6. Select the Update/Attach tab on the left, and then clickSelect File, upload the .v2c file.
+4. Select the **Update/Attach** tab on the left, and then click **Select File**, upload the .v2c file.
 
-7. Check the authorization result from the Sentinel Keys tab. The Vendor is 90481.
+5. Check the authorization result under the **Sentinel Keys** tab.
 
 ![Authorization result](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/install/91.png)
 
-#### Installing Authorization Dongle
+### Installing Authorization Dongle
 
 Install the authorization dongle on the server.
 
-1. Install the corresponding driver of the dongle on the server.
+1. Insert the dongle into the server.
+:::info
+If the supOS is installed on a virtual machine, make sure the dongle can be recognized on the VM management software. For details, see the corresponding manual.
+:::
 
-2. Insert the dongle into the server.
-
-3. If the supOS is installed on a virtual machine, make sure the dongle can be recognized on the VM management software. For details, see the corresponding manual.
-
-4. Run `lsusb` command to list all USB devices connected to the server.
-
-5. The dongle is successfully installed if the following figure shows.
+4. Run `lsusb` command to list all USB devices connected to the server. <br/>
+The dongle is successfully installed if the following figure shows.
 ![Dongle installation](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/install/92.png)
 
-### ✅Install and configure Ubuntu Server
+## Install and configure Ubuntu Server
 
-#### Installing Server
+### Installing Server
 
 1. Get [Ubuntu 20.04.2 Server iso](http://old-releases.ubuntu.com/releases/20.04.2/ubuntu-20.04.2-live-server-amd64.iso)
 
@@ -75,7 +64,7 @@ Install the authorization dongle on the server.
 
 ![Ubuntu LVM](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/install/ubuntu_LVM.png)
 
-#### Configuring Server
+### Configuring Server
 
 1. Enable root account
 
@@ -168,7 +157,7 @@ Now your system is ready for installing supOS
 
 :::
 
-## Uninstalling supOS
+## Uninstalling supOS Platform
 You can select to only delete the programme file without clearing data or delete all data when uninstalling the platform from the server.
 :::info
 
