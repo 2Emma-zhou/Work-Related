@@ -33,6 +33,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          breadcrumbs: false,
          sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -63,6 +64,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
+        // style:'primary',
         title: 'My Site',
         logo: {
           alt: 'My Site Logo',
@@ -73,57 +75,99 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Doc',
+            label: 'Documentation',
+          },
+          
+          {
+            type: 'dropdown',
+            label: 'Applications',
+            position: 'left',
+            items: [
+              {
+                type:'doc',
+                label: 'supCollector',
+                docId: 'Getting Started/System Requirements sc',
+              },
+              {
+                type: 'doc',
+                label: 'supDAM',
+                docId: 'Getting Started/System Requirements sd',
+              },
+              {
+                type: 'doc',
+                label: 'supETL',
+                docId: 'Getting Started/System Requirements se',
+              },
+              {
+                type: 'doc',
+                label: 'supEdge',
+                docId: 'Getting Started/System Requirements sedge',
+              },
+              {
+                type:'doc',
+                label: 'supBD',
+                docId: 'Getting Started/System Requirements sb',
+              },
+              {
+                type:'doc',
+                label: 'supLink',
+                docId: 'Getting Started/System Requirements sl',
+              },
+              
+            ],
+            
           },
           {
             type: 'docSidebar',
             sidebarId: 'video',
             position: 'left',
-            label: 'Demo',
+            label: 'Video Demonstration',
           },
           {
             type: 'docSidebar',
             sidebarId: 'api',
             position: 'left',
-            label: 'API',
+            label: 'API Reference',
           },
-          {
-            type: 'docSidebar',
-            sidebarId: 'class',
-            position: 'left',
-            label: 'supOS Class Series',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          
+          // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
             position: 'right',
           },
+       
         ],
       },
-      // algolia: {
-      //   // The application ID provided by Algolia
-      //   appId: 'YOUR_APP_ID',
+      algolia: {
+        // The application ID provided by Algolia
+        appId: '29I8LAXY53',
   
-      //   // Public API key: it is safe to commit it
-      //   apiKey: 'YOUR_SEARCH_API_KEY',
+        // Public API key: it is safe to commit it
+        apiKey: '420807d466741ad059d2c9aa0d68e28d',
   
-      //   indexName: 'YOUR_INDEX_NAME',
+        indexName: 'work-related',
   
-      //   // Optional: see doc section below
-      //   contextualSearch: true,
+        // Optional: see doc section below
+        contextualSearch: true,
   
-      //   // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-      //   externalUrlRegex: 'external\\.com|domain\\.com',
+        // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+        externalUrlRegex: 'external\\.com|domain\\.com',
   
-      //   // Optional: Algolia search parameters
-      //   searchParameters: {},
+        // Optional: Algolia search parameters
+        searchParameters: {},
   
-      //   // Optional: path for search page that enabled by default (`false` to disable it)
-      //   searchPagePath: 'search',
+        // Optional: path for search page that enabled by default (`false` to disable it)
+        searchPagePath: 'search',
   
-      //   //... other Algolia params
-      // },
+        //... other Algolia params
+      },
+      title: 'My site',
+  // ...
+  themes: ['@docusaurus/theme-search-algolia'],
+  themeConfig: {
+    // ...
+  },
       footer: {
         style: 'dark',
         links: [

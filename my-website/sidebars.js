@@ -27,20 +27,8 @@ const sidebars = {
       collapsed: false,
       items: [
         'Getting Started/System Requirements',
-        'Getting Started/Installing supCollector',
         'Getting Started/Installing supOS Platform',
-
-        {type: 'category',
-        label: 'Appendix',
-        link: {
-          type: 'generated-index',
-        },
-        items: [
-          'Getting Started/Appendix/Disable Windows Update Service',
-        'Getting Started/Appendix/Update Error Solution',
-        'Getting Started/Appendix/Net Program Installation',
-        ],
-      },
+        
       ],
       
     },
@@ -56,22 +44,7 @@ const sidebars = {
         'Using supOS/Login',
         'Using supOS/Process Flowchart',
         
-        {type: 'category',
-        label: 'Connecting supCollector',
-        link: {
-          type: 'generated-index',
-        },
-        items: [
-          'Using supOS/Connecting supCollector/Collector Type',
-'Using supOS/Connecting supCollector/Configuring supCollector',
-'Using supOS/Connecting supCollector/Connecting Simulate Collector',
-'Using supOS/Connecting supCollector/Connecting Common Collector',
-'Using supOS/Connecting supCollector/Connecting Cascading Collector',
-'Using supOS/Connecting supCollector/Connecting Third-party Collector',
-'Using supOS/Connecting supCollector/Data Write Back',
-'Using supOS/Connecting supCollector/Supported Driver',
-        ]
-        },
+        
         {type: 'category',
         label: 'Factory Modeling',
         link: {
@@ -197,6 +170,7 @@ const sidebars = {
     'API/Global APIs',
     'API/Jsql Guide',
     'API/Element Script',
+    'API/Programmable Component',
     'API/Workflow Script',
     {
       type: 'category',
@@ -402,8 +376,6 @@ const sidebars = {
       
       ]
     }, 
-  ],
-  class: [
     {
       type: 'category',
       label: 'Data Collection',
@@ -428,6 +400,7 @@ const sidebars = {
       items: [
         // 'class series/Low Code Development/Sales Order Workflow',
         'class series/Factory Modeling/Object Model Introduction',
+        'class series/Factory Modeling/Object Model Introduction_2',
         'class series/Factory Modeling/Embedded Service Video',
         'class series/Factory Modeling/JSQL',
 
@@ -457,13 +430,77 @@ const sidebars = {
         // 'class series/Low Code Development/Sales Order Workflow',
         'class series/Open API/OpenAPI Internal Usage',
         'class series/Open API/OpenAPI External Usage',
-        // 'class series/Low Code Development/Staff Information Demo',
+        'class series/Open API/Global API',
       
       ]
     },
+  ],
+  supCollector: [
+    'Getting Started/System Requirements sc',
+        'Getting Started/Installing supCollector',  
+        
+      {type: 'category',
+        label: 'Connecting supCollector',
+        link: {
+          type: 'generated-index',
+        },
+        items: [
+          'Using supOS/Connecting supCollector/Collector Type',
+'Using supOS/Connecting supCollector/Configuring supCollector',
+'Using supOS/Connecting supCollector/Connecting Simulate Collector',
+'Using supOS/Connecting supCollector/Connecting Common Collector',
+'Using supOS/Connecting supCollector/Connecting Cascading Collector',
+'Using supOS/Connecting supCollector/Connecting Third-party Collector',
+'Using supOS/Connecting supCollector/Data Write Back',
+'Using supOS/Connecting supCollector/Supported Driver',
+        ]
+        },
+        {type: 'category',
+        label: 'Appendix',
+        link: {
+          type: 'generated-index',
+        },
+        items: [
+          'Getting Started/Appendix/Disable Windows Update Service',
+          'Getting Started/Appendix/Migrate Authorization',
+        'Getting Started/Appendix/Update Error Solution',
+        'Getting Started/Appendix/Net Program Installation',
+        'Getting Started/Appendix/Change Login Port',
+        ],
+      },
+  ],
+  supETL: [
     
+    'Getting Started/System Requirements se',
+    'Getting Started/Extension Installation/Installing supETL',
       
-  ]
+  ],
+  supDAM: [
+    
+    'Getting Started/System Requirements sd',
+    'Getting Started/Extension Installation/Installing supDAM',
+      
+  ],
+  supEdge: [
+    
+    'Getting Started/System Requirements sedge',
+    'Getting Started/Installing supEdge',
+    'Getting Started/Using supEdge',
+    'Getting Started/Integrating Third-party Algorithms in supEdge',
+      
+  ],
+  supBD: [
+    
+    'Getting Started/System Requirements sb',
+    'Getting Started/Extension Installation/Installing supBD',
+      
+  ],
+  supLink: [
+    
+    'Getting Started/System Requirements sl',
+    'Getting Started/Installing supLink',
+      
+  ],
    
 };
 

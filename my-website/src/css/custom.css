@@ -28,3 +28,11 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+.markdown{
+  margin-left: 60px;
+}
+p {
+  letter-spacing: -.011em;
+    line-height: 24px;
+    margin-bottom: 1em;
+}
