@@ -1,0 +1,96 @@
+:::info
+Before the installation starts, make sure you have installed Ubuntu18.04 server operating system.
+:::
+# Preparation
+## Installing docker and docker-compose
+1. Get following installation packages from https://download.docker.com/linux/ubuntu/dists/bionic/pool/stable/amd64/.
+- docker-ce_19.03.9_3-0_ubuntu-bionic_amd64.deb
+- containerd.io_1.2.6-3_amd64.deb
+- docker-ce-cli_19.03.9_3-0_ubuntu-bionic_amd64.deb
+2. Install docker and verify the results by checking its version.
+```
+sudo dpkg -i docker-ce-cli_19.03.9_3-0_ubuntu-bionic_amd64.deb
+sudo dpkg -i containerd.io_1.2.6-3_amd64.deb
+sudo dpkg -i docker-ce_19.03.9_3-0_ubuntu-bionic_amd64.deb
+docker --version
+```
+3. Install docker-compose online and check the installation result.
+```
+sudo apt-get install curl
+sudo curl -L
+"https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+```
+
+## Installing Grapgic Drive
+This section focuses on the installation of Nvidia graphic drive. Make sure you have prepared corresponding installation package.
+1. Open the blacklist.
+```
+sudo vi /etc/modprobe.d/blacklist.conf
+```
+2. Add the following content to disable nouveau, and then save the file.
+```
+blacklist nouveau
+options nouveau modeset=0
+```
+3. Update the initial ram file system and reboot the system for the blacklist to take effect,
+```
+sudo update-initramfs -u
+sudo reboot
+```
+4. Check the result.
+```
+lsmod | grep nouveau
+```
+5. Download the .run file of the drive you need and put it under <b>/home</b>, make the file executable and then install the drive.
+```
+sudo chmod a+x NVIDIA-Linux-x86_64-460.84.run
+sudo ./NVIDIA-Linux-x86_64-460.84.run –no-opengl-files -no-x-check
+-no-nouveau-check
+```
+:::info
+During the installation, when the nvidia-xconfig is propmted, install it if your computer has only one graphic card. You can use `lshw -numeric -c display` to check the graphic cards.
+:::
+6. Check whether the installation is complete.
+```
+nvidia-smi
+```
+:::info
+If any issues come up during the installation, use `sudo ./NVIDIA-Linux-x86_64-430.40.run –uninstall` to uninstall the drive.
+:::
+7. Follow the instructions to install nvidia-docker2.
+```
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+sudo apt-get update
+sudo apt-get install -y nvidia-docker2
+sudo pkill -SIGHUP dockerd
+```
+## Installing Algorithm Image
+Get the algorithm image packages from technical support based on your graphic card.
+<table>
+<colgroup>
+<col style={{width:"40%"}}/>
+<col style={{width:"60%"}}/>
+</colgroup>
+  <thead>
+    <tr>
+      <th>Grahic Card</th>
+      <th>Algorithm Image Package</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GTX10, RTX20, Tesla T4, Quadro P series</td>
+      <td>X-Edge-cuda10.tar</td>
+    </tr>
+    <tr>
+      <td>RTX30, RTX40, Tesla A40，Tesla A100</td>
+      <td>X-Edge-cuda11.tar</td>
+    </tr>
+  </tbody>
+</table>
+
+1. 
+

@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'ignore',
-  favicon: 'img/favicon.ico',
+  favicon: 'https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/Favicon.svg',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -30,6 +30,7 @@ const config = {
   presets: [ 
      [
        'classic',
+       
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
@@ -63,6 +64,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
+      },
       navbar: {
         // style:'primary',
         title: 'My Site',

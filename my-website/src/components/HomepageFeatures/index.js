@@ -71,35 +71,35 @@ const productList = [
 const FeatureList = [
   {
     title: 'supOS Overview',
-    img: '../../static/img/supOS.png',
+    Svg: require('@site/static/img/supOS.svg').default,
     description: (
       <>
         Technical documentation places most of its focus on the content.
       </>
       
     ),
-    link: "docs/intro",
+    link: "intro",
   },
   {
     title: 'Video Demonstration',
-    img: '../../static/img/supOS.png',
+    Svg: require('@site/static/img/video.svg').default,
     description: (
       <>
         Technical documentation places most of its focus on the content.
       </>
       
     ),
-    link: "www.baidu.com",
+    link: "Video/Dashboard Development Step by Step",
   },
   {
     title: 'API Reference',
-    img: '../../static/img/supOS.png',
+    Svg: require('@site/static/img/api.svg').default,
     description: (
       <>
         Technical documentation places most of its focus on the content.
       </>
     ),
-    link: "www.baidu.com",
+    link: "category/openapi",
   },
   
 ]; 
@@ -122,12 +122,12 @@ function Product({Svg, type, desc,link}) {
   );
 }
 
-function Feature({img, title, description, link}) {
+function Feature({Svg, title, description, link}) {
   return (
       <div className={clsx('col col--4', styles.col)}>
         <a href={link} target="_self" style={{textDecoration:"none", color:"black"}}>
           <div className="text-center"  >
-      <img className={styles.featureSvg}/>
+          <Svg className={styles.featureSvg}/>
       </div>
       <div className={styles.featureContent}>
         <h3>{title}</h3>

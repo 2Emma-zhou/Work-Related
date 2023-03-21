@@ -1,3 +1,7 @@
+---
+hide_title: true
+---
+
 ## Introduction
 The supEdge platform loads custom vision algorithms of third-party developers through internal function calls. The platform has functions such as
 - Timing map collection
@@ -5,8 +9,10 @@ The supEdge platform loads custom vision algorithms of third-party developers th
 - Task management
 - Data interaction. 
 ## Calling Method
-The supEdge platform executes vision algorithms defined by third-party developers by calling standard functions. You need to override the algorithm function templates provided by the platform to implement the algorithm functions.<br/>
-You only need to provide the standard algorithm initialization function <b>algorithmInitialization</b> and the algorithm execution main function <b>algorithmDetect</b>, and the platform will use python scripts to automatically call these two functions.
+The supEdge platform executes vision algorithms defined by third-party developers by calling standard functions. You need to override the algorithm function templates provided by the platform to implement your own algorithm.<br/>
+1. Provide the standard algorithm initialization function <b>algorithmInitialization</b> and the algorithm execution main function <b>algorithmDetect</b>.
+2. supEdge platform uses python scripts to call these two functions.
+
 :::info
 The provided standard functions must be written in python, and the internal execution code can be written in other languages and compiled for python calling.
 :::
@@ -16,20 +22,26 @@ The provided standard functions must be written in python, and the internal exec
 
 ## Module Instruction
 ### Algorithm Initialization (arguments, configs)
-The algorithmInitialization function initializes the algorithm. It will only be executed once when the program starts running. The main purpose is to load the algorithm model and auxiliary classes, and register basic parameters. This function has no return parameters, and you are free to define the initialization content.
-Input parameters:
+This function initializes your algorithms. It will only be executed once when the program starts running to load the algorithm model and auxiliary classes, and register basic parameters.
+:::info
+This function has no return parameters, and you are free to define the initialization content.
+:::
+
 <table>
+<colgroup>
+<col style={{ width: "20%" }} />
+<col style={{ width: "80%" }} />
+</colgroup>
 <thead>
 <tr>
-<th>Parameter</th>
+<th>Input Parameter</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>arguments</td>
-<td><ul><li>Calls initializeArgument(attribute_name, value) to register parameters for all tasks. For example:
-<code>arguments.initializeArgument('time', 0)</code>
+<td><ul><li>Calls initializeArgument(attribute_name, value) to register parameters for all tasks. For example: <code>arguments.initializeArgument('time', 0)</code>
 </li>
 <li>The function will create a time parameter for all polling tasks, with an initial value of 0, and store it in the public buffer.</li></ul>
 </td>

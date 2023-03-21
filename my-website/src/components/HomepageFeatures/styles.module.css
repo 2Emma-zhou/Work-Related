@@ -1,5 +1,5 @@
 .features {
-  margin: 0 300px;
+  margin: 0 200px;
   position: relative;
   top: -160px;
 
@@ -9,6 +9,7 @@
   height: 50px;
   width: 50px;
   text-align: center;
+  margin: 20px;
 }
 .productSvg {
   height: 150px;
@@ -21,10 +22,11 @@
 
 }
 .col {
-  padding: 55px;
+  padding: 20px;
 }
 .featureContent {
-  margin: 45px 20px;
+  margin: 20px;
+  padding-top: 15px;
 }
 
 .featureContainer {
