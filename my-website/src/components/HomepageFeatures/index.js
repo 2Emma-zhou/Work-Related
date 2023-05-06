@@ -7,51 +7,51 @@ import Layout from '@theme/Layout';
 
 const productList = [
   {
-    type: 'supCollector',
+    type: 'X-Collector',
     Svg: require('@site/static/img/collector.svg').default,
     desc: (
       <>
-        Technical documentation places most of its focus on the content.
+        A versatile product capable of collecting diverse data types from edge devices, databases, and third-party systems.
       </>
     ),
     link: "Getting Started/System Requirements sc",
   },
   {
-    type: 'supETL',
+    type: 'X-ETL',
     Svg: require('@site/static/img/etl.svg').default,
     desc: (
       <>
-        Think like a user, write like an expert.
+        A flexible digital storage solution that securely stores and shares various types of data.
       </>
     ),
     link: "Getting Started/System Requirements se",
   },
   {
-    type: 'supDAM',
+    type: 'X-DAM',
     Svg: require('@site/static/img/dam.svg').default,
     desc: (
       <>
-        Always excited and enthusiastic to make technical stuff easy for everyone.
+        Efficiently organize and optimize your data assets with our comprehensive management solution.
       </>
     ),
     link: "Getting Started/System Requirements sd",
   },
   {
-    type: 'supEdge',
+    type: 'X-Edge',
     Svg: require('@site/static/img/edge.svg').default,
     desc: (
       <>
-        Always excited and enthusiastic to make technical stuff easy for everyone.
+        Unlock new insights from your data with our diverse collection of pre-built and custom algorithm integration.
       </>
     ),
     link: "Getting Started/System Requirements sedge",
   },
   {
-    type: 'supBD',
+    type: 'X-BD',
     Svg: require('@site/static/img/bd.svg').default,
     desc: (
       <>
-        Always excited and enthusiastic to make technical stuff easy for everyone.
+        Seamlessly manage and process large volumes of data with our all-inclusive big data solution.
       </>
     ),
     link: "Getting Started/System Requirements sb",
@@ -61,7 +61,7 @@ const productList = [
     Svg: require('@site/static/img/link.svg').default,
     desc: (
       <>
-        Always excited and enthusiastic to make technical stuff easy for everyone.
+       Efficiently manage your supOS platform on-the-go with our mobile app designed for seamless operation.
       </>
     ),
     link: "Getting Started/System Requirements sl",
@@ -74,7 +74,7 @@ const FeatureList = [
     Svg: require('@site/static/img/supOS.svg').default,
     description: (
       <>
-        Technical documentation places most of its focus on the content.
+        Connects industrial devices to collect, analyze, and visualize data for improved efficiency.
       </>
       
     ),
@@ -85,7 +85,7 @@ const FeatureList = [
     Svg: require('@site/static/img/video.svg').default,
     description: (
       <>
-        Technical documentation places most of its focus on the content.
+        A video tutorial series designed to guide you on product usage and best practices.
       </>
       
     ),
@@ -96,7 +96,7 @@ const FeatureList = [
     Svg: require('@site/static/img/api.svg').default,
     description: (
       <>
-        Technical documentation places most of its focus on the content.
+        A comprehensive guide on how to use supOS' API with detailed instructions and examples.
       </>
     ),
     link: "category/openapi",
@@ -150,16 +150,16 @@ export default function HomepageFeatures() {
           ))}
         </div>
       </div>
-      <div className="container" style={{padding:"4rem 0 2rem 0"}}>
+      <div className="container" style={{marginTop:"10%"}}>
         <div className="row"  >
           <h2>supOS Applications</h2>
         </div>
-      </div>
-      <div className="container" style={{padding:"2rem"}}>
-        <div className="row"  >
+      <div className="container">
+        <div className={clsx('row')}>
           {productList.map((props, idx) => (
             <Product key={idx} {...props} />
           ))}
+          </div>
           </div>
           </div>
       

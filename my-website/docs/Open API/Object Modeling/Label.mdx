@@ -1,74 +1,24 @@
+---
+hide_title: true
+---
 
-The return code of each API represents its operation state. The following items list the general error of OODM, which can be useful when you receive such code and resolve bugs according to the explaination.
-<ul>
-<li>10001001: Server unknown error</li>
-<li>10001002: Invalid parameter value</li>
-<li>10001003: Failed to generate ID</li>
-<li>10001004: Database operation failed</li>
-<li>10001005: Instance ID cannot be empty</li>
-<li>10001006: Date parse failed, unmatched format</li>
-<li>10001007: Remote call error</li>
-<li>10001008: Failed to copy object</li>
-<li>10001009: Not found (template/property/event/service/subscription/alarm)</li>
-<li>10001010: Unsupported operation</li>
-<li>10001011: No permission</li>
-<li>10001012: Duplicate field</li>
-<li>10001013: Does not conform to specifications</li>
-<li>10001014: Dependencies exist in metadata</li>
-<li>10001015: Metadata already exists</li>
-<li>90200000: Metadata does not belong to xx template</li>
-<li>90200001: Metadata does not belong to xx instance</li>
-<li>90200002: Metadata does not belong to xx function set</li>
-<li>90200003: Metadata does not belong to xx app</li>
-<li>90200004: Function set source of metadata is xx</li>
-<li>90200005: Parse instance text error</li>
-<li>90200006: Database type not supported</li>
-<li>90200007: Field value already exists</li>
-<li>90200008: Property value conversion error</li>
-<li>90200009: Alias and namespace of metadata excess maximum character length</li>
-<li>90200010: Instance exists, cannot delete,</li>
-<li>90200011: Node exists, cannot delete network,network</li>
-<li>90200012: Illegal paremt node IDId</li>
-<li>90200013: Uncertain name</li>
-<li>90300000: Service not found</li>
-<li>90300001: Service execution failed</li>
-<li>90300002: Service field cannot be empty</li>
-<li>90300003: Incorrect input parameter format</li>
-<li>90300004: Data processing error</li>
-<li>90300005: Alarm confirmation status mpdification error</li>
-<li>90300006: History alarm export error</li>
-<li>90300007: Matching data not found</li>
-<li>90300008: Failed to execute script</li>
-<li>90500000: Incorrect property format. Template namespace.template alias.property namespace.property alias</li>
-<li>90500001: Incorrect property format. Template namespace.template alias.instance alias.property namespace.property alias</li>
-<li>90500002: Incorrect property format. Function set namespace.function set alias.property namespace.property alias</li>
-<li>90500003: Template not found</li>
-<li>90500004: Function set not found</li>
-<li>90500005: Instance not found</li>
-<li>90500006: Property not found</li>
-<li>90800000: Data source not found</li>
-<li>90800001: Fialed to execute sqlsql</li>
-<li>90800002: Parse instance range property to JSON errorjson</li>
-<li>90800003: Parse instance range property value to JSON errorjson</li>
-<li>90800004: Alarm confirmation status mpdification error</li>
-<li>90800005: History alarm export error</li>
-<li>90800006: Parse string to date error</li>
-<li>90900002: Alarm info list cannot be empty</li>
-<li>90900003: Excessed alarm query limit (100)</li>
-<li>90900004: Incorrect alarm format</li>
-<li>90900005: Incorrect time format</li>
-<li>90900006: Invalid history alarm code</li>
-</ul>
+<div class="div">
+  <div class="title">
 
-## Get Label Category List
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Label Category List
 
-- Path Example code
+</div>
+  <div class="grid">
+    <div class="leftCol">Path</div>
+    <div class="rightCol">
+
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/model-label-types
+http://supOS ip:port/open-api/supos/oodm/v2/model-label-types
 ```
 
-- Query parameters
-
+</div>
+    <div class="leftCol">Query parameters</div>
+    <div class="rightCol">
 <table>
 <caption>Table 2. Query parameter description</caption>
                 <colgroup>
@@ -101,7 +51,9 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/model-label-types
                     </tr>
                     </tbody>
                     </table>
-- Response
+</div>
+    <div class="leftCol">Response</div>
+    <div class="rightCol">
 <ul>
 <li>200: Successful.
 
@@ -143,15 +95,28 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/model-label-types
 
 </li>
 </ul>
+</div>
+  </div>
+</div>
 
-## Create Label Category
+<div class="div">
+<div class="title">
 
-- Path Example code
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Create Label Category
+
+</div>
+<div class="grid">
+<div class="leftCol">Path</div>
+<div class="rightCol">
+
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/model-label-types
+http://supOS ip:port/open-api/supos/oodm/v2/model-label-types
 ```
 
-- Request Example Code
+</div>
+<div class="leftCol">Request Body</div>
+<div class="rightCol">
+
 ```
 {
   "appAccessMode": "PUBLIC", //whether can be seen in other apps (PUBLIC or PRIVATE). Required.
@@ -163,7 +128,9 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/model-label-types
 }
 ```
 
-- Response
+</div>
+    <div class="leftCol">Response</div>
+    <div class="rightCol">
 <ul>
 <li>200: Successful.
 
@@ -179,6 +146,7 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/model-label-types
 </li>
 <li>500: General internal error of OODM.
 
+
 ```
 {
   "code": 10001001,
@@ -190,24 +158,33 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/model-label-types
 
 </li>
 </ul>
+</div>
+  </div>
+</div>
 
-## Get Label/Category
+<div class="div">
+  <div class="title">
 
-- Path Example code
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Label/Category
+
+</div>
+  <div class="grid">
+    <div class="leftCol">Path</div>
+    <div class="rightCol">
+
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/model-label-types/{namespace}/{name}
+http://supOS ip:port/open-api/supos/oodm/v2/model-label-types/{namespace}/{name}
 ```
-<ul>
-<ul>
-<li>namespace: Label namespce. Required. String</li>
-<li>name: Label alias. Required. String.</li>
-</ul>
-</ul>
 
+- namespace: Label namespce. Required. String.
+- name: Label alias. Required. String.
 
-- Response
+</div>
+    <div class="leftCol">Response</div>
+    <div class="rightCol">
 <ul>
 <li>200: Successful.
+
 
 ```
 {
@@ -240,16 +217,27 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/model-label-types/{namespace}/
 
 </li>
 </ul>
+</div>
+  </div>
+</div>
 
-## Get All Labels
+<div class="div">
+  <div class="title">
 
-- Path Example code
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get All Labels
+
+</div>
+  <div class="grid">
+    <div class="leftCol">Path</div>
+    <div class="rightCol">
+
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/model-labels
+http://supOS ip:port/open-api/supos/oodm/v2/model-labels
 ```
 
-- Query parameters
-
+</div>
+    <div class="leftCol">Query parameters</div>
+    <div class="rightCol">
 <table>
 <caption>Table 2. Query parameter description</caption>
                 <colgroup>
@@ -312,9 +300,10 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/model-labels
                     </tr>
                     </tbody>
                     </table>
-- Response
-<ul>
-<li>200: Successful.
+</div>
+    <div class="leftCol">Response</div>
+    <div class="rightCol">
+200: Successful.
 
 ```
 {
@@ -340,29 +329,28 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/model-labels
 }
 ```
 
-</li>
-<li>500: General internal error of OODM.
+</div>
+  </div>
+</div>
+
+<div class="div">
+  <div class="title">
+
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Create Label
+
+</div>
+  <div class="grid">
+    <div class="leftCol">Path</div>
+    <div class="rightCol">
 
 ```
-{
-  "code": 10001001,
-  "data": {},
-  "detail": "string",
-  "message": "string"
-}
+http://supOS ip:port/open-api/supos/oodm/v2/model-labels
 ```
 
-</li>
-</ul>
+</div>
+    <div class="leftCol">Request Body</div>
+<div class="rightCol">
 
-## Create Label
-
-- Path Example code
-```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/model-labels
-```
-
-- Request Example Code
 ```
 {
   "appAccessMode": "PUBLIC", //whether can be seen in other apps (PUBLIC or PRIVATE). Required.
@@ -375,8 +363,10 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/model-labels
 }
 ```
 
-- Response
-<ul>
+</div>
+    <div class="leftCol">Response</div>
+    <div class="rightCol">
+    <ul>
 <li>200: Successful.
 
 ```
@@ -402,63 +392,28 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/model-labels
 
 </li>
 </ul>
+</div>
+  </div>
+</div>
 
-## Create Label
+<div class="div">
+  <div class="title">
 
-- Path Example code
-```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/model-labels
-```
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Cancel Instance Label
 
-- Request Example Code
-```
-{
-  "appAccessMode": "PUBLIC", //whether can be seen in other apps (PUBLIC or PRIVATE). Required.
-  "appName": "system",
-  "comment": "this is a test label",
-  "displayName": "category1",
-  "enName": "labelCategory1",
-  "namespace": "system",
-  "categoryId": 17777 //interger. Required.
-}
-```
-
-- Response
-<ul>
-<li>200: Successful.
+</div>
+  <div class="grid">
+    <div class="leftCol">Path</div>
+    <div class="rightCol">
 
 ```
-{
-  "code": 200,
-  "data": 19999,
-  "detail": "string",
-  "message": "ok"
-}
+http://supOS ip:port/open-api/supos/oodm/v2/model-labels/{templateNamespace}/{templateName}/instance-labels
 ```
 
-</li>
-<li>500: General internal error of OODM.
+</div>
+    <div class="leftCol">Request Body</div>
+    <div class="rightCol">
 
-```
-{
-  "code": 10001001,
-  "data": {},
-  "detail": "string",
-  "message": "string"
-}
-```
-
-</li>
-</ul>
-
-## Cancel Instance Label
-
-- Path Example code
-```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/model-labels/{templateNamespace}/{templateName}/instance-labels
-```
-
-- Request Example Code
 ```
 {
   "instanceNames": [ //instance name list
@@ -470,7 +425,9 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/model-labels/{templateNamespac
 }
 ```
 
-- Response
+</div>
+    <div class="leftCol">Response</div>
+    <div class="rightCol">
 <ul>
 <li>200: Successful.
 
@@ -497,15 +454,28 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/model-labels/{templateNamespac
 
 </li>
 </ul>
+</div>
+  </div>
+</div>
 
-## Add Instance Label
+<div class="div">
+  <div class="title">
 
-- Path Example code
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Add Instance Label
+
+</div>
+  <div class="grid">
+    <div class="leftCol">Path</div>
+    <div class="rightCol">
+
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/model-labels/{templateNamespace}/{templateName}/{instanceName}/instance-labels
+http://supOS ip:port/open-api/supos/oodm/v2/model-labels/{templateNamespace}/{templateName}/{instanceName}/instance-labels
 ```
 
-- Request Example Code
+</div>
+    <div class="leftCol">Request Body</div>
+    <div class="rightCol">
+
 ```
 {
   "instanceId": "10001",
@@ -517,7 +487,9 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/model-labels/{templateNamespac
 }
 ```
 
-- Response
+</div>
+    <div class="leftCol">Response</div>
+    <div class="rightCol">
 <ul>
 <li>200: Successful.
 
@@ -544,3 +516,6 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/model-labels/{templateNamespac
 
 </li>
 </ul>
+</div>
+  </div>
+</div>

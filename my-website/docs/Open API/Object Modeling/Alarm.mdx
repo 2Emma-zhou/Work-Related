@@ -1,72 +1,27 @@
-The return code of each API represents its operation state. The following items list the general error of OODM, which can be useful when you receive such code and resolve bugs according to the explaination.
-<ul>
-<li>10001001: Server unknown error</li>
-<li>10001002: Invalid parameter value</li>
-<li>10001003: Failed to generate ID</li>
-<li>10001004: Database operation failed</li>
-<li>10001005: Instance ID cannot be empty</li>
-<li>10001006: Date parse failed, unmatched format</li>
-<li>10001007: Remote call error</li>
-<li>10001008: Failed to copy object</li>
-<li>10001009: Not found (template/property/event/service/subscription/alarm)</li>
-<li>10001010: Unsupported operation</li>
-<li>10001011: No permission</li>
-<li>10001012: Duplicate field</li>
-<li>10001013: Does not conform to specifications</li>
-<li>10001014: Dependencies exist in metadata</li>
-<li>10001015: Metadata already exists</li>
-<li>90200000: Metadata does not belong to xx template</li>
-<li>90200001: Metadata does not belong to xx instance</li>
-<li>90200002: Metadata does not belong to xx function set</li>
-<li>90200003: Metadata does not belong to xx app</li>
-<li>90200004: Function set source of metadata is xx</li>
-<li>90200005: Parse instance text error</li>
-<li>90200006: Database type not supported</li>
-<li>90200007: Field value already exists</li>
-<li>90200008: Property value conversion error</li>
-<li>90200009: Alias and namespace of metadata excess maximum character length</li>
-<li>90200010: Instance exists, cannot delete,</li>
-<li>90200011: Node exists, cannot delete network,network</li>
-<li>90200012: Illegal paremt node IDId</li>
-<li>90200013: Uncertain name</li>
-<li>90300000: Service not found</li>
-<li>90300001: Service execution failed</li>
-<li>90300002: Service field cannot be empty</li>
-<li>90300003: Incorrect input parameter format</li>
-<li>90300004: Data processing error</li>
-<li>90300005: Alarm confirmation status mpdification error</li>
-<li>90300006: History alarm export error</li>
-<li>90300007: Matching data not found</li>
-<li>90300008: Failed to execute script</li>
-<li>90500000: Incorrect property format. Template namespace.template alias.property namespace.property alias</li>
-<li>90500001: Incorrect property format. Template namespace.template alias.instance alias.property namespace.property alias</li>
-<li>90500002: Incorrect property format. Function set namespace.function set alias.property namespace.property alias</li>
-<li>90500003: Template not found</li>
-<li>90500004: Function set not found</li>
-<li>90500005: Instance not found</li>
-<li>90500006: Property not found</li>
-<li>90800000: Data source not found</li>
-<li>90800001: Fialed to execute sqlsql</li>
-<li>90800002: Parse instance range property to JSON errorjson</li>
-<li>90800003: Parse instance range property value to JSON errorjson</li>
-<li>90800004: Alarm confirmation status mpdification error</li>
-<li>90800005: History alarm export error</li>
-<li>90800006: Parse string to date error</li>
-<li>90900002: Alarm info list cannot be empty</li>
-<li>90900003: Excessed alarm query limit (100)</li>
-<li>90900004: Incorrect alarm format</li>
-<li>90900005: Incorrect time format</li>
-<li>90900006: Invalid history alarm code</li>
-</ul>
+---
+hide_title: true
+---
 
-## Confirm Alarm Information
 
-- Path Example code
+<div className='div'>
+<div className='title'>
+
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Confirm Alarm Information
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Path</div>
+<div className='rightCol'>
+
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/alerts/ack
+http://supOS ip:port/open-api/supos/oodm/v2/alerts/ack
 ```
 
-- Request Example Code
+
+</div>
+<div className='leftCol'>Request body</div>
+<div className='rightCol'>
+
 ```
 {
   "ackAll": false,
@@ -76,16 +31,15 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/alerts/ack
   ]
 }
 ```
-<ul>
-<ul>
-<li>ackAll: Boolean. Whether to confirm all</li>
-<li>ackAll: Boolean. Whether to confirm all</li>
-<li>fullName: Array of strings. Instance ID triggered by the alarm and alarm alias</li>
-</ul>
-</ul>
+- ackAll: Boolean. Whether to confirm all
+- userName: String. User to confirm the alarm
+- fullName: Array of strings. Instance ID triggered by the alarm and alarm alias
 
-- Response
+</div>
+<div className='leftCol'>Response</div>
+<div className='rightCol'>
 400: General internal error of OODM.
+
 ```
 {
   "code": 10001001,
@@ -95,14 +49,29 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/alerts/ack
 }
 ```
 
-## Create Alarms in Batches
+</div>
+</div>
+</div>
 
-- Path Example code
+<div className='div'>
+<div className='title'>
+
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Create Alarms in Batches
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Path</div>
+<div className='rightCol'>
+
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/alarms
+http://supOS ip:port/open-api/supos/oodm/v2/alarms
 ```
 
-- Request Example Code
+
+</div>
+<div className='leftCol'>Request body</div>
+<div className='rightCol'>
+
 ```
 {
   "dtos": [
@@ -124,8 +93,12 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/alarms
 }
 ```
 
-- Response
+</div>
+<div className='leftCol'>Response</div>
+<div className='rightCol'>
+
 400: General internal error of OODM.
+
 ```
 {
   "code": 10001001,
@@ -135,22 +108,34 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/alarms
 }
 ```
 
-## Get Alarms
+</div>
+</div>
+</div>
+
+<div className='div'>
+<div className='title'>
+
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Alarms
 Run complex filtering on alarms.
 
-- Path Example code
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Path</div>
+<div className='rightCol'>
+
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/alarms
+http://supOS ip:port/open-api/supos/oodm/v2/alarms
 ```
-- Query Parameter
+
+
+</div>
+<div className='leftCol'>Query parameters</div>
+<div className='rightCol'>
 
 <table>
 <caption>Table 1. Query parameter description</caption>
-                <colgroup>
-                  <col style={{ width: "25%" }} />
-                  <col style={{ width: "25%" }} />
-                  <col style={{ width: "50%" }} />
-                </colgroup>
+                
                 <thead>
                   <tr>
                     <th>Parameter</th>
@@ -241,15 +226,21 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/alarms
                     </tr>
                     </tbody>
                     </table>
-- Request Example Code
+
+</div>
+<div className='leftCol'>Request body</div>
+<div className='rightCol'>
+
 ```
 instanceEnName=employee&attributeLabelNames=system.aaa&
 alarmDisplayName=xxx&alarmEnable=true //search for enabled alarms with "xxx" in its name under a property bound with the label system.aaa inside the instance employee
 ```
 
-- Response
-<ul>
-<li>200: Successful.
+</div>
+<div className='leftCol'>Response</div>
+<div className='rightCol'>
+
+- 200: Successful.
 
 ```
 {
@@ -292,9 +283,7 @@ alarmDisplayName=xxx&alarmEnable=true //search for enabled alarms with "xxx" in 
   "pagination": {}
 }
 ```
-
-</li>
-<li>400: General internal error of OODM.
+- 400: General internal error of OODM.
 
 ```
 {
@@ -305,17 +294,29 @@ alarmDisplayName=xxx&alarmEnable=true //search for enabled alarms with "xxx" in 
 }
 ```
 
-</li>
-</ul>
+</div>
+</div>
+</div>
 
-## Edit Alarm Information
+<div className='div'>
+<div className='title'>
 
-- Path Example code
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Edit Alarm Information
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Path</div>
+<div className='rightCol'>
+
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/alarms/{name} //name is alarm alias. Presently is the automatically generated UUID during creation
+http://supOS ip:port/open-api/supos/oodm/v2/alarms/{name} //name is alarm alias. Presently is the automatically generated UUID during creation
 ```
 
-- Request Example Code
+
+</div>
+<div className='leftCol'>Request body</div>
+<div className='rightCol'>
+
 ```
 {
   "displayName": "boiler overheating alarm",
@@ -330,9 +331,11 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/alarms/{name} //name is alarm 
 }
 ```
 
-- Response
-<ul>
-<li>200: Successful.
+</div>
+<div className='leftCol'>Response</div>
+<div className='rightCol'>
+
+- 200: Successful.
 
 ```
 {
@@ -342,9 +345,7 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/alarms/{name} //name is alarm 
   "detail": null
 }
 ```
-
-</li>
-<li>400: General internal error of OODM.
+- 400: General internal error of OODM.
 
 ```
 {
@@ -355,18 +356,37 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/alarms/{name} //name is alarm 
 }
 ```
 
-</li>
-</ul>
+</div>
+</div>
+</div>
 
-## Delete Alarms
+<div className='div'>
+<div className='title'>
+
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/3.png) Delete Alarms
 Delete alarm metadata. Returns successful when alarms not found as well.
 
-- Path Example code
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Path</div>
+<div className='rightCol'>
+
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/alarms/{name} //name is alarm alias. Presently is the automatically generated UUID during creation
+http://supOS ip:port/open-api/supos/oodm/v2/alarms/{name} //name is alarm alias. Presently is the automatically generated UUID during creation
 ```
 
-- Request Example Code
+
+</div>
+<div className='leftCol'>Query parameters</div>
+<div className='rightCol'>
+
+
+
+</div>
+<div className='leftCol'>Request body</div>
+<div className='rightCol'>
+
 ```
 {
   "displayName": "boiler overheating alarm",
@@ -381,20 +401,38 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/alarms/{name} //name is alarm 
 }
 ```
 
-- Response
+</div>
+<div className='leftCol'>Response</div>
+<div className='rightCol'>
+
 204 OK
 
-## Get Alarms under Specified Attribute
+</div>
+</div>
+</div>
 
-- Path Example code
+
+<div className='div'>
+<div className='title'>
+
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Alarms under Specified Attribute
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Path</div>
+<div className='rightCol'>
+
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/attributes/{attributeFullName}/alarms
+http://supOS ip:port/open-api/supos/oodm/v2/attributes/{attributeFullName}/alarms
 ```
 **attributeFullName**: Full path of the attribute. Template namespace.template alias.instance alias.attribute namesoace.attribure alias.
 
-- Response
-<ul>
-<li>200: Successful.
+
+</div>
+<div className='leftCol'>Response</div>
+<div className='rightCol'>
+
+- 200: Successful.
 
 ```
 [
@@ -414,9 +452,7 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/attributes/{attributeFullName}
   }
 ]
 ```
-
-</li>
-<li>400: General internal error of OODM.
+- 400: General internal error of OODM.
 
 ```
 {
@@ -427,28 +463,42 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/attributes/{attributeFullName}
 }
 ```
 
-</li>
-</ul>
+</div>
+</div>
+</div>
 
-## Get Authorized Alarm Receivers
+
+<div className='div'>
+<div className='title'>
+
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Authorized Alarm Receivers
 Corresponding empty array will be returned when alarm full path does not exist or no authorized users.
 To handle high concurrency, user list of each alarm is saved in cache for 5 minutes (user data changes may be delayed).
 
-- Path Example code
+</div>
+<div className='grid'>
+<div className='leftCol'>Path</div>
+<div className='rightCol'>
+
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/alarms/authorized-users
+http://supOS ip:port/open-api/supos/oodm/v2/alarms/authorized-users
 ```
 
-- Query parameters
+
+</div>
+<div className='leftCol'>Query parameters</div>
+<div className='rightCol'>
 
 **alarmFullPaths**: Full path of the attribute. Template namespace.template alias.instance alias.alarm alias. Use comma to separate multiple alarms.
 :::info
 The maximum number of alarms is 100. Error happens when exceeding 100.
 :::
 
-- Response
-<ul>
-<li>200: Successful.
+</div>
+<div className='leftCol'>Response</div>
+<div className='rightCol'>
+
+- 200: Successful.
 
 ```
 {
@@ -459,9 +509,7 @@ The maximum number of alarms is 100. Error happens when exceeding 100.
   "system.Template_829.msa_test_09.p1_a2": []
 }
 ```
-
-</li>
-<li>400: General internal error of OODM.
+- 400: General internal error of OODM.
 
 ```
 {
@@ -472,5 +520,6 @@ The maximum number of alarms is 100. Error happens when exceeding 100.
 }
 ```
 
-</li>
-</ul>
+</div>
+</div>
+</div>

@@ -1,74 +1,24 @@
-The return code of each API represents its operation state. The following items list the general error of OODM, which can be useful when you receive such code and resolve bugs according to the explaination.
-<ul>
-<li>10001001: Server unknown error</li>
-<li>10001002: Invalid parameter value</li>
-<li>10001003: Failed to generate ID</li>
-<li>10001004: Database operation failed</li>
-<li>10001005: Instance ID cannot be empty</li>
-<li>10001006: Date parse failed, unmatched format</li>
-<li>10001007: Remote call error</li>
-<li>10001008: Failed to copy object</li>
-<li>10001009: Not found (template/property/event/service/subscription/alarm)</li>
-<li>10001010: Unsupported operation</li>
-<li>10001011: No permission</li>
-<li>10001012: Duplicate field</li>
-<li>10001013: Does not conform to specifications</li>
-<li>10001014: Dependencies exist in metadata</li>
-<li>10001015: Metadata already exists</li>
-<li>90200000: Metadata does not belong to xx template</li>
-<li>90200001: Metadata does not belong to xx instance</li>
-<li>90200002: Metadata does not belong to xx function set</li>
-<li>90200003: Metadata does not belong to xx app</li>
-<li>90200004: Function set source of metadata is xx</li>
-<li>90200005: Parse instance text error</li>
-<li>90200006: Database type not supported</li>
-<li>90200007: Field value already exists</li>
-<li>90200008: Property value conversion error</li>
-<li>90200009: Alias and namespace of metadata excess maximum character length</li>
-<li>90200010: Instance exists, cannot delete,</li>
-<li>90200011: Node exists, cannot delete network,network</li>
-<li>90200012: Illegal paremt node IDId</li>
-<li>90200013: Uncertain name</li>
-<li>90300000: Service not found</li>
-<li>90300001: Service execution failed</li>
-<li>90300002: Service field cannot be empty</li>
-<li>90300003: Incorrect input parameter format</li>
-<li>90300004: Data processing error</li>
-<li>90300005: Alarm confirmation status mpdification error</li>
-<li>90300006: History alarm export error</li>
-<li>90300007: Matching data not found</li>
-<li>90300008: Failed to execute script</li>
-<li>90500000: Incorrect property format. Template namespace.template alias.property namespace.property alias</li>
-<li>90500001: Incorrect property format. Template namespace.template alias.instance alias.property namespace.property alias</li>
-<li>90500002: Incorrect property format. Function set namespace.function set alias.property namespace.property alias</li>
-<li>90500003: Template not found</li>
-<li>90500004: Function set not found</li>
-<li>90500005: Instance not found</li>
-<li>90500006: Property not found</li>
-<li>90800000: Data source not found</li>
-<li>90800001: Fialed to execute sqlsql</li>
-<li>90800002: Parse instance range property to JSON errorjson</li>
-<li>90800003: Parse instance range property value to JSON errorjson</li>
-<li>90800004: Alarm confirmation status mpdification error</li>
-<li>90800005: History alarm export error</li>
-<li>90800006: Parse string to date error</li>
-<li>90900002: Alarm info list cannot be empty</li>
-<li>90900003: Excessed alarm query limit (100)</li>
-<li>90900004: Incorrect alarm format</li>
-<li>90900005: Incorrect time format</li>
-<li>90900006: Invalid history alarm code</li>
-</ul>
+---
+hide_title: true
+---
 
-## Get All Events
-Comprehensive event search API, and it can run complex filters on events to get corresponding results.
+<div class="div">
+  <div class="title">
 
-- Path Example code
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get All Events
+
+</div>
+  <div class="grid">
+    <div class="leftCol">Path</div>
+    <div class="rightCol">
+
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/events
+http://supOS ip:port/open-api/supos/oodm/v2/events
 ```
 
-- Query Parameter
-
+</div>
+    <div class="leftCol">Query Parameter</div>
+    <div class="rightCol">
 <table>
 <caption>Table 1. Query parameter description</caption>
                 <colgroup>
@@ -156,15 +106,19 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/events
                     </tr>
                     </tbody>
                     </table>
+</div>
+<div className='leftCol'>Request Body</div>
+<div className='rightCol'>
 
-- Request Example Code
 Get events under the template system.t1 that have es in their names or aliases, and its source function set ID is system.f1 and is not bound with a label system.l1.
 ```
 templateFullNames=system.t1&sourceFunctionSetFullNames=system.f1&
 excludeLabelFullNames=true&labelFullNames=system.l1&keyword=es
 ```
 
-- Response
+</div>
+<div className='leftCol'>Response</div>
+<div className='rightCol'>
 <ul>
 <li>200: Successful.
 
@@ -211,3 +165,6 @@ excludeLabelFullNames=true&labelFullNames=system.l1&keyword=es
 
 </li>
 </ul>
+</div>
+</div>
+</div>

@@ -1,41 +1,57 @@
 .features {
-  margin: 0 200px;
+  margin: 0 10%;
   position: relative;
   top: -160px;
-
 }
+@media screen and (max-width: 996px) {
+  .features {
+    top: -50px; 
 
+  }
+}
+@media screen and (min-width: 996px) {
 .featureSvg {
   height: 50px;
   width: 50px;
   text-align: center;
-  margin: 20px;
+  margin: 20% 10% 10% 20%;
+}
+}
+@media screen and (max-width: 996px) {
+  .featureSvg {
+    height: 50px;
+  width: 50px;
+  text-align: center;
+    margin: 20% 10% 1% 1%; 
+
+  }
 }
 .productSvg {
   height: 150px;
   width: 150px;
   text-align: center;
+  margin: 10%;
 }
 
-.col:not(:last-child) {
-  border-right: 2px solid rgb(230, 224, 224);
-
-}
-.col {
-  padding: 20px;
-}
 .featureContent {
-  margin: 20px;
-  padding-top: 15px;
+  margin: 10%;
 }
 
-.featureContainer {
+.featureDiv {
   background-color:white;
   height:350px;
   border-radius:40px; 
   box-shadow: 3px 3px 20px 10px rgba(128,128,128,0.1);
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  overflow-x: auto;
+  overflow-y: hidden; 
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  border-width: 10px;
+  border-color: black;
 }
-.featureDiv{
-  border-radius:40px;
-  height:350px;
-}
+
+

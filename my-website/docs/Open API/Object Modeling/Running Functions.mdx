@@ -1,139 +1,89 @@
-The return code of each API represents its operation state. The following items list the general error of OODM, which can be useful when you receive such code and resolve bugs according to the explaination.
-<ul>
-<li>10001001: Server unknown error</li>
-<li>10001002: Invalid parameter value</li>
-<li>10001003: Failed to generate ID</li>
-<li>10001004: Database operation failed</li>
-<li>10001005: Instance ID cannot be empty</li>
-<li>10001006: Date parse failed, unmatched format</li>
-<li>10001007: Remote call error</li>
-<li>10001008: Failed to copy object</li>
-<li>10001009: Not found (template/property/event/service/subscription/alarm)</li>
-<li>10001010: Unsupported operation</li>
-<li>10001011: No permission</li>
-<li>10001012: Duplicate field</li>
-<li>10001013: Does not conform to specifications</li>
-<li>10001014: Dependencies exist in metadata</li>
-<li>10001015: Metadata already exists</li>
-<li>90200000: Metadata does not belong to xx template</li>
-<li>90200001: Metadata does not belong to xx instance</li>
-<li>90200002: Metadata does not belong to xx function set</li>
-<li>90200003: Metadata does not belong to xx app</li>
-<li>90200004: Function set source of metadata is xx</li>
-<li>90200005: Parse instance text error</li>
-<li>90200006: Database type not supported</li>
-<li>90200007: Field value already exists</li>
-<li>90200008: Property value conversion error</li>
-<li>90200009: Alias and namespace of metadata excess maximum character length</li>
-<li>90200010: Instance exists, cannot delete,</li>
-<li>90200011: Node exists, cannot delete network,network</li>
-<li>90200012: Illegal paremt node IDId</li>
-<li>90200013: Uncertain name</li>
-<li>90300000: Service not found</li>
-<li>90300001: Service execution failed</li>
-<li>90300002: Service field cannot be empty</li>
-<li>90300003: Incorrect input parameter format</li>
-<li>90300004: Data processing error</li>
-<li>90300005: Alarm confirmation status mpdification error</li>
-<li>90300006: History alarm export error</li>
-<li>90300007: Matching data not found</li>
-<li>90300008: Failed to execute script</li>
-<li>90500000: Incorrect property format. Template namespace.template alias.property namespace.property alias</li>
-<li>90500001: Incorrect property format. Template namespace.template alias.instance alias.property namespace.property alias</li>
-<li>90500002: Incorrect property format. Function set namespace.function set alias.property namespace.property alias</li>
-<li>90500003: Template not found</li>
-<li>90500004: Function set not found</li>
-<li>90500005: Instance not found</li>
-<li>90500006: Property not found</li>
-<li>90800000: Data source not found</li>
-<li>90800001: Fialed to execute sqlsql</li>
-<li>90800002: Parse instance range property to JSON errorjson</li>
-<li>90800003: Parse instance range property value to JSON errorjson</li>
-<li>90800004: Alarm confirmation status mpdification error</li>
-<li>90800005: History alarm export error</li>
-<li>90800006: Parse string to date error</li>
-<li>90900002: Alarm info list cannot be empty</li>
-<li>90900003: Excessed alarm query limit (100)</li>
-<li>90900004: Incorrect alarm format</li>
-<li>90900005: Incorrect time format</li>
-<li>90900006: Invalid history alarm code</li>
-</ul>
+---
+hide_title: true
+---
+
+<div class="div"> 
+<div class="title">
 
 ## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Real-time Alarms
 
+</div>
+<div class="grid">
+<div class="leftCol">Path</div>
+<div class="rightCol">
 
-- Path Example code
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/alert/current
+http://supOS ip:port/open-api/supos/oodm/v2/alert/current
 ```
-- Query Parameter
 
+</div>
+<div class="leftCol">Query Parameter</div>
+<div class="rightCol">
 <table>
 <caption>Table 1. Query parameter description</caption>
-                <colgroup>
-                  <col style={{ width: "25%" }} />
-                  <col style={{ width: "25%" }} />
-                  <col style={{ width: "50%" }} />
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th>Parameter</th>
-                    <th>Type</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>keyWord</td>
-                    <td>string</td>
-                    <td>Fuzzy match with the name or alias of object and object attribute.</td>
-                    </tr>
-                    <tr>
-                    <td>priority</td>
-                    <td>string</td>
-                    <td>Alarm priority.</td>
-                    </tr>
-                    <tr>
-                    <td>limitValue</td>
-                    <td>string</td>
-                    <td>LImit value of conditions that trigger the alarm.</td>
-                    </tr>
-                    
-                    </tbody>
-                    </table>
-
-
-- Response
+<colgroup>
+<col style={{ width: "25%" }} />
+<col style={{ width: "25%" }} />
+<col style={{ width: "50%" }} />
+</colgroup>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>keyWord</td>
+<td>string</td>
+<td>Fuzzy match with the name or alias of object and object attribute.</td>
+</tr>
+<tr>
+<td>priority</td>
+<td>string</td>
+<td>Alarm priority.</td>
+</tr>
+<tr>
+<td>limitValue</td>
+<td>string</td>
+<td>LImit value of conditions that trigger the alarm.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="leftCol">Response</div>
+<div class="rightCol">
 <ul>
 <li>200: Successful.
 
 ```
 {
-  "code" : 200,
-  "data" : [ {
-    "ackDatatimestamp" : 1614670680298, //alarm confirmation time
-    "ackStatus" : 0, //alarm confirmation status. 0 means not confirmed and 1 means confirmed
-    "ackUserName" : "Emma", //alarm confirmation person
-    "alertName" : "uuidde2d4cfaf5af4abe830387fbfe3e0bbf",
-    "alertType" : "EQ", //alarm condition. EQ=equal, LT=less than, LE=less and equal, GT=greater than, GE=greater and equal
-    "description" : "this is test alarm",
-    "disappearedDatatimestamp" : 1614583659860, //alarm cancellation time
-    "fullName" : "10801uuidde2d4cfaf5af4abe830387fbfe3e0bbf", //instance alias + alarm alias
-    "id" : 11111, //real-time alarm ID
-    "newValue" : "11", //value when alarm is triggered
-    "oldValue" : "9", //value before alarm is triggered
-    "priority" : 5,
-    "showName" : "a1", //alarm display name
-    "source" : "instance1", //instance alias that triggers the alarm
-    "sourcePropShowName" : "attribute1", //attribute name to which the alarm belongs
-    "sourcePropertyName" : "attribute1", //attribute alias to which the alarm belongs
-    "sourceShowName" : "instance1", //instance name that triggers the alarm
-    "startDatatimestamp" : 1614583559860, //alarm start time
-    "status" : 1,  //alarm status. 1 means alarm is triggered and 0 means alarm cancelled
-    "valType" : 0 //attribute type. 0=double, 1=float, 2=long, 3=int, 4=boolean and 5=string
-  } ],
-  "detail" : "string",
-  "message" : "ok"
+"code" : 200,
+"data" : [ {
+"ackDatatimestamp" : 1614670680298, //alarm confirmation time
+"ackStatus" : 0, //alarm confirmation status. 0 means not confirmed and 1 means confirmed
+"ackUserName" : "Emma", //alarm confirmation person
+"alertName" : "uuidde2d4cfaf5af4abe830387fbfe3e0bbf",
+"alertType" : "EQ", //alarm condition. EQ=equal, LT=less than, LE=less and equal, GT=greater than, GE=greater and equal
+"description" : "this is test alarm",
+"disappearedDatatimestamp" : 1614583659860, //alarm cancellation time
+"fullName" : "10801uuidde2d4cfaf5af4abe830387fbfe3e0bbf", //instance alias + alarm alias
+"id" : 11111, //real-time alarm ID
+"newValue" : "11", //value when alarm is triggered
+"oldValue" : "9", //value before alarm is triggered
+"priority" : 5,
+"showName" : "a1", //alarm display name
+"source" : "instance1", //instance alias that triggers the alarm
+"sourcePropShowName" : "attribute1", //attribute name to which the alarm belongs
+"sourcePropertyName" : "attribute1", //attribute alias to which the alarm belongs
+"sourceShowName" : "instance1", //instance name that triggers the alarm
+"startDatatimestamp" : 1614583559860, //alarm start time
+"status" : 1,//alarm status. 1 means alarm is triggered and 0 means alarm cancelled
+"valType" : 0 //attribute type. 0=double, 1=float, 2=long, 3=int, 4=boolean and 5=string
+} ],
+"detail" : "string",
+"message" : "ok"
 }
 ```
 
@@ -142,129 +92,158 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/alert/current
 
 ```
 {
-  "code": 10001001,
-  "data": {},
-  "detail": "string",
-  "message": "string"
+"code": 10001001,
+"data": {},
+"detail": "string",
+"message": "string"
 }
 ```
 
 </li>
 </ul>
+</div>
+</div>
+</div>
+
+<div class="div"> 
+<div class="title">
 
 ## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Set Real-time Value of Entity Instance
 
+</div> 
+<div class="grid"> 
+<div class="leftCol">Path</div> 
+<div class="rightCol"> 
 
-- Path Example code
-```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/attributes/current
-```
+``` 
+http://supOS ip:port/open-api/supos/oodm/v2/attributes/current 
+``` 
 
-- Request Example Code
-```
-[ {
-  "attributeFullPath" : "system.t1.i1.system.p1", //template namespace.template alias.instance alias.attribute namespace.attribute alias
-  "value" : "666",
-  "dateTime" : "2021-04-06T16:00+08:00"
-} ]
-```
+</div> 
+<div class="leftCol">Request Body</div> 
+<div class="rightCol"> 
 
-- Response
-<ul>
-<li>200: Successful.
+``` 
+[ { 
+"attributeFullPath" : "system.t1.i1.system.p1", //template namespace.template alias.instance alias.attribute namespace.attribute alias 
+"value" : "666", 
+"dateTime" : "2021-04-06T16:00+08:00" 
+} ] 
+``` 
 
-```
-{
-  "code" : 200,
-  "data" : [ {
-    "ackDatatimestamp" : 1614670680298, //alarm confirmation time
-    "ackStatus" : 0, //alarm confirmation status. 0 means not confirmed and 1 means confirmed
-    "ackUserName" : "Emma", //alarm confirmation person
-    "alertName" : "uuidde2d4cfaf5af4abe830387fbfe3e0bbf",
-    "alertType" : "EQ", //alarm condition. EQ=equal, LT=less than, LE=less and equal, GT=greater than, GE=greater and equal
-    "description" : "this is test alarm",
-    "disappearedDatatimestamp" : 1614583659860, //alarm cancellation time
-    "fullName" : "10801uuidde2d4cfaf5af4abe830387fbfe3e0bbf", //instance alias + alarm alias
-    "id" : 11111, //real-time alarm ID
-    "newValue" : "11", //value when alarm is triggered
-    "oldValue" : "9", //value before alarm is triggered
-    "priority" : 5,
-    "showName" : "a1", //alarm display name
-    "source" : "instance1", //instance alias that triggers the alarm
-    "sourcePropShowName" : "attribute1", //attribute name to which the alarm belongs
-    "sourcePropertyName" : "attribute1", //attribute alias to which the alarm belongs
-    "sourceShowName" : "instance1", //instance name that triggers the alarm
-    "startDatatimestamp" : 1614583559860, //alarm start time
-    "status" : 1,  //alarm status. 1 means alarm is triggered and 0 means alarm cancelled
-    "valType" : 0 //attribute type. 0=double, 1=float, 2=long, 3=int, 4=boolean and 5=string
-  } ],
-  "detail" : "string",
-  "message" : "ok"
-}
-```
-
-</li>
-<li>400: General internal error of OODM.
+</div> 
+<div class="leftCol">Response</div> 
+<div class="rightCol"> 
+<ul> 
+<li>200: Successful. 
 
 ```
-{
-  "code": 10001001,
-  "data": {},
-  "detail": "string",
-  "message": "string"
+{ 
+"code" : 200, 
+"data" : [ { 
+"ackDatatimestamp" : 1614670680298, //alarm confirmation time 
+"ackStatus" : 0, //alarm confirmation status. 0 means not confirmed and 1 means confirmed 
+"ackUserName" : "Emma", //alarm confirmation person 
+"alertName" : "uuidde2d4cfaf5af4abe830387fbfe3e0bbf", 
+"alertType" : "EQ", //alarm condition. EQ=equal, LT=less than, LE=less and equal, GT=greater than, GE=greater and equal 
+"description" : "this is test alarm", 
+"disappearedDatatimestamp" : 1614583659860, //alarm cancellation time 
+"fullName" : "10801uuidde2d4cfaf5af4abe830387fbfe3e0bbf", //instance alias + alarm alias 
+"id" : 11111, //real-time alarm ID 
+"newValue" : "11", //value when alarm is triggered 
+"oldValue" : "9", //value before alarm is triggered 
+"priority" : 5, 
+"showName" : "a1", //alarm display name 
+"source" : "instance1", //instance alias that triggers the alarm 
+"sourcePropShowName" : "attribute1", //attribute name to which the alarm belongs 
+"sourcePropertyName" : "attribute1", //attribute alias to which the alarm belongs 
+"sourceShowName" : "instance1", //instance name that triggers the alarm 
+"startDatatimestamp" : 1614583559860, //alarm start time 
+"status" : 1,//alarm status. 1 means alarm is triggered and 0 means alarm cancelled 
+"valType" : 0 //attribute type. 0=double, 1=float, 2=long, 3=int, 4=boolean and 5=string 
+} ], 
+"detail" : "string", 
+"message" : "ok" 
+} 
+```
+
+</li> 
+<li>400: General internal error of OODM. 
+
+```
+{ 
+"code": 10001001, 
+"data": {},
+"detail": "string",
+"message": "string"
 }
 ```
 
 </li>
 </ul>
+</div>
+</div> 
+</div> 
+
+<div class="div">
+<div class="title">
 
 ## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Get Real-time Data of Object Attribute
 :::info
 You can get up to 1000 attributes.
 :::
 
+</div>
+<div class="grid">
+<div class="leftCol">Path</div>
+<div class="rightCol"> 
 
-- Path Example code
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/attribute/current
+http://supOS ip:port/open-api/supos/oodm/v2/attribute/current
 ```
 
-- Request Example Code
+</div>
+<div class="leftCol">Request Body</div>
+<div class="rightCol"> 
+
 ```
 {
-  "inputs" : [ "system.t1.instance.system.p1" ] //template namespace.template alias.instance alias.attribute namespace.attribute alias
+"inputs" : [ "system.t1.instance.system.p1" ] //template namespace.template alias.instance alias.attribute namespace.attribute alias
 }
 ```
 
-- Response
+</div>
+<div class="leftCol">Response</div>
+<div class="rightCol"> 
 <ul>
 <li>200: Successful.
 
+
 ```
 {
-  "code" : 200,
-  "data" : {
-    "additionalProp1" : {
-      "name" : "system.testExcel.Instance_53.system.p1",
-      "status" : "0",
-      "timeStamp" : 1614736757547,
-      "value" : { }
-    },
-    "additionalProp2" : {
-      "name" : "system.testExcel.Instance_53.system.p1",
-      "status" : "0",
-      "timeStamp" : 1614736757547,
-      "value" : { }
-    },
-    "additionalProp3" : {
-      "name" : "system.testExcel.Instance_53.system.p1",
-      "status" : "0",
-      "timeStamp" : 1614736757547,
-      "value" : { }
-    }
-  },
-  "detail" : "string",
-  "message" : "ok"
+"code" : 200,
+"data" : {
+"additionalProp1" : {
+"name" : "system.testExcel.Instance_53.system.p1",
+"status" : "0",
+"timeStamp" : 1614736757547,
+"value" : { }
+},
+"additionalProp2" : {
+"name" : "system.testExcel.Instance_53.system.p1",
+"status" : "0",
+"timeStamp" : 1614736757547,
+"value" : { }
+},
+"additionalProp3" : {
+"name" : "system.testExcel.Instance_53.system.p1",
+"status" : "0",
+"timeStamp" : 1614736757547,
+"value" : { }
+}
+},
+"detail" : "string",
+"message" : "ok"
 }
 ```
 
@@ -273,68 +252,82 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/attribute/current
 
 ```
 {
-  "code": 10001001,
-  "data": {},
-  "detail": "string",
-  "message": "string"
+"code": 10001001,
+"data": {},
+"detail": "string",
+"message": "string"
 }
 ```
 
 </li>
 </ul>
+</div>
+</div>
+</div>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Get History Data of Object Attribute
+<div class="div">
+<div class="title"> 
 
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Get History Data of Object Attribute 
 
-- Path Example code
+</div>
+<div class="grid">
+<div class="leftCol">Path</div>
+<div class="rightCol"> 
+
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/attribute/histories
-```
+http://supOS ip:port/open-api/supos/oodm/v2/attribute/histories
+``` 
 
-- Request Example Code
+</div>
+<div class="leftCol">Request Body</div>
+<div class="rightCol"> 
+
 ```
 {
-  "fill" : { //filter conditions of history data
-    "strategy" : "previous"
-  },
-  "groupBy" : { //grouping conditions of history data
-    "time" : "5s,1s"
-  },
-  "limit" : 1, //number of returned data
-  "offset" : 23, //start query after the set number of data
-  "order" : "DESC", //sorting rule
-  "select" : [ "system.testExcel.Instance_53.system.p1" ],
-  "where" : { //query conditions
-    "and" : {
-      "timestamp" : {
-        "ge" : "2021-03-04T05:04:11Z",
-        "gt" : "2021-03-04T05:04:11Z",
-        "le" : "2021-03-04T05:14:11Z",
-        "lt" : "2021-03-04T05:14:11Z"
-      }
-    }
-  }
+"fill" : { //filter conditions of history data
+"strategy" : "previous"
+},
+"groupBy" : { //grouping conditions of history data
+"time" : "5s,1s"
+},
+"limit" : 1, //number of returned data
+"offset" : 23, //start query after the set number of data
+"order" : "DESC", //sorting rule
+"select" : [ "system.testExcel.Instance_53.system.p1" ],
+"where" : { //query conditions
+"and" : {
+"timestamp" : {
+"ge" : "2021-03-04T05:04:11Z",
+"gt" : "2021-03-04T05:04:11Z",
+"le" : "2021-03-04T05:14:11Z",
+"lt" : "2021-03-04T05:14:11Z"
 }
-```
+}
+}
+}
+``` 
 
-- Response
+</div>
+<div class="leftCol">Response</div>
+<div class="rightCol"> 
 <ul>
 <li>200: Successful.
 
 ```
 {
-  "code" : 200,
-  "data" : {
-    "results" : [ {
-      "datas" : [ [ { } ] ],
-      "fields" : [ "time" ],
-      "function" : "first",
-      "hasNext" : false,
-      "name" : "system.testExcel.Instance_53.system.p1"
-    } ]
-  },
-  "detail" : "string",
-  "message" : "ok"
+"code" : 200,
+"data" : {
+"results" : [ {
+"datas" : [ [ { } ] ],
+"fields" : [ "time" ],
+"function" : "first",
+"hasNext" : false,
+"name" : "system.testExcel.Instance_53.system.p1"
+} ]
+},
+"detail" : "string",
+"message" : "ok"
 }
 ```
 
@@ -343,43 +336,57 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/attribute/histories
 
 ```
 {
-  "code": 10001001,
-  "data": {},
-  "detail": "string",
-  "message": "string"
+"code": 10001001,
+"data": {},
+"detail": "string",
+"message": "string"
 }
 ```
 
 </li>
 </ul>
+</div>
+</div>
+</div>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Execute Entity Instance Service
+<div class="div">
+<div class="title"> 
 
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Execute Entity Instance Service 
 
-- Path Example code
+</div>
+<div class="grid">
+<div class="leftCol">Path</div>
+<div class="rightCol"> 
+
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/{instanceName}/service/{serviceNamespace}/{serviceName}
-```
+http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/{instanceName}/service/{serviceNamespace}/{serviceName}
+``` 
 
-- Request Example Code
+</div>
+<div class="leftCol">Request Body</div>
+<div class="rightCol"> 
+
 ```
 {
-  "propName" : "p1"
+"propName" : "p1"
 }
 ```
 
-- Response
+</div>
+<div class="leftCol">Response</div>
+<div class="rightCol"> 
 <ul>
 <li>200: Successful.
 
 ```
 {
-  "code" : 200,
-  "data" : {
-    "result" : 44
-  },
-  "detail" : "string",
-  "message" : "ok"
+"code" : 200,
+"data" : {
+"result" : 44
+},
+"detail" : "string",
+"message" : "ok"
 }
 ```
 
@@ -388,43 +395,57 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{
 
 ```
 {
-  "code": 10001001,
-  "data": {},
-  "detail": "string",
-  "message": "string"
+"code": 10001001,
+"data": {},
+"detail": "string",
+"message": "string"
 }
 ```
 
 </li>
-</ul>
+</ul> 
+</div>
+</div>
+</div>
+
+<div class="div">
+<div class="title">
 
 ## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Execute Form Template Service
 
+</div>
+<div class="grid">
+<div class="leftCol">Path</div>
+<div class="rightCol">
 
-- Path Example code
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/service/{serviceNamespace}/{serviceName}
+http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/service/{serviceNamespace}/{serviceName}
 ```
 
-- Request Example Code
+</div>
+<div class="leftCol">Request Body</div>
+<div class="rightCol">
+
 ```
 {
-  "propName" : "p1"
+"propName" : "p1"
 }
 ```
 
-- Response
+</div>
+<div class="leftCol">Response</div>
+<div class="rightCol">
 <ul>
 <li>200: Successful.
 
 ```
 {
-  "code" : 200,
-  "data" : {
-    "result" : 44
-  },
-  "detail" : "string",
-  "message" : "ok"
+"code" : 200,
+"data" : {
+"result" : 44
+},
+"detail" : "string",
+"message" : "ok"
 }
 ```
 
@@ -433,12 +454,15 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{
 
 ```
 {
-  "code": 10001001,
-  "data": {},
-  "detail": "string",
-  "message": "string"
+"code": 10001001,
+"data": {},
+"detail": "string",
+"message": "string"
 }
 ```
 
 </li>
 </ul>
+</div>
+</div>
+</div>

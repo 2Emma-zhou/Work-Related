@@ -48,7 +48,7 @@ const sidebars = {
         {type: 'category',
         label: 'Factory Modeling',
         link: {
-          type: 'generated-index',
+          type: 'generated-index'
         },
         items: [
           'Using supOS/Factory Modeling/Introduction',
@@ -57,6 +57,10 @@ const sidebars = {
           'Using supOS/Factory Modeling/Creating Object Instance',
 'Using supOS/Factory Modeling/Other Operations',
 'Using supOS/Factory Modeling/Third-party Database Connection',
+'API/Embedded Service',
+              'API/Global APIs',
+              'API/Jsql Guide',
+              'Open API/Call OpenAPI in Service',
 
         ]
         },
@@ -71,6 +75,7 @@ const sidebars = {
             label: 'Application Design',
             link: {
                 type: 'generated-index',
+                
             },
             items: [
               'Using supOS/APP Design/APP/Designing Process',
@@ -106,6 +111,8 @@ const sidebars = {
           'Using supOS/APP Design/APP/Dynamic Effect',
           
           'Using supOS/APP Design/APP/Element Details',
+          'API/Element Script',
+    'API/Programmable Component',
             ]
           },
           {
@@ -120,6 +127,9 @@ const sidebars = {
               'Using supOS/APP Design/Workflow Design/Workflow Creation',
               'Using supOS/APP Design/Workflow Design/Element Description',
               'Using supOS/APP Design/Workflow Design/Page Description',
+              
+              
+              'API/Workflow Script',
             ]
           },
          
@@ -166,12 +176,7 @@ const sidebars = {
   // But you can create a sidebar manually
  
   api: [
-    'API/Embedded Service',
-    'API/Global APIs',
-    'API/Jsql Guide',
-    'API/Element Script',
-    'API/Programmable Component',
-    'API/Workflow Script',
+   
     {
       type: 'category',
       label: 'OpenAPI',
@@ -179,10 +184,11 @@ const sidebars = {
           type: 'generated-index',
       },
       items: [
-        'Open API/HTTP Request',
+        'Open API/Error Code Reference',
+        
   {
     type: 'category',
-      label: 'Factory Modeling',
+      label: 'Object Modeling',
       link: {
           type: 'generated-index',
       },
@@ -198,17 +204,6 @@ const sidebars = {
 'Open API/Object Modeling/Running Functions',
 'Open API/Object Modeling/Template',
     ]
-  },
-  {
-    type: 'category',
-      label: 'Identity Authentication',
-      link: {
-          type: 'generated-index',
-      },
-      items: [
-    'Open API/Identity Authentication/2.8.1',
-    'Open API/Identity Authentication/oauth2',
-    ]
   }, 
   {
     type: 'category',
@@ -217,8 +212,10 @@ const sidebars = {
           type: 'generated-index',
       },
       items: [
-    'Open API/Identity Authentication/2.8.1',
-    'Open API/Identity Authentication/oauth2',
+    'Open API/APP Design Management/Pages',
+    'Open API/APP Design Management/Layouts',
+    'Open API/APP Design Management/Object Data',
+
     ]
   }, 
   {
@@ -228,8 +225,7 @@ const sidebars = {
           type: 'generated-index',
       },
       items: [
-    'Open API/Identity Authentication/2.8.1',
-    'Open API/Identity Authentication/oauth2',
+    'Open API/APP Management/Apps',
     ]
   },
   {
@@ -239,8 +235,7 @@ const sidebars = {
           type: 'generated-index',
       },
       items: [
-    'Open API/Identity Authentication/2.8.1',
-    'Open API/Identity Authentication/oauth2',
+    'Open API/Big Data Model Analysis/Data Mining Runtime',
     ]
   },
   {
@@ -250,74 +245,7 @@ const sidebars = {
           type: 'generated-index',
       },
       items: [
-    'Open API/Identity Authentication/2.8.1',
-    'Open API/Identity Authentication/oauth2',
-    ]
-  },
-  {
-    type: 'category',
-      label: 'Configuration Information',
-      link: {
-          type: 'generated-index',
-      },
-      items: [
-    'Open API/Identity Authentication/2.8.1',
-    'Open API/Identity Authentication/oauth2',
-    ]
-  },
-  {
-    type: 'category',
-      label: 'Data Push',
-      link: {
-          type: 'generated-index',
-      },
-      items: [
-    'Open API/Identity Authentication/2.8.1',
-    'Open API/Identity Authentication/oauth2',
-    ]
-  },
-  {
-    type: 'category',
-      label: 'Authentication Management',
-      link: {
-          type: 'generated-index',
-      },
-      items: [
-    'Open API/Identity Authentication/2.8.1',
-    'Open API/Identity Authentication/oauth2',
-    ]
-  },
-  {
-    type: 'category',
-      label: 'Notification Center',
-      link: {
-          type: 'generated-index',
-      },
-      items: [
-    'Open API/Identity Authentication/2.8.1',
-    'Open API/Identity Authentication/oauth2',
-    ]
-  },
-  {
-    type: 'category',
-      label: 'System Code',
-      link: {
-          type: 'generated-index',
-      },
-      items: [
-    'Open API/Identity Authentication/2.8.1',
-    'Open API/Identity Authentication/oauth2',
-    ]
-  },
-  {
-    type: 'category',
-      label: 'User Management',
-      link: {
-          type: 'generated-index',
-      },
-      items: [
-    'Open API/Identity Authentication/2.8.1',
-    'Open API/Identity Authentication/oauth2',
+    'Open API/Big Data Model Training/Data Mining',
     ]
   },
   {
@@ -327,10 +255,92 @@ const sidebars = {
           type: 'generated-index',
       },
       items: [
-    'Open API/Identity Authentication/2.8.1',
+    'Open API/Workflow/Task',
+    'Open API/Workflow/Process',
+    ]
+  },
+  {
+    type: 'category',
+      label: 'Configuration Information',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/Configuration Information/Config',
+    ]
+  },
+  {
+    type: 'category',
+      label: 'Data Push',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/Data Push/Webhook',
+    ]
+  },
+  {
+    type: 'category',
+      label: 'Authentication Management',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/Authentication Management/Quota',
+    ]
+  },
+  {
+    type: 'category',
+      label: 'Organization',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/Organization/Orgs',
+    ]
+  },
+  {
+    type: 'category',
+      label: 'Notification Center',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/Notification Center/V1',
+    'Open API/Notification Center/V2',
+    ]
+  },
+  {
+    type: 'category',
+      label: 'System Code',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/System Code/System Codes',
+    ]
+  },
+  {
+    type: 'category',
+      label: 'User Management',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/User Management/Users',
+    ]
+  },
+  {
+    type: 'category',
+      label: 'Identity Authentication',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
     'Open API/Identity Authentication/oauth2',
     ]
   },
+  
       ]
     },
       
@@ -339,13 +349,13 @@ const sidebars = {
     'Video/Dashboard Development Step by Step',
     {
       type: 'category',
-      label: 'supCollector Connection Demo',
+      label: 'X-Collector Connection Demo',
       link: {
           type: 'generated-index',
       },
       items: [
-        'supCollector Connection Demo/OPC DA',
-        'supCollector Connection Demo/Modbus',
+        'X-Collector Connection Demo/OPC DA',
+        'X-Collector Connection Demo/Modbus',
       
       ]
     },
@@ -437,22 +447,22 @@ const sidebars = {
   ],
   supCollector: [
     'Getting Started/System Requirements sc',
-        'Getting Started/Installing supCollector',  
+        'Getting Started/Installing X-Collector',  
         
       {type: 'category',
-        label: 'Connecting supCollector',
+        label: 'Connecting X-Collector',
         link: {
           type: 'generated-index',
         },
         items: [
-          'Using supOS/Connecting supCollector/Collector Type',
-'Using supOS/Connecting supCollector/Configuring supCollector',
-'Using supOS/Connecting supCollector/Connecting Simulate Collector',
-'Using supOS/Connecting supCollector/Connecting Common Collector',
-'Using supOS/Connecting supCollector/Connecting Cascading Collector',
-'Using supOS/Connecting supCollector/Connecting Third-party Collector',
-'Using supOS/Connecting supCollector/Data Write Back',
-'Using supOS/Connecting supCollector/Supported Driver',
+          'Using supOS/Connecting X-Collector/Collector Type',
+'Using supOS/Connecting X-Collector/Configuring X-Collector',
+'Using supOS/Connecting X-Collector/Connecting Simulate Collector',
+'Using supOS/Connecting X-Collector/Connecting Common Collector',
+'Using supOS/Connecting X-Collector/Connecting Cascading Collector',
+'Using supOS/Connecting X-Collector/Connecting Third-party Collector',
+'Using supOS/Connecting X-Collector/Data Write Back',
+'Using supOS/Connecting X-Collector/Supported Driver',
         ]
         },
         {type: 'category',
@@ -472,27 +482,161 @@ const sidebars = {
   supETL: [
     
     'Getting Started/System Requirements se',
-    'Getting Started/Extension Installation/Installing supETL',
-      
+    'Getting Started/Extension Installation/Installing X-ETL',
+
+    {
+      type: 'category',
+      label: 'Using X-ETL',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        'Getting Started/Using supETL/Process Diagram',
+        {
+          type: 'category',
+          label: 'Data Connection',
+          link: {
+              type: 'generated-index',
+          },
+          items: [
+            'Getting Started/Using supETL/Overview',
+            'Getting Started/Using supETL/Connecting Data',
+            'Getting Started/Using supETL/Data Source Description',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Task Configuration',
+          link: {
+              type: 'generated-index',
+          },
+          items: [
+        'Getting Started/Using supETL/Adding Data Task',
+        'Getting Started/Using supETL/Configuring Data Task',
+        'Getting Started/Using supETL/Publishing Data Task',
+        'Getting Started/Using supETL/Task Node Description',
+          ]
+        },
+        'Getting Started/Using supETL/Task Overview',
+        'Getting Started/Using supETL/Task O&M',
+        'Getting Started/Using supETL/Task Kinship',
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Data Migration',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        'Getting Started/Using supETL/Enabling CDC',
+        'Getting Started/Using supETL/Migrating Database',
+      ]
+    },
   ],
   supDAM: [
     
     'Getting Started/System Requirements sd',
-    'Getting Started/Extension Installation/Installing supDAM',
-      
+    'Getting Started/Extension Installation/Installing X-DAM',
+    {
+      type: 'category',
+      label: 'Using X-DAM',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        {
+          type: 'category',
+          label: 'Data Asset',
+          link: {
+              type: 'generated-index',
+          },
+          items: [
+            'Getting Started/Using supDAM/Data Asset/Data Asset Directory',
+            'Getting Started/Using supDAM/Data Asset/Metadata Collection',
+            'Getting Started/Using supDAM/Data Asset/Metadata Center',
+            'Getting Started/Using supDAM/Data Asset/Data Resource Overview',
+            'Getting Started/Using supDAM/Data Asset/Data Resource Statistics',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Data Governance',
+          link: {
+              type: 'generated-index',
+          },
+          items: [
+            {
+              type: 'category',
+              label: 'Data Standard',
+              link: {
+                  type: 'generated-index',
+              },
+              items: [
+                'Getting Started/Using supDAM/Data Standard/Standards Management',
+                'Getting Started/Using supDAM/Data Standard/Standards Execution',
+                'Getting Started/Using supDAM/Data Standard/Standards Overview',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Data Quality',
+              link: {
+                  type: 'generated-index',
+              },
+              items: [
+                'Getting Started/Using supDAM/Data Quality/QC Rule',
+                'Getting Started/Using supDAM/Data Quality/QC Task',
+                'Getting Started/Using supDAM/Data Quality/Quality Analysis',
+                'Getting Started/Using supDAM/Data Quality/Execution Records',
+              ]
+            },
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Data Service',
+          link: {
+              type: 'generated-index',
+          },
+          items: [
+            'Getting Started/Using supDAM/Data Service/Service Development',
+            'Getting Started/Using supDAM/Data Service/Service Management',
+            'Getting Started/Using supDAM/Data Service/Service Overview',
+          ]
+        },
+      ]
+    },
   ],
   supEdge: [
     
     'Getting Started/System Requirements sedge',
-    'Getting Started/Installing supEdge',
-    'Getting Started/Using supEdge',
-    'Getting Started/Integrating Third-party Algorithms in supEdge',
+    'Getting Started/Installing X-Edge',
+    {
+      type: 'category',
+      label: 'Using X-Edge',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        'Getting Started/Using supEdge/Process Diagram',
+        'Getting Started/Using supEdge/Connecting Video Source',
+        'Getting Started/Using supEdge/Configuring Algorithm',
+        'Getting Started/Using supEdge/Configuring Monitoring Design',
+        'Getting Started/Using supEdge/Assigning Permission',
+        'Getting Started/Using supEdge/Video Monitoring',
+      
+      ]
+    },
+    'Getting Started/Integrating Third-party Algorithms in X-Edge',
+    'Getting Started/Using supEdge/Algorithm Description',
+
       
   ],
   supBD: [
     
     'Getting Started/System Requirements sb',
-    'Getting Started/Extension Installation/Installing supBD',
+    'Getting Started/Extension Installation/Installing X-BD',
       
   ],
   supLink: [

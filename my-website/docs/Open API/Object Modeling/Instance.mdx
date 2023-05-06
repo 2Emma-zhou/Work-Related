@@ -1,79 +1,29 @@
+---
+hide_title: true
+---
 
-The return code of each API represents its operation state. The following items list the general error of OODM, which can be useful when you receive such code and resolve bugs according to the explaination.
-<ul>
-<li>10001001: Server unknown error</li>
-<li>10001002: Invalid parameter value</li>
-<li>10001003: Failed to generate ID</li>
-<li>10001004: Database operation failed</li>
-<li>10001005: Instance ID cannot be empty</li>
-<li>10001006: Date parse failed, unmatched format</li>
-<li>10001007: Remote call error</li>
-<li>10001008: Failed to copy object</li>
-<li>10001009: Not found (template/property/event/service/subscription/alarm)</li>
-<li>10001010: Unsupported operation</li>
-<li>10001011: No permission</li>
-<li>10001012: Duplicate field</li>
-<li>10001013: Does not conform to specifications</li>
-<li>10001014: Dependencies exist in metadata</li>
-<li>10001015: Metadata already exists</li>
-<li>90200000: Metadata does not belong to xx template</li>
-<li>90200001: Metadata does not belong to xx instance</li>
-<li>90200002: Metadata does not belong to xx function set</li>
-<li>90200003: Metadata does not belong to xx app</li>
-<li>90200004: Function set source of metadata is xx</li>
-<li>90200005: Parse instance text error</li>
-<li>90200006: Database type not supported</li>
-<li>90200007: Field value already exists</li>
-<li>90200008: Property value conversion error</li>
-<li>90200009: Alias and namespace of metadata excess maximum character length</li>
-<li>90200010: Instance exists, cannot delete,</li>
-<li>90200011: Node exists, cannot delete network,network</li>
-<li>90200012: Illegal paremt node IDId</li>
-<li>90200013: Uncertain name</li>
-<li>90300000: Service not found</li>
-<li>90300001: Service execution failed</li>
-<li>90300002: Service field cannot be empty</li>
-<li>90300003: Incorrect input parameter format</li>
-<li>90300004: Data processing error</li>
-<li>90300005: Alarm confirmation status mpdification error</li>
-<li>90300006: History alarm export error</li>
-<li>90300007: Matching data not found</li>
-<li>90300008: Failed to execute script</li>
-<li>90500000: Incorrect property format. Template namespace.template alias.property namespace.property alias</li>
-<li>90500001: Incorrect property format. Template namespace.template alias.instance alias.property namespace.property alias</li>
-<li>90500002: Incorrect property format. Function set namespace.function set alias.property namespace.property alias</li>
-<li>90500003: Template not found</li>
-<li>90500004: Function set not found</li>
-<li>90500005: Instance not found</li>
-<li>90500006: Property not found</li>
-<li>90800000: Data source not found</li>
-<li>90800001: Fialed to execute sqlsql</li>
-<li>90800002: Parse instance range property to JSON errorjson</li>
-<li>90800003: Parse instance range property value to JSON errorjson</li>
-<li>90800004: Alarm confirmation status mpdification error</li>
-<li>90800005: History alarm export error</li>
-<li>90800006: Parse string to date error</li>
-<li>90900002: Alarm info list cannot be empty</li>
-<li>90900003: Excessed alarm query limit (100)</li>
-<li>90900004: Incorrect alarm format</li>
-<li>90900005: Incorrect time format</li>
-<li>90900006: Invalid history alarm code</li>
-</ul>
+
+<div className='div'>
+
+<div className='title'>
 
 ## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Create Instance
 
-- Path Example code
-```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance
-```
-<ul>
-<ul>
-<li>templateNamespace: Namespace of the template under which the instance is located.</li>
-<li>templateName: Name of the template under which the instance is located.</li>
-</ul>
-</ul>
+</div>
 
-- Request body example code
+<div className='grid'>
+<div className='leftCol'>Path</div>
+<div className='rightCol'>
+
+```
+http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance
+```
+
+
+</div>
+<div className='leftCol'>Request body</div>
+<div className='rightCol'>
+
 ```
 {
 "appAccessMode": "PUBLIC", //whether can be seen in all applications (PUBLIC or PRIVATE). Required
@@ -99,9 +49,12 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{
 }
 ```
 
-- Response
-<ul>
-<li>200: Successful.
+</div>
+
+<div className='leftCol'>Response</div>
+<div className='rightCol'>
+
+- 200: Successful.
 
 ```
 {
@@ -111,38 +64,44 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{
   "message" : "ok"
 }
 ```
-<ul>
-<ul>
-<li>code: Return code when the request is successful</li>
-<li>data: ID of the created instance</li>
-<li>detail: Details</li>
-<li>message: Message</li>
-</ul>
-</ul>
-</li>
-</ul>
-<ul>
-<ul>
-<li>500: General internal error of OODM.</li>
-</ul>
-</ul>
+
+- code: Return code when the request is successful
+- data: ID of the created instance
+- detail: Details
+- message: Message
+
+
+- 500: General internal error of OODM.
+
+</div>
+</div>
+</div>
+
+<div className='div'>
+
+<div className='title'>
 
 ## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Incementally Update Instance
+
+</div>
 Update properties of template instances when the instance exists, if not, create a new instance. The API can update up to 1000 instances at the same time. Situations such as non-existing template properties, 
 unmatch value types and unique identifier of form is null, trigger an error and rollback data. If exceptions happen during setting real-time values, error pops up and request is terminated.
 
-- Path Example code
-```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/templates/{templateNamespace}/{templateName}/instances/create-or-update
-```
-<ul>
-<ul>
-<li>templateNamespace: Namespace of the template under which the instance is located.</li>
-<li>templateName: Name of the template under which the instance is located.</li>
-</ul>
-</ul>
+<div className='grid'>
+<div className='leftCol'>Path</div>
+<div className='rightCol'>
 
-- Request body example code
+```
+http://supOS ip:port/open-api/supos/oodm/v2/templates/{templateNamespace}/{templateName}/instances/create-or-update
+```
+- templateNamespace: Namespace of the template under which the instance is located.
+- templateName: Name of the template under which the instance is located.
+
+
+</div>
+<div className='leftCol'>Request body</div>
+<div className='rightCol'>
+
 ```
 [
 {
@@ -152,12 +111,13 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/templates/{templateNamespace}/
 ]
 ```
 
-- Response
-<ul>
-<li>200: Successful.</li>
-<li>400: General internal error of OODM.</li>
-</ul>
+</div>
 
+<div className='leftCol'>Response</div>
+<div className='rightCol'>
+
+- 200: Successful.
+- 400: General internal error of OODM.
 ```
 {
   "code": 10001001,
@@ -167,27 +127,43 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/templates/{templateNamespace}/
 }
 ```
 
+</div>
+</div>
+</div>
+
+
+<div className='div'>
+
+<div className='title'>
+
 ## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Inquire Instances under General Template
 
-- Path Example code
-```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/query
-```
-<ul>
-<ul>
-<li>templateNamespace: Namespace of the template under which the instance is located.</li>
-<li>templateName: Name of the template under which the instance is located.</li>
-</ul>
-</ul>
+</div>
 
-- Query parameters
-<ul>
-<li>pageIndex: Integer. Page number</li>
-<li>pageSize: Integer. Pieces of data on one page. At most 500.</li>
-<li>needExtAttribute: Boolean. Whether need to extend property static values</li>
-</ul>
+<div className='grid'>
+<div className='leftCol'>Path</div>
+<div className='rightCol'>
 
-- Request body example code
+```
+http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/query
+```
+- templateNamespace: Namespace of the template under which the instance is located.
+- templateName: Name of the template under which the instance is located.
+
+</div>
+<div className='leftCol'>Query parameters</div>
+<div className='rightCol'>
+
+
+- pageIndex: Integer. Page number
+- pageSize: Integer. Pieces of data on one page. At most 500.
+- needExtAttribute: Boolean. Whether need to extend property static values
+
+
+</div>
+<div className='leftCol'>Request body</div>
+<div className='rightCol'>
+
 ```
 {
   "distinct": true, //boolean. Whether to deduplicate data
@@ -215,9 +191,12 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{
 }
 ```
 
-- Response
-<ul>
-<li>200: Successful.
+</div>
+
+<div className='leftCol'>Response</div>
+<div className='rightCol'>
+
+- 200: Successful.
 
 ```
 {
@@ -237,11 +216,7 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{
   "message": "ok"
 }
 ```
-</li>
-</ul>
-<ul>
-<ul>
-<li>500: General internal error of OODM.
+- 500: General internal error of OODM.
 
 ```
 {
@@ -252,27 +227,32 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{
 }
 ```
 
-</li>
-</ul>
-</ul>
 
+</div>
+</div>
+</div>
 
+<div className='div'>
+<div className='title'>
 
 ## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Change Instance under General Template
 
-- Path Example code
-```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/{instanceName}
-```
-<ul>
-<ul>
-<li>templateNamespace: Namespace of the template under which the instance is located.</li>
-<li>templateName: Name of the template under which the instance is located.</li>
-<li>instanceName: Name of the instance to be changed.</li>
-</ul>
-</ul>
+</div>
+<div className='grid'>
+<div className='leftCol'>Path</div>
+<div className='rightCol'>
 
-- Request body example code
+```
+http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/{instanceName}
+```
+- templateNamespace: Namespace of the template under which the instance is located.
+- templateName: Name of the template under which the instance is located.
+- instanceName: Name of the instance to be changed.
+
+</div>
+<div className='leftCol'>Request body</div>
+<div className='rightCol'>
+
 ```
 {
   "appAccessMode": "PUBLIC", ////whether can be seen in all applications (PUBLIC or PRIVATE). Required
@@ -298,31 +278,22 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{
 }
 ```
 
-- Response
-<ul>
-<li>200: Successful.
+</div>
+<div className='leftCol'>Response</div>
+<div className='rightCol'>
+
+- 200: Successful.
 
 ```
 {
-  "code" : 200,
-  "data" : "13456",
+  "code" : 200, //Return code when the request is successful
+  "data" : "13456", //ID of the created instance
   "detail" : "string",
   "message" : "ok"
 }
 ```
-<ul>
-<ul>
-<li>code: Return code when the request is successful</li>
-<li>data: ID of the created instance</li>
-<li>detail: Details</li>
-<li>message: Message</li>
-</ul>
-</ul>
-</li>
-</ul>
-<ul>
-<ul>
-<li>500: General internal error of OODM.
+
+- 500: General internal error of OODM.
 
 ```
 {
@@ -333,28 +304,33 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{
 }
 ```
 
-</li>
-</ul>
-</ul>
+</div>
+</div>
+</div>
+
+<div className='div'>
+<div className='title'>
 
 ## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/3.png) Delete Entity Instance
 
-- Path Example code
-```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/{instanceName}
-```
-<ul>
-<ul>
-<li>templateNamespace: Namespace of the template under which the instance is located.</li>
-<li>templateName: Name of the template under which the instance is located.</li>
-<li>instanceName: Name of the instance to be deleted.</li>
+</div>
+<div className='grid'>
+<div className='leftCol'>Path</div>
+<div className='rightCol'>
 
-</ul>
-</ul>
+```
+http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/{instanceName}
+```
+- templateNamespace: Namespace of the template under which the instance is located.
+- templateName: Name of the template under which the instance is located.
+- instanceName: Name of the instance to be deleted.
 
-- Response
-<ul>
-<li>200: Successful.
+</div>
+
+<div className='leftCol'>Response</div>
+<div className='rightCol'>
+
+- 200: Successful.
 
 ```
 {
@@ -364,19 +340,7 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{
   "detail": null
 }
 ```
-<ul>
-<ul>
-<li>code: Return code when the request is successful</li>
-<li>data: ID of the created instance</li>
-<li>detail: Details</li>
-<li>message: Message</li>
-</ul>
-</ul>
-</li>
-</ul>
-<ul>
-<ul>
-<li>500: General internal error of OODM.
+- 500: General internal error of OODM.
 
 ```
 {
@@ -387,43 +351,46 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{
 }
 ```
 
-</li>
-</ul>
-</ul>
+</div>
+</div>
+</div>
+
+
+<div className='div'>
+<div className='title'>
 
 ## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Instance under General Template
 
-- Path Example code
+</div>
+<div className='grid'>
+<div className='leftCol'>Path</div>
+<div className='rightCol'>
+
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instances
+http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instances
 ```
-<ul>
-<ul>
-<li>templateNamespace: Namespace of the template under which the instance is located.</li>
-<li>templateName: Name of the template under which the instance is located.</li>
-</ul>
-</ul>
+- templateNamespace: Namespace of the template under which the instance is located.
+- templateName: Name of the template under which the instance is located.
 
-- Query parameters
+</div>
+<div className='leftCol'>Query parameters</div>
+<div className='rightCol'>
 
-<ul>
-<ul>
-<li>labelIds: Array of integers. Page number</li>
-<li>keyword: String</li>
-<li>pageIndex: Integer. Page number. Required</li>
-<li>pageSize: Integer. Pieces of data on one page. At most 500. Required</li>
-<li>searchAttributeId: Integer. Searching field</li>
-<li>containDerivedInstances: Boolean. Whether contains derived instances</li>
-<li>needSystemSttributeValues: Boolean. Whether need system property value</li>
-<li>needNormalSttributeValues: Boolean. Whether need normal property value (non-system, non primary key). The default is only primary key field</li>
-</ul>
-</ul>
+labelIds: Array of integers. Page number
+- keyword: String
+- pageIndex: Integer. Page number. Required
+- pageSize: Integer. Pieces of data on one page. At most 500. Required
+- searchAttributeId: Integer. Searching field
+- containDerivedInstances: Boolean. Whether contains derived instances
+- needSystemSttributeValues: Boolean. Whether need system property value
+- needNormalSttributeValues: Boolean. Whether need normal property value (non-system, non primary key). The default is only primary key field
 
-- Response
+</div>
 
-<ul>
-<ul>
-<li>200: Successful.
+<div className='leftCol'>Response</div>
+<div className='rightCol'>
+
+- 200: Successful.
 
 ```
 {
@@ -451,15 +418,7 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{
   "message": "ok"
 }
 ```
-
-<ul>
-<li>code: Return code when the request is successful</li>
-<li>data: ID of the created instance</li>
-<li>detail: Details</li>
-<li>message: Message</li>
-</ul>
-</li>
-<li>500: General internal error of OODM.
+- 500: General internal error of OODM.
 
 ```
 {
@@ -469,44 +428,40 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{
   "message": "string"
 }
 ```
-</li>
-</ul>
-</ul>
 
+</div>
+</div>
+</div>
+
+<div className='div'>
+<div className='title'>
 
 ## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Instance Details by Alias
-- Example code
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Path</div>
+<div className='rightCol'>
+
 ```
 http://supOS platform IP/open-api/supos/oodm/v2/templates/{templateNamespace}/{templateName}/instances/{instanceName}/value
 ```
-<ul>
-<ul>
-<li>templateNamespace: Namespace of the template under which the instance is located.</li>
-<li>templateName: Name of the template under which the instance is located.</li>
-<li>instanceName: Nameof the instance.</li>
-</ul>
-</ul>
+- templateNamespace: Namespace of the template under which the instance is located.
+- templateName: Name of the template under which the instance is located.
+- instanceName: Nameof the instance.
 
-- Response
+</div>
+<div className='leftCol'>Response</div>
+<div className='rightCol'>
 
-<ul>
-<ul>
-<li>200: Successful.
+- 200: Successful.
 
 ```
 { //attributeNameapce.attributeEnName:attributeValue
   "system.enName": "zhangsan"
 }
 ```
-
-<ul>
-<li>code: Return code when the request is successful</li>
-<li>data: ID of the created instance</li>
-<li>detail: Details</li>
-<li>message: Message</li>
-</ul>
-</li>
-<li>400: General internal error of OODM.
+- 400: General internal error of OODM.
 
 ```
 {
@@ -516,33 +471,39 @@ http://supOS platform IP/open-api/supos/oodm/v2/templates/{templateNamespace}/{t
   "message": "string"
 }
 ```
-</li>
-</ul>
-</ul>
 
+</div>
+</div>
+</div>
+
+<div className='div'>
+<div className='title'>
 
 ## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Instance Details under General Template
 
-- Path Example code
-```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instances/{instanceName}
-```
-<ul>
-<ul>
-<li>templateNamespace: Namespace of the template under which the instance is located.</li>
-<li>templateName: Name of the template under which the instance is located.</li>
-<li>instanceName: Name of the instance.</li>
-</ul>
-</ul>
-
-- Request body example code
-```
+</div>
+<div className='grid'>
+<div className='leftCol'>Path</div>
+<div className='rightCol'>
 
 ```
+http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instances/{instanceName}
+```
+- templateNamespace: Namespace of the template under which the instance is located.
+- templateName: Name of the template under which the instance is located.
+- instanceName: Nameof the instance.
 
-- Response
-<ul>
-<li>200: Successful.
+</div>
+<div className='leftCol'>Query parameters</div>
+<div className='rightCol'>
+
+
+
+</div>
+<div className='leftCol'>Response</div>
+<div className='rightCol'>
+
+- 200: Successful.
 
 ```
 {
@@ -580,43 +541,36 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/template/{templateNamespace}/{
   "message": "ok"
 }
 ```
-<ul>
-<ul>
-<li>code: Return code when the request is successful</li>
-<li>data: Template information</li>
-<li>detail: Details</li>
-<li>message: Message</li>
-</ul>
-</ul>
-</li>
-</ul>
-<ul>
-<ul>
-<li>500: General internal error of OODM.</li>
-</ul>
-</ul>
+- 500: General internal error of OODM.
+
+</div>
+</div>
+</div>
+
+<div className='div'>
+<div className='title'>
 
 ## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Instance under Relation Template
 
-- Path Example code
-```
-http://192.168.31.125:1235/open-api/supos/oodm/v2alpha/templates/{templateNamespace}/{templateName}/relations/{relationNamespace}/{relationName}/instances
-```
-<ul>
-<ul>
-<li>templateNamespace: Namespace of the template under which the instance is located.</li>
-<li>templateName: Name of the template under which the instance is located.</li>
-<li>relationNamespace: Name of the relation template under which the instance is located.</li>
-<li>relationName: Alias of the relation template under which the instance is located.</li>
-</ul>
-</ul>
+</div>
+<div className='grid'>
+<div className='leftCol'>Path</div>
+<div className='rightCol'>
 
-- Query parameters
+```
+http://supOS ip:port/open-api/supos/oodm/v2alpha/templates/{templateNamespace}/{templateName}/relations/{relationNamespace}/{relationName}/instances
+```
+templateNamespace: Namespace of the template under which the instance is located.
+- templateName: Name of the template under which the instance is located.
+- relationNamespace: Name of the relation template under which the instance is located.
+- relationName: Alias of the relation template under which the instance is located.
 
-<ul>
-<ul>
-<li>labelFullName: Array of strings. label namespace.label alias</li>
-<li>keyword: String. Used together with searchAttributeNameWithNamespace to fuzzy match values of the set attribute.
+</div>
+<div className='leftCol'>Query parameters</div>
+<div className='rightCol'>
+
+labelFullName: Array of strings. label namespace.label alias
+- keyword: String. Used together with searchAttributeNameWithNamespace to fuzzy match values of the set attribute.
 
 :::info
 - 0 timezone is saved when dateTime type of data is doing fuzzy match. You need to manually convert the timezone.
@@ -624,19 +578,19 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2alpha/templates/{templateNamesp
 :::
 
 
-</li>
-<li>pageIndex: Integer. Page number. Required</li>
-<li>pageSize: Integer. Pieces of data on one page. At most 500. Required</li>
-<li>searchAttributeNameWithNamespace: String. Searching field namespace.alias</li>
-<li>containDerivedInstances: Boolean. Whether contains derived instances</li>
-<li>needSystemSttributeValues: Boolean. Whether need system property value</li>
-<li>needNormalSttributeValues: Boolean. Whether need normal property value (non-system, non primary key). The default is only primary key field</li>
-</ul>
-</ul>
 
-- Response
-<ul>
-<li>200: Successful.
+- pageIndex: Integer. Page number. Required
+- pageSize: Integer. Pieces of data on one page. At most 500. Required
+- searchAttributeNameWithNamespace: String. Searching field namespace.alias
+- containDerivedInstances: Boolean. Whether contains derived instances
+- needSystemSttributeValues: Boolean. Whether need system property value
+- needNormalSttributeValues: Boolean. Whether need normal property value (non-system, non primary key). The default is only primary key field
+
+</div>
+<div className='leftCol'>Response</div>
+<div className='rightCol'>
+
+- 200: Successful.
 
 ```
 {
@@ -659,18 +613,12 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2alpha/templates/{templateNamesp
   "pageSize": 20
 }
 ```
-<ul>
-<ul>
-<li>code: Return code when the request is successful</li>
-<li>data: ID of the created instance</li>
-<li>detail: Error details</li>
-<li>message: Message</li>
-</ul>
-</ul>
-</li>
-</ul>
-<ul>
-<ul>
-<li>400: General internal error of OODM.</li>
-</ul>
-</ul>
+- 400: General internal error of OODM.
+
+</div>
+</div>
+</div>
+
+
+
+

@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Own Documentation Site',
+  title: 'supOS Industrial Operating System',
   tagline: 'Welcome to my documentation',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
@@ -26,12 +26,11 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-  // themes: ['@docusaurus/theme-search-algolia'],
   presets: [ 
      [
        'classic',
        
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      // /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
           breadcrumbs: false,
@@ -62,7 +61,7 @@ const config = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  // /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       colorMode: {
         defaultMode: 'light',
@@ -81,7 +80,7 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Documentation',
+            label: 'supOS',
           },
           
           {
@@ -91,27 +90,27 @@ const config = {
             items: [
               {
                 type:'doc',
-                label: 'supCollector',
+                label: 'X-Collector',
                 docId: 'Getting Started/System Requirements sc',
               },
               {
                 type: 'doc',
-                label: 'supDAM',
+                label: 'X-DAM',
                 docId: 'Getting Started/System Requirements sd',
               },
               {
                 type: 'doc',
-                label: 'supETL',
+                label: 'X-ETL',
                 docId: 'Getting Started/System Requirements se',
               },
               {
                 type: 'doc',
-                label: 'supEdge',
+                label: 'X-Edge',
                 docId: 'Getting Started/System Requirements sedge',
               },
               {
                 type:'doc',
-                label: 'supBD',
+                label: 'X-BD',
                 docId: 'Getting Started/System Requirements sb',
               },
               {
@@ -140,6 +139,11 @@ const config = {
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
+            position: 'right',
+          },
+          {
+            href: 'release_notes',
+            label: 'Release Notes',
             position: 'right',
           },
        
@@ -171,6 +175,13 @@ const config = {
       title: 'My site',
   // ...
   themes: ['@docusaurus/theme-search-algolia'],
+  stylesheets: [
+    {
+      // ...
+      href: './src/css/custom.css',
+      // ...
+    },
+  ],
   themeConfig: {
     // ...
   },

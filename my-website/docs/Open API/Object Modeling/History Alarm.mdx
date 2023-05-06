@@ -1,102 +1,53 @@
-The return code of each API represents its operation state. The following items list the general error of OODM, which can be useful when you receive such code and resolve bugs according to the explaination.
-<ul>
-<li>10001001: Server unknown error</li>
-<li>10001002: Invalid parameter value</li>
-<li>10001003: Failed to generate ID</li>
-<li>10001004: Database operation failed</li>
-<li>10001005: Instance ID cannot be empty</li>
-<li>10001006: Date parse failed, unmatched format</li>
-<li>10001007: Remote call error</li>
-<li>10001008: Failed to copy object</li>
-<li>10001009: Not found (template/property/event/service/subscription/alarm)</li>
-<li>10001010: Unsupported operation</li>
-<li>10001011: No permission</li>
-<li>10001012: Duplicate field</li>
-<li>10001013: Does not conform to specifications</li>
-<li>10001014: Dependencies exist in metadata</li>
-<li>10001015: Metadata already exists</li>
-<li>90200000: Metadata does not belong to xx template</li>
-<li>90200001: Metadata does not belong to xx instance</li>
-<li>90200002: Metadata does not belong to xx function set</li>
-<li>90200003: Metadata does not belong to xx app</li>
-<li>90200004: Function set source of metadata is xx</li>
-<li>90200005: Parse instance text error</li>
-<li>90200006: Database type not supported</li>
-<li>90200007: Field value already exists</li>
-<li>90200008: Property value conversion error</li>
-<li>90200009: Alias and namespace of metadata excess maximum character length</li>
-<li>90200010: Instance exists, cannot delete,</li>
-<li>90200011: Node exists, cannot delete network,network</li>
-<li>90200012: Illegal paremt node IDId</li>
-<li>90200013: Uncertain name</li>
-<li>90300000: Service not found</li>
-<li>90300001: Service execution failed</li>
-<li>90300002: Service field cannot be empty</li>
-<li>90300003: Incorrect input parameter format</li>
-<li>90300004: Data processing error</li>
-<li>90300005: Alarm confirmation status mpdification error</li>
-<li>90300006: History alarm export error</li>
-<li>90300007: Matching data not found</li>
-<li>90300008: Failed to execute script</li>
-<li>90500000: Incorrect property format. Template namespace.template alias.property namespace.property alias</li>
-<li>90500001: Incorrect property format. Template namespace.template alias.instance alias.property namespace.property alias</li>
-<li>90500002: Incorrect property format. Function set namespace.function set alias.property namespace.property alias</li>
-<li>90500003: Template not found</li>
-<li>90500004: Function set not found</li>
-<li>90500005: Instance not found</li>
-<li>90500006: Property not found</li>
-<li>90800000: Data source not found</li>
-<li>90800001: Fialed to execute sqlsql</li>
-<li>90800002: Parse instance range property to JSON errorjson</li>
-<li>90800003: Parse instance range property value to JSON errorjson</li>
-<li>90800004: Alarm confirmation status mpdification error</li>
-<li>90800005: History alarm export error</li>
-<li>90800006: Parse string to date error</li>
-<li>90900002: Alarm info list cannot be empty</li>
-<li>90900003: Excessed alarm query limit (100)</li>
-<li>90900004: Incorrect alarm format</li>
-<li>90900005: Incorrect time format</li>
-<li>90900006: Invalid history alarm code</li>
-</ul>
+---
+hide_title: true
+---
 
-## Get History Alarm Details
+<div class="div">
+  <div class="title">
 
-- Path Example code
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get History Alarm Details
+
+</div>
+  <div class="grid">
+    <div class="leftCol">Path</div>
+    <div class="rightCol">
+
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/alerts/history/{alertRecordId}
+http://supOS ip:port/open-api/supos/oodm/v2/alerts/history/{alertRecordId}
+alertRecordId: String. Alarm record ID.
 ```
-**alertRecordId**: String. Alarm record ID.
 
-- Response
+</div>
+    <div class="leftCol">Response</div>
+    <div class="rightCol">
 <ul>
 <li>200: Successful.
 
 ```
-[
-  {
-    "alertRecordId": "a95eb247e47e466ebcc1e5ff8df764a1",
-    "alarmName": "uuid1079ef50a32c4b1d8dad7f97addf46fd",
-    "triggerCompareOperator": "GT",
-    "priority": 1,
-    "templateName": "materialInfo",
-    "templateNamespace": "system",
-    "instanceName": "m_100012870",
-    "attributeName": "discharge_pressure",
-    "instanceDisplayName": "obj_data2",
-    "attributeDisplayName": "pro_obj",
-    "displayName": "alarm6",
-    "ackUserName": "test",
-    "ackStatus": 0,
-    "triggerCondition": "150 > 100",
-    "description": "Trigger alarm when exceeding 100",
-    "startDatetime": "2021-04-06T16:00:00.000+08:00",
-    "ackDatetime": "2021-04-06T17:00:00.000+08:00",
-    "disappearedDatetime": "2021-04-06T18:00:00.000+08:00",
-    "triggerAttributeValue": "150",
-    "disappearedStatus": 0
-  }
-]
-
+[ 
+  {    
+    "alertRecordId": "a95eb247e47e466ebcc1e5ff8df764a1",    
+    "alarmName": "uuid1079ef50a32c4b1d8dad7f97addf46fd",    
+    "triggerCompareOperator": "GT",   
+    "priority": 1,    
+    "templateName": "materialInfo",    
+    "templateNamespace": "system",    
+    "instanceName": "m_100012870",    
+    "attributeName": "discharge_pressure",    
+    "instanceDisplayName": "obj_data2",    
+    "attributeDisplayName": "pro_obj",    
+    "displayName": "alarm6",    
+    "ackUserName": "test",    
+    "ackStatus": 0,    
+    "triggerCondition": "150 > 100",    
+    "description": "Trigger alarm when exceeding 100",    
+    "startDatetime": "2021-04-06T16:00:00.000+08:00",    
+    "ackDatetime": "2021-04-06T17:00:00.000+08:00",    
+    "disappearedDatetime": "2021-04-06T18:00:00.000+08:00",    
+    "triggerAttributeValue": "150",    
+    "disappearedStatus": 0  
+    }
+    ]
 ```
 
 </li>
@@ -113,15 +64,27 @@ http://192.168.31.125:1235/open-api/supos/oodm/v2/alerts/history/{alertRecordId}
 
 </li>
 </ul>
+</div>
+  </div>
+</div>
 
-## Get History Record of Alarm
+<div class="div">
+  <div class="title">
 
-- Path Example code
+## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get History Record of Alarm
+
+</div>
+  <div class="grid">
+    <div class="leftCol">Path</div>
+    <div class="rightCol">
+
 ```
-http://192.168.31.125:1235/open-api/supos/oodm/v2/alerts/history
+http://supOS ip:port/open-api/supos/oodm/v2/alerts/history
 ```
-- Query parameters
-The returned data is sorted in descending order based on the alarm triggering time and only return 20 records.
+
+</div>
+    <div class="leftCol">Query parameters</div>
+    <div class="rightCol">
 <table>
 <caption>Table 1. Query parameter description</caption>
                 <colgroup>
@@ -194,15 +157,22 @@ The returned data is sorted in descending order based on the alarm triggering ti
                     </tr>
                     </tbody>
                     </table>
+</div>
+<div className='leftCol'>Request Body</div>
+<div className='rightCol'>
 
-- Request Example Code
 Get running alarms with p1 in instance alias or name, attribute alias or name, or alarm description, and happen between 2021-04-01 16:00:00 to 2021-04-10 23:59:59
 ```
 keyword:p1 startTime:2021-04-01T16:00:00.000+08:00 endTime:2021-04-10T23:59:59.000+08:00 status:1
 ```
-- Response
+
+</div>
+<div className='leftCol'>Response</div>
+<div className='rightCol'>
 <ul>
 <li>200: Successful.
+
+
 
 ```
 {
@@ -226,7 +196,6 @@ keyword:p1 startTime:2021-04-01T16:00:00.000+08:00 endTime:2021-04-10T23:59:59.0
     "current": 1
   }
 }
-
 ```
 
 </li>
@@ -243,3 +212,6 @@ keyword:p1 startTime:2021-04-01T16:00:00.000+08:00 endTime:2021-04-10T23:59:59.0
 
 </li>
 </ul>
+</div>
+</div>
+</div>

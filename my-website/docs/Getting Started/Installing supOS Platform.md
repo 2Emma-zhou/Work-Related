@@ -7,7 +7,7 @@ sidebar_position: 3
 ## Preparation
 
 ✅A Ubuntu 20.04.2 server for supOS<br/>
-✅A Windows server for supCollector <br/>
+✅A Windows server for X-Collector <br/>
 ✅A USB dongle burned with authorization file or just an authorization file<br/>
 
 
