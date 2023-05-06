@@ -322,6 +322,16 @@ const sidebars = {
   },
   {
     type: 'category',
+      label: 'User Management',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/User Management/Users',
+    ]
+  },
+  {
+    type: 'category',
       label: 'Identity Authentication',
       link: {
           type: 'generated-index',
