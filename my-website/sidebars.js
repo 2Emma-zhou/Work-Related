@@ -162,6 +162,7 @@ const sidebars = {
           type: 'generated-index',
       },
       items: [
+        'System Configuration/System Settings',
         'System Configuration/Organization Management',
         'System Configuration/User Security Management',
         'System Configuration/System Management',
@@ -456,13 +457,13 @@ const sidebars = {
         },
         items: [
           'Using supOS/Connecting X-Collector/Collector Type',
-'Using supOS/Connecting X-Collector/Configuring X-Collector',
-'Using supOS/Connecting X-Collector/Connecting Simulate Collector',
-'Using supOS/Connecting X-Collector/Connecting Common Collector',
-'Using supOS/Connecting X-Collector/Connecting Cascading Collector',
-'Using supOS/Connecting X-Collector/Connecting Third-party Collector',
-'Using supOS/Connecting X-Collector/Data Write Back',
-'Using supOS/Connecting X-Collector/Supported Driver',
+          'Using supOS/Connecting X-Collector/Configuring X-Collector',
+          'Using supOS/Connecting X-Collector/Connecting Simulate Collector',
+          'Using supOS/Connecting X-Collector/Connecting Common Collector',
+          'Using supOS/Connecting X-Collector/Connecting Cascading Collector',
+          'Using supOS/Connecting X-Collector/Connecting Third-party Collector',
+          'Using supOS/Connecting X-Collector/Data Write Back',
+          'Using supOS/Connecting X-Collector/Supported Driver',
         ]
         },
         {type: 'category',
@@ -573,8 +574,8 @@ const sidebars = {
                   type: 'generated-index',
               },
               items: [
-                'Getting Started/Using supDAM/Data Standard/Standards Management',
-                'Getting Started/Using supDAM/Data Standard/Standards Execution',
+                'Getting Started/Using supDAM/Data Standard/Creating Standards',
+                'Getting Started/Using supDAM/Data Standard/Executing Standards',
                 'Getting Started/Using supDAM/Data Standard/Standards Overview',
               ]
             },
@@ -585,12 +586,25 @@ const sidebars = {
                   type: 'generated-index',
               },
               items: [
-                'Getting Started/Using supDAM/Data Quality/QC Rule',
-                'Getting Started/Using supDAM/Data Quality/QC Task',
-                'Getting Started/Using supDAM/Data Quality/Quality Analysis',
+                'Getting Started/Using supDAM/Data Quality/Creating QC Rule',
+                'Getting Started/Using supDAM/Data Quality/Creating QC Task',
                 'Getting Started/Using supDAM/Data Quality/Execution Records',
+                'Getting Started/Using supDAM/Data Quality/Quality Analysis',
               ]
             },
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Data Workshop',
+          link: {
+              type: 'generated-index',
+          },
+          items: [
+            'Getting Started/Using supDAM/Data Workshop/Creating Business Distribution',
+            'Getting Started/Using supDAM/Data Workshop/Designing Model',
+            'Getting Started/Using supDAM/Data Workshop/Creating Indicator',
+            'Getting Started/Using supDAM/Data Workshop/Model Overview',
           ]
         },
         {
@@ -600,11 +614,12 @@ const sidebars = {
               type: 'generated-index',
           },
           items: [
-            'Getting Started/Using supDAM/Data Service/Service Development',
+            'Getting Started/Using supDAM/Data Service/Developing Service',
             'Getting Started/Using supDAM/Data Service/Service Management',
             'Getting Started/Using supDAM/Data Service/Service Overview',
           ]
         },
+        'Getting Started/Using supDAM/Maintenance Center',
       ]
     },
   ],
@@ -637,7 +652,64 @@ const sidebars = {
     
     'Getting Started/System Requirements sb',
     'Getting Started/Extension Installation/Installing X-BD',
-      
+    {
+      type: 'category',
+      label: 'Using X-BD',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        'Getting Started/Using supBD/Process Diagram',
+        {
+          type: 'category',
+          label: 'Experiment Model Creation',
+          link: {
+              type: 'generated-index',
+          },
+          items: [
+            'Getting Started/Using supBD/Creating Sample Set',
+            'Getting Started/Using supBD/Designing Experiment',
+            'Getting Started/Using supBD/Creating Experiment Model',
+            'Getting Started/Using supBD/Component Description',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Rule Model Creation',
+          link: {
+              type: 'generated-index',
+          },
+          items: [
+            'Getting Started/Using supBD/Creating Data Object',
+            'Getting Started/Using supBD/Designing Rule Model',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Model Calling',
+          link: {
+              type: 'generated-index',
+          },
+          items: [
+            'Getting Started/Using supBD/Using Single Model',
+            'Getting Started/Using supBD/Using Multiple Models',
+          ]
+        },
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Third-party Algorithm',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        'Getting Started/Using supBD/Developing Third-party Algorithm',
+        'Getting Started/Using supBD/Developing Third-party Algorithm Model',
+        'Getting Started/Using supBD/Uploading Algorithm Dependency',
+      ]
+    },
+    
   ],
   supLink: [
     

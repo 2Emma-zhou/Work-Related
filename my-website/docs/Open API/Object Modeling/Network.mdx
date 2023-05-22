@@ -5,7 +5,7 @@ hide_title: true
 <div class="div">
   <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Network List
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Network List
 
 </div>
   <div class="grid">
@@ -13,7 +13,7 @@ hide_title: true
     <div class="rightCol">
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/networks
+http://{supOS ip:port}/open-api/supos/oodm/v2/networks
 ```
 
 </div>
@@ -57,7 +57,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks
 <ul>
 <li>200: Successful.
 
-```
+```json
 {
   "code": 200,
   "data": {
@@ -81,7 +81,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks
 </li>
 <li>500: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -99,7 +99,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks
 <div class="div">
   <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Create Network
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Create Network
 
 </div>
   <div class="grid">
@@ -107,14 +107,14 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks
     <div class="rightCol">
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/networks
+http://{supOS ip:port}/open-api/supos/oodm/v2/networks
 ```
 
 </div>
     <div class="leftCol">Request Body</div>
     <div class="rightCol">
 
-```
+```json
 {
   "comment": "newly created network",
   "displayName": "network1",
@@ -128,7 +128,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks
 <ul>
 <li>200: Successful.
 
-```
+```json
 {
   "code": 200,
   "data": 19999,
@@ -140,7 +140,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks
 </li>
 <li>500: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -158,7 +158,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks
 <div class="div">
   <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Edit Network
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/2.png) Edit Network
 
 </div>
   <div class="grid">
@@ -166,7 +166,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks
     <div class="rightCol">
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}
+http://{supOS ip:port}/open-api/supos/oodm/v2/networks/{networkName}
 ```
 **networkName**: Required. Network alias.
 
@@ -174,7 +174,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}
     <div class="leftCol">Request Body</div>
     <div class="rightCol">
 
-```
+```json
 {
   "comment": "edited network",
   "displayName": "edit network"
@@ -187,7 +187,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}
 <ul>
 <li>200: Successful.
 
-```
+```json
 {
   "code": 200,
   "message": "ok",
@@ -199,7 +199,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}
 </li>
 <li>500: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -217,7 +217,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}
 <div class="div">
   <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/3.png) Delete Network
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/3.png) Delete Network
 
 </div>
   <div class="grid">
@@ -225,7 +225,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}
     <div class="rightCol">
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}
+http://{supOS ip:port}/open-api/supos/oodm/v2/networks/{networkName}
 ```
 **networkName**: Required. Network alias.
 
@@ -235,7 +235,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}
 <ul>
 <li>200: Successful.
 
-```
+```json
 {
   "code": 200,
   "message": "ok",
@@ -247,7 +247,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}
 </li>
 <li>500: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -265,7 +265,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}
 <div class="div">
 <div class="title"> 
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Create Network Node 
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Create Network Node 
 
 </div>
 <div class="grid">
@@ -273,7 +273,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}
 <div class="rightCol"> 
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes
+http://{supOS ip:port}/open-api/supos/oodm/v2/networks/{networkName}/nodes
 ```
 **networkName**: Required. Network alias.
 
@@ -281,7 +281,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes
 <div class="leftCol">Request Body</div>
 <div class="rightCol"> 
 
-```
+```json
 {
   "instanceName": "instance1", //instance alias of the current node
   "networkOrder": 2.3, //sorting field
@@ -297,7 +297,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes
 <ul>
 <li>200: Successful.
 
-```
+```json
 {
   "code": 200,
   "data": 19999,
@@ -309,7 +309,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes
 </li>
 <li>500: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -327,7 +327,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes
 <div class="div">
   <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Children Node Tree of Current Node
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Children Node Tree of Current Node
   
 </div>
 <div class="grid">
@@ -335,7 +335,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes
 <div class="rightCol">
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes/{nodeId}
+http://{supOS ip:port}/open-api/supos/oodm/v2/networks/{networkName}/nodes/{nodeId}
 ```
 - networkName: Required. String. Network alias.
 - nodeId: Required. Integer. Node ID.
@@ -422,7 +422,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes/{nodeId
 <li>
 200: Successful.
 
-```
+```json
 {
         "code": 200,
         "data": {
@@ -451,7 +451,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes/{nodeId
 <li>
 500: General internal error of OODM.
 
-```
+```json
 {
           "code": 10001001,
           "data": {},
@@ -471,7 +471,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes/{nodeId
 <div class="title">
 
   
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Edit Network Node
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/2.png) Edit Network Node
   
 </div>
 <div class="grid">
@@ -479,7 +479,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes/{nodeId
 <div class="rightCol">
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes/{nodeId}
+http://{supOS ip:port}/open-api/supos/oodm/v2/networks/{networkName}/nodes/{nodeId}
 ```
 - networkName: Required. String. Network alias.
 - nodeId: Required. Integer. Node ID.
@@ -488,7 +488,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes/{nodeId
 <div class="leftCol">Request Body</div>
 <div class="rightCol">
 
-```
+```json
 {
         "networkOrder": 2.3,
         "parentId": 16666
@@ -503,7 +503,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes/{nodeId
 <ul>
 <li>200: Successful.
 
-```
+```json
 {
 "code": 200,
 "message": "ok",
@@ -515,7 +515,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes/{nodeId
 </li>
 <li>500: General internal error of OODM.
 
-```
+```json
 {
 "code": 10001001,
 "data": {},
@@ -533,7 +533,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes/{nodeId
 <div class="div"> 
 <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/3.png) Recursion Delete Network Node
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/3.png) Recursion Delete Network Node
 
 </div> 
 <div class="grid"> 
@@ -541,7 +541,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes/{nodeId
 <div class="rightCol">
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes/{nodeId}
+http://{supOS ip:port}/open-api/supos/oodm/v2/networks/{networkName}/nodes/{nodeId}
 ``` 
 
 </div> 
@@ -550,7 +550,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes/{nodeId
 <ul> 
 <li>200: Successful. 
 
-```
+```json
 {
   "code": 200,
   "message": "ok",
@@ -562,7 +562,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes/{nodeId
 </li>
 <li>500: General internal error of OODM. 
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -580,7 +580,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes/{nodeId
 <div class="div"> 
 <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Network Tree According to Network Name
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Network Tree According to Network Name
 
 </div> 
 <div class="grid"> 
@@ -588,7 +588,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/nodes/{nodeId
 <div class="rightCol"> 
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/tree
+http://{supOS ip:port}/open-api/supos/oodm/v2/networks/{networkName}/tree
 ``` 
 **networkName**: Required. Network alias. 
 
@@ -638,7 +638,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/tree
 <ul> 
 <li>200: Successful. 
 
-```
+```json
 {
   "code": 200,
   "data": {
@@ -666,7 +666,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/networks/{networkName}/tree
 </li>
 <li>500: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},

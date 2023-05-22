@@ -5,17 +5,17 @@ sidebar_position: 6
 
 You can either collect data from edge devices through X-Collector, or connect a third-party database to the supOS platform and call data through template services.
 ## Connecting Database
-1. Log in to the supOS platform, and then click ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/platform/7.png) to enter the design center.
+1. Log in to the supOS platform, and then click ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/7.png) to enter the design center.
 2. Select **Global Configuration** > **Data Source Management** on the left side in design center, and then click **New**.<br/>
 You can select a type of database according to actual situation. MySQL is used as an example in this chapter.
 3. Select **mySQL**, and then enter the basic information of the database.
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/platform/79.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/79.png)
 4. Click **Connection Test** to check whether the database is correctly connected.
 5. Click **Confirm**.
 ## Creating Service
 Databased added under **Global Configuration** cannot be directly used. An object template is needed to introduce data from the connected third-party databases.
 1. In the design center of supOS platform, select **Object Model Management** > **Object Template**.
-2. Select **Form Template**, and then click ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/platform/28.png).
+2. Select **Form Template**, and then click ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/28.png).
     - **Entity Template** is often used to describe data collected through X-Collector.
     - **Form Template** is frequently used to introduce data from third-party databases.
 3. Enter information of the template, and then click **Save**.
@@ -29,7 +29,7 @@ You can leave optional parameters as default.
 <li>Enter <strong>{}</strong> in <strong>Return Format</strong> for now.</li>
 </ul>
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/platform/81.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/81.png)
 
 5. Click **Script** tab, and then enter the script.
 <ul><li> No input parameters are added under <strong>Service Information</strong>.</li></ul>
@@ -37,7 +37,8 @@ You can leave optional parameters as default.
 :::info
 Value of **sourceId** and **sql** variables in the code below are for reference only.
 :::
-<code>
+
+```javascript
 var JsonObject = Java.type("io.vertx.core.json.JsonObject")
 var httpService = services["HttpClientService"];
 var ArrayList = Java.type("java.util.ArrayList");
@@ -58,7 +59,7 @@ list = JSON.parse(res).body.data.dataSource;
 result = {
     list: new ArrayList(list)
 }
-</code>
+```
 
 <ul><ul><li> Added input parameters under <strong>Service Information</strong>.
 
@@ -68,7 +69,7 @@ You need to manually enter information of the database, including sourceId, sql 
 
 </li></ul></ul>
 
-```
+```javascript
 var JsonObject = Java.type("io.vertx.core.json.JsonObject")
 var httpService = services["HttpClientService"];
 if(!pageSize || pageSize <0) {
@@ -93,7 +94,7 @@ To get data from the connected database, its ID is necessary.
 2. Press F12 to bring out the console, and then press F5 to refresh the page.
 3. Under **Network** on the console, click the **query** tab.<br/>
 All information of the listed databases are displayed under **infos** in order.
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/platform/80.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/80.png)
 5. Copy the id of corresponding database and then paste it to the service.
 
 

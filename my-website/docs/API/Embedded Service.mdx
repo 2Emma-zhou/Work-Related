@@ -19,14 +19,14 @@ Namespaces in examples can be left without when there is no duplicated namespace
 ### getPropertyValue
 - Usage: Get real-time value of the property.
 - Input parameter: propName is the namespace and alias of the property to be searched for.
-```
+```json
 {
     "propName": "namespace.propertyName"
 }
 ```
 - Output parameter: Snapshot value of the property.
 - Used in custom service
-```
+```javascript
 var inputs = {
     "propName": "factory.temperature"
 }
@@ -34,7 +34,7 @@ var inputs = {
 var propValue = objects.boiler1.getPropertyValue(inputs)
 ```
 - Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/getPropertyValue**.
-```
+```json
 {
     //post body
     "propName": "factory.temperature"
@@ -43,20 +43,20 @@ var propValue = objects.boiler1.getPropertyValue(inputs)
 ### getPropertyValues
 - Usage: Get real-time value of the property in batches.
 - Input parameter: propNames is the namespace and alias of the property to be searched for. Multiple properties are separated by commas.
-```
+```json
 {
     "propName": "propNames": "namespace.propertyName1,namespace.propertyName2"
 }
 ```
 - Output parameter
-```
+```json
 {
     "/templateNamespace/templateName/instanceName/propertyNamespace/propertyName1": 50,
     "/templateNamespace/templateName/instanceName/propertyNamespace/propertyName2": 150
 }
 ```
 - Used in custom service
-```
+```javascript
 var inputs = {
     "propNames": "factory.pressure,factory.temperature"
 }
@@ -64,7 +64,7 @@ var inputs = {
 var propValues = objects.boiler1.getPropertyValues(inputs)
 ```
 - Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/getPropertyValues**.
-```
+```json
 {
     //post body
     "propNames": "factory.pressure,factory.temperature"
@@ -73,13 +73,13 @@ var propValues = objects.boiler1.getPropertyValues(inputs)
 ### getPropertyVQTValue
 - Usage: Get real-time value of the property and return the data in VQT format.
 - Input parameter: propName is the namespace and alias of the property to be searched for.
-```
+```json
 {
     "propName": "namespace.propertyName"
 }
 ```
 - Output parameter
-```
+```json
 {
     "value": 18,
     "tags": {
@@ -91,7 +91,7 @@ var propValues = objects.boiler1.getPropertyValues(inputs)
 }
 ```
 - Used in custom service
-```
+```javascript
 var inputs = {
     "propName": "factory.temperature"
 }
@@ -99,7 +99,7 @@ var inputs = {
 var propValue = objects.boiler1.getPropertyVQTValue(inputs)
 ```
 - Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/getPropertyVQTValue**.
-```
+```json
 {
     //post body
     "propNames": "namespace.propertyName1,namespace.propertyName2"
@@ -108,13 +108,13 @@ var propValue = objects.boiler1.getPropertyVQTValue(inputs)
 ### getPropertyVQTValues
 - Usage: Get real-time value of the property in batches and return the data in VQT format.
 - Input parameter: propNames is the namespace and alias of the property to be searched for. Multiple properties are separated by commas.
-```
+```json
 {
     "propNames": "namespace.propertyName"
 }
 ```
 - Output parameter
-```
+```json
 {
     "/templateNamespace/templateName/instanceName/propertyNamespace/propertyName1": {
         "name": "/templateNamespace/templateName/instanceName/propertyNamespace/propertyName1",
@@ -131,7 +131,7 @@ var propValue = objects.boiler1.getPropertyVQTValue(inputs)
 }
 ```
 - Used in custom service
-```
+```javascript
 var inputs = {
     "propNames": "factory.pressure,factory.temperature"
 }
@@ -139,7 +139,7 @@ var inputs = {
 var propValues = objects.boiler1.getPropertyVQTValues(inputs)
 ```
 - Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/getPropertyVQTValues**.
-```
+```json
 {
     //post body
     "propNames": "factory.pressure,factory.temperature"
@@ -148,14 +148,14 @@ var propValues = objects.boiler1.getPropertyVQTValues(inputs)
 ### getPropertyLastValue
 - Usage: Get the last normal history value of the property.
 - Input parameter: propName is the namespace and alias of the property to be searched for.
-```
+```json
 {
     "propName": "namespace.propertyName"
 }
 ```
 - Output parameter: Outputs the last normal history value.
 - Used in custom service
-```
+```javascript
 var inputs = {
     "propName": "factory.temperature"
 }
@@ -163,7 +163,7 @@ var inputs = {
 var propValue = objects.boiler1.getPropertyLastValue(inputs)
 ```
 - Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/getPropertyLastValue**.
-```
+```json
 {
     //post body
     "propName": "factory.temperature"
@@ -172,13 +172,13 @@ var propValue = objects.boiler1.getPropertyLastValue(inputs)
 ### getPropertyLastVQTValue
 - Usage: Get the last normal history value of the property and return the data in VQT format.
 - Input parameter: propName is the namespace and alias of the property to be searched for.
-```
+```json
 {
     "propName": "namespace.propertyName"
 }
 ```
 - Output parameter
-```
+```json
 {
     "time": "2021-02-03T13:16:17Z",
     "value": 50,
@@ -186,7 +186,7 @@ var propValue = objects.boiler1.getPropertyLastValue(inputs)
 }
 ```
 - Used in custom service
-```
+```javascript
 var inputs = {
     "propName": "factory.temperature"
 }
@@ -194,7 +194,7 @@ var inputs = {
 var propValue = objects.boiler1.getPropertyLastValue(inputs)
 ```
 - Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/getPropertyLastVQTValue**.
-```
+```json
 {
     //post body
     "propName": "factory.temperature"
@@ -209,7 +209,7 @@ var propValue = objects.boiler1.getPropertyLastValue(inputs)
 <ul><li>offset: Offset value.</li></ul>
 <ul><li>select: Required. Search for full names of tags. You can define query strategy before tags such as first, max, sum and more.</li></ul>
 <ul><li>where: Required. Search time period. The minimum time is required. </li></ul>
-```
+```json
 {
     "fill": {
         "strategy": "previous"
@@ -235,7 +235,7 @@ var propValue = objects.boiler1.getPropertyLastValue(inputs)
 }
 ```
 - Used in custom service
-```
+```javascript
 var inputs = {
     "fill": {
         "strategy": "previous"
@@ -267,7 +267,7 @@ var param = {
 var propValue = objects.boiler1.getPropertiesHistory(param)
 ```
 - Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/getPropertiesHistory**.
-```
+```json
 {
     //post body
     "fill": {
@@ -300,7 +300,7 @@ var propValue = objects.boiler1.getPropertiesHistory(param)
 <ul><li>propNames: Namespace and alias of the property to be searched for.</li></ul>
 <ul><li>time: Query time.</li></ul>
 <ul><li>strategy: Query strategy. <strong>pre</strong> is the former value of the set query time and <strong>next</strong> is the next one.</li></ul>
-```
+```json
 {
     "propNames": [
         "namespace.propertyName1",
@@ -311,7 +311,7 @@ var propValue = objects.boiler1.getPropertiesHistory(param)
 }
 ```
 - Output parameter
-```
+```json
 {
     "map": {
         "/templateNamespace/templateName/instanceName/propertyNamespace/propertyName1": 50,
@@ -320,7 +320,7 @@ var propValue = objects.boiler1.getPropertiesHistory(param)
 }
 ```
 - Used in custom service
-```
+```javascript
 var inputs = {
     "propNames": [
         "factory.temperature",
@@ -336,7 +336,7 @@ var param = {
 var propValue = objects.boiler1.getCertainHistory(param)
 ```
 - Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/getCertainHistory**.
-```
+```json
 {
     //post body
     "propNames": [
@@ -352,20 +352,20 @@ var propValue = objects.boiler1.getCertainHistory(param)
 - Input parameter
 <ul><li>propName: Namespace and alias of the property to be searched for.</li></ul>
 <ul><li>propValue: Property value to be set.</li></ul>
-```
+```json
 {
     "propName": "namespace.propertyName",
     "propValue": 123
 }
 ```
 - Output parameter
-```
+```json
 {
     "success":true
 }
 ```
 - Used in custom service
-```
+```javascript
 var inputs = {
     "propName": "factory.temperature",
     "propValue": 123
@@ -374,7 +374,7 @@ var inputs = {
 var result = objects.boiler1.setPropertyValue(inputs)
 ```
 - Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/setPropertyValue**.
-```
+```json
 {
     //post body
     "propName": "factory.temperature",
@@ -386,20 +386,20 @@ var result = objects.boiler1.setPropertyValue(inputs)
 - Input parameter
 <ul><li>key: Namespace and alias of the property to be searched for.</li></ul>
 <ul><li>value: Property value to be set.</li></ul>
-```
+```json
 {
     "namsapace.propertyName1": "11",  // key1: value1
     "namsapace.propertyName2": "zhangsan"  // key2: value2
 }
 ```
 - Output parameter
-```
+```json
 {
     "success":true
 }
 ```
 - Used in custom service
-```
+```javascript
 var inputs = {
     "factory.temperature": 50,
     "factory.pressure": 150
@@ -408,7 +408,7 @@ var inputs = {
 objects.boiler1.setPropertyValues(inputs)
 ```
 - Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/setPropertyValues**.
-```
+```json
 {
     //post body
     "factory.temperature": 50,
@@ -420,7 +420,7 @@ objects.boiler1.setPropertyValues(inputs)
 - Input parameter
 <ul><li>key: Namespace and alias of the property to be searched for.</li></ul>
 <ul><li>value: Property value set to be configured.</li></ul>
-```
+```json
 {
     "namespace.propertyName": [  //  key
         { // value
@@ -431,13 +431,13 @@ objects.boiler1.setPropertyValues(inputs)
 }
 ```
 - Output parameter
-```
+```json
 {
     "success":true
 }
 ```
 - Used in custom service
-```
+```javascript
 var param = {
     "factory.temperature": [
         {
@@ -460,7 +460,7 @@ var inputs = {
 objects.boiler1.setPropertyVQTValues(inputs)
 ```
 - Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/setPropertyVQTValues**.
-```
+```json
 {
     //post body
      "factory.temperature": [
@@ -482,20 +482,20 @@ objects.boiler1.setPropertyVQTValues(inputs)
 - Input parameter
 <ul><li>propName: Namespace and alias of the property to be searched for.</li></ul>
 <ul><li>propValue: Property value to be set.</li></ul>
-```
+```json
 {
     "propName": "namespace.propertyName",
     "propValue": 123
 }
 ```
 - Output parameter
-```
+```json
 {
     "success":true
 }
 ```
 - Used in custom service
-```
+```javascript
 var inputs = {
     "propName": "factory.temperature",
     "propValue": 123
@@ -504,7 +504,7 @@ var inputs = {
 var result = objects.boiler1.setPropertyDefaultValue(inputs)
 ```
 - Used by openAPI: Service path is **{domain}/runtime/factory/template/device/instance/boiler1/service/system/setPropertyVQTValues**.
-```
+```json
 {
     //post body
     "propName": "factory.temperature",
@@ -525,7 +525,7 @@ Form template services can only apply to form templates. Template and correspond
 - OpenAPI input parameter
 <ul><li>key: Property alias.</li></ul>
 <ul><li>value: Property value to be set.</li></ul>
-```
+```json
 {   //key: value
    "uid": "01",
    "name": "Emma",
@@ -535,7 +535,7 @@ Form template services can only apply to form templates. Template and correspond
 - Whether is required: If the property is set to be the primary key, the property is required and cannot duplicate.
 - Output parameter: Integer. The number of inserted data entries.
 - Used in custom service
-```
+```javascript
 // input parameter is an object
 var inputs = {
    uid: "01",
@@ -546,7 +546,7 @@ var inputs = {
 templates["work.user"].AddDataTableEntry(inputs);
 ```
 - Used by openAPI: Service path is **{domain}/runtime/work/template/user/service/system/AddDataTableEntry**.
-```
+```json
 {
     //post body
    "uid": "01",
@@ -557,7 +557,7 @@ templates["work.user"].AddDataTableEntry(inputs);
 ### AddDataTableEntries
 - Usage: Insert multiple entries to the template.
 - OpenAPI input parameter: **list** contains all data to be inserted with the format of **property alias: property value**.
-```
+```json
 {
    "list":[
       {
@@ -573,7 +573,7 @@ templates["work.user"].AddDataTableEntry(inputs);
 ```
 - Output parameter: Integer. The number of inserted data entries.
 - Used in custom service
-```
+```javascript
 var param = {
    list: [
       {
@@ -590,11 +590,11 @@ var params = {
     params: JSON.stringify(param)
 }
 
-// 访问模板是省略命名空间
+// leave out the namespace when accessing template
 templates["work.user"].AddDataTableEntries(params);
 ```
 - Used by openAPI: Service path is **{domain}/runtime/work/template/user/service/system/AddDataTableEntry**.
-```
+```json
 {
     //post body
    "list":[
@@ -618,7 +618,7 @@ templates["work.user"].AddDataTableEntries(params);
 :::info
 Only properties that conform to the defined conditions will be updated with set values and conditions cannot be empty.
 :::
-```
+```json
 {
     "update": {
         "age": 40,
@@ -632,7 +632,7 @@ Only properties that conform to the defined conditions will be updated with set 
 ```
 - Output parameter: Integer. The number of updated data entries.
 - Used in custom service
-```
+```javascript
 var inputs = {
     update: {
         age: 40,
@@ -646,7 +646,7 @@ var inputs = {
 templates["work.user"].UpdateDataTableEntry(inputs);
 ```
 - Used by openAPI: Service path is **{domain}/runtime/work/template/user/service/system/UpdateDataTableEntry**.
-```
+```json
 {
     //post body
   "update": {
@@ -655,7 +655,7 @@ templates["work.user"].UpdateDataTableEntry(inputs);
     },
     "where": {
         "name": "Emma",
-        "dep": "研发"
+        "dep": "Dev"
     }
 }
 ```
@@ -665,28 +665,28 @@ templates["work.user"].UpdateDataTableEntry(inputs);
 :::info
 At least one condition is necessary.
 :::
-```
+```json
 {
     "name": "Emma",
-    "dep": "研发"
+    "dep": "Dev"
 }
 ```
 - Output parameter: Integer. The number of deleted data entries.
 - Used in custom service
-```
+```javascript
 var inputs = {
     name: "Emma",
-    dep: "研发"
+    dep: "Dev"
 };
 
 templates.user.DeleteDataTableEntries(inputs);
 ```
 - Used by openAPI: Service path is **{domain}/runtime/work/template/user/service/system/DeleteDataTableEntries**.
-```
+```json
 {
     //post body
     "name": "Emma",
-    "dep": "研发"
+    "dep": "Dev"
 }
 ```
 ### GetDataTableEntries
@@ -702,7 +702,7 @@ templates.user.DeleteDataTableEntries(inputs);
 :::info
 When using fuzzy match, you can only use **and** and **or** as operator.
 :::
-```
+```json
 {
     "fields": [],
     "distinct":false,
@@ -727,7 +727,7 @@ When using fuzzy match, you can only use **and** and **or** as operator.
 }
 ```
 - Output parameter
-```
+```json
 {
     "pagination": {
         "current": 1,
@@ -750,7 +750,7 @@ When using fuzzy match, you can only use **and** and **or** as operator.
 }
 ```
 - Used in custom service
-```
+```javascript
 var param = {
     "fields": ["name", "age"],
     "pageIndex":1,
@@ -775,7 +775,7 @@ var params = {
 var data = templates["work.user"].GetDataTableEntries(params);
 ```
 - Used by openAPI: Service path is **{domain}/runtime/work/template/user/service/system/GetDataTableEntries**.
-```
+```json
 {
     //post body
     "fields": ["name", "age"],
@@ -800,7 +800,7 @@ Usage: Get table structure of DataTable object.
 :::info
 **dataCategory** in return value is a field added by the system, which applies no impact on business.
 :::
-```
+```json
 {
     "data": [
         {
@@ -832,7 +832,7 @@ Usage: Get table structure of DataTable object.
 - Usage: Execute SQL commands and return corresponding data.
 - Input parameter: SQL commands.
 - Return value: Field information on the table.
-```
+```json
 {
     "data": [
 		"system_id", 
@@ -850,7 +850,7 @@ Usage: Get table structure of DataTable object.
 ### querySQLExec
 - Usage: Execute SQL commands to search for DataTable object data.
 - Input parameter
-```
+```json
 {
     "sql": "select * from table1 where name=${name} and age=${age}",
     "params": [{
@@ -865,7 +865,7 @@ Usage: Get table structure of DataTable object.
 }
 ```
 - Return value: Field information on the table.
-```
+```json
 {
     "total": 2,
     "data": {
@@ -904,14 +904,14 @@ System embedded object provides service to get auto-increment serial number to g
 :::info
 The generated serial number is global auto-increment.
 :::
-```
+```javascript
 var result =  services['SerialNumberService'].acquire();
 result;
 ```
 ### Get Aggregated Result in InfluxDB
 - Usage <br/>
 Get the history value sum of an object property in set period.
-```
+```javascript
 function influxDbDataFun(expressStr, objName, propName, startTimeUtcStr, endTimeUtcStr) {
        // '2019-04-28T19:00:00Z','2019-04-29T19:00:00Z'
           var objProp = objName + '.' + propName;
@@ -984,7 +984,7 @@ function influxDbDataFun(expressStr, objName, propName, startTimeUtcStr, endTime
 
 ### History Value Query
 - Script example
-```
+```javascript
 var query = {
            select: [
            "first(\"system.testTemplate.testInstance.system.p4\")"
@@ -1095,7 +1095,7 @@ var query = {
 </table>
 
 - Result
-```
+```javascript
  {
        "unauthorized": [],
        "results": [
@@ -1191,15 +1191,15 @@ var query = {
 ### Service Calls Service
 Services can call each other in script.
 - Example 1: Call the property value setting service of <strong>testInstance</strong>. You need to define input parameters of <strong>setPropertyValue</strong> service in <strong>inputs</strong>.
-```
-   var inputs = {
+```javascript
+var inputs = {
     propValue:'test111', //String   property value
     propName:'p1' //String  property name
    };
    ObjectPool.get('testInstance').executeService('setPropertyValue',inputs);
 ```
 - Example 2: Define other objects in the script to call services.
-```
-     var httservice = services["HttpClientService"];
-     var result = httpservice.getString(baseUrl,3000);
+```javascript
+var httservice = services["HttpClientService"];
+var result = httpservice.getString(baseUrl,3000);
 ```

@@ -5,7 +5,7 @@ hide_title: true
 <div class="div"> 
 <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Real-time Alarms
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Real-time Alarms
 
 </div>
 <div class="grid">
@@ -13,7 +13,7 @@ hide_title: true
 <div class="rightCol">
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/alert/current
+http://{supOS ip:port}/open-api/supos/oodm/v2/alert/current
 ```
 
 </div>
@@ -57,7 +57,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/alert/current
 <ul>
 <li>200: Successful.
 
-```
+```json
 {
 "code" : 200,
 "data" : [ {
@@ -90,7 +90,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/alert/current
 </li>
 <li>500: General internal error of OODM.
 
-```
+```json
 {
 "code": 10001001,
 "data": {},
@@ -108,7 +108,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/alert/current
 <div class="div"> 
 <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Set Real-time Value of Entity Instance
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/2.png) Set Real-time Value of Entity Instance
 
 </div> 
 <div class="grid"> 
@@ -116,7 +116,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/alert/current
 <div class="rightCol"> 
 
 ``` 
-http://supOS ip:port/open-api/supos/oodm/v2/attributes/current 
+http://{supOS ip:port}/open-api/supos/oodm/v2/attributes/current 
 ``` 
 
 </div> 
@@ -137,7 +137,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/attributes/current
 <ul> 
 <li>200: Successful. 
 
-```
+```json
 { 
 "code" : 200, 
 "data" : [ { 
@@ -170,7 +170,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/attributes/current
 </li> 
 <li>400: General internal error of OODM. 
 
-```
+```json
 { 
 "code": 10001001, 
 "data": {},
@@ -188,7 +188,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/attributes/current
 <div class="div">
 <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Get Real-time Data of Object Attribute
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Get Real-time Data of Object Attribute
 :::info
 You can get up to 1000 attributes.
 :::
@@ -199,14 +199,14 @@ You can get up to 1000 attributes.
 <div class="rightCol"> 
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/attribute/current
+http://{supOS ip:port}/open-api/supos/oodm/v2/attribute/current
 ```
 
 </div>
 <div class="leftCol">Request Body</div>
 <div class="rightCol"> 
 
-```
+```json
 {
 "inputs" : [ "system.t1.instance.system.p1" ] //template namespace.template alias.instance alias.attribute namespace.attribute alias
 }
@@ -219,7 +219,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/attribute/current
 <li>200: Successful.
 
 
-```
+```json
 {
 "code" : 200,
 "data" : {
@@ -250,7 +250,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/attribute/current
 </li>
 <li>500: General internal error of OODM.
 
-```
+```json
 {
 "code": 10001001,
 "data": {},
@@ -268,7 +268,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/attribute/current
 <div class="div">
 <div class="title"> 
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Get History Data of Object Attribute 
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Get History Data of Object Attribute 
 
 </div>
 <div class="grid">
@@ -276,14 +276,14 @@ http://supOS ip:port/open-api/supos/oodm/v2/attribute/current
 <div class="rightCol"> 
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/attribute/histories
+http://{supOS ip:port}/open-api/supos/oodm/v2/attribute/histories
 ``` 
 
 </div>
 <div class="leftCol">Request Body</div>
 <div class="rightCol"> 
 
-```
+```json
 {
 "fill" : { //filter conditions of history data
 "strategy" : "previous"
@@ -314,7 +314,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/attribute/histories
 <ul>
 <li>200: Successful.
 
-```
+```json
 {
 "code" : 200,
 "data" : {
@@ -334,7 +334,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/attribute/histories
 </li>
 <li>500: General internal error of OODM.
 
-```
+```json
 {
 "code": 10001001,
 "data": {},
@@ -352,7 +352,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/attribute/histories
 <div class="div">
 <div class="title"> 
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Execute Entity Instance Service 
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Execute Entity Instance Service 
 
 </div>
 <div class="grid">
@@ -360,14 +360,14 @@ http://supOS ip:port/open-api/supos/oodm/v2/attribute/histories
 <div class="rightCol"> 
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/{instanceName}/service/{serviceNamespace}/{serviceName}
+http://{supOS ip:port}/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/{instanceName}/service/{serviceNamespace}/{serviceName}
 ``` 
 
 </div>
 <div class="leftCol">Request Body</div>
 <div class="rightCol"> 
 
-```
+```json
 {
 "propName" : "p1"
 }
@@ -379,7 +379,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 <ul>
 <li>200: Successful.
 
-```
+```json
 {
 "code" : 200,
 "data" : {
@@ -393,7 +393,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 </li>
 <li>500: General internal error of OODM.
 
-```
+```json
 {
 "code": 10001001,
 "data": {},
@@ -411,7 +411,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 <div class="div">
 <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Execute Form Template Service
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Execute Form Template Service
 
 </div>
 <div class="grid">
@@ -419,14 +419,14 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 <div class="rightCol">
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/service/{serviceNamespace}/{serviceName}
+http://{supOS ip:port}/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/service/{serviceNamespace}/{serviceName}
 ```
 
 </div>
 <div class="leftCol">Request Body</div>
 <div class="rightCol">
 
-```
+```json
 {
 "propName" : "p1"
 }
@@ -438,7 +438,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 <ul>
 <li>200: Successful.
 
-```
+```json
 {
 "code" : 200,
 "data" : {
@@ -452,7 +452,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 </li>
 <li>500: General internal error of OODM.
 
-```
+```json
 {
 "code": 10001001,
 "data": {},

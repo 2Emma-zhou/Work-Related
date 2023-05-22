@@ -5,7 +5,7 @@ hide_title: true
 <div class="div"> 
 <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Relations by Conditions
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Relations by Conditions
 Comprehensive relation query interface, and you can use it to run complex filters on relations.
 For example: Get relations under the template **system.t1** and **system.t3** and takes reference from the template **system.t5**.
 ```
@@ -18,7 +18,7 @@ templateFullNames=system.t1&templateFullNames=system.t3
 <div class="rightCol"> 
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2alpha/relations
+http://{supOS ip:port}/open-api/supos/oodm/v2alpha/relations
 ```
 
 </div> 
@@ -77,7 +77,7 @@ http://supOS ip:port/open-api/supos/oodm/v2alpha/relations
 <ul>
 <li>200: Successful.
 
-```
+```json
 {
   "list" : [ {  //relation
 "displayName" : "realtion1",
@@ -119,7 +119,7 @@ http://supOS ip:port/open-api/supos/oodm/v2alpha/relations
 </li>
 <li>400: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -136,7 +136,7 @@ http://supOS ip:port/open-api/supos/oodm/v2alpha/relations
 <div class="title">
 
   
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Node Details under Specified Relation
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Node Details under Specified Relation
   
 </div>
 <div class="grid">
@@ -144,7 +144,7 @@ http://supOS ip:port/open-api/supos/oodm/v2alpha/relations
 <div class="rightCol"> 
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2alpha/templates/{templateNamespace}/{templateName}/relations/{relationNamespace}/{relationName}/relationNodes
+http://{supOS ip:port}/open-api/supos/oodm/v2alpha/templates/{templateNamespace}/{templateName}/relations/{relationNamespace}/{relationName}/relationNodes
 ``` 
 </div>
 <div class="leftCol">Response</div>

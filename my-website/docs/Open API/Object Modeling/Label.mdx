@@ -5,7 +5,7 @@ hide_title: true
 <div class="div">
   <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Label Category List
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Label Category List
 
 </div>
   <div class="grid">
@@ -13,7 +13,7 @@ hide_title: true
     <div class="rightCol">
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/model-label-types
+http://{supOS ip:port}/open-api/supos/oodm/v2/model-label-types
 ```
 
 </div>
@@ -57,7 +57,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-label-types
 <ul>
 <li>200: Successful.
 
-```
+```json
 {
   "code": 200,
   "data": {
@@ -84,7 +84,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-label-types
 </li>
 <li>500: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -102,7 +102,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-label-types
 <div class="div">
 <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Create Label Category
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Create Label Category
 
 </div>
 <div class="grid">
@@ -110,14 +110,14 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-label-types
 <div class="rightCol">
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/model-label-types
+http://{supOS ip:port}/open-api/supos/oodm/v2/model-label-types
 ```
 
 </div>
 <div class="leftCol">Request Body</div>
 <div class="rightCol">
 
-```
+```json
 {
   "appAccessMode": "PUBLIC", //whether can be seen in other apps (PUBLIC or PRIVATE). Required.
   "appName": "system", //required
@@ -134,7 +134,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-label-types
 <ul>
 <li>200: Successful.
 
-```
+```json
 {
   "code": 200,
   "data": 19999,
@@ -147,7 +147,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-label-types
 <li>500: General internal error of OODM.
 
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -165,7 +165,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-label-types
 <div class="div">
   <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Label/Category
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Label/Category
 
 </div>
   <div class="grid">
@@ -173,7 +173,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-label-types
     <div class="rightCol">
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/model-label-types/{namespace}/{name}
+http://{supOS ip:port}/open-api/supos/oodm/v2/model-label-types/{namespace}/{name}
 ```
 
 - namespace: Label namespce. Required. String.
@@ -186,7 +186,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-label-types/{namespace}/{name}
 <li>200: Successful.
 
 
-```
+```json
 {
   "code": 200,
   "data": {
@@ -206,7 +206,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-label-types/{namespace}/{name}
 </li>
 <li>500: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -224,7 +224,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-label-types/{namespace}/{name}
 <div class="div">
   <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get All Labels
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get All Labels
 
 </div>
   <div class="grid">
@@ -232,7 +232,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-label-types/{namespace}/{name}
     <div class="rightCol">
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/model-labels
+http://{supOS ip:port}/open-api/supos/oodm/v2/model-labels
 ```
 
 </div>
@@ -305,7 +305,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-labels
     <div class="rightCol">
 200: Successful.
 
-```
+```json
 {
   "code": 200,
   "data": {
@@ -336,7 +336,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-labels
 <div class="div">
   <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Create Label
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Create Label
 
 </div>
   <div class="grid">
@@ -344,14 +344,14 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-labels
     <div class="rightCol">
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/model-labels
+http://{supOS ip:port}/open-api/supos/oodm/v2/model-labels
 ```
 
 </div>
     <div class="leftCol">Request Body</div>
 <div class="rightCol">
 
-```
+```json
 {
   "appAccessMode": "PUBLIC", //whether can be seen in other apps (PUBLIC or PRIVATE). Required.
   "appName": "system",
@@ -369,7 +369,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-labels
     <ul>
 <li>200: Successful.
 
-```
+```json
 {
   "code": 200,
   "data": 19999,
@@ -381,7 +381,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-labels
 </li>
 <li>500: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -399,7 +399,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-labels
 <div class="div">
   <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Cancel Instance Label
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/2.png) Cancel Instance Label
 
 </div>
   <div class="grid">
@@ -407,14 +407,14 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-labels
     <div class="rightCol">
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/model-labels/{templateNamespace}/{templateName}/instance-labels
+http://{supOS ip:port}/open-api/supos/oodm/v2/model-labels/{templateNamespace}/{templateName}/instance-labels
 ```
 
 </div>
     <div class="leftCol">Request Body</div>
     <div class="rightCol">
 
-```
+```json
 {
   "instanceNames": [ //instance name list
     "instance1"
@@ -431,7 +431,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-labels/{templateNamespace}/{te
 <ul>
 <li>200: Successful.
 
-```
+```json
 {
   "code": 200,
   "message": "ok",
@@ -443,7 +443,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-labels/{templateNamespace}/{te
 </li>
 <li>500: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -461,7 +461,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-labels/{templateNamespace}/{te
 <div class="div">
   <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Add Instance Label
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/2.png) Add Instance Label
 
 </div>
   <div class="grid">
@@ -469,14 +469,14 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-labels/{templateNamespace}/{te
     <div class="rightCol">
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/model-labels/{templateNamespace}/{templateName}/{instanceName}/instance-labels
+http://{supOS ip:port}/open-api/supos/oodm/v2/model-labels/{templateNamespace}/{templateName}/{instanceName}/instance-labels
 ```
 
 </div>
     <div class="leftCol">Request Body</div>
     <div class="rightCol">
 
-```
+```json
 {
   "instanceId": "10001",
   "labelIds": [
@@ -493,7 +493,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-labels/{templateNamespace}/{te
 <ul>
 <li>200: Successful.
 
-```
+```json
 {
   "code": 200,
   "message": "ok",
@@ -505,7 +505,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/model-labels/{templateNamespace}/{te
 </li>
 <li>500: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},

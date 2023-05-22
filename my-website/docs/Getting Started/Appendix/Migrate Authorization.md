@@ -56,7 +56,7 @@ Upload the generated authorization file to a server where the supOS platform is 
 
 1. Enter **https://supOS IP:1947** on a browser to log in to the authorization backend.
 2. Select **Update/Attach** tab, and then click **Choose File**.
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/platform/83.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/83.png)
 3. Select the authorization file and then upload it.
 4. Under **Sentinal Keys** tab, check the authorization result.
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/platform/84.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/84.png)

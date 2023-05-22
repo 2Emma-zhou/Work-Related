@@ -27,7 +27,7 @@ The platform can authorize the dongle through a USB or an authorization file.
 1. Access "http://server IP:1947" through a browser, and then log in to the authorization back-end.
 2. Click the **Sentinel Keys** tab on the left, and then click **Fingerprint** to generate and download fingerprint_xxx.c2v the authorization file.
 
-![Authorization file](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/install/90..png)
+![Authorization file](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/install/90..png)
 
 3. Send the file to technical support for authorization and then get the authorized .v2c file.
 
@@ -35,7 +35,7 @@ The platform can authorize the dongle through a USB or an authorization file.
 
 5. Check the authorization result under the **Sentinel Keys** tab.
 
-![Authorization result](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/install/91.png)
+![Authorization result](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/install/91.png)
 
 ### Installing Authorization Dongle
 
@@ -48,7 +48,7 @@ If the supOS is installed on a virtual machine, make sure the dongle can be reco
 
 4. Run `lsusb` command to list all USB devices connected to the server. <br/>
 The dongle is successfully installed if the following figure shows.
-![Dongle installation](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/install/92.png)
+![Dongle installation](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/install/92.png)
 
 ## Install and configure Ubuntu Server
 
@@ -62,7 +62,7 @@ The dongle is successfully installed if the following figure shows.
 
     2. at least 200G mount at /home/supos/supos
 
-![Ubuntu LVM](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/install/ubuntu_LVM.png)
+![Ubuntu LVM](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/install/ubuntu_LVM.png)
 
 ### Configuring Server
 
@@ -72,7 +72,7 @@ The dongle is successfully installed if the following figure shows.
 
       `sudo vi /etc/ssh/sshd_config`
 
-      ![Ubuntu LVM](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/install/60.png)
+      ![Ubuntu LVM](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/install/60.png)
 
       Press ESC to exit editing and the enter `:wq` to save the file.
 

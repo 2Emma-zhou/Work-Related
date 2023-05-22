@@ -5,7 +5,7 @@ hide_title: true
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get User Pending Tasks
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get User Pending Tasks
 
 
 </div>
@@ -14,7 +14,7 @@ hide_title: true
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/workflow/v2/tasks/pending
+http://{supOS ip:port}/open-api/p/workflow/v2/tasks/pending
 ```
 
 </div>
@@ -32,7 +32,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/pending
 
 - 200: Successful.
 
-```
+```json
 {
   "list": [
     {
@@ -55,7 +55,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/pending
 ```
 - 400
 
-```
+```json
 {
   "code": 100108503,
   "message": "username cannot be empty"
@@ -70,7 +70,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/pending
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -84,7 +84,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/pending
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Submit Pending Tasks
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Submit Pending Tasks
 
 
 </div>
@@ -93,14 +93,14 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/pending
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/workflow/v2/tasks/pending
+http://{supOS ip:port}/open-api/p/workflow/v2/tasks/pending
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "taskId": "1000492908536529",  //required. String
   "username": "test",  //required. String
@@ -129,7 +129,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/pending
 - 200: Successful.
 - 400
 
-```
+```json
 {
   "code": 100108502,
   "message": "username cannot be empty"
@@ -147,7 +147,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/pending
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -161,7 +161,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/pending
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Save Form Data Linked with Pending Tasks 
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/2.png) Save Form Data Linked with Pending Tasks 
 
 
 </div>
@@ -170,14 +170,14 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/pending
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/workflow/v2/tasks/pending
+http://{supOS ip:port}/open-api/p/workflow/v2/tasks/pending
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "taskId": "1000492908536529",  //required. Pending task ID
   "username": "test",  //required
@@ -192,7 +192,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/pending
 - 200: Successful.
 - 400
 
-```
+```json
 {
   "code": 100108502,
   "message": "username cannot be empty"
@@ -209,7 +209,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/pending
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -223,7 +223,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/pending
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Details of Pending Tasks 
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Details of Pending Tasks 
 
 
 </div>
@@ -232,7 +232,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/pending
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/workflow/v2/tasks/{taskId}/pending
+http://{supOS ip:port}/open-api/p/workflow/v2/tasks/{taskId}/pending
 ```
 
 </div>
@@ -246,7 +246,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/{taskId}/pending
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "companyId": "1000",
   "assigns": [
@@ -284,7 +284,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/{taskId}/pending
 ```
 - 400
 
-```
+```json
 {
   "code": 100108502,
   "message": "username cannot be empty"
@@ -301,7 +301,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/{taskId}/pending
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -315,7 +315,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/{taskId}/pending
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Total Number of Pending Tasks 
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Total Number of Pending Tasks 
 
 
 </div>
@@ -324,7 +324,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/{taskId}/pending
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/workflow/v2/tasks/pending/total
+http://{supOS ip:port}/open-api/p/workflow/v2/tasks/pending/total
 ```
 
 </div>
@@ -343,7 +343,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/pending/total
 - 200: Returns the total number of pending tasks.
 - 400
 
-```
+```json
 {
   "code": 100108502,
   "message": "username cannot be empty"
@@ -360,7 +360,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/pending/total
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -374,7 +374,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/pending/total
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Complete Tasks
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Complete Tasks
 
 
 </div>
@@ -383,7 +383,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/pending/total
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/workflow/v2/tasks/completive
+http://{supOS ip:port}/open-api/p/workflow/v2/tasks/completive
 ```
 
 </div>
@@ -397,7 +397,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/completive
 <div className='rightCol'>
 
 - 200: Returns the complete tasks.
-```
+```json
 {
   "list": [
     {
@@ -421,7 +421,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/completive
 ```
 - 400
 
-```
+```json
 {
   "code": 100108502,
   "message": "username cannot be empty"
@@ -436,7 +436,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/completive
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -450,7 +450,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/completive
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Details of Complete Tasks 
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Details of Complete Tasks 
 
 
 </div>
@@ -459,7 +459,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/completive
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/workflow/v2/tasks/{taskId}/completive
+http://{supOS ip:port}/open-api/p/workflow/v2/tasks/{taskId}/completive
 ```
 
 </div>
@@ -473,7 +473,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/{taskId}/completive
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "initiator": "zhangsan",
   "processId": "1000492908536528",
@@ -491,7 +491,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/{taskId}/completive
 ```
 - 400
 
-```
+```json
 {
   "code": 100108502,
   "message": "username cannot be empty"
@@ -507,7 +507,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/{taskId}/completive
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -521,7 +521,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/{taskId}/completive
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Delegate Pending Tasks
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Delegate Pending Tasks
 
 
 </div>
@@ -530,14 +530,14 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/{taskId}/completive
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/workflow/v2/tasks/entrust
+http://{supOS ip:port}/open-api/p/workflow/v2/tasks/entrust
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "mandatary": "zhangsan", //required. Entrustee
   "username": "test",  //required. Entruster
@@ -553,7 +553,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/entrust
 - 200: Successful.
 - 400
 
-```
+```json
 {
   "code": 100108502,
   "message": "username cannot be empty"
@@ -573,7 +573,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/entrust
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -587,7 +587,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/entrust
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Recall Pending Tasks
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Recall Pending Tasks
 
 
 </div>
@@ -596,14 +596,14 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/entrust
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/workflow/v2/tasks/revocation
+http://{supOS ip:port}/open-api/p/workflow/v2/tasks/revocation
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "taskId": "1000492908536529",
   "username": "test" //required
@@ -617,7 +617,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/revocation
 - 200: Successful.
 - 400
 
-```
+```json
 {
   "code": 100108502,
   "message": "username cannot be empty"
@@ -637,7 +637,7 @@ http://supOS ip:port/open-api/p/workflow/v2/tasks/revocation
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"

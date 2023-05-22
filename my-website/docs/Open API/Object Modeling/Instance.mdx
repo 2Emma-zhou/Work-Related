@@ -7,7 +7,7 @@ hide_title: true
 
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Create Instance
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Create Instance
 
 </div>
 
@@ -16,7 +16,7 @@ hide_title: true
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance
+http://{supOS ip:port}/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance
 ```
 
 
@@ -24,7 +24,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
 "appAccessMode": "PUBLIC", //whether can be seen in all applications (PUBLIC or PRIVATE). Required
 "appName": "system", //application name. Required
@@ -56,7 +56,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 
 - 200: Successful.
 
-```
+```json
 {
   "code" : 200,
   "data" : "13456",
@@ -81,7 +81,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Incementally Update Instance
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Incementally Update Instance
 
 </div>
 Update properties of template instances when the instance exists, if not, create a new instance. The API can update up to 1000 instances at the same time. Situations such as non-existing template properties, 
@@ -92,7 +92,7 @@ unmatch value types and unique identifier of form is null, trigger an error and 
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/templates/{templateNamespace}/{templateName}/instances/create-or-update
+http://{supOS ip:port}/open-api/supos/oodm/v2/templates/{templateNamespace}/{templateName}/instances/create-or-update
 ```
 - templateNamespace: Namespace of the template under which the instance is located.
 - templateName: Name of the template under which the instance is located.
@@ -118,7 +118,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/templates/{templateNamespace}/{templ
 
 - 200: Successful.
 - 400: General internal error of OODM.
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -136,7 +136,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/templates/{templateNamespace}/{templ
 
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Inquire Instances under General Template
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Inquire Instances under General Template
 
 </div>
 
@@ -145,7 +145,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/templates/{templateNamespace}/{templ
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/query
+http://{supOS ip:port}/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/query
 ```
 - templateNamespace: Namespace of the template under which the instance is located.
 - templateName: Name of the template under which the instance is located.
@@ -164,7 +164,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "distinct": true, //boolean. Whether to deduplicate data
   "orderBys": [ //array of objects. Set the sorting order of data
@@ -198,7 +198,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 
 - 200: Successful.
 
-```
+```json
 {
   "code": 200,
   "data": {
@@ -218,7 +218,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 ```
 - 500: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -235,7 +235,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Change Instance under General Template
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/2.png) Change Instance under General Template
 
 </div>
 <div className='grid'>
@@ -243,7 +243,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/{instanceName}
+http://{supOS ip:port}/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/{instanceName}
 ```
 - templateNamespace: Namespace of the template under which the instance is located.
 - templateName: Name of the template under which the instance is located.
@@ -253,7 +253,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "appAccessMode": "PUBLIC", ////whether can be seen in all applications (PUBLIC or PRIVATE). Required
   "attributeValues": [ //existing attributes of the parent template
@@ -284,7 +284,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 
 - 200: Successful.
 
-```
+```json
 {
   "code" : 200, //Return code when the request is successful
   "data" : "13456", //ID of the created instance
@@ -295,7 +295,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 
 - 500: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -311,7 +311,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/3.png) Delete Entity Instance
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/3.png) Delete Entity Instance
 
 </div>
 <div className='grid'>
@@ -319,7 +319,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/{instanceName}
+http://{supOS ip:port}/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instance/{instanceName}
 ```
 - templateNamespace: Namespace of the template under which the instance is located.
 - templateName: Name of the template under which the instance is located.
@@ -332,7 +332,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 
 - 200: Successful.
 
-```
+```json
 {
   "code": 200,
   "message": "ok",
@@ -342,7 +342,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 ```
 - 500: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -359,7 +359,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Instance under General Template
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Instance under General Template
 
 </div>
 <div className='grid'>
@@ -367,7 +367,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instances
+http://{supOS ip:port}/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instances
 ```
 - templateNamespace: Namespace of the template under which the instance is located.
 - templateName: Name of the template under which the instance is located.
@@ -392,7 +392,7 @@ labelIds: Array of integers. Page number
 
 - 200: Successful.
 
-```
+```json
 {
   "code": 200,
   "data": {
@@ -420,7 +420,7 @@ labelIds: Array of integers. Page number
 ```
 - 500: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -436,7 +436,7 @@ labelIds: Array of integers. Page number
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Instance Details by Alias
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Instance Details by Alias
 
 </div>
 <div className='grid'>
@@ -456,14 +456,14 @@ http://supOS platform IP/open-api/supos/oodm/v2/templates/{templateNamespace}/{t
 
 - 200: Successful.
 
-```
+```json
 { //attributeNameapce.attributeEnName:attributeValue
   "system.enName": "zhangsan"
 }
 ```
 - 400: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -479,7 +479,7 @@ http://supOS platform IP/open-api/supos/oodm/v2/templates/{templateNamespace}/{t
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Instance Details under General Template
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Instance Details under General Template
 
 </div>
 <div className='grid'>
@@ -487,7 +487,7 @@ http://supOS platform IP/open-api/supos/oodm/v2/templates/{templateNamespace}/{t
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instances/{instanceName}
+http://{supOS ip:port}/open-api/supos/oodm/v2/template/{templateNamespace}/{templateName}/instances/{instanceName}
 ```
 - templateNamespace: Namespace of the template under which the instance is located.
 - templateName: Name of the template under which the instance is located.
@@ -505,7 +505,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 
 - 200: Successful.
 
-```
+```json
 {
   "code": 200,
   "data": {
@@ -550,7 +550,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Instance under Relation Template
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Instance under Relation Template
 
 </div>
 <div className='grid'>
@@ -558,7 +558,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/template/{templateNamespace}/{templa
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2alpha/templates/{templateNamespace}/{templateName}/relations/{relationNamespace}/{relationName}/instances
+http://{supOS ip:port}/open-api/supos/oodm/v2alpha/templates/{templateNamespace}/{templateName}/relations/{relationNamespace}/{relationName}/instances
 ```
 templateNamespace: Namespace of the template under which the instance is located.
 - templateName: Name of the template under which the instance is located.
@@ -592,7 +592,7 @@ labelFullName: Array of strings. label namespace.label alias
 
 - 200: Successful.
 
-```
+```json
 {
   "data": [
     {

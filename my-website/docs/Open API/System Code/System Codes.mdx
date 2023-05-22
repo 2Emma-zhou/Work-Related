@@ -5,7 +5,7 @@ hide_title: true
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Code Value by Entity Code
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Code Value by Entity Code
 
 
 </div>
@@ -14,7 +14,7 @@ hide_title: true
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/systemcode/v2/entities/{entityCode}/values
+http://{supOS ip:port}/open-api/systemcode/v2/entities/{entityCode}/values
 ```
 
 </div>
@@ -37,7 +37,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "list": [
     {
@@ -60,7 +60,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 ```
 - 400
 
-```
+```json
 {
   "code": 100111010,
   "message": "entityCode cannot be empty"
@@ -85,7 +85,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Code Details by Entity Code and Value Code
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Code Details by Entity Code and Value Code
 
 
 </div>
@@ -94,7 +94,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/systemcode/v2/entities/{entityCode}/values/{valueCodes}
+http://{supOS ip:port}/open-api/systemcode/v2/entities/{entityCode}/values/{valueCodes}
 ```
 
 </div>
@@ -114,7 +114,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "list": [
     {
@@ -132,7 +132,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 ```
 - 400
 
-```
+```json
 {
   "code": 100111010,
   "message": "entityCode cannot be empty"

@@ -419,13 +419,13 @@ exec sp_helpsrvrolemember 'sysadmin'
 Only account with **sysadmin** role can enable CDC.
 :::
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/45.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/45.png)
 
 3. Check whether the database has enabled CDC.
 ```
 select is_cdc_enabled, name from sys.databases
 ```
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/46.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/46.png)
 
 - 0: Not enabled.
 - 1: Enabled.
@@ -442,13 +442,13 @@ GO
 ```
 select is_cdc_enabled, name from sys.databases
 ```
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/47.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/47.png)
 
 6. Check whether the tables you want to synchronize data from have enabled CDC.
 ```
 select name,is_tracked_by_cdc from sys.tables
 ```
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/48.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/48.png)
 
 - 0: Not enabled.
 - 1: Enabled.
@@ -488,7 +488,7 @@ EXEC sys.sp_cdc_enable_table
   </tbody>
 </table>
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/49.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/49.png)
 
 8. Check the status again.
 ```

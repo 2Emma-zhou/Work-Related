@@ -18,7 +18,7 @@ The provided standard functions must be written in python, and the internal exec
 :::
 
 ## Vision Algorithm Execution Structure
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supEdge/1.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supEdge/1.png)
 
 ## Module Instruction
 ### Algorithm Initialization (arguments, configs)
@@ -118,7 +118,7 @@ The <b>algorithmDetect</b> function will be executed when the current task is be
 <td>data_map</td>
 <td>Data dictionary, the structure requirements are:
 
-```
+```json
 { 
 'tag': string, 
 'data': list or dict, 
@@ -140,7 +140,7 @@ After the algorithm is developed, you need to compress and upload it to the plat
 - For python developers, a requirements.txt file is necessary in the algorithm package, which is convenient for the platform to build an operating environment.
 - For developers of other compilable languages, put the required link libraries and algorithm packages together to prevent problems such as missing libraries.
 Attach a runtime.json file to the package to describe the running environment. For example:
-```
+```json
 { 
 'algorithmName': helmet, 
 'algorithmShowName': helmet algorithm, 

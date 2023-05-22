@@ -5,7 +5,7 @@ hide_title: true
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Get Access Token and Refresh Token
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Get Access Token and Refresh Token
 
 
 </div>
@@ -14,14 +14,14 @@ hide_title: true
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/auth/v2/oauth2/token
+http://{supOS ip:port}/open-api/auth/v2/oauth2/token
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "grantType": "authorization_code",  //refresh_code or authorization_code
   "code": "string",  //required for authorization_code
@@ -36,7 +36,7 @@ http://supOS ip:port/open-api/auth/v2/oauth2/token
 
 - 200: Successful.
 
-```
+```json
 {
   "accessToken": "string",
   "expiresIn": "string",
@@ -49,7 +49,7 @@ http://supOS ip:port/open-api/auth/v2/oauth2/token
 ```
 - 400
 
-```
+```json
 {
   "code": 100106500,
   "message": "invalid grant_Type"
@@ -57,7 +57,7 @@ http://supOS ip:port/open-api/auth/v2/oauth2/token
 ```
 
 - 401
-```
+```json
 {
   "code": 100106403,
   "message": "invalid accessToken"
@@ -71,7 +71,7 @@ http://supOS ip:port/open-api/auth/v2/oauth2/token
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Add Third-party Authentication Center
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Add Third-party Authentication Center
 
 
 </div>
@@ -80,14 +80,14 @@ http://supOS ip:port/open-api/auth/v2/oauth2/token
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/auth/v2/oauth2/identity/provider/instances
+http://{supOS ip:port}/open-api/auth/v2/oauth2/identity/provider/instances
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "clientType": "internal",  //required. Internal means embedded client
   "protocolType": "bluetron",  //required
@@ -108,14 +108,14 @@ http://supOS ip:port/open-api/auth/v2/oauth2/identity/provider/instances
 
 - 200: Successful.
 
-```
+```json
 {
   "redirectUri": "http[s]://xxx/xx/xxx/xxx/authrize?protocolType=bluetron"
 }
 ```
 - 400
 
-```
+```json
 {
   "code": 100106023,
   "message": "client already exists"
@@ -130,7 +130,7 @@ http://supOS ip:port/open-api/auth/v2/oauth2/identity/provider/instances
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Access Token on Client
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Access Token on Client
 
 
 </div>
@@ -156,7 +156,7 @@ http://supOS ip:port/{basePath}/oauth2/client/v1/accessToken
 
 - 200: Successful.
 
-```
+```json
 {
   "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJwelhpeXRYVHZVVmx6YTloUC1tZTdEUXNLbXlvRkxLSmFHeE5HMEQzdUpNIn0.eyJleHAiOjE2MzQ4OTgyNTUsImlhdCI6MTYzNDg5MTA1NSwianRpIjoiOTU5NThhMDItZDI4Zi00NDhhLTk5NzItNDQ1YjA4NzBjMDBiIiwiaXNzIjoiaHR0cDovLzEwMC42NC44LjE2MTo4MDgwL2F1dGgvcmVhbG1zL2R0Iiwic3ViIjoiNWMxMzMyN2EtYzNkZS00NDVmLTk4NGEtYTgwOWRmZWY4MWM2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiQXBwX2NlOGRjNjAyMzY4YmRjZTY5MjUzYzNiZDk3NTEyNDNhIiwic2Vzc2lvbl9zdGF0ZSI6IjYyODFlYjFhLTFlMDgtNDZhMy1iNThjLWE4MzM4MzE1MzE2YSIsImFjciI6IjEiLCJzY29wZSI6IiIsImNsaWVudElkIjoiQXBwX2NlOGRjNjAyMzY4YmRjZTY5MjUzYzNiZDk3NTEyNDNhIiwiY2xpZW50SG9zdCI6IjEwMC42NC44LjE1MiIsImNsaWVudEFkZHJlc3MiOiIxMDAuNjQuOC4xNTIifQ.nsptCw0lWeKzauAaFBWkCVOjMdkPDvfqvcVCIx-qig4dmwso_GH3fMtfZ1bhFUjbwsBqKZMUiFRekaURSZAiIIijAYc4uX0lJxsMmHNd5BZWsr-KPKjwAMkCUTxWJy8Eg-LcbSwWQXXZHtXR1MRiSouaAwVe15Q77YLgyQAWJSRtN_hAfPXdhPQiZxRab7_tWaiDu-AIEZktmnKIsm0YHYMeaNtlHCoBwCbW5McLbnscMrFdscXkeEyoOJHN8k3byY62nAY1XoSZQmtSz02HUXhcJVr2mZsQmP2Ry_z_An8t_LNrU64Us7-I64SB1j4G2X3W6okwrp8KAUcWFHU-ag",
   "expiresIn": 7200000,
@@ -165,7 +165,7 @@ http://supOS ip:port/{basePath}/oauth2/client/v1/accessToken
 ```
 - 400
 
-```
+```json
 {
   "code": 100106500,
   "message": "request parameter error"
@@ -180,7 +180,7 @@ http://supOS ip:port/{basePath}/oauth2/client/v1/accessToken
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Refresh Token on Client
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Refresh Token on Client
 
 
 </div>
@@ -204,7 +204,7 @@ http://supOS ip:port/{basePath}/oauth2/client/v1/refreshToken
 
 - 200: Successful.
 
-```
+```json
 {
   "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJwelhpeXRYVHZVVmx6YTloUC1tZTdEUXNLbXlvRkxLSmFHeE5HMEQzdUpNIn0.eyJleHAiOjE2MzQ4OTgyNTUsImlhdCI6MTYzNDg5MTA1NSwianRpIjoiOTU5NThhMDItZDI4Zi00NDhhLTk5NzItNDQ1YjA4NzBjMDBiIiwiaXNzIjoiaHR0cDovLzEwMC42NC44LjE2MTo4MDgwL2F1dGgvcmVhbG1zL2R0Iiwic3ViIjoiNWMxMzMyN2EtYzNkZS00NDVmLTk4NGEtYTgwOWRmZWY4MWM2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiQXBwX2NlOGRjNjAyMzY4YmRjZTY5MjUzYzNiZDk3NTEyNDNhIiwic2Vzc2lvbl9zdGF0ZSI6IjYyODFlYjFhLTFlMDgtNDZhMy1iNThjLWE4MzM4MzE1MzE2YSIsImFjciI6IjEiLCJzY29wZSI6IiIsImNsaWVudElkIjoiQXBwX2NlOGRjNjAyMzY4YmRjZTY5MjUzYzNiZDk3NTEyNDNhIiwiY2xpZW50SG9zdCI6IjEwMC42NC44LjE1MiIsImNsaWVudEFkZHJlc3MiOiIxMDAuNjQuOC4xNTIifQ.nsptCw0lWeKzauAaFBWkCVOjMdkPDvfqvcVCIx-qig4dmwso_GH3fMtfZ1bhFUjbwsBqKZMUiFRekaURSZAiIIijAYc4uX0lJxsMmHNd5BZWsr-KPKjwAMkCUTxWJy8Eg-LcbSwWQXXZHtXR1MRiSouaAwVe15Q77YLgyQAWJSRtN_hAfPXdhPQiZxRab7_tWaiDu-AIEZktmnKIsm0YHYMeaNtlHCoBwCbW5McLbnscMrFdscXkeEyoOJHN8k3byY62nAY1XoSZQmtSz02HUXhcJVr2mZsQmP2Ry_z_An8t_LNrU64Us7-I64SB1j4G2X3W6okwrp8KAUcWFHU-ag",
   "expiresIn": 7200000,
@@ -213,7 +213,7 @@ http://supOS ip:port/{basePath}/oauth2/client/v1/refreshToken
 ```
 - 400
 
-```
+```json
 {
   "code": 100106500,
   "message": "request parameter error"

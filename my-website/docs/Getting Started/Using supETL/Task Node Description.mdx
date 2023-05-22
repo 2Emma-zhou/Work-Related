@@ -11,6 +11,7 @@ Variables used in operators need to be configured in advance during task develop
 ## Data Input Node
 ### Data Input
 - supOS instance
+
 <ul>
 <ul>
 <li>Select template, instance, attribute from the supOS you added.</li>
@@ -18,8 +19,9 @@ Variables used in operators need to be configured in advance during task develop
 </ul>
 </ul>
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/52.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/52.png)
 - File data source
+
 <ul>
 <ul>
 <li>HDFS is not supported.</li>
@@ -32,7 +34,7 @@ Variables used in operators need to be configured in advance during task develop
 When the input data source is file, the published task reads the file and output results again if any changes happen on the file.
 :::
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/53.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/53.png)
 - API data source
 
 <table>
@@ -55,26 +57,18 @@ Variables can be configured in the request URL, request headers, and JSON text, 
 </td>
     </tr>
     <tr>
-<td>Request address variable</td>
+<td>Request address</td>
 <td>Use <b>#{}</b> to identify variables.</td>
     </tr>
     <tr>
-<td>Request header parameter variable</td>
+<td>Request header param</td>
 <td>Select Variable as the Processing method, and select the value. You can enable Circular traversal and </td>
-    </tr>
-    <tr>
-<td></td>
-<td></td>
-    </tr>
-    <tr>
-<td></td>
-<td></td>
     </tr>
   </tbody>
 </table>
 
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/54.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/54.png)
 ### Message Queue Input
 Collects data from message queue and map it to a 2-demension table, and delivers to downstream operators for processing.
 
@@ -111,7 +105,7 @@ If there is a new submitted offset, consumption starts from the newly submitted 
   </tbody>
 </table>
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/55.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/55.png)
 
 ### Data Warehouse Input
 Supports tables and views on ODS, DW and local DW message.
@@ -142,7 +136,7 @@ Install X-DAM in advance. Otherwise, **Local data warehouse** will not be availa
   </tbody>
 </table>
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/56.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/56.png)
 
 ## Data Processing Node
 ### Data Quality
@@ -167,24 +161,24 @@ Install X-DAM in advance. Otherwise, **Local data warehouse** will not be availa
 <td>Select a field, and use the embedded or custom expression to verify its data format.</td>
     </tr>
     <tr>
-<td>Data format check</td>
-<td></td>
+<td>Enumeration value check</td>
+<td>Select a field, and set certain values to check whether the field value is one of the enumerated values.</td>
     </tr>
   </tbody>
 </table>
 
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/57.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/57.png)
 
 ### SQL Execution
 Uses SQL statements to perform simple operations such as insert, delete and update on the relational data sources.
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/58.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/58.png)
 
 ### Data Set
 Renames data fields or configures field mapping to generate a new dataset, mainly used for redefining the data structure set during data processing.
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/59.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/59.png)
 
 ### Data Filtering
 Multiple filter conditions are avaliable for a single field, and data that meets all conditions will be filtered.
@@ -192,7 +186,7 @@ Multiple filter conditions are avaliable for a single field, and data that meets
 - like/not like: For text type of fields. **like** matches part or all of the text and **not like** matches none.
 - between/not between: For date type of fields. **between** means the date is within the set range and **not between** means not.
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/60.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/60.png)
 
 ### Data Connection
 Integrates data from multiple tables to one.
@@ -208,14 +202,14 @@ Integrates data from multiple tables to one.
 </ol>
 </ol>
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/61.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/61.png)
 
 ### Data Sorting
 :::info
 The sorting priority goes down along with the field position on the list.
 :::
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/62.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/62.png)
 
 ### Data Merging
 Merges data from multiple data sources. You can select columns from multiple sample sets and merge them into a data set.
@@ -231,14 +225,14 @@ Merges data from multiple data sources. You can select columns from multiple sam
 </ol>
 </ol>
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/63.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/63.png)
 
 ### Missing Value Handling
 Replaces null and empty strings in the data source to make sure subsequent data processing such as feature query, modeling, goes smoothly.
 - Replaces the missing value with the maximum, minimum, average value of the column, or a constant value, global variable or linear fitting value.
 - Use custom formula to generate values as replacement. Only **+, -, *, /** are supported.
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/64.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/64.png)
 
 ### Data Type Conversion
 Converts the type of input fields.
@@ -246,11 +240,11 @@ Converts the type of input fields.
 If the conversion is not legal, **0** is generated.
 :::
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/65.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/65.png)
 
 ### Data Completion
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/66.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/66.png)
 
 <table>
   <thead>
@@ -279,18 +273,18 @@ If the conversion is not legal, **0** is generated.
   </tbody>
 </table>
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/66-1.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/66-1.png)
 
 
 ### Variable Settings
 
 Gives new value to global variables you set during task development. The new value can be either manually set or fields from the input data source.
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/67.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/67.png)
 
 ### Data Aggregation
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/68.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/68.png)
 
 Aggregate data based on the set group fields.
 1. Select fields, and then click **Add group field**. The aggregated data will be grouped by the set fields.
@@ -338,8 +332,8 @@ Aggregate data based on the set group fields.
   </tbody>
 </table>
 
-![Aggregate by time](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/68-1.png)
-![Aggregate by data record](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/68-2.png)
+![Aggregate by time](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/68-1.png)
+![Aggregate by data record](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/68-2.png)
 
 
 
@@ -349,8 +343,8 @@ Aggregate data based on the set group fields.
 Only available for file type data, and output to file type of data.
 :::
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/69.png)
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/69-1.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/69.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/69-1.png)
 
 
 ### Custom Operator
@@ -363,6 +357,7 @@ Presently, only original JaveScript is available.
 - JavaScript rules:
 
 <ul>
+<ul>
   <li>The input parameter of the JS script is a collection of data passed down from the previous node, which can be a single or multiple entries.</li>
   <li>The definition of the data collection in the script is "dataList".</li>
   <li>To obtain the value of a property, use the dot notation followed by the property name (e.g., ".id").</li>
@@ -371,9 +366,10 @@ Presently, only original JaveScript is available.
   <li>Debugging logs can be added to the JS script using the "log.debug()" function, and the debugging results can be viewed at the bottom of the script.</li>
   <li>It is possible to use Java-related collection classes for operations within the JS script.</li>
 </ul>
+</ul>
 
 - Script example
-```
+```javascript
 var arr = [];
 for (var i=0; i<dataList.length; i++) {
     dataList[i].id = dataList[i].id + 10;
@@ -390,17 +386,17 @@ for (var i=0; i<dataList.length; i++) {
 :::
 
 - After writing the script, click **Data simulation** to debug the data. You can add up to 50 records.
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/70-1.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/70-1.png)
 
 - Debug the script to make sure the result is reasonable.
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/70.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/70.png)
 
 ## Big Data Model
 ### Model Operation
 Runs big data model of supOS and output the results.
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/71.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/71.png)
 
 ### Model Update
 Select big data models that can be updated, and update them automatically and output the results.
@@ -411,7 +407,7 @@ Generates sample sets data and synchronizes to X-BD sample set management.
 - String type of data in sample set cannot contain English comma **,**.
 :::
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/73.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/73.png)
 
 ## Process Control
 
@@ -422,11 +418,11 @@ Based on the set conditional statements, branch tasks that meet the conditions a
 Make sure the result is boolean type of data, and only condition returns **True**, will the branch task be executed.
 :::
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/74.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/74.png)
 
 ## Security Desentization
 By using data obfuscation to process multiple fields, the obfuscated data will overwrite the original data and flow to downstream operators.
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/75.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/75.png)
 
 ## Data Output
 ### Data Output
@@ -435,24 +431,24 @@ Configurations are similar to the input data source. For details, see <a href="#
 
 - supOS instance
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/76.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/76.png)
 
 - File data source
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/77.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/77.png)
 
 - API data source
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/78.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/78.png)
 
 ### Message Queue Output
 Kafka, mQTT and RocketMQ are supported.
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/79.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/79.png)
 
 ### Data Warehouse Output
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/80.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/80.png)
 
 ### HBASE Output
 
@@ -461,6 +457,6 @@ Kafka, mQTT and RocketMQ are supported.
 - rowKey, as the primary key for an HBase data source, a mapping relationship must be established for it. If there are duplicate values in the data source mapped to it, only the latest row of data will be retained.
 :::
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/81.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/81.png)
 
 

@@ -26,7 +26,7 @@ You can check the namespace of object templates on their basic information page,
         </ul>
     </li>
  <li>Example
-```
+```javascript
 // call service under a form template
 var objName = 'namespace.templateName';
 // call service under an instance of an entity template
@@ -52,7 +52,7 @@ cb:function(res){
  <li>Example
 
 
-```
+```javascript
 // url is https://www.baidu.com?id=123&code=456
 var data = scriptUtil.getRequestUrl();
 console.log(data)
@@ -69,8 +69,7 @@ console.log(data)
 <ul><li>Usage: Get current timezone and return it as an object.</li>
  <li>Example
 
-
-```
+```javascript
 var Offset = scriptUtil.getTimeZone();
 console.log(Offset)
 ```
@@ -83,7 +82,7 @@ console.log(Offset)
 <li>Example
 
 
-```
+```javascript
 // refresh the page in 50 ms
 scriptUtil.reload(50);
 ```
@@ -95,7 +94,7 @@ scriptUtil.reload(50);
 <li>Example
 
 
-```
+```javascript
 var Offset = scriptUtil.refreshWorkflow();
 ```
 </li>
@@ -107,7 +106,7 @@ var Offset = scriptUtil.refreshWorkflow();
 <li>Example
 
 
-```
+```javascript
 scriptUtil.copy(any);
 ```
 </li>
@@ -126,7 +125,7 @@ scriptUtil.copy(any);
 <li>Example
 
 
-```
+```javascript
 var url = '/api/openapi/notification/v1/message';
 var param = {
   method: 'POST', //request method such as GET, POST, PUT and DELETE
@@ -151,7 +150,7 @@ scriptUtil.request(url, param).then(res=>{
 <li>Example
 
 
-```
+```javascript
 scriptUtil.registerReactDom(this, this.props);
 ```
 </li>
@@ -167,7 +166,7 @@ scriptUtil.registerReactDom(this, this.props);
 <li>Example
 
 
-```
+```javascript
 scriptUtil.logoutReactDom(this, this.props);
 ```
 </li>
@@ -179,7 +178,7 @@ scriptUtil.logoutReactDom(this, this.props);
 <li>Example
 
 
-```
+```javascript
 var reactInstance = scriptUtil.getRegisterReactDom('htdiv-xxxx');
 reactInstance.getValue()
 ```
@@ -192,7 +191,7 @@ reactInstance.getValue()
 <li>Example
 
 
-```
+```javascript
 scriptUtil.getFormData(['title', 'name', 'age']);
 ```
 </li>
@@ -204,7 +203,7 @@ scriptUtil.getFormData(['title', 'name', 'age']);
 <li>Example
 
 
-```
+```javascript
 scriptUtil.setFormData({ title: 'test data' });
 ```
 </li>
@@ -227,7 +226,7 @@ Automatic submit is only valid when setting <strong>Linkage</strong> to <strong>
 <ul><ul><li>Example
 
 
-```
+```javascript
 const component = scriptUtil.getRegisterReactDom('ctrlId');
 scriptUtil.submitDefaultValue(component, 'search value', '1');
 ```
@@ -252,7 +251,7 @@ Callback is only triggered when clicking **ok** on the pop-up window.
 <ul><ul><li>Example
 
 
-```
+```javascript
 scriptUtil.Alert('Prompted Successfully', () => {
   console.log('Click OK');
 });
@@ -272,7 +271,7 @@ scriptUtil.Alert('Prompted Successfully', () => {
 <li>Example
 
 
-```
+```javascript
 scriptUtil.showMessage('Message', 'success');
 ```
 </li>
@@ -290,7 +289,7 @@ scriptUtil.showMessage('Message', 'success');
 <li>Example
 
 
-```
+```javascript
 scriptUtil.timestampFormat(1587109353040, 'YYYY-MM-DD HH:mm:ss');
 // "2020-04-17 15:42:33"
 ```
@@ -303,7 +302,7 @@ scriptUtil.timestampFormat(1587109353040, 'YYYY-MM-DD HH:mm:ss');
 <li>Example
 
 
-```
+```javascript
 scriptUtil.timestampAntiFormat('2021-05-01 01:00:00');
 // 1619802000000
 ```
@@ -316,7 +315,7 @@ scriptUtil.timestampAntiFormat('2021-05-01 01:00:00');
 <li>Example
 
 
-```
+```javascript
 const reg = scriptUtil.regRexGroup('mobilePhone');
 const variable_1 = '18866668888';
 const variable_3 = '1886666777';
@@ -332,7 +331,7 @@ reg.test(variable_3); //false;
 <li>Example
 
 
-```
+```javascript
 scriptUtil.isVaild(['ctrlId1','ctrlId2','ctrlId3']);
 ```
 </li>
@@ -344,7 +343,7 @@ scriptUtil.isVaild(['ctrlId1','ctrlId2','ctrlId3']);
 <li>Example
 
 
-```
+```javascript
 scriptUtil.getFormatterMap(['ctrlId1','ctrlId2','ctrlId3']);
 ```
 </li>
@@ -361,7 +360,7 @@ scriptUtil.getFormatterMap(['ctrlId1','ctrlId2','ctrlId3']);
 </li>
 <li>Example
 
-```
+```javascript
 // parseTableMap(data, map, index = 'number')
 const data = [{name:'Emma',age: 123},{name:'Judy',age: 33}];
 const map = {name: 'name',age: 'age'}
@@ -393,7 +392,7 @@ console.log(result)
 </li>
 <li>Example
 
-```
+```javascript
 const data = {name:'Emma',age: 123, sex: 'F'}
 const sort = ['sex', 'age', 'name']
 const result = scriptUtil.objKeySort(data,sort)
@@ -413,7 +412,7 @@ console.log(result)
 <li>Example
 
 
-```
+```javascript
 var result = scriptUtil.getEditRow('table component id')
 ```
 </li>
@@ -432,7 +431,7 @@ var result = scriptUtil.getEditRow('table component id')
 </li>
 <li>Example
 
-```
+```javascript
 scriptUtil.JSONToExcelConvertor({
   data: [{ name: 'Emma', age: '12', sex: 'F' }],
   dataTitle: ['name', 'age', 'sex'],
@@ -449,7 +448,7 @@ scriptUtil.JSONToExcelConvertor({
 <ul><li>Usage: Close current page.</li>
 <li>Example
 
-```
+```javascript
 scriptUtil.closeCurrentPage();
 ```
 </li>
@@ -475,7 +474,7 @@ scriptUtil.closeCurrentPage();
 </li></ul>
 <ul><ul><li>Example
 
-```
+```javascript
 // blank page
 scriptUtil.openPage('url', '_blank');
 
@@ -494,7 +493,7 @@ scriptUtil.openPage('url', '_blank'， true, '{"height":400,"width":400}');
 <li>Example
 
 
-```
+```javascript
 scriptUtil.showModal(`{
 "width":800,
 "height":600,
@@ -519,7 +518,7 @@ scriptUtil.showModal(`{
 <li>Example
 
 
-```
+```javascript
 scriptUtil.closeModal();
 ```
 </li>
@@ -530,7 +529,7 @@ scriptUtil.closeModal();
 <li>Example
 
 
-```
+```javascript
 window.parent.scriptUtil.closeModal();
 ```
 </li>
@@ -556,7 +555,7 @@ window.parent.scriptUtil.closeModal();
 </li></ul>
 <ul><ul><li>Example
 
-```
+```javascript
 const param = {
   'namespace.p1': 'p1',
   'namespace.p2': 'p2',
@@ -587,7 +586,7 @@ scriptUtil.addDataTable(
 </li>
 <li>Example
 
-```
+```javascript
 const param = {
   id: 'xxx', //can only delete data based on id.
 };
@@ -624,7 +623,7 @@ Keys must appear with namespace.
 <ul><ul>
 <li>Example
 
-```
+```javascript
 //Update condition: code is 1623219467408
 //Update result: comDetailAdd is Ningbo, Zhejiang Province
 var dataSource = 'supyoung_companyreg.company_reg';
@@ -674,8 +673,8 @@ Keys must appear with namespace.
 </li></ul>
 <ul><ul><li>Example
 
-```
-/Update condition: code is 1623219467408
+```javascript
+//Update condition: code is 1623219467408
 //Update result: comDetailAdd is Ningbo, Zhejiang Province
 var namespace = "supyoung_companyreg"
 var dataSource = namespace+'.company_reg';
@@ -718,14 +717,14 @@ scriptUtil.queryDataTable(
 <ul><li>
 Calling service under object template
 
-```
+```javascript
 scriptUtil.callFunction('templateNamespace.templateName', 'callService', {a: 1});
 ```
 </li></ul>
 <ul><ul><li>
 Calling service under object instance
 
-```
+```javascript
 scriptUtil.callFunction('templateNamespace.templateName/instanceName', 'callService', {a: 1})
 .then(function(res){
     console.log('then:res');
@@ -743,7 +742,7 @@ scriptUtil.callFunction('templateNamespace.templateName/instanceName', 'callServ
 <li>Example
 
 
-```
+```javascript
 scriptUtil.getUserInfo(function (res) {
   // res is current user information
   console.log('res', res);
@@ -757,7 +756,7 @@ scriptUtil.getUserInfo(function (res) {
 <li>Example
 
 
-```
+```javascript
 scriptUtil.getSessionUserInfo();
 ```
 </li>
@@ -768,7 +767,7 @@ scriptUtil.getSessionUserInfo();
 <li>Example
 
 
-```
+```javascript
 scriptUtil.setAuthority();
 ```
 </li>

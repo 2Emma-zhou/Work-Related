@@ -20,7 +20,7 @@ Different types of driver corresponds to different information. For details, see
 * **Source name**: The source name must be starting with a letter, and only letters, numbers or underscores. The length should be no more than 50 characters.
 * **Driver name**: Select a driver type.
 * **Description**: Description of the source. The maximum length is 200 characters.
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supCollector/add1.png) 
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supCollector/add1.png) 
 3.  Click **Import tags in batch** tab to synchronize tags connected to the source, and then click **Save**.
 
 <ul><ul><li>Click <strong>Synchronize</strong> to only synchronize new tags.
@@ -36,7 +36,7 @@ For first time synchronization, all related tags will be synchronized.
 <li>Select a tag, you can edit its parameters on the right side.</li>
 </ul></ul>
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supCollector/import.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supCollector/import.png)
 :::info
 - Some types of collector do not support tag synchronization.
 - Interfaces of tag synchronization are different depending on the driver type. This section uses **Simulator** as an example.
@@ -61,7 +61,7 @@ For first time synchronization, all related tags will be synchronized.
   A tag is the smallest unit corresponding to a specific attribute of a source. Aside from tag synchronization, you can also manually add tags or import them in batches.
 1. On X-Collector, select **RTD Collector** > **Tag**.
 2. Click **Add**, enter the tag information and then click **Save**.
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supCollector/2.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supCollector/2.png)
 
 :::info
 For writing data back to equipment, you need to set **R/W status** to **R/W**. For details on data writing back, see <a href="Data Write Back">Data Write Back</a>.

@@ -5,7 +5,7 @@ hide_title: true
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Process Start Details
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Process Start Details
 
 
 </div>
@@ -14,7 +14,7 @@ hide_title: true
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/workflow/v2/processes/{processKey}/startInfo
+http://{supOS ip:port}/open-api/p/workflow/v2/processes/{processKey}/startInfo
 ```
 
 </div>
@@ -23,7 +23,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes/{processKey}/startInfo
 
 - 200: Successful.
 
-```
+```json
 {
   "companyId": "1000",
   "assigns": [
@@ -52,7 +52,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes/{processKey}/startInfo
 ```
 - 400
 
-```
+```json
 {
   "code": 100108112,
   "message": "process is not published"
@@ -67,7 +67,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes/{processKey}/startInfo
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -81,7 +81,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes/{processKey}/startInfo
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Process Details
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Process Details
 
 
 </div>
@@ -90,7 +90,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes/{processKey}/startInfo
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/workflow/v2/processes/{processId}
+http://{supOS ip:port}/open-api/p/workflow/v2/processes/{processId}
 ```
 
 </div>
@@ -105,7 +105,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes/{processId}
 
 - 200: Successful.
 
-```
+```json
 {
   "appId": "App_325ea305252fe5d0d1f78b1c2efe2413",
   "processId": "1000492908536528",
@@ -124,7 +124,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes/{processId}
 ```
 - 400
 
-```
+```json
 {
   "code": 100108227,
   "message": "process instance does not exist"
@@ -140,7 +140,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes/{processId}
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -154,7 +154,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes/{processId}
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Process Logs
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Process Logs
 
 
 </div>
@@ -163,7 +163,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes/{processId}
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/workflow/v2/processes/{processId}/logs
+http://{supOS ip:port}/open-api/p/workflow/v2/processes/{processId}/logs
 ```
 
 </div>
@@ -187,14 +187,14 @@ http://supOS ip:port/open-api/p/workflow/v2/processes/{processId}/logs
 ```
 - 400
 
-```
+```json
 {
   "code": 100108227,
   "message": "process instance does not exist"
 }
 ```
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -208,7 +208,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes/{processId}/logs
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Reminder Information
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Reminder Information
 
 
 </div>
@@ -217,7 +217,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes/{processId}/logs
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/workflow/v2/processes/{processId}/urgeInfo
+http://{supOS ip:port}/open-api/p/workflow/v2/processes/{processId}/urgeInfo
 ```
 
 </div>
@@ -243,7 +243,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes/{processId}/urgeInfo
 ```
 - 400
 
-```
+```json
 {
   "code": 100108227,
   "message": "process instance does not exist"
@@ -252,7 +252,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes/{processId}/urgeInfo
 100108506: processId cannot be empty.
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -266,7 +266,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes/{processId}/urgeInfo
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Processes Initiated by User
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Processes Initiated by User
 
 
 </div>
@@ -275,7 +275,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes/{processId}/urgeInfo
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/workflow/v2/processes
+http://{supOS ip:port}/open-api/p/workflow/v2/processes
 ```
 
 </div>
@@ -294,7 +294,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes
 
 - 200: Successful.
 
-```
+```json
 {
   "list": [
     {
@@ -322,7 +322,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes
 ```
 - 400
 
-```
+```json
 {
   "code": 100108501,
   "message": "process status code does not exist"
@@ -338,7 +338,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -352,7 +352,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Save Process Startup Page
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/2.png) Save Process Startup Page
 
 After clicking **Save**, the process will start and pause at the first user.
 
@@ -362,14 +362,14 @@ After clicking **Save**, the process will start and pause at the first user.
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/workflow/v2/processes
+http://{supOS ip:port}/open-api/p/workflow/v2/processes
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "appId": "App_eab56959eef74c1ea2e1a5fbe7b38ddf",
   "formData": "{}",
@@ -384,7 +384,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes
 
 - 200: Successful.
 
-```
+```json
 {
   "processId": "1000492908536528",
   "taskId": "1000492908536529"
@@ -392,7 +392,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes
 ```
 - 400
 
-```
+```json
 {
   "code": 100108112,
   "message": "process is not published"
@@ -409,7 +409,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -423,7 +423,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Initiate a Process
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Initiate a Process
 
 
 </div>
@@ -432,14 +432,14 @@ http://supOS ip:port/open-api/p/workflow/v2/processes
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/workflow/v2/processes
+http://{supOS ip:port}/open-api/p/workflow/v2/processes
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "appId": "App_eab56959eef74c1ea2e1a5fbe7b38ddf",
   "assigns": [  //assignee list
@@ -468,14 +468,14 @@ http://supOS ip:port/open-api/p/workflow/v2/processes
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "processId": "1000492908536528"
 }
 ```
 - 400
 
-```
+```json
 {
   "code": 100108112,
   "message": "process is not published"
@@ -493,7 +493,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -507,7 +507,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Cancel a Process
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Cancel a Process
 
 :::info
 Presently only available for general user.
@@ -519,14 +519,14 @@ Presently only available for general user.
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/workflow/v2/processes/{processId}/cancellation
+http://{supOS ip:port}/open-api/p/workflow/v2/processes/{processId}/cancellation
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "username": "test"  //required
 }
@@ -539,7 +539,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes/{processId}/cancellation
 - 200: Successful.
 - 400
 
-```
+```json
 {
   "code": 100108227,
   "message": "process instance does not exist"
@@ -555,7 +555,7 @@ http://supOS ip:port/open-api/p/workflow/v2/processes/{processId}/cancellation
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"

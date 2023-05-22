@@ -5,7 +5,7 @@ hide_title: true
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Send Message
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Send Message
 
 
 </div>
@@ -14,14 +14,14 @@ hide_title: true
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/notification/v2/messages
+http://{supOS ip:port}/open-api/p/notification/v2/messages
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "businessCode": "businessCode",  //required
   "businessName": "businessName",  //required
@@ -51,14 +51,14 @@ http://supOS ip:port/open-api/p/notification/v2/messages
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "taskCode": "taskCode"
 }
 ```
 - 400
 
-```
+```json
 {
   "code": 100000001,
   "message": "sender business code cannot be empty"
@@ -76,7 +76,7 @@ http://supOS ip:port/open-api/p/notification/v2/messages
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -89,7 +89,7 @@ http://supOS ip:port/open-api/p/notification/v2/messages
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Send Message Based on Topic
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Send Message Based on Topic
 
 
 </div>
@@ -98,14 +98,14 @@ http://supOS ip:port/open-api/p/notification/v2/messages
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/notification/v2/topic/messages
+http://{supOS ip:port}/open-api/p/notification/v2/topic/messages
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "businessCode": "businessCode",  //required
   "businessName": "businessName",  //required
@@ -128,14 +128,14 @@ http://supOS ip:port/open-api/p/notification/v2/topic/messages
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "taskCode": "taskCode"
 }
 ```
 - 400
 
-```
+```json
 {
   "code": 100000001,
   "message": "sender business code cannot be empty"
@@ -156,7 +156,7 @@ http://supOS ip:port/open-api/p/notification/v2/topic/messages
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -169,7 +169,7 @@ http://supOS ip:port/open-api/p/notification/v2/topic/messages
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get User Message
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get User Message
 
 
 </div>
@@ -178,7 +178,7 @@ http://supOS ip:port/open-api/p/notification/v2/topic/messages
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/notification/v2alpha1/users/{username}/messages
+http://{supOS ip:port}/open-api/p/notification/v2alpha1/users/{username}/messages
 ```
 
 </div>
@@ -196,7 +196,7 @@ http://supOS ip:port/open-api/p/notification/v2alpha1/users/{username}/messages
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "pagination": {
     "current": 1,
@@ -242,7 +242,7 @@ http://supOS ip:port/open-api/p/notification/v2alpha1/users/{username}/messages
 ```
 - 400
 
-```
+```json
 {
   "code": 100000001,
   "message": "start time cannot be empty"
@@ -262,7 +262,7 @@ http://supOS ip:port/open-api/p/notification/v2alpha1/users/{username}/messages
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"

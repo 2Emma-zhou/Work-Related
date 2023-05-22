@@ -5,7 +5,7 @@ hide_title: true
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Tenant Quota
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Tenant Quota
 
 </div>
 <div className='grid'>
@@ -13,7 +13,7 @@ hide_title: true
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/supos/license/v1/quotas/tenants/{tenantId}
+http://{supOS ip:port}/open-api/supos/license/v1/quotas/tenants/{tenantId}
 ```
 
 </div>
@@ -22,7 +22,7 @@ http://supOS ip:port/open-api/supos/license/v1/quotas/tenants/{tenantId}
 
 - 200: Successful.
 
-```
+```json
 {
   "productQuota": {
     "TENANT_DEADLINE": "permanent"
@@ -45,7 +45,7 @@ http://supOS ip:port/open-api/supos/license/v1/quotas/tenants/{tenantId}
 ```
 - 400/500
 
-```
+```json
 {
   "code": 10001004,
   "message": "tenantId is empty"
@@ -65,7 +65,7 @@ http://supOS ip:port/open-api/supos/license/v1/quotas/tenants/{tenantId}
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get All Quota
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get All Quota
 
 </div>
 <div className='grid'>
@@ -73,7 +73,7 @@ http://supOS ip:port/open-api/supos/license/v1/quotas/tenants/{tenantId}
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/supos/license/v1/quotas/system
+http://{supOS ip:port}/open-api/supos/license/v1/quotas/system
 ```
 
 </div>
@@ -82,7 +82,7 @@ http://supOS ip:port/open-api/supos/license/v1/quotas/system
 
 - 200: Successful.
 
-```
+```json
 {
   "productQuota": {
     "PLATFORM_DEADLINE": "permanent"
@@ -109,7 +109,7 @@ http://supOS ip:port/open-api/supos/license/v1/quotas/system
 ```
 - 400/500
 
-```
+```json
 {
   "code": 10001004,
   "message": "tenantId is empty"

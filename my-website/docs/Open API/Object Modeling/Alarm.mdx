@@ -6,7 +6,7 @@ hide_title: true
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Confirm Alarm Information
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Confirm Alarm Information
 
 </div>
 <div className='grid'>
@@ -14,7 +14,7 @@ hide_title: true
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/alerts/ack
+http://{supOS ip:port}/open-api/supos/oodm/v2/alerts/ack
 ```
 
 
@@ -22,7 +22,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/alerts/ack
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "ackAll": false,
   "userName": "Emma",
@@ -40,7 +40,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/alerts/ack
 <div className='rightCol'>
 400: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -56,7 +56,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/alerts/ack
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Create Alarms in Batches
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Create Alarms in Batches
 
 </div>
 <div className='grid'>
@@ -64,7 +64,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/alerts/ack
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/alarms
+http://{supOS ip:port}/open-api/supos/oodm/v2/alarms
 ```
 
 
@@ -72,7 +72,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/alarms
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "dtos": [
     {
@@ -99,7 +99,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/alarms
 
 400: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -115,7 +115,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/alarms
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Alarms
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Alarms
 Run complex filtering on alarms.
 
 
@@ -125,7 +125,7 @@ Run complex filtering on alarms.
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/alarms
+http://{supOS ip:port}/open-api/supos/oodm/v2/alarms
 ```
 
 
@@ -242,7 +242,7 @@ alarmDisplayName=xxx&alarmEnable=true //search for enabled alarms with "xxx" in 
 
 - 200: Successful.
 
-```
+```json
 {
   "list": [
     {
@@ -285,7 +285,7 @@ alarmDisplayName=xxx&alarmEnable=true //search for enabled alarms with "xxx" in 
 ```
 - 400: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -301,7 +301,7 @@ alarmDisplayName=xxx&alarmEnable=true //search for enabled alarms with "xxx" in 
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Edit Alarm Information
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/2.png) Edit Alarm Information
 
 </div>
 <div className='grid'>
@@ -309,7 +309,7 @@ alarmDisplayName=xxx&alarmEnable=true //search for enabled alarms with "xxx" in 
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/alarms/{name} //name is alarm alias. Presently is the automatically generated UUID during creation
+http://{supOS ip:port}/open-api/supos/oodm/v2/alarms/{name} //name is alarm alias. Presently is the automatically generated UUID during creation
 ```
 
 
@@ -317,7 +317,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/alarms/{name} //name is alarm alias.
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "displayName": "boiler overheating alarm",
   "priority": 8,
@@ -337,7 +337,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/alarms/{name} //name is alarm alias.
 
 - 200: Successful.
 
-```
+```json
 {
   "code": 200,
   "message": "ok",
@@ -347,7 +347,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/alarms/{name} //name is alarm alias.
 ```
 - 400: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001013,
   "message": "priority:0 illegal: must integer from 1-10",
@@ -363,7 +363,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/alarms/{name} //name is alarm alias.
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/3.png) Delete Alarms
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/3.png) Delete Alarms
 Delete alarm metadata. Returns successful when alarms not found as well.
 
 
@@ -373,7 +373,7 @@ Delete alarm metadata. Returns successful when alarms not found as well.
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/alarms/{name} //name is alarm alias. Presently is the automatically generated UUID during creation
+http://{supOS ip:port}/open-api/supos/oodm/v2/alarms/{name} //name is alarm alias. Presently is the automatically generated UUID during creation
 ```
 
 
@@ -387,7 +387,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/alarms/{name} //name is alarm alias.
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "displayName": "boiler overheating alarm",
   "priority": 8,
@@ -415,7 +415,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/alarms/{name} //name is alarm alias.
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Alarms under Specified Attribute
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Alarms under Specified Attribute
 
 </div>
 <div className='grid'>
@@ -423,7 +423,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/alarms/{name} //name is alarm alias.
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/attributes/{attributeFullName}/alarms
+http://{supOS ip:port}/open-api/supos/oodm/v2/attributes/{attributeFullName}/alarms
 ```
 **attributeFullName**: Full path of the attribute. Template namespace.template alias.instance alias.attribute namesoace.attribure alias.
 
@@ -454,7 +454,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/attributes/{attributeFullName}/alarm
 ```
 - 400: General internal error of OODM.
 
-```
+```json
 {
   "code": 10001001,
   "data": {},
@@ -471,7 +471,7 @@ http://supOS ip:port/open-api/supos/oodm/v2/attributes/{attributeFullName}/alarm
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Authorized Alarm Receivers
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Authorized Alarm Receivers
 Corresponding empty array will be returned when alarm full path does not exist or no authorized users.
 To handle high concurrency, user list of each alarm is saved in cache for 5 minutes (user data changes may be delayed).
 
@@ -481,7 +481,7 @@ To handle high concurrency, user list of each alarm is saved in cache for 5 minu
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/alarms/authorized-users
+http://{supOS ip:port}/open-api/supos/oodm/v2/alarms/authorized-users
 ```
 
 
@@ -500,7 +500,7 @@ The maximum number of alarms is 100. Error happens when exceeding 100.
 
 - 200: Successful.
 
-```
+```json
 {
   "system.Template_823.msa_test_05.p1_a1": [
     "admin",
@@ -511,7 +511,7 @@ The maximum number of alarms is 100. Error happens when exceeding 100.
 ```
 - 400: General internal error of OODM.
 
-```
+```json
 {
   "code": 90900002,
   "message": "alarmFullPaths cannot be empty",

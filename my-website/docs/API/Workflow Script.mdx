@@ -5,7 +5,7 @@ Write the script in a template service for workflows calling.
 ## Creating Object Service
 Add 3 input parameters to represent data involved in workflows.
 - data: JSON data from business form transmitted from the previous task.
-```
+```json
 {
     "name": "Emma",
     "sex": "F"
@@ -193,7 +193,7 @@ Add 3 input parameters to represent data involved in workflows.
                     </tbody>
                     </table>
 ## Writing Service Script
-```
+```javascript
 var formDataJson = JSON.parse(data); // JSON data of the form
 var auditDataJson = JSON.parse(auditData);
 var flowDataJson = JSON.parse(flowData);

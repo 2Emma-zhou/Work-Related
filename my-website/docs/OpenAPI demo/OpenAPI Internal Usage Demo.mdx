@@ -46,7 +46,7 @@ httpService.post(baseUrl, JSON.stringify(param), headers, 10000)
 ```
 
 - Getting instance details by alias
-```
+```javascript
 var baseUrl = "/open-api/supos/oodm/v2/templates/{template namespace}/{template alias}/instances/{instance alias}/value";
 var httpservice= services["HttpClientService"];// create hidden service object
 //3000 is the maximum timeout period with millisecond as unit. When no data returned after the set time, the request is timed out
@@ -55,7 +55,7 @@ result;
 ```
 
 - Changing instance information
-```
+```javascript
 var baseUrl = "/open-api/supos/oodm/v2/template/{template namespace}/{template alias}/instance/{instance alias}"
 
 var param = {
@@ -78,7 +78,7 @@ httpService.put(baseUrl, JSON.stringify(param), headers, 10000)
 
 
 - Deleting instance
-```
+```javascript
 var baseUrl = "/open-api/supos/oodm/v2/template/{template namespace}/{template alias}/instance/{instance alias}";
 
 var httpservice= services["HttpClientService"];// create hidden service object

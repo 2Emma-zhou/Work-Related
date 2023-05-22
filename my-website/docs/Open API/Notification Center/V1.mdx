@@ -5,7 +5,7 @@ hide_title: true
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Send Message
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Send Message
 
 
 </div>
@@ -21,7 +21,7 @@ http://supOS ip:port/api/openapi/notification/v1/message
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "content": {  //required when message type is specified
     "title": "title",
@@ -53,14 +53,14 @@ http://supOS ip:port/api/openapi/notification/v1/message
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "taskCode": "taskCode"
 }
 ```
 - 400
 
-```
+```json
 {
   "code": 100000001,
   "message": "'sender' cannot be empty"
@@ -76,7 +76,7 @@ http://supOS ip:port/api/openapi/notification/v1/message
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"

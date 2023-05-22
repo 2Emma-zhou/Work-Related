@@ -5,7 +5,9 @@ hide_title: true
 X-DAM supports StarRocks and MySQL databases.
 - For data volume less than 1 million in a single table, we recommend you use the embedded MySQL database.
 - For data volume more than 10 million in a single table, we recommend you mount the StarRocks database.
-Make sure you depoly the database first so you can configure corresponding information during X-DAM installation.
+:::info
+Make sure you deploy the database first so you can configure corresponding information during X-DAM installation.
+:::
 
 ## X-DAM Installation
 :::info
@@ -21,7 +23,7 @@ Make sure you depoly the database first so you can configure corresponding infor
 Make sure SSH is enabled on the server, and you need to use root to log in.
 :::
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supDAM/2.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supDAM/2.png)
 
 <table>
   <thead>
@@ -66,13 +68,13 @@ Make sure SSH is enabled on the server, and you need to use root to log in.
   </tbody>
 </table>
 
-3. Select **Installation type**,and then click **Next**.
+3. Select **Installation type**, and then click **Next**.
 4. Upload the installation package and then start installing X-DAM.
 :::info
 Make sure you have copied the installation package to **/home/supngin/supngin-dam** on the server before you select **Server**. Files under this path are displayed here by default.
 :::
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supDAM/3.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supDAM/3.png)
 
 
 
@@ -99,11 +101,41 @@ Middleware configuration is only needed for supOS cluster deployment.
 
 <ul>
 <ul>
-<li>Zookeeper: ZK=zookeeper_IP_1:2181/dam_kafka,zookeeper_IP_2:2181/dam_kafka,zookeeper_IP_3:2181/dam_kafka</li>
-<li>Kafka: KAFKA=kafka_IP_1:9092,kafka_IP_2:9092,kafka_IP_3:9092</li>
-<li>Redis: REDIS_HOSTS=redis_IP_1:6379,redis_IP_2:6379,redis_IP_3:6379,redis_IP_4:6379,redis_IP_5:6379,redis_IP_6:6379</li>
-<li>Nacos: NACOS=nacos_IP_1:8848,nacos_IP_2:8848,nacos_IP_3:8848</li>
-<li>NFS: NFS_HOST=nfs_vip_IP and NFS_PATH=/nfs</li>
+<li>Zookeeper:
+
+```
+ZK=zookeeper_IP_1:2181/dam_kafka,zookeeper_IP_2:2181/dam_kafka,zookeeper_IP_3:2181/dam_kafka
+```
+
+</li>
+<li>Kafka:
+
+```
+KAFKA=kafka_IP_1:9092,kafka_IP_2:9092,kafka_IP_3:9092
+```
+
+</li>
+<li>Redis:
+
+```
+REDIS_HOSTS=redis_IP_1:6379,redis_IP_2:6379,redis_IP_3:6379,redis_IP_4:6379,redis_IP_5:6379,redis_IP_6:6379
+```
+
+</li>
+<li>Nacos:
+
+```
+NACOS=nacos_IP_1:8848,nacos_IP_2:8848,nacos_IP_3:8848
+```
+
+</li>
+<li>NFS:
+
+```
+NFS_HOST=nfs_vip_IP and NFS_PATH=/nfs
+```
+
+</li>
 </ul>
 </ul>
 
@@ -140,7 +172,7 @@ STORAGE_ENGINE_SERVER=192.168.12.51 //database server IP
 STORAGE_ENGINE_PORT=9030 //query port of the database
 ```
 </li>
-<li>EMbedded MySQL
+<li>Embedded MySQL
 
 ```
 STORAGE_ENGINE_LAKE_DB=true //true means using embedded MySQL database
@@ -176,7 +208,7 @@ sudo bash install.sh
 kubectl get po
 ```
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supDAM/1.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supDAM/1.png)
 
 
 ## Accessing X-DAM
@@ -185,7 +217,7 @@ Log in to supOS, and then select **Data Intelligence**.
 After installation, X-DAM permission is not granted to admin or any user be default. Make sure you access supOS and assign corresponding module permission under **User Security Management**.
 :::
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supDAM/4.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supDAM/4.png)
 
 
 ## Uninstalling X-DAM

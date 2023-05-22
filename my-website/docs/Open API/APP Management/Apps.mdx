@@ -5,7 +5,7 @@ hide_title: true
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get App List
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get App List
 
 
 </div>
@@ -14,7 +14,7 @@ hide_title: true
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/appmgr/v2/apps
+http://{supOS ip:port}/open-api/appmgr/v2/apps
 ```
 
 </div>
@@ -37,7 +37,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 
 - 200: Successful.
 
-```
+```json
 {
   "list": [
     {
@@ -68,7 +68,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 ```
 - 400
 
-```
+```json
 {
   "code": 100122000,
   "message": "APP type cannot be empty"

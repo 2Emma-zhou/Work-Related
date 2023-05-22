@@ -8,7 +8,7 @@ hide_title: true
 Parameters needed for source connection for SQL Server, Oracle, PostgreSQL and Damon database are similar, and SQL Server is used as an example.
 :::
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/6.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/6.png)
 
 <table>
   <thead>
@@ -42,7 +42,7 @@ Parameters needed for source connection for SQL Server, Oracle, PostgreSQL and D
 ## Interface Data Source
 - WebService
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/10.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/10.png)
 
 <table>
   <thead>
@@ -97,7 +97,7 @@ Parameters needed for source connection for SQL Server, Oracle, PostgreSQL and D
 
 - Restful
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/11.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/11.png)
 
 <table>
   <thead>
@@ -180,7 +180,7 @@ When parsing the response data, comparison between result and reponse data start
 
 ## Object Model Data Source
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/12.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/12.png)
 
 <table>
   <thead>
@@ -236,7 +236,7 @@ Use the generated AK/SK credential on the source supOS for data acquisition.
 ## File Data Source
 - Local file directory
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/13.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/13.png)
 
 <table>
   <thead>
@@ -259,7 +259,7 @@ Use the generated AK/SK credential on the source supOS for data acquisition.
 
 - SMB
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/14.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/14.png)
 
 <table>
   <thead>
@@ -292,7 +292,7 @@ Use the generated AK/SK credential on the source supOS for data acquisition.
 
 - HDFS
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/15.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/15.png)
 
 <table>
   <thead>
@@ -320,7 +320,7 @@ Use the generated AK/SK credential on the source supOS for data acquisition.
 
 - FTP
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/16.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/16.png)
 
 <table>
   <thead>
@@ -355,7 +355,7 @@ Use the generated AK/SK credential on the source supOS for data acquisition.
 
 - MINIO
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/17.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/17.png)
 
 <table>
   <thead>
@@ -396,7 +396,7 @@ Absolute path of the data file to be connected.
 
 - OSS
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/18.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/18.png)
 
 <table>
   <thead>
@@ -438,7 +438,7 @@ Absolute path of the data file to be connected.
 ## Big Data Storage
 - Hive
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/19.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/19.png)
 
 <table>
   <thead>
@@ -472,7 +472,7 @@ Absolute path of the data file to be connected.
 
 - HBase
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/20.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/20.png)
 
 <table>
   <thead>
@@ -529,14 +529,14 @@ hostnames:
 hostnames:
 - "ubuntu-hadoop04"
 ```
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/50.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/50.png)
 3. Finish editing and do the same for **flink-jobmanager-batch** and **flink-taskmanager-batch**.
 4. Check the container ID, and then access the container.
 ```
 kubectl get po
 kubectl exec -it dam-resource-5b558bfdd7-kxgv2 bash
 ```
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/51.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/51.png)
 5. Inside the container, execute the following content to check whether the mapping is added in **hosts** file.
 ```
 cat /etc/hosts
@@ -546,7 +546,7 @@ cat /etc/hosts
 ## Message Queue
 - Kafka
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/21.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/21.png)
 
 <table>
   <thead>
@@ -571,7 +571,7 @@ IP address and port of the Kafka server.
 
 - MQTT
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/22.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/22.png)
 
 <table>
   <thead>
@@ -596,7 +596,7 @@ IP address and port of the MQTT server in the format of <b>tcp://ip:port</b>.
 
 - RocketMQ
 
-![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/supETL/23.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/23.png)
 
 <table>
   <thead>

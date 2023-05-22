@@ -5,7 +5,7 @@ hide_title: true
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Person Details by Code
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Person Details by Code
 
 
 </div>
@@ -14,7 +14,7 @@ hide_title: true
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/organization/v2/persons/{personCode}
+http://{supOS ip:port}/open-api/organization/v2/persons/{personCode}
 ```
 
 </div>
@@ -28,7 +28,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "code": "zhangsan",
   "name": "Zhangsan",
@@ -83,7 +83,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 ```
 - 400
 
-```
+```json
 {
   "code": 100104020,
   "message": "specified person does not exist"
@@ -97,7 +97,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Company Details by Code
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Company Details by Code
 
 
 </div>
@@ -106,7 +106,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/organization/v2/companies/{companyCode}
+http://{supOS ip:port}/open-api/organization/v2/companies/{companyCode}
 ```
 
 </div>
@@ -120,7 +120,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "code": "developCompany",
   "parentCode": "defualt_company",
@@ -140,7 +140,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 ```
 - 400
 
-```
+```json
 {
   "code": 100104040,
   "message": "company does not exist"
@@ -154,7 +154,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Persons by Company Code
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Persons by Company Code
 
 
 </div>
@@ -163,7 +163,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/organization/v2/companies/{companyCode}/persons
+http://{supOS ip:port}/open-api/organization/v2/companies/{companyCode}/persons
 ```
 
 </div>
@@ -184,7 +184,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "list": [
     {
@@ -238,7 +238,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 ```
 - 400
 
-```
+```json
 {
   "code": 100000003,
   "message": "'current' cannot be smaller than 1"
@@ -257,7 +257,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Post Details by Code
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Post Details by Code
 
 
 </div>
@@ -266,7 +266,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/organization/v2/positions/{positionCode}
+http://{supOS ip:port}/open-api/organization/v2/positions/{positionCode}
 ```
 
 </div>
@@ -280,7 +280,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "parentCode": "technologyPosition",
   "code": "developPosition",
@@ -310,7 +310,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 ```
 - 400
 
-```
+```json
 {
   "code": 100104013,
   "message": "specified post does not exist"
@@ -332,7 +332,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Persons by Post
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Persons by Post
 
 
 </div>
@@ -341,7 +341,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/organization/v2/positions/{positionCode}/persons
+http://{supOS ip:port}/open-api/organization/v2/positions/{positionCode}/persons
 ```
 
 </div>
@@ -362,7 +362,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "list": [
     {
@@ -416,7 +416,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 ```
 - 400
 
-```
+```json
 {
   "code": 100000003,
   "message": "'current' cannot be smaller than 1"
@@ -437,7 +437,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Department Details by Code
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Department Details by Code
 
 
 </div>
@@ -446,7 +446,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/organization/v2/departments/{departmentCode}
+http://{supOS ip:port}/open-api/organization/v2/departments/{departmentCode}
 ```
 
 </div>
@@ -460,7 +460,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "parentCode": "technologyDepartment",
   "code": "developDepartment",
@@ -496,7 +496,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 ```
 - 400
 
-```
+```json
 {
   "code": 100104004,
   "message": "specified department does not exist"
@@ -510,7 +510,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Persons by Department
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Persons by Department
 
 
 </div>
@@ -519,7 +519,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/organization/v2/departments/{departmentCode}/persons
+http://{supOS ip:port}/open-api/organization/v2/departments/{departmentCode}/persons
 ```
 
 </div>
@@ -540,7 +540,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "list": [
     {
@@ -594,7 +594,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 ```
 - 400
 
-```
+```json
 {
   "code": 100000003,
   "message": "'current' cannot be smaller than 1"
@@ -615,7 +615,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Company List
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Company List
 
 
 </div>
@@ -624,7 +624,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/organization/v2/companies
+http://{supOS ip:port}/open-api/organization/v2/companies
 ```
 
 </div>
@@ -646,7 +646,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "list": [
     {
@@ -675,7 +675,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 ```
 - 400
 
-```
+```json
 {
   "code": 100000003,
   "message": "'current' cannot be smaller than 1"
@@ -696,7 +696,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Department List
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Department List
 
 
 </div>
@@ -705,7 +705,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/organization/v2/departments
+http://{supOS ip:port}/open-api/organization/v2/departments
 ```
 
 </div>
@@ -727,7 +727,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "list": [
         {
@@ -766,7 +766,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 ```
 - 400
 
-```
+```json
 {
   "code": 100000003,
   "message": "'current' cannot be smaller than 1"
@@ -787,7 +787,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Post List
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Post List
 
 
 </div>
@@ -796,7 +796,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/organization/v2/positions
+http://{supOS ip:port}/open-api/organization/v2/positions
 ```
 
 </div>
@@ -818,7 +818,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "list": [
     {
@@ -851,7 +851,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 ```
 - 400
 
-```
+```json
 {
   "code": 100000003,
   "message": "'current' cannot be smaller than 1"
@@ -872,7 +872,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Person List
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Person List
 
 
 </div>
@@ -881,7 +881,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/organization/v2/persons
+http://{supOS ip:port}/open-api/organization/v2/persons
 ```
 
 </div>
@@ -903,7 +903,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "list": [
         {
@@ -967,7 +967,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 ```
 - 400
 
-```
+```json
 {
   "code": 100000003,
   "message": "'current' cannot be smaller than 1"
@@ -988,7 +988,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Department List by Company
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Department List by Company
 
 
 </div>
@@ -997,7 +997,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/organization/v2/companies/{companyCode}/departments
+http://{supOS ip:port}/open-api/organization/v2/companies/{companyCode}/departments
 ```
 
 </div>
@@ -1019,7 +1019,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "list": [
         {
@@ -1052,7 +1052,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 ```
 - 400
 
-```
+```json
 {
   "code": 100000003,
   "message": "'current' cannot be smaller than 1"
@@ -1074,7 +1074,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Post List by Company
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Post List by Company
 
 
 </div>
@@ -1083,7 +1083,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/organization/v2/companies/{companyCode}/positions
+http://{supOS ip:port}/open-api/organization/v2/companies/{companyCode}/positions
 ```
 
 </div>
@@ -1104,7 +1104,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "list": [
     {
@@ -1133,7 +1133,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 ```
 - 400
 
-```
+```json
 {
   "code": 100000003,
   "message": "'current' cannot be smaller than 1"
@@ -1154,7 +1154,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Add, Edit and Delete Person in Batches
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Add, Edit and Delete Person in Batches
 
 
 </div>
@@ -1163,14 +1163,14 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/organization/v2/persons/bulk
+http://{supOS ip:port}/open-api/organization/v2/persons/bulk
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "addPersons": [
     {
@@ -1274,7 +1274,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 - 200: Successful.
 - 400
 
-```
+```json
 {
   "code": 1001040393,
   "message": "person code is required, cannot be empty. It must a combination of letter, number and underscore, with length less than 50."
@@ -1384,7 +1384,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Set Person Icon by Code
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Set Person Icon by Code
 
 
 </div>
@@ -1393,7 +1393,7 @@ Accept-Language: Default is the server language. Options are **en-us** and **zh-
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/organization/v2/persons/{personCode}/image
+http://{supOS ip:port}/open-api/organization/v2/persons/{personCode}/image
 ```
 
 </div>
@@ -1415,7 +1415,7 @@ fileName
 - 200: Successful.
 - 400
 
-```
+```json
 {
   "code": 1001040379,
   "message": "person icon format error"

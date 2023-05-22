@@ -5,7 +5,7 @@ hide_title: true
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Algorithm Runtime Model
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Algorithm Runtime Model
 
 
 </div>
@@ -14,7 +14,7 @@ hide_title: true
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/bigdata-runtime/v2/models
+http://{supOS ip:port}/open-api/bigdata-runtime/v2/models
 ```
 
 </div>
@@ -31,7 +31,7 @@ http://supOS ip:port/open-api/bigdata-runtime/v2/models
 
 - 200: Successful.
 
-```
+```json
 {
   "list": [
     {
@@ -54,7 +54,7 @@ http://supOS ip:port/open-api/bigdata-runtime/v2/models
 ```
 - 400
 
-```
+```json
 {
   "code": 40000404,
   "message": "unknown error"
@@ -68,7 +68,7 @@ http://supOS ip:port/open-api/bigdata-runtime/v2/models
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Runtime Model Version List
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Runtime Model Version List
 
 
 </div>
@@ -77,7 +77,7 @@ http://supOS ip:port/open-api/bigdata-runtime/v2/models
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/bigdata-runtime/v2/models/{modelCode}/versions
+http://{supOS ip:port}/open-api/bigdata-runtime/v2/models/{modelCode}/versions
 ```
 
 **modelCode**: Model code. Required. String.
@@ -88,7 +88,7 @@ http://supOS ip:port/open-api/bigdata-runtime/v2/models/{modelCode}/versions
 
 - 200: Successful.
 
-```
+```json
 {
   "list": [
     {
@@ -103,7 +103,7 @@ http://supOS ip:port/open-api/bigdata-runtime/v2/models/{modelCode}/versions
 ```
 - 400
 
-```
+```json
 {
   "code": 40000404,
   "message": "unknown error"
@@ -117,7 +117,7 @@ http://supOS ip:port/open-api/bigdata-runtime/v2/models/{modelCode}/versions
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Call Runtime Model
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Call Runtime Model
 
 
 </div>
@@ -126,7 +126,7 @@ http://supOS ip:port/open-api/bigdata-runtime/v2/models/{modelCode}/versions
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/bigdata-runtime/v2/models/{modelCode}/versions/{modelVersion}/invocations
+http://{supOS ip:port}/open-api/bigdata-runtime/v2/models/{modelCode}/versions/{modelVersion}/invocations
 ```
 
 - **modelCode**: Model code. Required. String.
@@ -136,7 +136,7 @@ http://supOS ip:port/open-api/bigdata-runtime/v2/models/{modelCode}/versions/{mo
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "outerId": "uuiduuiduuid",  //required. ID externally input
   "inputData": [  //input data of the model. Required. Array. 
@@ -153,7 +153,7 @@ http://supOS ip:port/open-api/bigdata-runtime/v2/models/{modelCode}/versions/{mo
 
 200: Successful.
 
-```
+```json
 {
   "outerId": "uuiduuiduuid",  //running task ID
   "data": [

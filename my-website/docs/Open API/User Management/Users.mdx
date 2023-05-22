@@ -5,7 +5,7 @@ hide_title: true
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Add User
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Add User
 
 
 </div>
@@ -14,14 +14,14 @@ hide_title: true
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/auth/v2/users
+http://{supOS ip:port}/open-api/auth/v2/users
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "username": "test",  //required
   "password": "xxxxx",  //required
@@ -56,7 +56,7 @@ http://supOS ip:port/open-api/auth/v2/users
 - 200: Successful.
 - 400
 
-```
+```json
 {
   "code": 100106021,
   "message": "password rule: Contains upper and lower cases, and number, and the length is 6-8 digits."
@@ -78,7 +78,7 @@ http://supOS ip:port/open-api/auth/v2/users
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -92,7 +92,7 @@ http://supOS ip:port/open-api/auth/v2/users
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get User List
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get User List
 
 
 </div>
@@ -101,7 +101,7 @@ http://supOS ip:port/open-api/auth/v2/users
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/auth/v2/users
+http://{supOS ip:port}/open-api/auth/v2/users
 ```
 
 </div>
@@ -121,7 +121,7 @@ http://supOS ip:port/open-api/auth/v2/users
 
 - 200: Successful.
 
-```
+```json
 {
   "list": [
     {
@@ -152,7 +152,7 @@ http://supOS ip:port/open-api/auth/v2/users
 ```
 - 400
 
-```
+```json
 {
   "code": 100106500,
   "message": "pageSize exceeds the maximum of 500"
@@ -162,7 +162,7 @@ http://supOS ip:port/open-api/auth/v2/users
 100106014: Company does not exist.
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -176,7 +176,7 @@ http://supOS ip:port/open-api/auth/v2/users
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/3.png) Delete User in Batches
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/3.png) Delete User in Batches
 
 
 </div>
@@ -185,7 +185,7 @@ http://supOS ip:port/open-api/auth/v2/users
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/auth/v2/users
+http://{supOS ip:port}/open-api/auth/v2/users
 ```
 
 </div>
@@ -201,7 +201,7 @@ http://supOS ip:port/open-api/auth/v2/users
 - 200: Successful.
 - 400
 
-```
+```json
 {
   "code": 100106017,
   "message": "{name},pending tasks exist, {name} cannot be deleted"
@@ -216,7 +216,7 @@ http://supOS ip:port/open-api/auth/v2/users
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -230,7 +230,7 @@ http://supOS ip:port/open-api/auth/v2/users
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get User Details
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get User Details
 
 
 </div>
@@ -239,7 +239,7 @@ http://supOS ip:port/open-api/auth/v2/users
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/auth/v2/users/{username}
+http://{supOS ip:port}/open-api/auth/v2/users/{username}
 ```
 
 </div>
@@ -247,7 +247,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "username": "admin",
   "userDesc": "super admin",
@@ -269,7 +269,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}
 ```
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -283,7 +283,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Edit User
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/2.png) Edit User
 
 
 </div>
@@ -292,14 +292,14 @@ http://supOS ip:port/open-api/auth/v2/users/{username}
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/auth/v2/users/{username}
+http://{supOS ip:port}/open-api/auth/v2/users/{username}
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "userDesc": "manager",
   "timeZone": "GMT+0000",
@@ -315,7 +315,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}
 - 200: Successful.
 - 400
 
-```
+```json
 {
   "code": 100106500,
   "message": "timeZone format error"
@@ -330,7 +330,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -344,7 +344,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Unbind User
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/2.png) Unbind User
 
 :::info
 Up to 10 roles can be unbind.
@@ -356,14 +356,14 @@ Up to 10 roles can be unbind.
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/auth/v2/users/{username}/role
+http://{supOS ip:port}/open-api/auth/v2/users/{username}/role
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "roleCodes": [  //required
     "role1"
@@ -378,7 +378,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}/role
 - 200: Successful.
 - 400
 
-```
+```json
 {
   "code": 100106013,
   "message": "role1,role2 do not exist"
@@ -394,7 +394,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}/role
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -408,7 +408,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}/role
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Bind User
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Bind User
 
 :::info
 Up to 10 roles can be bound.
@@ -420,14 +420,14 @@ Up to 10 roles can be bound.
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/auth/v2/users/{username}/role
+http://{supOS ip:port}/open-api/auth/v2/users/{username}/role
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "roleCodes": [  //required
     "role1"
@@ -442,7 +442,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}/role
 - 200: Successful.
 - 400
 
-```
+```json
 {
   "code": 100106013,
   "message": "role1,role2 do not exist"
@@ -459,7 +459,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}/role
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -473,7 +473,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}/role
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Reset Default Admin Password
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/2.png) Reset Default Admin Password
 
 :::info
 - Only works on admin.
@@ -486,7 +486,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}/role
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/auth/v2/users/{username}/role
+http://{supOS ip:port}/open-api/auth/v2/users/{username}/role
 ```
 
 </div>
@@ -494,7 +494,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}/role
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "password": "9Bo0JPnIfi0A9tptjB/pwisHnom1gSPm/OLyuPDXldM="
 }
@@ -513,7 +513,7 @@ The returned password is encrypted with base64. Decipher with following algorith
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/3.png) Unbind Third-party Role
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/3.png) Unbind Third-party Role
 
 :::info
 - Works on 1-10 third-party roles.
@@ -526,7 +526,7 @@ The returned password is encrypted with base64. Decipher with following algorith
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/auth/v2/users/{username}/role/third/identity
+http://{supOS ip:port}/open-api/auth/v2/users/{username}/role/third/identity
 ```
 
 </div>
@@ -541,7 +541,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}/role/third/identity
 
 - 200: Successful.
 - 400
-```
+```json
 {
   "code": 100106500,
   "message": "number of roles exceeds the maximum of 10"
@@ -555,7 +555,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}/role/third/identity
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Accessible Menus by Username 
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Accessible Menus by Username 
 
 
 </div>
@@ -564,7 +564,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}/role/third/identity
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/rbac/v2/users/{username}/permissions/menus
+http://{supOS ip:port}/open-api/rbac/v2/users/{username}/permissions/menus
 ```
 
 </div>
@@ -580,7 +580,7 @@ http://supOS ip:port/open-api/rbac/v2/users/{username}/permissions/menus
 
 - 200: Successful.
 
-```
+```json
 {
   "list": [
     {
@@ -593,7 +593,7 @@ http://supOS ip:port/open-api/rbac/v2/users/{username}/permissions/menus
 ```
 - 400
 
-```
+```json
 {
   "code": 100105225,
   "message": "specified user does not exist"
@@ -610,7 +610,7 @@ http://supOS ip:port/open-api/rbac/v2/users/{username}/permissions/menus
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -624,7 +624,7 @@ http://supOS ip:port/open-api/rbac/v2/users/{username}/permissions/menus
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Accessible Menus by Role 
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Accessible Menus by Role 
 
 
 </div>
@@ -633,7 +633,7 @@ http://supOS ip:port/open-api/rbac/v2/users/{username}/permissions/menus
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/rbac/v2/roles/{rolecode}/permissions/menus
+http://{supOS ip:port}/open-api/rbac/v2/roles/{rolecode}/permissions/menus
 ```
 
 </div>
@@ -649,7 +649,7 @@ http://supOS ip:port/open-api/rbac/v2/roles/{rolecode}/permissions/menus
 
 - 200: Successful.
 
-```
+```json
 {
   "list": [
     {
@@ -662,7 +662,7 @@ http://supOS ip:port/open-api/rbac/v2/roles/{rolecode}/permissions/menus
 ```
 - 400
 
-```
+```json
 {
   "code": 100105228,
   "message": "specified role does not exist"
@@ -679,7 +679,7 @@ http://supOS ip:port/open-api/rbac/v2/roles/{rolecode}/permissions/menus
 </ul>
 
 - 500
-```
+```json
 {
   "code": 100000001,
   "message": "internal service exception"
@@ -693,7 +693,7 @@ http://supOS ip:port/open-api/rbac/v2/roles/{rolecode}/permissions/menus
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Load User Icon
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Load User Icon
 
 
 </div>
@@ -702,7 +702,7 @@ http://supOS ip:port/open-api/rbac/v2/roles/{rolecode}/permissions/menus
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/auth/v2/users/{username}/avatar
+http://{supOS ip:port}/open-api/auth/v2/users/{username}/avatar
 ```
 
 </div>
@@ -719,7 +719,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}/avatar
 - 200: Successful.
 - 400
 
-```
+```json
 {
   "code": 100106114,
   "message": "avatar file does not exist"
@@ -733,7 +733,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}/avatar
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Upload User Icon
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Upload User Icon
 
 
 </div>
@@ -742,7 +742,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}/avatar
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/auth/v2/users/{username}/avatar
+http://{supOS ip:port}/open-api/auth/v2/users/{username}/avatar
 ```
 
 </div>
@@ -756,7 +756,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}/avatar
 <div className='rightCol'>
 
 - 200: Successful.
-```
+```json
 {
   "fileName": "string",
   "fileFullPath": "string",
@@ -765,7 +765,7 @@ http://supOS ip:port/open-api/auth/v2/users/{username}/avatar
 ```
 - 400
 
-```
+```json
 {
   "code": 100106112,
   "message": "file type can only be jpg, gif and png"

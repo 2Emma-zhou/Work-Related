@@ -5,7 +5,7 @@ hide_title: true
 <div class="div">
   <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get History Alarm Details
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get History Alarm Details
 
 </div>
   <div class="grid">
@@ -13,7 +13,7 @@ hide_title: true
     <div class="rightCol">
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/alerts/history/{alertRecordId}
+http://{supOS ip:port}/open-api/supos/oodm/v2/alerts/history/{alertRecordId}
 alertRecordId: String. Alarm record ID.
 ```
 
@@ -53,7 +53,7 @@ alertRecordId: String. Alarm record ID.
 </li>
 <li>400: General internal error of OODM.
 
-```
+```json
 {
   "code": 90900006,
   "message": "invalid histroy alarm ID",
@@ -71,7 +71,7 @@ alertRecordId: String. Alarm record ID.
 <div class="div">
   <div class="title">
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get History Record of Alarm
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get History Record of Alarm
 
 </div>
   <div class="grid">
@@ -79,7 +79,7 @@ alertRecordId: String. Alarm record ID.
     <div class="rightCol">
 
 ```
-http://supOS ip:port/open-api/supos/oodm/v2/alerts/history
+http://{supOS ip:port}/open-api/supos/oodm/v2/alerts/history
 ```
 
 </div>
@@ -174,7 +174,7 @@ keyword:p1 startTime:2021-04-01T16:00:00.000+08:00 endTime:2021-04-10T23:59:59.0
 
 
 
-```
+```json
 {
   "list": [
     {
@@ -201,7 +201,7 @@ keyword:p1 startTime:2021-04-01T16:00:00.000+08:00 endTime:2021-04-10T23:59:59.0
 </li>
 <li>400: General internal error of OODM.
 
-```
+```json
 {
   "code": 90900005,
   "message": "wrong time format",

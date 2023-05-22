@@ -5,7 +5,7 @@ hide_title: true
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Business Topics for Subscription
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Business Topics for Subscription
 
 Get the list of business topics that can be externally subscribed on the current platform.
 
@@ -15,7 +15,7 @@ Get the list of business topics that can be externally subscribed on the current
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/webhook/v2/topics
+http://{supOS ip:port}/open-api/webhook/v2/topics
 ```
 
 </div>
@@ -31,7 +31,7 @@ http://supOS ip:port/open-api/webhook/v2/topics
 
 - 200: Successful.
 
-```
+```json
 {
   "list": [
     {
@@ -49,14 +49,14 @@ http://supOS ip:port/open-api/webhook/v2/topics
 ```
 - 400
 
-```
+```json
 {
   "code": 100108503,
   "message": "username cannot be empty"
 }
 ```
 - 500
-```
+```json
 {
   "code": 100000007,
   "message": "service internal error"
@@ -78,7 +78,7 @@ http://supOS ip:port/open-api/webhook/v2/topics
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Subscribe Business Topics
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Subscribe Business Topics
 
 Subscribe business topics from external. Batch subscription is available.
 
@@ -88,14 +88,14 @@ Subscribe business topics from external. Batch subscription is available.
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/webhook/v2/topics/subscribe
+http://{supOS ip:port}/open-api/webhook/v2/topics/subscribe
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "tenantId": "dt", //required
   "appId": "App_ca4f1aeb382142849cebadb8b780c9ed", //required
@@ -112,7 +112,7 @@ http://supOS ip:port/open-api/webhook/v2/topics/subscribe
 
 - 200: Successful.
 
-```
+```json
 {
   "appRegisterId": 2646255255224320,
   "topicHistoryStatusList": [
@@ -124,7 +124,7 @@ http://supOS ip:port/open-api/webhook/v2/topics/subscribe
 }
 ```
 - 500
-```
+```json
 {
   "code": 100000007,
   "message": "service internal error"
@@ -137,7 +137,7 @@ http://supOS ip:port/open-api/webhook/v2/topics/subscribe
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Change Subscribed Topic History to Read
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/2.png) Change Subscribed Topic History to Read
 
 :::info
 When **historyStatus** is returned as **false** after calling the **/topics/subscribe** API, 
@@ -150,14 +150,14 @@ you need to synchronize full historical data, and then call this API again to ge
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/webhook/v2/topics/readiness
+http://{supOS ip:port}/open-api/webhook/v2/topics/readiness
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "tenantId": "dt", //required
   "appId": "App_ca4f1aeb382142849cebadb8b780c9ed", //required
@@ -173,13 +173,13 @@ http://supOS ip:port/open-api/webhook/v2/topics/readiness
 
 - 200: Successful.
 
-```
+```json
 {
   "data": true
 }
 ```
 - 500
-```
+```json
 {
   "code": 100000007,
   "message": "service internal error"
@@ -192,7 +192,7 @@ http://supOS ip:port/open-api/webhook/v2/topics/readiness
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Activate Pushed Task
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Activate Pushed Task
 
 :::info
 Usually used when the subscriber service restarts or data inconsistancy happens.
@@ -204,14 +204,14 @@ Usually used when the subscriber service restarts or data inconsistancy happens.
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/webhook/v2/retry
+http://{supOS ip:port}/open-api/webhook/v2/retry
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "tenantId": "dt", //required
   "appId": "App_ca4f1aeb382142849cebadb8b780c9ed", //required
@@ -227,7 +227,7 @@ http://supOS ip:port/open-api/webhook/v2/retry
 
 - 200: Successful.
 - 500
-```
+```json
 {
   "code": "string",
   "message": "string"

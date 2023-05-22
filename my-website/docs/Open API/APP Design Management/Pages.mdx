@@ -5,7 +5,7 @@ hide_title: true
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Design Structure
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Design Structure
 
 :::info
 - No **Layout** block in the results.
@@ -18,7 +18,7 @@ hide_title: true
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/compose/v2/pages/tree
+http://{supOS ip:port}/open-api/p/compose/v2/pages/tree
 ```
 
 
@@ -35,7 +35,7 @@ http://supOS ip:port/open-api/p/compose/v2/pages/tree
 
 - 200: Successful.
 
-```
+```json
 {
   "id": "App_bac090d688004de9bf927b9ff66bfca7",
   "name": "desktop",
@@ -153,7 +153,7 @@ http://supOS ip:port/open-api/p/compose/v2/pages/tree
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/1.png) Create a Page
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/1.png) Create a Page
 
 </div>
 <div className='grid'>
@@ -161,14 +161,14 @@ http://supOS ip:port/open-api/p/compose/v2/pages/tree
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/compose/v2/pages
+http://{supOS ip:port}/open-api/p/compose/v2/pages
 ```
 
 </div>
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "name": "page", //required
   "description": "",
@@ -200,7 +200,7 @@ http://supOS ip:port/open-api/p/compose/v2/pages
 
 - 200: Successful.
 
-```
+```json
 {
   "location": "string"  //resource URL of the page
 }
@@ -224,7 +224,7 @@ http://supOS ip:port/open-api/p/compose/v2/pages
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/4.png) Get Page Details
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/4.png) Get Page Details
 
 
 </div>
@@ -233,7 +233,7 @@ http://supOS ip:port/open-api/p/compose/v2/pages
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/compose/v2/pages/{pageId}
+http://{supOS ip:port}/open-api/p/compose/v2/pages/{pageId}
 ```
 **pageId**: Required.
 
@@ -249,7 +249,7 @@ http://supOS ip:port/open-api/p/compose/v2/pages/{pageId}
 
 - 200: Successful.
 
-```
+```json
 {
   "layouts": [
     {
@@ -294,7 +294,7 @@ http://supOS ip:port/open-api/p/compose/v2/pages/{pageId}
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/2.png) Edit Page Information
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/2.png) Edit Page Information
 
 </div>
 <div className='grid'>
@@ -302,7 +302,7 @@ http://supOS ip:port/open-api/p/compose/v2/pages/{pageId}
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/compose/v2/pages/{pageId}
+http://{supOS ip:port}/open-api/p/compose/v2/pages/{pageId}
 ```
 
 **pageId**: Required.
@@ -311,7 +311,7 @@ http://supOS ip:port/open-api/p/compose/v2/pages/{pageId}
 <div className='leftCol'>Request body</div>
 <div className='rightCol'>
 
-```
+```json
 {
   "name": "page", //required
   "description": "",
@@ -334,7 +334,7 @@ http://supOS ip:port/open-api/p/compose/v2/pages/{pageId}
 
 - 200: Successful.
 
-```
+```json
 {
   "location": "string"
 }
@@ -358,7 +358,7 @@ http://supOS ip:port/open-api/p/compose/v2/pages/{pageId}
 <div className='div'>
 <div className='title'>
 
-## ![](https://wordpressfreezonex.oss-cn-hangzhou.aliyuncs.com/openAPI/3.png) Delete a Page
+## ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/openAPI/3.png) Delete a Page
 
 </div>
 <div className='grid'>
@@ -366,7 +366,7 @@ http://supOS ip:port/open-api/p/compose/v2/pages/{pageId}
 <div className='rightCol'>
 
 ```
-http://supOS ip:port/open-api/p/compose/v2/pages/{pageId}
+http://{supOS ip:port}/open-api/p/compose/v2/pages/{pageId}
 ```
 
 **pageId**: Required.

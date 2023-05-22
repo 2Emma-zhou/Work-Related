@@ -32,13 +32,13 @@ There are two form templates are used as examples in the guide: User template an
 
 Use sql.toSql() to check if the jsql you input is correct. The following is an example:
 - Query
-```
+```javascript
 var user = jsql.template['system.user'];
 var sql = jsql.select().from(user);
 sql.toSql()
 ```
 - Result
-```
+```sql
 select * from system_user;
 ```
 
@@ -51,7 +51,7 @@ Too much data may cause server crash. If no limit clauses are added, only the fi
 If the template namespace is not defined in the syntax, data query is happened inside the current app first and then in system. If no items can be found, an error will be reported.
 :::
 
-```
+```javascript
 // Get template
 var user = jsql.template.user;
 // Select staff，the first 20 items are returned by default
@@ -72,7 +72,7 @@ repo.query(sql);
 Attributes must be acquired by template object rather than using string because string stands for contant.
 ### General Query
 - Query
-```
+```javascript
 // Select the name and age of all the staff
 var user = jsql.template.user;
 var sql = jsql.select(user.name, user.age).from(user);
@@ -84,7 +84,7 @@ repo.query(sql);
 
 - Result
 
-```
+```json
 {
     "columns": [
         {
@@ -123,7 +123,7 @@ Attributes with namespace are not supported presently. Attribute alias must be u
 Get data in the format of kv (key:value) to cater to front-end components of Tianfang.
 - Query
 
-```
+```javascript
 // Get the name and age of all the staff
 var user = jsql.template.user;
 var sql = jsql.select(user.name, user.age).from(user);
@@ -132,7 +132,7 @@ var sql = jsql.select(user.name, user.age).from(user);
 repo.query(sql, "kv");
 ```
 - Result
-```
+```json
 {
     "list": [
         {
@@ -163,7 +163,7 @@ Join types:
 * rightJoin(t, onCondition)
 * fullJoin(t, onCondition)
 
-```
+```javascript
 // search for all notes for leave of R&D department and return staff ID, name and reason for leave
 var absence = jsql.template.absence;
 var user = jsql.template.user;
@@ -178,7 +178,7 @@ repo.query(sql);
 
 ### Fuzzy Query
 
-```
+```javascript
 // Select all the staff with name starting with letter J
 var sql = jsql.select().from(user).where(user.name.like("J%"));
 // Select all the notes for leave with the reason for leave containing sick
@@ -187,7 +187,7 @@ var sql = jsql.select().from(absence).where(absence.reason.like("%sick%"));
 
 ### Comparison Operation
 - Query
-```
+```javascript
 // Select all the staff older than 20
 var sql = jsql.select().from(user).where(user.age.gt(20));
 // Select all the notes for leave with less than three days of absence 
@@ -210,21 +210,21 @@ var sql = jsql.select().from(absence).where(absence.absence_days.lt(3));
 
 * and
 
-```
+```javascript
 // Select all the staff in department2 who are older than 20
 var sql = jsql.select().from(user).where(user.age.gt(20).and(user.dep.eq('Department2')));
 ```
 
 * or
 
-```
+```javascript
 // Select all the staff older than 20 or younger than 40
 var sql = jsql.select().from(user).where(user.age.gt(20).or(user.age.lt(40)));
 ```
 
 * not
 
-```
+```javascript
 // Select all the staff that are not from department two
 var sql = jsql.select().from(user).where(user.dep.eq('department2').not());
 ```
@@ -233,7 +233,7 @@ var sql = jsql.select().from(user).where(user.dep.eq('department2').not());
 
 Sometimes constant expressions are needed to combine with sql, e.g. where true and user.age.gt(20).
 ### General
-```
+```javascript
 // Input parameter to conbine with sql
 // Two input parameters: min_age, name_keyword，both can be null. If the parameters are null，data will not be filtered.
 var absence = jsql.template.absence;
@@ -257,7 +257,7 @@ repo.query(sql);
 
 Complex expressions need to be grouped by using brackets.
 
-```
+```javascript
 //Select all the staff older than 20 and younger than 30 or older than 40 and younger than 50.
 
 var sql = jsql.select().from(user).where(jsql.group(user.age.gt(20).and(user.age.lt(30))).or(jsql.group(user.age.gt(40).and(user.age.lt(50)))));
@@ -269,7 +269,7 @@ var sql = jsql.select().from(user).where(jsql.group(user.age.gt(20).and(user.age
 
 ### in, notIn
 
-```
+```javascript
 //Select all the staff of department two or three
 var sql = jsql.select().from(user).where(user.dep.in('department2','department3'));
 //Select all the staff that are not from department two or three
@@ -280,7 +280,7 @@ var sql = jsql.select().from(user).where(user.dep.notIn('department2','departmen
 ### between, notBetween
 
 
-```
+```javascript
 // Select all the staff whose age is between 20 and 30 (including 20 and 30)
 
 var sql = jsql.select().from(user).where(user.age.between(20, 30))
@@ -295,7 +295,7 @@ var sql = jsql.select().from(user).where(user.age.notBetween(20, 30))
 * caseWhen
 * caseWhenEq
 
-```
+```javascript
 // Select the age range of all the staff，0-20: teenager，20-30: adolescence，30+ middle age
 
 var sql = jsql.select(jsql.caseWhen(user.age.lt(20), 'teenager').when(user.age.between(20, 30), 'adolescence').el('middle age')).from(user);
@@ -306,7 +306,7 @@ var sql = jsql.select(jsql.caseWhen(user.age.lt(20), 'teenager').when(user.age.b
 
 ## Grouping Query Results
 
-```
+```javascript
 // Calculate the staff number of each department
 
 var sql = jsql.select(user.dep, user.uid.count()).from(user).groupBy(user.dep);
@@ -314,7 +314,7 @@ var sql = jsql.select(user.dep, user.uid.count()).from(user).groupBy(user.dep);
 
 ## Filter Grouping Results
 
-```
+```javascript
 // Calculate the staff number of each department and Return results with the number greater than 100
 
 var sql = jsql.select(user.dep, 
@@ -323,7 +323,7 @@ user.uid.count()).from(user).groupBy(user.dep).having(user.uid.count().gt(100));
 
 ## Sorting Results
 
-```
+```javascript
 // Select all the satff. Order by uid with ascending order(the default order is ascending order)
 var sql = jsql.select().from(user).orderBy(user.uid);
 // Select all the satff. Order by uid with descending order
@@ -339,7 +339,7 @@ var sql = jsql.select().from(user).orderBy(user.uid).orderByDesc(user.name);
 - Limit(20,20) means to start from 20 and to get the data from 20-40. The first _20_ stands for data address, the latter stands for the length of data.
 - Pagination can also be used to limit data to meet front-end requirements.
 
-```
+```javascript
 // Select staff and return the data of first 20 staff; order the result by uid with  ascending order.
 var sql = jsql.select().from(user).orderBy(user.uid).limit(20);
 // Select staff, skip the first 20 staff, order the results by ascending order. Rerurn the staff from 20-40.
@@ -351,7 +351,7 @@ var sql = jsql.select().from(user).orderBy(user.uid).pageBy(2, 20);
 
 ## Deduplicating Results
 
-```
+```javascript
 // Select staff with distinct name
 
 var sql = jsql.select(user.name.distinct()).from(user);
@@ -366,7 +366,7 @@ var sql = jsql.select().distinctAll().from(user);
 ### Arithmetic Operation
 
 - Query
-```
+```javascript
 // Return the result with the age of the staff adding 10
 var sql = jsql.select(user.age.add(10)).from(user);
 ```
@@ -388,7 +388,7 @@ var sql = jsql.select(user.age.add(10)).from(user);
 
 **abs** can get absolute value with no input parameters.
 
-```
+```javascript
 // Select all the notes for leave. Return the absolute value of absence days minus 7 
 
 var sql = jsql.select(absence.absence_days.sub(7).abs()).from(absence);
@@ -402,7 +402,7 @@ var sql = jsql.select(absence.absence_days.sub(7).abs()).from(absence);
 
 - length: Integer, length of subtraction
 
-```
+```javascript
 // Select all the notes for leave. Subtract the first 30 characters of leave reason
 
 var sql = jsql.select(absence.reason.substr(1, 30)).from(absence);
@@ -414,7 +414,7 @@ var sql = jsql.select(absence.reason.substr(1, 30)).from(absence);
 
 Calculate quantity with no input parameters.
 
-```
+```javascript
 // Get number of notes for leave 
 var sql = jsql.select(absence.code.count()).from(absence);
 ```
@@ -423,7 +423,7 @@ var sql = jsql.select(absence.code.count()).from(absence);
 
 Get average value with no input parameters.
 
-```
+```javascript
 // Get average value of absentce days 
 
 var sql = jsql.select(absence.absence_days.avg()).from(absence);
@@ -433,7 +433,7 @@ var sql = jsql.select(absence.absence_days.avg()).from(absence);
 
 Get maximum value with no input parameters.
 
-```
+```javascript
 // Get the longest duration of absence days 
 
 var sql = jsql.select(absence.absence_days.max()).from(absence);
@@ -443,7 +443,7 @@ var sql = jsql.select(absence.absence_days.max()).from(absence);
 
 Get minimum value with no input parameters.
 
-```
+```javascript
 // Get the longest duration of absence days 
 
 var sql = jsql.select(absence.absence_days.max()).from(absence);
@@ -455,7 +455,7 @@ var sql = jsql.select(absence.absence_days.max()).from(absence);
 
 format: Refer to mysql documents for details ：https://www.mysqltutorial.org/mysql-date/_format/
 
-```
+```javascript
 // Get the staff id and the employ time: date format: 2020-10-10 11:30:03
 var sql =
 jsql.select(user.employ_time.dateFormat('%Y-%m-%d %H:%i:%S')).from(user);
@@ -463,7 +463,7 @@ jsql.select(user.employ_time.dateFormat('%Y-%m-%d %H:%i:%S')).from(user);
 
 ## Inserting Data
 
-```
+```javascript
 // Insert two staff
 
 // Fields and values correspond to each other in order
@@ -489,7 +489,7 @@ repo.insert(sql);
 Update command must have **where** condition to prevent the undesirable update of data.
 :::
 
-```
+```javascript
 // Plus one to the age of all staff from department two
 var sql = jsql.update(user)
 .set({age: user.age.add(1)})
@@ -505,7 +505,7 @@ repo.update(sql);
 Delete command must have **where** condition to prevent the undesirable delete of data.
 :::
 
-```
+```javascript
 // delete notes for leave whose ID is 001
 var sql = jsql.delete(absence).where(absence.code.eq('001'));
 // return the number of deleted items
@@ -518,7 +518,7 @@ Transaction is usually used to manually control the consistancy of multiple data
 The current isolation level of transaction is **repeatable-read**, which eliminated non-repeatable read but phantom read still exists.
 :::
 
-```
+```javascript
 //start transaction
 var tx = services.DataTableService.createTransaction();
 //submit transaction
