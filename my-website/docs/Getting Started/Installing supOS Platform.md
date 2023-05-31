@@ -74,17 +74,17 @@ The dongle is successfully installed if the following figure shows.
 
       ![Ubuntu LVM](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/install/60.png)
 
-      Press ESC to exit editing and the enter `:wq` to save the file.
+    2. Press ESC to exit editing and then enter `:wq` to save the file.
 
-    2. Restart the service.
+    3. Restart the service.
 
       `service sshd restart`
     
-    3. Set the password of the root account.
+    4. Set the password of the root account.
       
       `sudo passwd`
 
-    4. Switch to root account
+    5. Switch to root account.
 
       ` sudo su`
 
@@ -96,9 +96,9 @@ The dongle is successfully installed if the following figure shows.
 
     2. Comment out the line with swap (add a #)
 
-    3. esc and `:wq`
+    3. Press ESC to exit editing and then enter `:wq` to save the file.
 
-3. Install Tools
+3. Install tools.
 
   `apt install sysstat net-tools sysbench fio zip`
 
@@ -112,23 +112,18 @@ The dongle is successfully installed if the following figure shows.
 
       `sudo vi /etc/resolv.conf`
 
-5. Turn off the default firewall
+5. Turn off the default firewall.
 
   `sudo ufw disable`
 
-:::info
-
-Now your system is ready for installing supOS
-
-:::
 
 ## Installing supOS Platform
 
 1. Create directories under /home on the server for supOS installation package and the platform.
 
-    /home/supOS/supOS/downloads: For the installation package.
+    - /home/supOS/supOS/downloads: For the installation package.
     
-    /home/supOS/supOS/opt/supOS: For supOS platform.
+    - /home/supOS/supOS/opt/supOS: For supOS platform.
 
 2. Copy the installation package to the created directory.
 
@@ -174,7 +169,7 @@ Once you uninstall the programme, the original configuration files such as “en
       
       `sudo bash uninstall.sh`
 
-- Uninstall the programme and clear all data
+- Uninstall the programme and clear all data.
 
 1. Switch to the bin directory under the supOS platform installation path.
 

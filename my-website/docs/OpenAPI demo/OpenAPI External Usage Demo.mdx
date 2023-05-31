@@ -23,10 +23,10 @@ AK is the **secret ID** and SK is **secret key** in the file.
 :::
 
 ### Calculating Signature
-Use the following code to calculate the signature for using open API to get supOS platform data in third-party platforms.
-1. Copy the following code in your IDE, change the AK/SK information to what you got from the supOS platform.
+Use the following code to calculate the signature as authorization for using open API to get supOS platform data in third-party platforms.<br />
+Copy the following code in your IDE, change the AK/SK information to what you got from the supOS platform.
 - Node.js version
-```
+```javascript
 const crypto = require('crypto');
 const ak="993034575ceaf0e166ad9a73fcf3c469"
 const sk="62f6652846cf9096d680e7dc42f03ed1"
@@ -87,7 +87,7 @@ module.exports = {
 }
 ```
 - Python version
-```
+```python
 import hashlib
 import hmac
 import json
@@ -198,40 +198,15 @@ class SignRequest:
         print('signature：' + final_signature)
         header_map['Authorization'] = final_signature
 ```
-2. Run the code and get the signature.<br/>
-The result should be like the following examples.
-- Node.js version
-```
-signature source==========Start===========
-GET
-/open-api/organization/v2/companies
-application/json;charset=utf-8
-current=1&pagesize=500
 
-
-signature source==========End===========
-signature： Sign 993034575ceaf0e166ad9a73fcf3c469-fb17c1b737f768a6153e2b69ce0f5c1df4f8bbcde5e3195c00fffb17e185822a
-```
-- Python version
-```
-signature source: ========start======>>
-GET
-/open-api/organization/v2/companies
-application/json;charset=utf-8
-current=1&pagesize=500
-
-
-signature source: <<========end======
-signature：Sign 993034575ceaf0e166ad9a73fcf3c469-fb17c1b737f768a6153e2b69ce0f5c1df4f8bbcde5e3195c00fffb17e185822a
-```
 ### Calling API to get Data
-1. In your IDE, create another file, and then copy the following code.
+In your IDE, create another file, and then copy the following code.
 - Node.js version
 
 <ul><ul>
 <li>GET/DELETE request</li></ul></ul>
 
-```
+```javascript
 const hosted = require('./hosted.js')
 const rp = require('request-promise');
 function test() {
@@ -274,7 +249,7 @@ test()
 <li>POST/PUT request</li>
 </ul></ul>
 
-```
+```javascript
 const hosted = require('./hosted.js')
 const rp = require('request-promise');
 function test() {
@@ -322,7 +297,7 @@ test()
 
 
 - Python version
-```
+```python
 from integrates import SignRequest
 
 if __name__ == '__main__':
@@ -330,4 +305,32 @@ if __name__ == '__main__':
     params = {'current': 1, 'pageSize': 500}
     resp = sign_request.get("/open-api/organization/v2/companies", params)
 ```
-2. Run the code to get corresponding data from supOS platform.
+
+### Results
+
+Run the calling API code to get the signature and results.<br/>
+The signature should be like the following examples with different data obtained from supOS.
+- Node.js version
+```javascript
+signature source==========Start===========
+GET
+/open-api/organization/v2/companies
+application/json;charset=utf-8
+current=1&pagesize=500
+
+
+signature source==========End===========
+signature： Sign 993034575ceaf0e166ad9a73fcf3c469-fb17c1b737f768a6153e2b69ce0f5c1df4f8bbcde5e3195c00fffb17e185822a
+```
+- Python version
+```python
+signature source: ========start======>>
+GET
+/open-api/organization/v2/companies
+application/json;charset=utf-8
+current=1&pagesize=500
+
+
+signature source: <<========end======
+signature：Sign 993034575ceaf0e166ad9a73fcf3c469-fb17c1b737f768a6153e2b69ce0f5c1df4f8bbcde5e3195c00fffb17e185822a
+```

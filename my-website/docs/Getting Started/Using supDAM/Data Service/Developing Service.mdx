@@ -1,7 +1,8 @@
-Create services to publish data inside the warehouse as APIs, and then third-party users can get the data through the published API.
+Create services to publish data inside the warehouse or sources added to supOS, or external services as APIs, and then third-party users can get the data through the published API.
 
 ### Creating Registration Service
-1. Log in to supOS, and then Select **Data Intelligence** > **Data Service** > **Service development**.
+Register third-party services in X-DAM and open them to public.
+1. Log in to supOS, and then select **Data Intelligence** > **Data Service** > **Service development**.
 2. Click ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supDAM/34.png) to add system and directory.
 3. Click **New**, and then select **Registration service**.
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supDAM/52.png)
@@ -12,7 +13,8 @@ The default return type is <b>Penetrate</b>, meaning to forward everything the s
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supDAM/53.png)
 
 5. Click **Next**, configure the service parameters.
-- Backend service path should be the same as the **Service path** in basic information.
+- Backend service host is where the data located (host IP and port).
+- Backend service path is from the service request URL (after the host IP and port).
 - Based on the service request type, set its request parameter, content-type and request body (only for PUT/POST).
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supDAM/54.png)
 
@@ -30,6 +32,7 @@ All services created through indicators are **Registration service**.
 :::
 
 ### Creating Data Service
+Open internal data, such as sources added to supOS or X-DAM data warehouses, to public.
 1. Click **New**, and then select **Data service**.
 2. Similar to **Registration service**, enter the basic information of the service.
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supDAM/56.png)
@@ -63,7 +66,7 @@ All services created through indicators are **Registration service**.
 </ol>
 </ol>
 
-![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supDAM/57.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supDAM/58.png)
 
 4. Click **Next**, check the service parameters, and then click **Start testing**.
 
