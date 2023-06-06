@@ -10,7 +10,7 @@ info:
 servers:
 - url: https://virtserver.swaggerhub.com/2Emma-zhou/emma/1.0
   description: SwaggerHub API Auto Mocking
-- url: /open-api/appmgr/v2/
+- url: http://192.168.31.49:8080/open-api/appmgr/v2
 security:
 - Sign: []
 tags:
