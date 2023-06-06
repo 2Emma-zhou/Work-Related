@@ -88,3 +88,22 @@ h1 {
   padding-bottom: 15px;
 }
 
+.image-zoom {
+  width: 30%;
+}
+
+.response {
+  border-top:  solid rgb(124, 120, 120);
+  padding-top: 3%;
+  margin-top: 2%;
+}
+
+:root {
+  --docusaurus-highlighted-code-line-bg: rgb(126, 129, 129);
+}
+
+/* If you have a different syntax highlighting theme for dark mode. */
+[data-theme='dark'] {
+  /* Color which works with dark mode syntax highlighting theme */
+  --docusaurus-highlighted-code-line-bg: rgb(196, 44, 44);
+}

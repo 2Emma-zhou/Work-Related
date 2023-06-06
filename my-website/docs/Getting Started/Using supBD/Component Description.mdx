@@ -87,17 +87,61 @@ None
 </div>
 <div className='bdcom'>Definition</div>
 <div className='rightCol'>
-Adjust data type distribution by increasing or decresing the number of samples with algorithms such as SMOTE, ADASYN for minority, and Tomek Links, Near Miss for majority.
+Adjust data type distribution by increasing or decresing the number of minority or majority samples with algorithms such as SMOTE, ADASYN, Tomek Link and Near Miss.
 </div>
 <div className='bdcom'>Configuration</div>
 <div className='rightCol'>
+
+Select an enumeration field, and then select a balancing algorithm and set its related parameters.
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Balancing method</td>
+<td>Select a balancing algorithm.
+
+- SMOTE/ADASYN: Add data to the minority samples based on the existing data to balance data in each category.
+- Tomek Link/Near Miss: Reduce data from the majority samples to balance data in each category.
+
+</td>
+</tr>
+<tr>
+<td>Sampling method</td>
+<td>Select a method to set the oversampling or undersampling field.
+
+- Quantity category: Select a sample category based on its quantity. For example, select **Non-minimum class** to add or deduct data to/from the category other than the minimum for volume balance.
+- Sample size: Select a category, and manually set the target size to balance each category.
+- Sample proportion: Select a category, and manually set the amplitude/reduction percentage of the category valome.
+- For **Tomek Link**, you can set a category and reduce its data volume.
+
+</td>
+</tr>
+<tr>
+<td>K-Nearest Neighbors</td>
+<td>Set the number of KNN for algorithms to calculate.</td>
+</tr>
+<tr>
+<td>Random seed</td>
+<td>Enable it to fix the amplitude/reduction value for repeated debugging.</td>
+</tr>
+</tbody>
+</table>
 
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/37.png)
 
 </div>
 <div className='bdcom'>Insight</div>
 <div className='bdend'>
-None
+
+Used **SMOTE** to oversmaple the **Non-minimum** category.
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/47.png)
+
 </div>
 </div>
 <div className='div'>
@@ -132,16 +176,23 @@ Keep the data unchanged for the set execution cycle.
 <div className='bdcom'>Configuration</div>
 <div className='rightCol'>
 
-1. Click **Select object**, and then select fields to convert.
-2. Select a conversion type.
-3. Set the conversion rules.
+1. Enable **Data cache**.
+2. Click **Select object**, and then select comparison fields.
+3. Click **Config**, and then select fields to be kept with the **Comparison field**.
 
-![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/36.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/38.png)
+
+:::info
+ONly numerical fields are available.
+:::
 
 </div>
 <div className='bdcom'>Insight</div>
 <div className='bdend'>
-None
+
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/39.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/40.png)
+
 </div>
 </div>
 <div className='div'>
@@ -152,16 +203,21 @@ None
 </div>
 <div className='bdcom'>Definition</div>
 <div className='rightCol'>
-The end of the experiment.
+Merge multiple input data sets into one.
 </div>
 <div className='bdcom'>Configuration</div>
 <div className='rightCol'>
-Select output object. Normally it is set to the prediction results of the algorithm. You can also select dependent and independent variables.
+
+Enable **Auto handle duplicate field names**, and duplicate field name will add a suffix **1**.
+
+:::tip
+Under **Node info**, view the input and output data structure.
+:::
 
 </div>
 <div className='bdcom'>Insight</div>
 <div className='bdend'>
-None
+Merged data set.
 </div>
 </div>
 <div className='div'>
@@ -172,16 +228,33 @@ None
 </div>
 <div className='bdcom'>Definition</div>
 <div className='rightCol'>
-The end of the experiment.
+
+Split the original data set into **Training set** and **Validation set**. Used for regression or classifier algorithms.
+
 </div>
 <div className='bdcom'>Configuration</div>
 <div className='rightCol'>
-Select output object. Normally it is set to the prediction results of the algorithm. You can also select dependent and independent variables.
+
+1. Set the ratio between trainning set and validation set, and during each debugging, the actual ratio will be slightly different from the set value.
+2. Select whether to enable **Random seed**.
+- Enable **Random seed**, repeat debugging the experiment and the same ratio as the last time will be used again.
+- Disable **Random seed**, repeat debugging the experiment and the ratio will be slightly different each time.
+
+:::info
+For example, the ratio is set to 80/20.
+- Enable **Random seed**, the ratio of the first debugging may be **80.21%/19.79%**, and the second debugging ratio will still be **80.21%/19.79%**.
+- Disable **Random seed**, the ratio of the first debugging may be **80.21%/19.79%**, and the second debugging ratio may be **79.91%/20.09%**.
+:::
+
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/41.png)
 
 </div>
 <div className='bdcom'>Insight</div>
 <div className='bdend'>
-None
+
+Displays the data of each set. Only the first 50 entries are displayed.
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/42.png)
+
 </div>
 </div>
 <div className='div'>
@@ -192,16 +265,25 @@ None
 </div>
 <div className='bdcom'>Definition</div>
 <div className='rightCol'>
-The end of the experiment.
+Eliminates the error data to improve data clearance and machine learning effect.
 </div>
 <div className='bdcom'>Configuration</div>
 <div className='rightCol'>
-Select output object. Normally it is set to the prediction results of the algorithm. You can also select dependent and independent variables.
+
+1. Select fields for filtering.
+2. Select a filter and set the filter window size.
+:::info
+When selecting **EMA**, you can either use adaptive weight or manually set the weight. For manual set, keep 2 decimal places.
+:::
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/43.png)
 
 </div>
 <div className='bdcom'>Insight</div>
 <div className='bdend'>
-None
+
+View the effect with the **Tendency chart** element.
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/44.png)
+
 </div>
 </div>
 <div className='div'>
@@ -212,16 +294,28 @@ None
 </div>
 <div className='bdcom'>Definition</div>
 <div className='rightCol'>
-The end of the experiment.
+Applies different lag cycle to the selected feature field to analyze the time serial difference.
 </div>
 <div className='bdcom'>Configuration</div>
 <div className='rightCol'>
-Select output object. Normally it is set to the prediction results of the algorithm. You can also select dependent and independent variables.
+
+Click **Config**, and then select the feature field and set the lag cycle.
+- Set lag cycle to a positive integer, the feature field is in advance.
+- Set lag cycle to a negative integer, the feature field is left behind.
+- Set lag cycle to 0, the feature field is at the same pace as other fields.
+
+:::caution
+The lag cycle cannot be larger than the number of data rows.
+:::
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/47.png)
 
 </div>
 <div className='bdcom'>Insight</div>
 <div className='bdend'>
-None
+
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/45.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/46.png)
+
 </div>
 </div>
 <div className='div'>
@@ -232,16 +326,21 @@ None
 </div>
 <div className='bdcom'>Definition</div>
 <div className='rightCol'>
-The end of the experiment.
+Replace the missing value of the input sample set.
 </div>
 <div className='bdcom'>Configuration</div>
 <div className='rightCol'>
-Select output object. Normally it is set to the prediction results of the algorithm. You can also select dependent and independent variables.
+
+Click **Select object**, select fields that have missing values and set the processing methods.
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/49.png)
 
 </div>
 <div className='bdcom'>Insight</div>
 <div className='bdend'>
-None
+
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/50.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/51.png)
+
 </div>
 </div>
 <div className='div'>
@@ -252,16 +351,21 @@ None
 </div>
 <div className='bdcom'>Definition</div>
 <div className='rightCol'>
-The end of the experiment.
+Limit the input data set within a certain value range, normally [0, 1], to get better effect from subsequent modeling algorithms with less running time.
 </div>
 <div className='bdcom'>Configuration</div>
 <div className='rightCol'>
-Select output object. Normally it is set to the prediction results of the algorithm. You can also select dependent and independent variables.
+
+Click **Select object**, select fields that needs to be normalized and set the processing methods.
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/52.png)
 
 </div>
 <div className='bdcom'>Insight</div>
 <div className='bdend'>
-None
+
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/53.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/54.png)
+
 </div>
 </div>
 <div className='div'>
@@ -272,16 +376,20 @@ None
 </div>
 <div className='bdcom'>Definition</div>
 <div className='rightCol'>
-The end of the experiment.
+Convert numerical type of fields in the sample set to string type based on the configuration.
 </div>
 <div className='bdcom'>Configuration</div>
 <div className='rightCol'>
-Select output object. Normally it is set to the prediction results of the algorithm. You can also select dependent and independent variables.
+
+Click **Select object**, select fields that needs to be converted.
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/55.png)
 
 </div>
 <div className='bdcom'>Insight</div>
 <div className='bdend'>
-None
+
+Same values with **string** as data type.
+
 </div>
 </div>
 <div className='div'>
@@ -292,16 +400,20 @@ None
 </div>
 <div className='bdcom'>Definition</div>
 <div className='rightCol'>
-The end of the experiment.
+Define dependent and independent variables from the sample set, and subsequent algorithms can get clear data features and corresponding relations based on the role.
 </div>
 <div className='bdcom'>Configuration</div>
 <div className='rightCol'>
-Select output object. Normally it is set to the prediction results of the algorithm. You can also select dependent and independent variables.
+
+Click **Select object**, select fields and set them to independent and dependent variables.
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/56.png)
 
 </div>
 <div className='bdcom'>Insight</div>
 <div className='bdend'>
-None
+
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/57.png)
+
 </div>
 </div>
 <div className='div'>
@@ -312,15 +424,51 @@ None
 </div>
 <div className='bdcom'>Definition</div>
 <div className='rightCol'>
-The end of the experiment.
+Set difference limit between fields. Normally used when connecting with DCS and involving in control process to keep the process steady by limiting the change.
 </div>
 <div className='bdcom'>Configuration</div>
 <div className='rightCol'>
-Select output object. Normally it is set to the prediction results of the algorithm. You can also select dependent and independent variables.
+
+Click **Select object**, select fields and set them to independent and dependent variables.
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/58.png)
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Comparison field</td>
+<td>Select fields to be the compared objects.</td>
+</tr>
+<tr>
+<td>Step deadband</td>
+<td>Buffer value between the difference of values of comparison field and original field, and the step limit value.</td>
+</tr>
+<tr>
+<td>Step limit</td>
+<td>Limit of the difference between values of comparison field and original field. The value must be larger than the step deadband.</td>
+</tr>
+</tbody>
+</table>
+
+:::info
+An example to demonstrate the relation betweend step deadband and limit.
+- The orginal field value is 10, comparison field value is 3, step limit is 3, step deadband is 1. After processing, the original field will be 6 (3 + 3), beacuse the difference 7 > 3.
+- The orginal field value is 10, comparison field value is 3, step limit is 10, step deadband is 8. After processing, the original field will be 3, beacuse the difference 7 < 8.
+- The orginal field value is 10, comparison field value is 3, step limit is 8, step deadband is 5. After processing, the original field will be 10, beacuse the difference 5 < 7 < 8.
+
+:::
 
 </div>
 <div className='bdcom'>Insight</div>
 <div className='bdend'>
-None
+
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/59.png)
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supBD/60.png)
+
 </div>
 </div>

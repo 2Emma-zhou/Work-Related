@@ -3,6 +3,38 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const  path = require('path');
+
+const redocusaurus = [
+  'redocusaurus',
+  {
+    config: path.join(__dirname, 'redocly.yaml'),
+    specs: [
+      {
+        id: 'using-single-yaml',
+        spec: 'openapi/1.yaml',
+        route: '/examples/using-single-yaml/',
+      },
+      {
+        id: 'using-multi-file-yaml',
+        spec: 'openapi/2.yaml',
+        route: '/examples/using-multi-file-yaml/',
+      },
+      {
+        id: 'using-remote-url',
+        // Remote File
+        spec: 'https://github.com/2Emma-zhou/Work-Related/blob/main/my-website/2Emma-zhou-emma-1.0-resolved.yaml',
+        route: '/examples/using-remote-url/',
+      },
+    ],
+    theme: {
+      /**
+       * Highlight color for docs
+       */
+      primaryColor: '#1890ff',
+    },
+  },
+];
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -27,9 +59,10 @@ const config = {
     locales: ['en'],
   },
   presets: [ 
+    'redocusaurus',
      [
-       'classic',
-       
+       '@docusaurus/preset-classic',
+      
       // /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
@@ -59,10 +92,27 @@ const config = {
       }),
     ],
   ],
-
+  plugins: [
+    require.resolve("plugin-image-zoom"),
+    require.resolve("redocusaurus")
+  ],
+  
   themeConfig:
   // /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+        
+
+      zoom: {
+        selector: '.mdx img',
+        
+        config: {
+          // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+          background: {
+            light: 'rgb(255, 255, 255)',
+            dark: 'rgb(50, 50, 50)'
+          }
+        }
+      },
       colorMode: {
         defaultMode: 'light',
         disableSwitch: true,
@@ -82,9 +132,26 @@ const config = {
             position: 'left',
             label: 'supOS',
           },
-          
           {
-            type: 'dropdown',
+            label: 'Examples',
+            position: 'left',
+            items: [
+              {
+                label: 'All',
+                to: 'openapi/1.yaml',
+              },
+              {
+                label: 'Using Remote URL',
+                to: '/examples/using-remote-url/',
+              },
+              {
+                label: 'Using Multiple YAMLs',
+                to: '/examples/using-multi-file-yaml/',
+              },
+            ],
+          },
+          {
+            // type: 'dropdown',
             label: 'Applications',
             position: 'left',
             items: [
@@ -182,9 +249,6 @@ const config = {
       // ...
     },
   ],
-  themeConfig: {
-    // ...
-  },
       footer: {
         style: 'dark',
         links: [
@@ -231,10 +295,12 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
+        theme: require('prism-react-renderer/themes/dracula'), lightCodeTheme, 
         darkTheme: darkCodeTheme,
       },
     }),
 };
 
 module.exports = config;
+
+

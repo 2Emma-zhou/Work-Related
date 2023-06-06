@@ -42,22 +42,36 @@ const sidebars = {
       collapsed: false,
       items: [
         'Using supOS/Login',
-        'Using supOS/Process Flowchart',
-        
-        
         {type: 'category',
         label: 'Factory Modeling',
         link: {
           type: 'generated-index'
         },
         items: [
-          'Using supOS/Factory Modeling/Introduction',
-          'Using supOS/Factory Modeling/Modeling Process',
-          'Using supOS/Factory Modeling/Creating Object Template',
-          'Using supOS/Factory Modeling/Creating Object Instance',
-'Using supOS/Factory Modeling/Other Operations',
-'Using supOS/Factory Modeling/Third-party Database Connection',
-'API/Embedded Service',
+          'Using supOS/Factory Modeling/Overview',
+          {type: 'category',
+        label: 'Entity Model Creation',
+        link: {
+          type: 'generated-index'
+        },
+        items: [
+          'Using supOS/Factory Modeling/Entity Template Type',
+          'Using supOS/Factory Modeling/Creating Entity Model',
+        ]
+        },
+        {type: 'category',
+        label: 'Form Model Creation',
+        link: {
+          type: 'generated-index'
+        },
+        items: [
+          'Using supOS/Factory Modeling/Form Template vs Data Table',
+          'Using supOS/Factory Modeling/Creating Form Model',
+        ]
+        },
+        'Using supOS/Factory Modeling/Other Operations',
+        'Using supOS/Factory Modeling/Third-party Database Connection',
+        'API/Embedded Service',
               'API/Global APIs',
               'API/Jsql Guide',
               'Open API/Call OpenAPI in Service',
@@ -204,6 +218,16 @@ const sidebars = {
 'Open API/Object Modeling/Relation',
 'Open API/Object Modeling/Running Functions',
 'Open API/Object Modeling/Template',
+    ]
+  }, 
+  {
+    type: 'category',
+      label: 'supLink',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+    'Open API/supLink/Send Messages to Mobile App',
     ]
   }, 
   {
@@ -715,7 +739,43 @@ const sidebars = {
     
     'Getting Started/System Requirements sl',
     'Getting Started/Installing supLink',
-      
+    {
+      type: 'category',
+      label: 'Using supLink',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        'Getting Started/Using supLink/System Settings',
+        'Getting Started/Using supLink/Managing App Group',
+        'Getting Started/Using supLink/Authorizing Mobile User',
+        {
+          type: 'category',
+          label: 'Configuring Base Apps',
+          link: {
+              type: 'generated-index',
+          },
+          items: [
+            'Getting Started/Using supLink/Flowchart',
+            'Getting Started/Using supLink/Alarm',
+            'Getting Started/Using supLink/Trend',
+            'Getting Started/Using supLink/Monitor',
+            'Getting Started/Using supLink/Workflow',
+            'Getting Started/Using supLink/Report',
+            'Getting Started/Using supLink/Notice',
+            'Getting Started/Using supLink/Tag Overview',
+            'Getting Started/Using supLink/Object Overview',
+          ]
+        },
+        'Getting Started/Using supLink/Configuring supOS App',
+        'Getting Started/Using supLink/Configuring LCDP App',
+        'Getting Started/Using supLink/Configuring Custom App',
+        'Getting Started/Using supLink/App Statistics',
+        'Getting Started/Using supLink/Viewing Messages',
+        'Getting Started/Using supLink/General Functions on Mobile',
+      ]
+    },
+    'Getting Started/Using supLink/Configuring External Kafka',
   ],
    
 };

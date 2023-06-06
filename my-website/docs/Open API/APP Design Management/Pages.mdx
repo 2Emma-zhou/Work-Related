@@ -2,6 +2,10 @@
 hide_title: true
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
 <div className='div'>
 <div className='title'>
 
@@ -9,7 +13,7 @@ hide_title: true
 
 :::info
 - No **Layout** block in the results.
-- Data sturcture of the results is not fixed, and the results here are for reference only.
+- API responses are for reference only.
 :::
 
 </div>
@@ -30,10 +34,18 @@ http://{supOS ip:port}/open-api/p/compose/v2/pages/tree
 - **type**: String. When it is set to **symbol**, element tree is returned; if empty or other, design tree is returned.
 
 </div>
+</div>
+<div className="response">
+<div className="grid">
 <div className='leftCol'>Response</div>
 <div className='rightCol'>
 
-- 200: Successful.
+<Tabs>
+<TabItem value="200" label="200" default>
+<details>
+<summary>
+<strong>Click here</strong> to see response example.
+</summary>
 
 ```json
 {
@@ -134,18 +146,22 @@ http://{supOS ip:port}/open-api/p/compose/v2/pages/tree
   ]
 }
 ```
-- 400
 
-<ul>
-<ul>
-<li>400: Request failed.</li>
-<li>401: Permission authentication failed.</li>
-<li>404: Corresponding data not found.</li>
-<li>409: Request conflicted. The Specified name exists, cannot add.</li>
-<li>500: System error.</li>
-</ul>
-</ul>
+</details>
+</TabItem>
+<TabItem value="400" label="400">
 
+- 400: Request failed.
+- 401: Permission authentication failed.
+- 404: Corresponding data not found.
+- 409: Request conflicted. The Specified name exists, cannot add.
+
+</TabItem>
+<TabItem value="500" label="500">
+System error.
+</TabItem>
+</Tabs>
+</div>
 </div>
 </div>
 </div>
@@ -213,9 +229,10 @@ http://{supOS ip:port}/open-api/p/compose/v2/pages
 <li>401: Permission authentication failed.</li>
 <li>404: Corresponding data not found.</li>
 <li>409: Request conflicted. The Specified name exists, cannot add.</li>
-<li>500: System error.</li>
 </ul>
 </ul>
+
+- 500: System error.
 
 </div>
 </div>
@@ -347,9 +364,10 @@ http://{supOS ip:port}/open-api/p/compose/v2/pages/{pageId}
 <li>401: Permission authentication failed.</li>
 <li>404: Page not found.</li>
 <li>409: Request conflicted. The Specified name exists, cannot add.</li>
-<li>500: System error.</li>
 </ul>
 </ul>
+
+- 500: System error.
 
 </div>
 </div>
@@ -384,10 +402,12 @@ http://{supOS ip:port}/open-api/p/compose/v2/pages/{pageId}
 <li>401: Permission authentication failed.</li>
 <li>404: Page not found.</li>
 <li>409: Request conflicted. The Specified name exists, cannot add.</li>
-<li>500: System error.</li>
 </ul>
 </ul>
+
+- 500: System error.
 
 </div>
 </div>
 </div>
+

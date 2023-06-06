@@ -1,6 +1,7 @@
 ---
-sidebar_position: 4
+hide_title: true
 ---
+
 ## Overview
 This document dedicates in demonstrating the internal usage of common openAPIs in supOS platform.
 :::info
@@ -20,8 +21,15 @@ Make sure to set the output type to **JSON**.
 You can write your own script which requires a basic http request body code and an open API path code. 
 Both of them you can get from <a href="../category/openapi">Open API</a> and check the video class <a href="../class series/Open API/OpenAPI Internal Usage">Open API Internal Usage</a> to learn the method.
 :::
-- Create an instance
-```
+
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="js" label="Create an instance">
+
+```js
 baseUrl = "/open-api/supos/oodm/v2/template/{template namespace}/{template alias}/instance"
 
 var param = {
@@ -45,17 +53,21 @@ var httpService= services["HttpClientService"];
 httpService.post(baseUrl, JSON.stringify(param), headers, 10000)
 ```
 
-- Getting instance details by alias
-```javascript
+</TabItem>
+<TabItem value="js2" label="Get instance details by alias">
+
+```js
 var baseUrl = "/open-api/supos/oodm/v2/templates/{template namespace}/{template alias}/instances/{instance alias}/value";
 var httpservice= services["HttpClientService"];// create hidden service object
 //3000 is the maximum timeout period with millisecond as unit. When no data returned after the set time, the request is timed out
 var result = httpservice.getString(baseUrl,3000);
-result;    
+result;
 ```
 
-- Changing instance information
-```javascript
+</TabItem>
+<TabItem value="js3" label="Change instance information">
+
+```js
 var baseUrl = "/open-api/supos/oodm/v2/template/{template namespace}/{template alias}/instance/{instance alias}"
 
 var param = {
@@ -76,13 +88,19 @@ var httpService= services["HttpClientService"];
 httpService.put(baseUrl, JSON.stringify(param), headers, 10000)
 ```
 
+</TabItem>
+<TabItem value="js4" label="Delete instance">
 
-- Deleting instance
-```javascript
+```js
 var baseUrl = "/open-api/supos/oodm/v2/template/{template namespace}/{template alias}/instance/{instance alias}";
 
 var httpservice= services["HttpClientService"];// create hidden service object
 //3000 is the maximum timeout period with millisecond as unit. When no data returned after the set time, the request is timed out
 var result = httpservice.delete(baseUrl,3000);
-result;    
+result; 
 ```
+
+</TabItem>
+</Tabs>
+
+
