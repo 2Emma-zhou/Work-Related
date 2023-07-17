@@ -28,11 +28,9 @@ const sidebars = {
       items: [
         'Getting Started/System Requirements',
         'Getting Started/Installing supOS Platform',
-        
       ],
       
     },
-    
     {
       type: 'category',
       label: 'Using supOS',
@@ -56,7 +54,9 @@ const sidebars = {
         },
         items: [
           'Using supOS/Factory Modeling/Entity Template Type',
-          'Using supOS/Factory Modeling/Creating Entity Model',
+          'Using supOS/Factory Modeling/Entity Model Details',
+          'Using supOS/Factory Modeling/Creating Entity Template',
+          'Using supOS/Factory Modeling/Creating Entity Instance',
         ]
         },
         {type: 'category',
@@ -94,23 +94,21 @@ const sidebars = {
             items: [
               'Using supOS/APP Design/APP/Designing Process',
           'Using supOS/APP Design/APP/Creating an Application',
-           'Using supOS/APP Design/APP/Designing a Page',
            {
             type: 'category',
-            label: 'Free Layout',
+            label: 'Designing Pages in Free Layout',
             link: {
                 type: 'generated-index',
             },
             items: [
-              'Using supOS/APP Design/APP/Free Layout/Arranging Page Blocks',
+              'Using supOS/APP Design/APP/Free Layout/Creating Pages',
               'Using supOS/APP Design/APP/Free Layout/Page Description',
               'Using supOS/APP Design/APP/Free Layout/Quick Operations',
-              'Using supOS/APP Design/APP/Free Layout/Data Linkage',
             ]
            },
            {
             type: 'category',
-            label: 'Grid Layout',
+            label: 'Designing Pages in Grid Layout',
             link: {
                 type: 'generated-index',
             },
@@ -118,7 +116,6 @@ const sidebars = {
               'Using supOS/APP Design/APP/Grid Layout/Page Description',
               'Using supOS/APP Design/APP/Grid Layout/Property Description',
               'Using supOS/APP Design/APP/Grid Layout/Quick Operations',
-              'Using supOS/APP Design/APP/Grid Layout/Data Linkage',
             ]
            },
            'Using supOS/APP Design/APP/Layout Scenario',
@@ -177,19 +174,82 @@ const sidebars = {
       },
       items: [
         'System Configuration/System Settings',
-        'System Configuration/Organization Management',
-        'System Configuration/User Security Management',
-        'System Configuration/System Management',
+        {
+          type: 'category',
+          label: 'Organization Management',
+          link: {
+              type: 'generated-index',
+          },
+          items: [
+            'System Configuration/Adding Company',
+            'System Configuration/Adding Organization',
+            'System Configuration/Adding Staff',
+            'System Configuration/Assigning Permissions to Subsidiary Admin',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'User Security Management',
+          link: {
+              type: 'generated-index',
+          },
+          items: [
+            'System Configuration/User Management',
+            'System Configuration/Role Management',
+            'System Configuration/Viewing Permission',
+            'System Configuration/Viewing Online User',
+            'System Configuration/Setting Whitelist and Blacklist',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'System Management',
+          link: {
+              type: 'generated-index',
+          },
+          items: [
+            'System Configuration/System Management',
+            'System Configuration/Configuring Menu',
+            'System Configuration/Setting International Management',
+            'System Configuration/Authenticating SSO',
+            'System Configuration/Viewing Logs',
+          ]
+        },
         'System Configuration/Computing Task',
-        'System Configuration/Global Configuration',
-        'System Configuration/Message Management',
+        {
+          type: 'category',
+          label: 'Global Configuration',
+          link: {
+              type: 'generated-index',
+          },
+          items: [
+            'System Configuration/Adding Data Source',
+            'System Configuration/Data Source Description',
+            'System Configuration/Adding Standard Data Service',
+            'System Configuration/Adding PI Database',
+            'System Configuration/Adding Local Resource',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Message Management',
+          link: {
+              type: 'generated-index',
+          },
+          items: [
+            'System Configuration/Setting Message Information',
+            'System Configuration/Configuring Message Content',
+            'System Configuration/Setting Message Theme',
+            'System Configuration/Sending Message through API',
+            'System Configuration/Managing Messages',
+          ]
+        },
       ]
     },
    
   ],
 
   // But you can create a sidebar manually
- 
   api: [
    
     {
@@ -381,7 +441,6 @@ const sidebars = {
       items: [
         'X-Collector Connection Demo/OPC DA',
         'X-Collector Connection Demo/Modbus',
-      
       ]
     },
     {
@@ -396,6 +455,10 @@ const sidebars = {
         'Low Code Development/Sales Order Approval Workflow Demo',
         'Low Code Development/Sales Order Dashboard Demo',
         'Low Code Development/Sales Order Report Demo',
+        'Using supOS/Connecting X-Collector/Data Write Back',
+        'Using supOS/APP Design/APP/Free Layout/Data Linkage in Free Layout',
+        'Using supOS/APP Design/APP/Grid Layout/Data Linkage in Grid Layout', 
+
       ]
     },
     
@@ -411,64 +474,64 @@ const sidebars = {
       
       ]
     }, 
-    {
-      type: 'category',
-      label: 'Data Collection',
-      link: {
-          type: 'generated-index',
-      },
-      items: [
-        'class series/Data Collection/Collecting Data through Modbus',
-         'class series/Data Collection/Collecting Data through OPC DA',
-        'class series/Data Collection/Collecting Video Data through RTSP',
-        'class series/Data Collection/Collecting Data from External Database',
-        // 'class series/Data Collection/Collecting Data through MQTT',
+    // {
+    //   type: 'category',
+    //   label: 'Data Collection',
+    //   link: {
+    //       type: 'generated-index',
+    //   },
+    //   items: [
+    //     'class series/Data Collection/Collecting Data through Modbus',
+    //      'class series/Data Collection/Collecting Data through OPC DA',
+    //     'class series/Data Collection/Collecting Video Data through RTSP',
+    //     'class series/Data Collection/Collecting Data from External Database',
+    //     // 'class series/Data Collection/Collecting Data through MQTT',
       
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Factory Modeling',
-      link: {
-          type: 'generated-index',
-      },
-      items: [
-        // 'class series/Low Code Development/Sales Order Workflow',
-        'class series/Factory Modeling/Object Model Introduction',
-        'class series/Factory Modeling/Object Model Introduction_2',
-        'class series/Factory Modeling/Embedded Service Video',
-        'class series/Factory Modeling/JSQL',
+    //   ]
+    // },
+    // {
+    //   type: 'category',
+    //   label: 'Factory Modeling',
+    //   link: {
+    //       type: 'generated-index',
+    //   },
+    //   items: [
+    //     // 'class series/Low Code Development/Sales Order Workflow',
+    //     'class series/Factory Modeling/Object Model Introduction',
+    //     'class series/Factory Modeling/Object Model Introduction_2',
+    //     'class series/Factory Modeling/Embedded Service Video',
+    //     'class series/Factory Modeling/JSQL',
 
-        // 'class series/Low Code Development/Staff Information Demo',
+    //     // 'class series/Low Code Development/Staff Information Demo',
       
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Low Code Development',
-      link: {
-          type: 'generated-index',
-      },
-      items: [
-        'class series/Low Code Development/Sales Order Workflow',
-        'class series/Low Code Development/Staff Information Demo',
+    //   ]
+    // },
+    // {
+    //   type: 'category',
+    //   label: 'Low Code Development',
+    //   link: {
+    //       type: 'generated-index',
+    //   },
+    //   items: [
+    //     'class series/Low Code Development/Sales Order Workflow',
+    //     'class series/Low Code Development/Staff Information Demo',
       
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Open API',
-      link: {
-          type: 'generated-index',
-      },
-      items: [
-        // 'class series/Low Code Development/Sales Order Workflow',
-        'class series/Open API/OpenAPI Internal Usage',
-        'class series/Open API/OpenAPI External Usage',
-        'class series/Open API/Global API',
+    //   ]
+    // },
+    // {
+    //   type: 'category',
+    //   label: 'Open API',
+    //   link: {
+    //       type: 'generated-index',
+    //   },
+    //   items: [
+    //     // 'class series/Low Code Development/Sales Order Workflow',
+    //     'class series/Open API/OpenAPI Internal Usage',
+    //     'class series/Open API/OpenAPI External Usage',
+    //     'class series/Open API/Global API',
       
-      ]
-    },
+    //   ]
+    // },
   ],
   supCollector: [
     'Getting Started/System Requirements sc',
@@ -482,12 +545,11 @@ const sidebars = {
         items: [
           'Using supOS/Connecting X-Collector/Collector Type',
           'Using supOS/Connecting X-Collector/Configuring X-Collector',
-          'Using supOS/Connecting X-Collector/Connecting Simulate Collector',
-          'Using supOS/Connecting X-Collector/Connecting Common Collector',
-          'Using supOS/Connecting X-Collector/Connecting Cascading Collector',
-          'Using supOS/Connecting X-Collector/Connecting Third-party Collector',
-          'Using supOS/Connecting X-Collector/Data Write Back',
-          'Using supOS/Connecting X-Collector/Supported Driver',
+          // 'Using supOS/Connecting X-Collector/Connecting Simulate Collector',
+          'Using supOS/Connecting X-Collector/Connecting RTD Collector',
+          // 'Using supOS/Connecting X-Collector/Connecting Cascading Collector',
+          // 'Using supOS/Connecting X-Collector/Connecting Third-party Collector',
+          // 'Using supOS/Connecting X-Collector/Supported Driver',
         ]
         },
         {type: 'category',
@@ -516,7 +578,7 @@ const sidebars = {
           type: 'generated-index',
       },
       items: [
-        'Getting Started/Using supETL/Process Diagram',
+        // 'Getting Started/Using supETL/Process Diagram',
         {
           type: 'category',
           label: 'Data Connection',
@@ -658,7 +720,7 @@ const sidebars = {
           type: 'generated-index',
       },
       items: [
-        'Getting Started/Using supEdge/Process Diagram',
+        // 'Getting Started/Using supEdge/Process Diagram',
         'Getting Started/Using supEdge/Connecting Video Source',
         'Getting Started/Using supEdge/Configuring Algorithm',
         'Getting Started/Using supEdge/Configuring Monitoring Design',
@@ -683,7 +745,6 @@ const sidebars = {
           type: 'generated-index',
       },
       items: [
-        'Getting Started/Using supBD/Process Diagram',
         {
           type: 'category',
           label: 'Experiment Model Creation',
@@ -739,6 +800,7 @@ const sidebars = {
     
     'Getting Started/System Requirements sl',
     'Getting Started/Installing supLink',
+    'Getting Started/Using supLink/Configuring External Kafka',
     {
       type: 'category',
       label: 'Using supLink',
@@ -775,7 +837,7 @@ const sidebars = {
         'Getting Started/Using supLink/General Functions on Mobile',
       ]
     },
-    'Getting Started/Using supLink/Configuring External Kafka',
+    
   ],
    
 };

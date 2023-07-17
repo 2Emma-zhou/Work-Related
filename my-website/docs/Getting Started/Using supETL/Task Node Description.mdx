@@ -3,7 +3,7 @@ hide_title: true
 ---
 
 :::info
-Variables used in operators need to be configured in advance during task development..
+Variables used in operators need to be configured in advance during task development.
 :::
 
 <span id="inputNode"></span>
@@ -20,6 +20,7 @@ Variables used in operators need to be configured in advance during task develop
 </ul>
 
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/52.png)
+
 - File data source
 
 <ul>
@@ -31,10 +32,11 @@ Variables used in operators need to be configured in advance during task develop
 </ul>
 
 :::info
-When the input data source is file, the published task reads the file and output results again if any changes happen on the file.
+When the input data source is a file, the published task reads the file and output results again if the file changes.
 :::
 
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/53.png)
+
 - API data source
 
 <table>
@@ -58,11 +60,15 @@ Variables can be configured in the request URL, request headers, and JSON text, 
     </tr>
     <tr>
 <td>Request address</td>
-<td>Use <b>#{}</b> to identify variables.</td>
+<td>
+
+Enter the API request address and use **#{}** to identify variables.
+
+</td>
     </tr>
     <tr>
 <td>Request header param</td>
-<td>Select Variable as the Processing method, and select the value. You can enable Circular traversal and </td>
+<td>Set the header parameter of the API. When setting <b>Variable</b> as the <b>Processing method</b>, you can select the value from global variables.</td>
     </tr>
   </tbody>
 </table>
@@ -70,7 +76,7 @@ Variables can be configured in the request URL, request headers, and JSON text, 
 
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/54.png)
 ### Message Queue Input
-Collects data from message queue and map it to a 2-demension table, and delivers to downstream operators for processing.
+Collects data from message queue and maps it to a 2-demension table, and delivers to downstream operators for processing.
 
 <table>
   <thead>
@@ -181,7 +187,7 @@ Renames data fields or configures field mapping to generate a new dataset, mainl
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/59.png)
 
 ### Data Filtering
-Multiple filter conditions are avaliable for a single field, and data that meets all conditions will be filtered.
+Multiple filter conditions are available for a single field, and data that meets all conditions will be filtered.
 - in/not in: For numeric fields. Value is an array of numbers and use comma to separate. **in** means the field value equals to one of the numbers and **not in** means equals to none.
 - like/not like: For text type of fields. **like** matches part or all of the text and **not like** matches none.
 - between/not between: For date type of fields. **between** means the date is within the set range and **not between** means not.
@@ -189,7 +195,7 @@ Multiple filter conditions are avaliable for a single field, and data that meets
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/60.png)
 
 ### Data Connection
-Integrates data from multiple tables to one.
+Integrates data from multiple tables into one.
 1. Drag 2 data input operators and configure them with 2 relational data tables.
 2. Drag the **Data connection** operator and connect both data sources to it.
 3. Double-click **Data connection**, and then configure its connection relation.
@@ -288,7 +294,7 @@ Gives new value to global variables you set during task development. The new val
 
 Aggregate data based on the set group fields.
 1. Select fields, and then click **Add group field**. The aggregated data will be grouped by the set fields.
-2. Select fields of numberic type, and then click **Add aggregated field** to add fields to be aggregated.
+2. Select fields of numeric type, and then click **Add aggregated field** to add fields to be aggregated.
 3. Set **Aggregation cycle type**.
 
 <table>
@@ -420,8 +426,8 @@ Make sure the result is boolean type of data, and only condition returns **True*
 
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/74.png)
 
-## Security Desentization
-By using data obfuscation to process multiple fields, the obfuscated data will overwrite the original data and flow to downstream operators.
+## Data Desensitization
+By using data desensitization to process multiple fields, the desensitized data will overwrite the original data and flow to downstream operators.
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/75.png)
 
 ## Data Output
@@ -454,7 +460,7 @@ Kafka, mQTT and RocketMQ are supported.
 
 :::info
 - HBase data source only receives string type of data.
-- rowKey, as the primary key for an HBase data source, a mapping relationship must be established for it. If there are duplicate values in the data source mapped to it, only the latest row of data will be retained.
+- **rowKey**, as the primary key for an HBase data source, a mapping relationship must be established for it. If there are duplicate values in the data source mapped to it, only the latest row of data will be retained.
 :::
 
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/81.png)

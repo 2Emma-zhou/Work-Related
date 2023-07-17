@@ -22,7 +22,9 @@ Make sure necessary data tags are synchronized to the source of X-Collector. For
 4. Select **Collection Node Management** > **Authentication**, and then click ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/16.png) to add a collector.<br/>
 Enter collector information and set **type** to **common Collector**. For details, see <a href="../Using supOS/Connecting X-Collector/Connecting Common Collector">Connecting Common Collector</a>.
 5. On X-Collector, select **RTD Collector** > **Connection Info**, and then click **Add**, enter corresponding information to add the collector you just added on supOS platform.
-![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supCollector/Snap4.png) 
+
+<img width={350} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supCollector/Snap4.png" />
+
 6. On supOS platform, select **Collection Node Management** > **Status**, find the collector you added, and then click **OK** to complete the data source adding.<br/>
 Now you can see a new instance is added under **Object Model Management** > **Object Instance** > **Entity Template** > **Collector Template**.
 ### Creating Object Template
@@ -37,11 +39,14 @@ Next to **Data Sources** on the **Attribute Info** panel, you can click **Setup*
 :::info
 For details on calculations, see <a href="../Using supOS/Factory Modeling/Creating Object Instance#data_source">Configuring Data Source</a>.
 :::
-![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/demo/2.png)
+
+<img width={350} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/demo/2.png" />
+
 4. Click **OK**.
+
 ### Creating Process Application
 On **Business Designer**, draw a process diagram of the gas monitoring system. With the collected data, you can view the monitor gas status in real time.
-1. On supOS platform, select **Business Designer** > ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/demo/3.png) to add a new application.
+1. On supOS platform, select **Business Designer** > <img width={20} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/demo/3.png" /> to add a new application.
 2. Click **Edit Page** to enter the application, and then add a new page.
 3. On the page, use elements on the left side and provided templates to draw a diagram of the gas monitoring system.
 <ul>
@@ -67,7 +72,7 @@ On **Business Designer**, draw a process diagram of the gas monitoring system. W
 <li>Click on the diagram, and then under <strong>Interact</strong> on the right side, write a script for <strong>Content Loading</strong> to control the furnace automatically based on corresponding property value.</li>
 </ul></ul>
 
-```
+```js
 function aa() {
     var params={
         "propName":'Property_218' //define the property value that controls the furnace

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+hide_title: true
 
 ---
 
@@ -14,18 +14,34 @@ You can check the namespace of object templates on their basic information page,
 - When using scriptUtil APIs (callFunction excluded) on supOS V2.80.01.02 and later versions, add a parameter **version: 'V2'**. Older versions like V2.70.01.00 uses **version: 'V1'** (embedded).
 - When using scriptUtil APIs that are related to form templates (add, delete, insert and search) supOS V2.80.01.02 and later versions, we recommend using callFunction instead to unify service calling.
 ## API Description
+
+
 ### Service Execution
-- executeSrciptService
-<ul><li>Usage: Call embedded services of object templates or custom services.</li>
-    <li>Parameter
-        <ul><li>objName: Required. Locate the corresponding template or instance.</li>
+
+
+<div className='div'>
+<div className='title'>
+
+**executeSrciptService**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Call embedded services of object templates or custom services.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
+<ul><li>objName: Required. Locate the corresponding template or instance.</li>
         <li>serviceName: Required. Service name that you want to call.</li>
         <li>params: Optional. Input parameters of the service.</li>
         <li>cb[callback]: Callback function.</li>
         <li>version: Version number. Mostly for differentiating V2.7 and V3.0.</li>
         </ul>
-    </li>
- <li>Example
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
+
 ```javascript
 // call service under a form template
 var objName = 'namespace.templateName';
@@ -44,13 +60,24 @@ cb:function(res){
 // custom request parameters
 });
 ```
-</li>
-</ul>
 
-- getRequestUrl
-<ul><li>Usage: Get the string after ? in a URL link and return it as an object.</li>
- <li>Example
+</div>
+</div>
+</div>
 
+<div className='div'>
+<div className='title'>
+
+**getRequestUrl**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Get the string after ? in a URL link and return it as an object.
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 // url is https://www.baidu.com?id=123&code=456
@@ -59,159 +86,305 @@ console.log(data)
 // return data
 {
   id: 123,
-  code:456
+  code: 456
 }
 ```
-</li>
-</ul>
 
-- getTimeZone
-<ul><li>Usage: Get current timezone and return it as an object.</li>
- <li>Example
+</div>
+</div>
+</div>
+
+
+<div className='div'>
+<div className='title'>
+
+**getTimeZone**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Get current timezone and return it as an object.
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 var Offset = scriptUtil.getTimeZone();
 console.log(Offset)
 ```
-</li>
-</ul>
 
-- reload
-<ul><li>Usage: Refresh current page after the set delay.</li>
-<li>Parameter: (number) refers to the delay time with millisecond as unit.</li>
-<li>Example
+</div>
+</div>
+</div>
 
+<div className='div'>
+<div className='title'>
+
+**reload**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Refresh current page after the set delay.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
+(number) refers to the delay time with millisecond as unit.
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 // refresh the page in 50 ms
 scriptUtil.reload(50);
 ```
-</li>
-</ul>
 
-- refreshWorkflow
-<ul><li>Usage: Refresh workflow.</li>
-<li>Example
+</div>
+</div>
+</div>
 
+<div className='div'>
+<div className='title'>
+
+**refreshWorkflow**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Refresh workflow.
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 var Offset = scriptUtil.refreshWorkflow();
 ```
-</li>
-</ul>
 
-- copy
-<ul><li>Usage: Copy data to clipboard.</li>
-<li>Parameter: (any) refers to the data to be copied.</li>
-<li>Example
+</div>
+</div>
+</div>
 
+
+<div className='div'>
+<div className='title'>
+
+**copy**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Copy data to clipboard.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
+<ul><li>(any) refers to the data to be copied.</li></ul>
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 scriptUtil.copy(any);
 ```
-</li>
-</ul>
 
-- request
-<ul><li>Usage: Call third-party service or openAPI interface of supOS.</li>
-<li>Parameter
+</div>
+</div>
+</div>
+
+<div className='div'>
+<div className='title'>
+
+**request**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Call third-party service or openAPI interface of supOS.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
 <ul><li>(string): Refers to the request url.</li>
 <li>(object): Refers to input parameters.
 <ul><li>method: Request method such as <strong>POST/GET/DELETE/PUT</strong>.</li>
 <li>body: Input parameters.</li></ul>
 </li>
 </ul>
-</li>
-<li>Example
-
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 var url = '/api/openapi/notification/v1/message';
 var param = {
   method: 'POST', //request method such as GET, POST, PUT and DELETE
-  body: {} //optional
+  body: {}, //optional
   headers: {} //optional
 };
 scriptUtil.request(url, param).then(res=>{
   console.log(res)
 });
 ```
-</li>
-</ul>
+
+</div>
+</div>
+</div>
 
 ### scriptUtilReact Component
-- registerReactDom
-<ul><li>Usage: Register as a <strong>ReactDom</strong> in <strong>Programmable Component</strong>, and then can be called by using the component in business designer.</li>
-<li>Parameter
+
+
+<div className='div'>
+<div className='title'>
+
+**registerReactDom**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Register as a <strong>ReactDom</strong> in <strong>Programmable Component</strong>, and then can be called by using the component in business designer.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
 <ul><li>(component): Component instance.</li>
 <li>(object): Props.</li>
 </ul>
-</li>
-<li>Example
-
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 scriptUtil.registerReactDom(this, this.props);
 ```
-</li>
-</ul>
 
-- logoutReactDom
-<ul><li>Usage: Logout the registered <strong>ReactDom</strong> instance in <strong>Programmable Component</strong>, and often can be called in the lifecycle of <strong>componentWillUnmount</strong> to release storage.</li>
-<li>Parameter
+</div>
+</div>
+</div>
+
+<div className='div'>
+<div className='title'>
+
+**logoutReactDom**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Logout the registered <strong>ReactDom</strong> instance in <strong>Programmable Component</strong>, and often can be called in the lifecycle of <strong>componentWillUnmount</strong> to release storage.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
 <ul><li>(component): Component instance.</li>
 <li>(object): Props.</li>
 </ul>
-</li>
-<li>Example
-
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 scriptUtil.logoutReactDom(this, this.props);
 ```
-</li>
-</ul>
 
-- getRegisterReactDom
-<ul><li>Usage: Get registered component instance to call the embedded functions.</li>
-<li>Parameter: (string) refers to component ID and returns the registered component instance.</li>
-<li>Example
+</div>
+</div>
+</div>
 
+<div className='div'>
+<div className='title'>
+
+**getRegisterReactDom**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Get registered component instance to call the embedded functions.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
+(string): Refers to component ID and returns the registered component instance.
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 var reactInstance = scriptUtil.getRegisterReactDom('htdiv-xxxx');
 reactInstance.getValue()
 ```
-</li>
-</ul>
 
-- getFormData
-<ul><li>Usage: Get component value to obtain form data after submitted.</li>
-<li>Parameter: (array) refers to component name and returns corresponding component value as an object.</li>
-<li>Example
+</div>
+</div>
+</div>
 
+<div className='div'>
+<div className='title'>
+
+**getFormData**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Get component value to obtain form data after submitted.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
+(array): Refers to component name and returns corresponding component value as an object.
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 scriptUtil.getFormData(['title', 'name', 'age']);
 ```
-</li>
-</ul>
 
-- setFormData
-<ul><li>Usage: Set component value to fill in the form and change form data.</li>
-<li>Parameter: (object): component name: component valule.</li>
-<li>Example
+</div>
+</div>
+</div>
 
+<div className='div'>
+<div className='title'>
+
+**setFormData**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Set component value to fill in the form and change form data.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
+(object): Component name: Component value.
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 scriptUtil.setFormData({ title: 'test data' });
 ```
-</li>
-</ul>
 
-- submitDefaultValue
-<ul><li>Usage: Bind form component to trigger data search.</li>
-<li>Parameter
+</div>
+</div>
+</div>
+
+
+<div className='div'>
+<div className='title'>
+
+**submitDefaultValue**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Bind form component to trigger data search.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
 <ul><li>(component): Form component instance.</li>
 <li>(string): To-be-set values of form component instance.</li>
 <li>(string): Tag. <strong>1</strong> means automatically submit the form and <strong>0</strong> means manual submit.
@@ -222,98 +395,168 @@ Automatic submit is only valid when setting <strong>Linkage</strong> to <strong>
 
 </li>
 </ul>
-</li></ul>
-<ul><ul><li>Example
-
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 const component = scriptUtil.getRegisterReactDom('ctrlId');
 scriptUtil.submitDefaultValue(component, 'search value', '1');
 ```
-</li>
-</ul></ul>
+
+</div>
+</div>
+</div>
 
 ### General Tool of scriptUtil
-- Alert
-<ul><li>Usage: pop-up window.</li>
-<li>Parameter
+
+
+<div className='div'>
+<div className='title'>
+
+**Alert**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+pop-up window.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
 <ul>
 <li>(string): Message.</li>
 <li>(function): Callback
 
 :::info
-Callback is only triggered when clicking **ok** on the pop-up window.
+Callback is only triggered when clicking ok on the pop-up window.
 :::
 
 </li>
 </ul>
-</li></ul>
-<ul><ul><li>Example
-
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 scriptUtil.Alert('Prompted Successfully', () => {
   console.log('Click OK');
 });
 ```
-</li>
-</ul></ul>
 
-- showMessage
-<ul>
-<li>Parameter
+</div>
+</div>
+</div>
+
+
+<div className='div'>
+<div className='title'>
+
+**showMessage**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Display a message.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
 <ul>
 <li>(string): Message.</li>
 <li>(string): Message type, including <strong>success/warning/info/error</strong>.
 </li>
 </ul>
-</li>
-<li>Example
-
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 scriptUtil.showMessage('Message', 'success');
 ```
-</li>
-</ul>
 
-- timestampFormat
-<ul><li>Usage: Formats timestamp and returns time string with the set formatting.</li>
-<li>Parameter
+</div>
+</div>
+</div>
+
+
+<div className='div'>
+<div className='title'>
+
+**timestampFormat**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Formats timestamp and returns time string with the set formatting.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
 <ul>
 <li>(number): Timestamp.</li>
 <li>(string): Time format.
 </li>
 </ul>
-</li>
-<li>Example
-
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 scriptUtil.timestampFormat(1587109353040, 'YYYY-MM-DD HH:mm:ss');
 // "2020-04-17 15:42:33"
 ```
-</li>
-</ul>
 
-- timestampAntiFormat
-<ul><li>Usage: Deformats time strings and returns corresponding timestamp.</li>
-<li>Parameter: (string) refers to general time string.</li>
-<li>Example
+</div>
+</div>
+</div>
 
+
+<div className='div'>
+<div className='title'>
+
+**timestampAntiFormat**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Deformats time strings and returns corresponding timestamp.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
+(string): General time string.
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 scriptUtil.timestampAntiFormat('2021-05-01 01:00:00');
 // 1619802000000
 ```
-</li>
-</ul>
 
-- regRexGroup
-<ul><li>Usage: Checks whether the corresponding variable matches the regualr expressions and returns it.</li>
-<li>Parameter: (string) refers to regular expression type, including <strong>mobilePhone/telephone/zipCode/idCard/number/email/ip</strong>.</li>
-<li>Example
+</div>
+</div>
+</div>
 
+
+<div className='div'>
+<div className='title'>
+
+**regRexGroup**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Checks whether the corresponding variable matches the regular expressions and returns it.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
+(string): Regular expression type, including <strong>mobilePhone/telephone/zipCode/idCard/number/email/ip</strong>.
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 const reg = scriptUtil.regRexGroup('mobilePhone');
@@ -322,43 +565,85 @@ const variable_3 = '1886666777';
 reg.test(variable_1); //true;
 reg.test(variable_3); //false;
 ```
-</li>
-</ul>
 
-- isVaild
-<ul><li>Usage: Checks whether the component value formatting conforms to the set rules when submitting the form and returns result as <strong>true</strong> or <strong>false</strong>.</li>
-<li>Parameter: (array) refers to component IDs.</li>
-<li>Example
+</div>
+</div>
+</div>
 
+
+<div className='div'>
+<div className='title'>
+
+**isVaild**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Checks whether the component value formatting conforms to the set rules when submitting the form and returns the result as <strong>true</strong> or <strong>false</strong>.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
+(array): Component IDs.
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
-scriptUtil.isVaild(['ctrlId1','ctrlId2','ctrlId3']);
+scriptUtil.isVaild(['ctrlId1', 'ctrlId2', 'ctrlId3']);
 ```
-</li>
-</ul>
 
-- getFormatterMap
-<ul><li>Usage: Get component title and name according to its ID and return an object.</li>
-<li>Parameter: (array) refers to component IDs.</li>
-<li>Example
+</div>
+</div>
+</div>
+<div className='div'>
+<div className='title'>
 
+**getFormatterMap**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Get component title and name according to its ID and return an object.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
+(array): Component IDs.
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
-scriptUtil.getFormatterMap(['ctrlId1','ctrlId2','ctrlId3']);
+scriptUtil.getFormatterMap(['ctrlId1', 'ctrlId2', 'ctrlId3']);
 ```
-</li>
-</ul>
 
-- parseTableMap
-<ul><li>Usage: Replace object keys inside an array and return a new array.</li>
-<li>Parameter
+</div>
+</div>
+</div>
+
+
+<div className='div'>
+<div className='title'>
+
+**parseTableMap**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Replace object keys inside an array and return a new array.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
 <ul>
 <li>(array): Data source.</li>
 <li>(object): Map.</li>
 <li>(string): Index.</li>
 </ul>
-</li>
-<li>Example
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 // parseTableMap(data, map, index = 'number')
@@ -379,18 +664,30 @@ console.log(result)
     }
 ]
 ```
-</li>
-</ul>
 
-- objKeySort
-<ul><li>Usage: Sort the object keys and return and new object.</li>
-<li>Parameter
+</div>
+</div>
+</div>
+<div className='div'>
+<div className='title'>
+
+**objKeySort**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Sort the object keys and return a new object.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
 <ul>
 <li>(object): Data source.</li>
 <li>(array): Field array that needs to be sorted.</li>
 </ul>
-</li>
-<li>Example
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 const data = {name:'Emma',age: 123, sex: 'F'}
@@ -403,24 +700,50 @@ console.log(result)
     name:'Emma',
 }
 ```
-</li>
-</ul>
 
-- getEditRow
-<ul><li>Usage: Get data of the clicked table row and return an object.</li>
-<li>Parameter: (string) refers to table component ID.</li>
-<li>Example
+</div>
+</div>
+</div>
+<div className='div'>
+<div className='title'>
 
+**getEditRow**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Get data of the clicked table row and return an object.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
+(string): Table component ID.
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 var result = scriptUtil.getEditRow('table component id')
 ```
-</li>
-</ul>
 
-- JSONToExcelConvertor
-<ul><li>Usage: Export data to excel tables.</li>
-<li>Parameter
+</div>
+</div>
+</div>
+
+
+<div className='div'>
+<div className='title'>
+
+**JSONToExcelConvertor**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Export data to excel tables.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
 <ul>
 <li>(array): Data source.</li>
 <li>(array): Data title.</li>
@@ -428,8 +751,9 @@ var result = scriptUtil.getEditRow('table component id')
 <li>(string): Exported file name.</li>
 <li>(string): Exported file extension, including csv/xls.</li>
 </ul>
-</li>
-<li>Example
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 scriptUtil.JSONToExcelConvertor({
@@ -440,23 +764,48 @@ scriptUtil.JSONToExcelConvertor({
   extension: 'xls',
 });
 ```
-</li>
-</ul>
+
+</div>
+</div>
+</div>
 
 ### scriptUtil Page Operation
-- closeCurrentPage
-<ul><li>Usage: Close current page.</li>
-<li>Example
+
+
+<div className='div'>
+<div className='title'>
+
+**closeCurrentPage**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Close current page.
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 scriptUtil.closeCurrentPage();
 ```
-</li>
-</ul>
 
-- openPage
-<ul><li>Usage: Open a new page or search for a named page.</li>
-<li>Parameter
+</div>
+</div>
+</div>
+<div className='div'>
+<div className='title'>
+
+**openPage**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Open a new page or search for a named page.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
 <ul>
 <li>(string): Url of the target page and if no targets, open a new page.</li>
 <li>(string): Name of target property or page. You can select from <strong>blank (new page)/parent (parent page)/self (replace current page)/top (any locadable page)/name (page name)</strong></li>
@@ -464,15 +813,9 @@ scriptUtil.closeCurrentPage();
 <li>(boolean): Feature. Whether or not support customization.</li>
 <li>(string): openConfig[JSON]. Page configruation. </li>
 </ul>
-
-:::info
-- openConfig is only valid when setting **feature** to **true**.
-- openConfig is JSON.
-- You can refer to https://www.runoob.com/jsref/met-win-open.html for functions of Window.open.
-:::
-
-</li></ul>
-<ul><ul><li>Example
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 // blank page
@@ -482,16 +825,29 @@ scriptUtil.openPage('url', '_blank');
 scriptUtil.openPage('url', '_self');
 
 // empty page with set size
-scriptUtil.openPage('url', '_blank'， true, '{"height":400,"width":400}');
+scriptUtil.openPage('url', '_blank', true, '{"height":400,"width":400}');
 ```
-</li>
-</ul></ul>
 
-- showModal
-<ul><li>Usage: Open a new modal window.</li>
-<li>Parameter: (string) refers to pop-up window configuration. You can select from <strong>modalVisible/modalWidth/modalHeight/modalTitle</strong>.</li>
-<li>Example
+</div>
+</div>
+</div>
+<div className='div'>
+<div className='title'>
 
+**showModal**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Open a new modal window.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
+(string) refers to pop-up window configuration. You can select from <strong>modalVisible/modalWidth/modalHeight/modalTitle</strong>.
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 scriptUtil.showModal(`{
@@ -510,50 +866,80 @@ scriptUtil.showModal(`{
 "isSandbox":true
 }`)
 ```
-</li>
-</ul>
 
-- closeModal
-<ul><li>Usage: Close modal window.</li>
-<li>Example
+</div>
+</div>
+</div>
 
+
+<div className='div'>
+<div className='title'>
+
+**closeModal**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Close modal window.
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 scriptUtil.closeModal();
 ```
-</li>
-</ul>
 
-- closeParentModal
-<ul><li>Usage: Close modal window of parent page.</li>
-<li>Example
+</div>
+</div>
+</div>
+<div className='div'>
+<div className='title'>
 
+**closeParentModal**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Close modal window of parent page.
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 window.parent.scriptUtil.closeModal();
 ```
-</li>
-</ul>
+
+</div>
+</div>
+</div>
 
 ### scriptUtil Database Operation
-- addDataTable
-<ul><li>Usage: Add data to data table.</li>
-<li>Parameter
+
+
+<div className='div'>
+<div className='title'>
+
+**addDataTable**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Add data to data table.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
 <ul>
 <li>dataSource: Table name.</li>
 <li>properties: Specific data to be added to the database.</li>
 <li>version: Version number.</li>
 <li>function: Callback parameter. Only accept one result parameter.</li>
 </ul>
-
-:::info
-- V2.8.1.2 and later versions are compatible with 'V1'(embedded) and new functions must add 'V2'.
-- Peoperties must be <strong>array</strong> type, and key must appear with namespace.
-- Table name in <strong>dataSource</strong> must appear with namespace.
-:::
-
-</li></ul>
-<ul><ul><li>Example
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 const param = {
@@ -571,20 +957,32 @@ scriptUtil.addDataTable(
   }
 );
 ```
-</li>
-</ul></ul>
 
-- delDataTable
-<ul><li>Usage: Delete data from data table.</li>
-<li>Parameter
+</div>
+</div>
+</div>
+<div className='div'>
+<div className='title'>
+
+**delDataTable**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Delete data from data table.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
 <ul>
 <li>dataSource: Table name.</li>
 <li>properties: Specific data to be deleted from the database. ID needs to be specified.</li>
 <li>version: Version number.</li>
 <li>function: Callback parameter. Only accept one result parameter.</li>
 </ul>
-</li>
-<li>Example
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 const param = {
@@ -601,12 +999,25 @@ scriptUtil.delDataTable(
   }
 );
 ```
-</li>
-</ul>
 
-- updateDataTable
-<ul><li>Usage: Update data to data table.</li>
-<li>Parameter
+</div>
+</div>
+</div>
+
+
+<div className='div'>
+<div className='title'>
+
+**updateDataTable**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Update data to data table.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
 <ul>
 <li>dataSource: Table name.</li>
 <li>properties: Specific data to be updated to the database.</li>
@@ -614,14 +1025,9 @@ scriptUtil.delDataTable(
 <li>version: Version number.</li>
 <li>function: Callback parameter. Only accept one result parameter.</li>
 </ul>
-
-:::info
-Keys must appear with namespace.
-:::
-
-</li></ul>
-<ul><ul>
-<li>Example
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 //Update condition: code is 1623219467408
@@ -645,12 +1051,23 @@ scriptUtil.updateDataTable(
   }
 );
 ```
-</li></ul>
-</ul>
 
-- queryDataTable
-<ul><li>Usage: Search for data from data table.</li>
-<li>Parameter
+</div>
+</div>
+</div>
+<div className='div'>
+<div className='title'>
+
+**queryDataTable**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Search for data from data table.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
 <ul>
 <li>dataSource: Table name.</li>
 <li>filters: Object.
@@ -665,13 +1082,9 @@ scriptUtil.updateDataTable(
 <li>version: Version number.</li>
 <li>function: Callback parameter. Only accept one result parameter.</li>
 </ul>
-
-:::info
-Keys must appear with namespace.
-:::
-
-</li></ul>
-<ul><ul><li>Example
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 //Update condition: code is 1623219467408
@@ -701,27 +1114,45 @@ scriptUtil.queryDataTable(
   }
 );
 ```
-</li>
-</ul></ul>
 
-- callFunction
-<ul><li>Usage: Call services under object template or instance.</li>
-<li>Parameter
+</div>
+</div>
+</div>
+
+
+<div className='div'>
+<div className='title'>
+
+**callFunction**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Call services under object template or instance.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
 <ul>
 <li>path: Required. Service path, which can be <strong>template alias/template namespace.template alias</strong> for service under object template and <strong>template alias/instance alias</strong> or <strong>template namespace.template alias/instance alias</strong> for service under object instance.</li>
 <li>service: Required. Service alias or service namespace.service alias.</li>
 <li>params: Optional. Input parameters of the service.</li>
 </ul>
-</li>
-<li>Example
-<ul><li>
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
+<ul>
+<li>
 Calling service under object template
 
 ```javascript
 scriptUtil.callFunction('templateNamespace.templateName', 'callService', {a: 1});
 ```
-</li></ul>
-<ul><ul><li>
+
+</li>
+</ul>
+<ul>
+<li>
 Calling service under object instance
 
 ```javascript
@@ -730,17 +1161,33 @@ scriptUtil.callFunction('templateNamespace.templateName/instanceName', 'callServ
     console.log('then:res');
 });
 ```
-</li></ul></ul>
+
 </li>
 </ul>
+</div>
+</div>
+</div>
 
 ### scriptUtil User Information
 
-- getUserInfo
-<ul><li>Usage: Get user information.</li>
-<li>Parameter: (function) refers to callback function.</li>
-<li>Example
 
+<div className='div'>
+<div className='title'>
+
+**getUserInfo**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Get user information.
+</div>
+<div className='leftCol'>Parameter</div>
+<div className='rightCol'>
+(function) refers to callback function.
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 scriptUtil.getUserInfo(function (res) {
@@ -748,27 +1195,49 @@ scriptUtil.getUserInfo(function (res) {
   console.log('res', res);
 });
 ```
-</li>
-</ul>
 
-- getSessionUserInfo
-<ul><li>Usage: Get user session information from <strong>sessionStorage</strong> and return an object.</li>
-<li>Example
+</div>
+</div>
+</div>
+<div className='div'>
+<div className='title'>
 
+**getSessionUserInfo**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Get user session information from <strong>sessionStorage</strong> and return an object.
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 scriptUtil.getSessionUserInfo();
 ```
-</li>
-</ul>
 
-- setAuthority
-<ul><li>Usage: Logout.</li>
-<li>Example
+</div>
+</div>
+</div>
+<div className='div'>
+<div className='title'>
 
+**setAuthority**
+
+</div>
+<div className='grid'>
+<div className='leftCol'>Usage</div>
+<div className='rightCol'>
+Logout.
+</div>
+<div className='leftCol'>Example</div>
+<div className='rightCol'>
 
 ```javascript
 scriptUtil.setAuthority();
 ```
-</li>
-</ul>
+
+</div>
+</div>
+</div>

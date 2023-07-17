@@ -1,3 +1,7 @@
+---
+hide_title: true
+---
+
 Workflow script is normally used after submitting a to do task. To do task triggers the script to execute and complete the workflow.
 :::info
 Write the script in a template service for workflows calling.
@@ -5,6 +9,7 @@ Write the script in a template service for workflows calling.
 ## Creating Object Service
 Add 3 input parameters to represent data involved in workflows.
 - data: JSON data from business form transmitted from the previous task.
+
 ```json
 {
     "name": "Emma",
@@ -13,8 +18,8 @@ Add 3 input parameters to represent data involved in workflows.
 }
 ```
 - auditData: Branch task information.
+
 <table>
-<caption>Table 1. auditData parameter description</caption>
                 <colgroup>
                   <col style={{ width: "25%" }} />
                   <col style={{ width: "25%" }} />
@@ -69,10 +74,11 @@ Add 3 input parameters to represent data involved in workflows.
                     </tr>
                     </tbody>
                     </table>
+
 - flowData: Workflow information.
+
 <table>
-<caption>Table 2. flowData parameter description</caption>
-                <colgroup>
+<colgroup>
                   <col style={{ width: "25%" }} />
                   <col style={{ width: "25%" }} />
                   <col style={{ width: "50%" }} />
@@ -192,7 +198,9 @@ Add 3 input parameters to represent data involved in workflows.
                     </tr>
                     </tbody>
                     </table>
+
 ## Writing Service Script
+
 ```javascript
 var formDataJson = JSON.parse(data); // JSON data of the form
 var auditDataJson = JSON.parse(auditData);

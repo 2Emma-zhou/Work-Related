@@ -62,7 +62,7 @@ Parameters needed for source connection for SQL Server, Oracle, PostgreSQL and D
     </tr>
     <tr>
  <td>Http authorization</td>
- <td>Enable http authorization and enter username and password if the intefrace needs authentication.</td>
+ <td>Enable HTTP authorization and enter username and password if the interface needs authentication.</td>
     </tr>
     <tr>
  <td>Method</td>
@@ -125,7 +125,7 @@ Parameters needed for source connection for SQL Server, Oracle, PostgreSQL and D
 </tr>
 <tr>
  <td>Http authorization</td>
- <td>Enable http authorization and enter username and password if the interface needs authentication.</td>
+ <td>Enable HTTP authorization and enter username and password if the interface needs authentication.</td>
 </tr>
 <tr>
  <td>Headers param</td>
@@ -159,7 +159,7 @@ When setting <strong>GET</strong> or <strong>DELETE</strong> as <strong>HTTP Met
 <tr>
  <td>Output param config</td>
  <td>Enable it to verify parameter of upstream interface. Click fields on the output param window as output results, and result values are automatically filled.
-When parsing the response data, comparison between result and reponse data starts and once difference occurs, connection fails.</td>
+When parsing the response data, comparison between result and response data starts and once difference occurs, connection fails.</td>
 </tr>
 <tr>
 <td>Output type</td>
@@ -195,7 +195,7 @@ When parsing the response data, comparison between result and reponse data start
     Local Data Source
   </td>
   <td>
-    Enable it to make the current supOS platform the data source.
+    Enable it to set data source to the current supOS platform.
   </td>
 </tr>
 <tr>
@@ -204,7 +204,7 @@ When parsing the response data, comparison between result and reponse data start
 </tr>
 <tr>
 <td>Auto creation of metadata collection task</td>
-<td>Whether to generate a metadata collection task automatically in X-DAM. It is enabled and the collection is set to 1:00 by default.</td>
+<td>Enable it to automatically generate a metadata collection task in X-DAM. It is enabled and the collection is set to 1:00 by default.</td>
     </tr>
     <tr>
   <td>
@@ -279,7 +279,7 @@ Use the generated AK/SK credential on the source supOS for data acquisition.
     </tr>
     <tr>
  <td>Smb file path</td>
- <td>Absolute path of the data source file to be connected.</td>
+ <td>The absolute path of the data source file to be connected.</td>
     </tr>
     <tr>
  <td>Username/Password</td>
@@ -382,7 +382,7 @@ Name of the MINIO bucket to be connected.
      <tr>
  <td>File path</td>
  <td>
-Absolute path of the data file to be connected.
+The absolute path of the data file to be connected.
  </td>
     </tr>
     <tr>
@@ -423,7 +423,7 @@ Name of the OSS bucket to be connected.
      <tr>
  <td>File path</td>
  <td>
-Absolute path of the data file to be connected.
+The absolute path of the data file to be connected.
  </td>
     </tr>
     <tr>
@@ -530,6 +530,7 @@ hostnames:
 - "ubuntu-hadoop04"
 ```
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/50.png)
+
 3. Finish editing and do the same for **flink-jobmanager-batch** and **flink-taskmanager-batch**.
 4. Check the container ID, and then access the container.
 ```
@@ -537,6 +538,7 @@ kubectl get po
 kubectl exec -it dam-resource-5b558bfdd7-kxgv2 bash
 ```
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/51.png)
+
 5. Inside the container, execute the following content to check whether the mapping is added in **hosts** file.
 ```
 cat /etc/hosts

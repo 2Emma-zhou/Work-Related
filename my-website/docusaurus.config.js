@@ -3,44 +3,62 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const  path = require('path');
 
-const redocusaurus = [
-  'redocusaurus',
-  {
-    config: path.join(__dirname, 'redocly.yaml'),
-    specs: [
-      {
-        id: 'using-single-yaml',
-        spec: 'openapi/1.yaml',
-        route: '/examples/using-single-yaml/',
-      },
-      {
-        id: 'using-multi-file-yaml',
-        spec: 'openapi/2.yaml',
-        route: '/examples/using-multi-file-yaml/',
-      },
-      {
-        id: 'using-remote-url',
-        // Remote File
-        spec: 'https://github.com/2Emma-zhou/Work-Related/blob/main/my-website/2Emma-zhou-emma-1.0-resolved.yaml',
-        route: '/examples/using-remote-url/',
-      },
-    ],
-    theme: {
-      /**
-       * Highlight color for docs
-       */
-      primaryColor: '#1890ff',
-    },
-  },
-];
+// const redocusaurus = [
+//   'redocusaurus',
+//   {
+//     debug: Boolean(process.env.DEBUG || process.env.CI),
+//     config: path.join(__dirname, 'redocly.yaml'),
+//     specs: [
+//       {
+//         id: 'App Management',
+//         spec: 'openapi/APP Management.yaml', 
+//         route: '/api-reference/app-management/',
+//       },
+//       {
+//         id: 'using-multi-file-yaml',
+//         spec: 'openapi/multi-file/openapi.yaml',
+//         route: '/examples/using-multi-file-yaml/',
+//       },
+//       {
+//         id: 'using-swagger-json',
+//         spec: 'openapi/swagger/swagger.json',
+//         route: '/examples/using-swagger-json/',
+//       },
+//       {
+//         id: 'using-remote-url',
+//         // Remote File
+//         spec: 'https://redocly.github.io/redoc/openapi.yaml',
+//         route: '/examples/using-remote-url/',
+//       },
+//       {
+//         id: 'using-custom-page',
+//         spec: 'openapi/single-file/openapi.yaml',
+//         // NOTE: no `route` passed, instead data used in custom React Component ('custom-page/index.jsx')
+//       },
+//       {
+//         id: 'using-custom-layout',
+//         spec: 'openapi/single-file/openapi.yaml',
+//         // NOTE: no `route` passed, instead data used in custom React Component ('custom-layout/index.jsx')
+//       },
+//     ],
+//     theme: {
+//       /**
+//        * Highlight color for docs
+//        */
+//       primaryColor: '#1890ff',
+//     },
+//   },
+// ];
 
+// if (process.env.VERCEL_URL) {
+//   process.env.DEPLOY_PRIME_URL = `https://${process.env.VERCEL_URL}`;
+// }
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'supOS Industrial Operating System',
-  tagline: 'Welcome to my documentation',
-  url: 'https://your-docusaurus-test-site.com',
+  tagline: 'Get started reshaping your future',
+  url: 'https://your_supOS.com',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'ignore',
@@ -59,12 +77,11 @@ const config = {
     locales: ['en'],
   },
   presets: [ 
-    'redocusaurus',
      [
        '@docusaurus/preset-classic',
       
       // /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         docs: {
           breadcrumbs: false,
          sidebarPath: require.resolve('./sidebars.js'),
@@ -89,22 +106,99 @@ const config = {
         //   include: ['**/*.{js,jsx,ts,tsx,md,mdx}'],
         // },
         
-      }),
+      },
     ],
+    [
+    'redocusaurus',
+    {
+      // Plugin Options for loading OpenAPI files
+      specs: [
+        {
+          spec: 'openapi/APP Management.yaml',
+          route: '/api/',
+        },
+        {
+          spec: 'openapi/APP Config.yaml',
+          route: '/appConfig/',
+        },
+        {
+          spec: 'openapi/Big Data Model Inference.yaml',
+          route: '/bdModelInference/',
+        },
+        {
+          spec: 'openapi/Big Data Model Training.yaml',
+          route: '/bdModelTraining/',
+        },
+        {
+          spec: 'openapi/Config Info.yaml',
+          route: '/configInfo/',
+        },
+        {
+          spec: 'openapi/Notification Center.yaml',
+          route: '/NotificationCenter/',
+        },
+        {
+          spec: 'openapi/Object Modeling.yaml',
+          route: '/objectModeling/',
+        },
+        {
+          spec: 'openapi/System Code.yaml',
+          route: '/systemCode/',
+        },
+        {
+          spec: 'openapi/workflow.yaml', 
+          route: '/workflow/',
+        },
+        {
+          spec: 'openapi/Permission Management.yaml', 
+          route: '/permissionManagement/',
+        },
+        {
+          spec: 'openapi/Authroization Management.yaml', 
+          route: '/authorizationManagement/',
+        },
+        {
+          spec: 'openapi/Identity Oauth2.yaml', 
+          route: '/identityOauth2/',
+        },
+        {
+          spec: 'openapi/Identity Authentication.yaml', 
+          route: '/identityAuthentication/',
+        },
+        {
+          spec: 'openapi/Data Push.yaml', 
+          route: '/dataPush/',
+        },
+        {
+          spec: 'openapi/Module Management.yaml', 
+          route: '/moduleManagement/',
+        },
+        {
+          spec: 'openapi/Organization.yaml', 
+          route: '/organization/',
+        },
+        {
+          spec: 'openapi/User Management.yaml', 
+          route: '/userManagement/',
+        },
+      ],
+      // Theme Options for modifying how redoc renders them
+      theme: {
+        // Change with your site colors
+        primaryColor: '#1890ff',
+      },
+    },
   ],
+],
   plugins: [
-    require.resolve("plugin-image-zoom"),
-    require.resolve("redocusaurus")
+    require.resolve("plugin-image-zoom")  //zoom images in document
   ],
-  
+
   themeConfig:
   // /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-        
-
-      zoom: {
+       zoom: {  //image zoom config
         selector: '.mdx img',
-        
         config: {
           // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
           background: {
@@ -120,10 +214,10 @@ const config = {
       },
       navbar: {
         // style:'primary',
-        title: 'My Site',
+        title: '',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/supOS.svg',
         },
         items: [
           {
@@ -132,24 +226,7 @@ const config = {
             position: 'left',
             label: 'supOS',
           },
-          {
-            label: 'Examples',
-            position: 'left',
-            items: [
-              {
-                label: 'All',
-                to: 'openapi/1.yaml',
-              },
-              {
-                label: 'Using Remote URL',
-                to: '/examples/using-remote-url/',
-              },
-              {
-                label: 'Using Multiple YAMLs',
-                to: '/examples/using-multi-file-yaml/',
-              },
-            ],
-          },
+          
           {
             // type: 'dropdown',
             label: 'Applications',
@@ -195,11 +272,85 @@ const config = {
             position: 'left',
             label: 'Video Demonstration',
           },
+          // {
+          //   type: 'docSidebar',
+          //   sidebarId: 'api',
+          //   position: 'left',
+          //   label: 'API Reference',
+          // },
           {
-            type: 'docSidebar',
-            sidebarId: 'api',
             position: 'left',
             label: 'API Reference',
+            items: [
+              {
+                label: 'APP Management',
+                to: '/api/',
+              },
+              {
+                label: 'APP Config',
+                to: '/appConfig/',
+              },
+              {
+                label: 'Big Data Model Inference',
+                to: '/bdModelInference',
+              },
+              {
+                label: 'Big Data Model Training',
+                to: '/bdModelTraining',
+              },
+              {
+                label: 'Object Modeling',
+                to: '/objectModeling',
+              },
+              {
+                label: 'Workflow',
+                to: '/workflow',
+              },
+              {
+                label: 'Config Info',
+                to: '/configInfo',
+              },
+              {
+                label: 'Notification Center',
+                to: '/notificationCenter',
+              },
+              {
+                label: 'System Code',
+                to: '/systemCode',
+              },
+              {
+                label: 'Permission Management', 
+                to: '/permissionManagement',
+              },
+              {
+                label: 'Authorization Management', 
+                to: '/authorizationManagement',
+              },
+              {
+                label: 'Identity Oauth2', 
+                to: '/identityOauth2',
+              },
+              {
+                label: 'Identity Authentication', 
+                to: '/identityAuthentication',
+              },
+              {
+                label: 'Data Push', 
+                to: '/dataPush/',
+              },
+              {
+                label: 'Module Management', 
+                to: '/moduleManagement/',
+              },
+              {
+                label: 'Organization', 
+                to: '/organization/',
+              },
+              {
+                label: 'User Management', 
+                to: '/userManagement/',
+              },
+            ]
           },
           
           // {to: '/blog', label: 'Blog', position: 'left'},
@@ -217,31 +368,18 @@ const config = {
         ],
       },
       algolia: {
-        // The application ID provided by Algolia
         appId: '29I8LAXY53',
-  
-        // Public API key: it is safe to commit it
         apiKey: '420807d466741ad059d2c9aa0d68e28d',
-  
         indexName: 'work-related',
-  
-        // Optional: see doc section below
         contextualSearch: true,
-  
-        // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
         externalUrlRegex: 'external\\.com|domain\\.com',
-  
-        // Optional: Algolia search parameters
         searchParameters: {},
-  
-        // Optional: path for search page that enabled by default (`false` to disable it)
         searchPagePath: 'search',
-  
-        //... other Algolia params
       },
       title: 'My site',
   // ...
   themes: ['@docusaurus/theme-search-algolia'],
+  
   stylesheets: [
     {
       // ...
@@ -295,7 +433,7 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: require('prism-react-renderer/themes/dracula'), lightCodeTheme, 
+        theme: require('prism-react-renderer/themes/dracula'), lightCodeTheme,  //code block change to black
         darkTheme: darkCodeTheme,
       },
     }),

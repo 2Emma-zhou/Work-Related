@@ -2,7 +2,49 @@
 hide_title: true
 ---
 
-Object modeling on supOS allows you to digitalize your plant, workshop, staff and equipment into object templates and instances, and typical features of objects are converted to attributes of templates and instances.
+Object modeling on supOS allows you to digitalize your plant, workshop, staff and equipment into object models.
+## Overview
+
+![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/factoryModeling/34.png)
+
+<table>
+  <thead>
+    <tr>
+      <th>Function</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Object Template</td>
+      <td>Template of general things in your plant, such as workshop, staff.</td>
+    </tr>
+    <tr>
+      <td>Object Instance</td>
+      <td>Specific things in your plant, such as furnace, staff Zhang.</td>
+    </tr>
+    <tr>
+      <td>Function Set</td>
+      <td>Sets of general functions that can be associated with and inherited by linked templates and instances.</td>
+    </tr>
+    <tr>
+      <td>Tag Management</td>
+      <td>Model category.</td>
+    </tr>
+    <tr>
+      <td>Data Set</td>
+      <td>Manually created and maintained database on supOS.</td>
+    </tr>
+    <tr>
+      <td>Data Group</td>
+      <td>Group and manage data permission of object instance attributes.</td>
+    </tr>
+    <tr>
+      <td>Task Management</td>
+      <td>Information of subscription tasks.</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Object Template vs Object Instance
 
@@ -43,116 +85,3 @@ Refer to the following examples to understand the relation between an object tem
 All template attributs will be inherited by the subordinate instances. For example, from the above staff example, staff A will have attributes including age, gender, name, birth date and post.
 :::
 
-
-## Template Type
-
-Based on object variety, supOS provides 3 types of templates.
-
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Entity template</td>
-      <td>Models of entities, such as device, workshop, staff etc.</td>
-    </tr>
-    <tr>
-      <td>Form template</td>
-      <td>Models of data tables.</td>
-    </tr>
-    <tr>
-      <td>Relation template</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Mapping template</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
-
-## Module Details
-Each template and instance contain modules such as basic information, attribute, service, event and subscription.
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Basic Information</td>
-<td>
-Describes the model name, aliases, parent templates, function sets, and details.
-
-:::info
-Object aliases must be unique under one namespace (APP or system).
-:::
-
-</td>
-</tr>
-<tr>
-<td>Attributes</td>
-<td>
-Describes attributes of object instances.
-<ul>
-<li>
-<strong>Attribute Info</strong>: Displays the current status of an object instance, such as device name, device number, temperature, pressure, and speed.
-</li>
-<li>
-<strong>Alarm rules</strong>: Defines rules of alarm events. When the collected data is updated, the supOS platform judges whether to trigger an alarm based on the rules.
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>Services</td>
-<td>
-Functions that you can use instance properties to realize.
-<ul>
-<li>You can define one or more services for each object instance.</li>
-<li>Services can be used by other features on the platform.</li>
-<li>Embedded services can be called in scripts. For detailed calling methods, see <a href="../../API/Embedded Service">Embedded Service</a></li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>Events</td>
-<td>
-Messages sent by object instances and subscribed by external parties.
-<ul>
-<li>An event is triggered when the data source changes or the configured logic applies.</li>
-<li>A subscriber who listens to the event should be created during modeling.</li>
-<li>A data set containing the event-triggering field must be linked with the event.</li>
-</ul>
-
-:::info
-- Field names in the data set must be the same as aliases of the instance properties.
-- Only available for entity template, instance and function set.
-:::
-
-</td>
-</tr>
-<tr>
-<td>Subscriptions</td>
-<td>
-Receives and responds to events.
-<ul>
-<li>Uses data set linked with the event to define reactions based on business logic.</li>
-<li>The same event can be subscribed by multiple subscribers.</li>
-</ul>
-
-:::info
-Only available for entity template, instance and function set.
-:::
-
-</td>
-</tr>
-</tbody>
-</table>

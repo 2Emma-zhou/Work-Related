@@ -1,835 +1,264 @@
 ---
 sidebar_position: 7
-
 ---
 
-<p>
-    You can use elements inside the business designer to make equipment visible,
-    and bind them with data collected by collectors from a factory, and then
-    configure dynamic effects to simulate real-time status of business processes
-    going inside the factory.
-  </p>
-  <article className="nested3" aria-labelledby="ariaid-title24" id="visible">
+Dynamic effects display real-time status of equipment to simulate production process going inside the plant.
+
 
 ## Visible
 
-<div>
-      <p>
-        Controls whether the graphic element is visible when the collected data
-        changes.
-      </p>
-      <section id="visible__steps_py5_qsm_k5b">
-        <ol id="visible__steps_py5_qsm_k5b">
-          <li className="stepexpand">
-            <span>
-              Double-click a graphic element or right-click a grouped element,
-              and then click <strong>Dynamic</strong> to open dynamic effect
-              configuration window.
-            </span>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Click <strong>Visible</strong>, and then click{" "}
-              <img id="visible__image_qy5_qsm_k5b" src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to
-              select an object.
-            </span>
-            <div>
-              Normally the object is a property of a collector instance. You can
-              also select <strong>Expression</strong> from the drop-down
-              list next to <strong>Data Source</strong> and write a script.
-            </div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Select <strong>Type of Data</strong>.
-            </span>
-            <div>
-              <ul id="visible__ul_ry5_qsm_k5b">
-                <li>
-                  <strong>Analog</strong>: Select between <strong>Quantities</strong> and <strong>Percentage</strong>. You need to set
-                  lower and upper limits as conditions for dynamic effect of the
-                  graphic element.
-                </li>
-                <li>
-                  <strong>Switch</strong>: Only{" "}
-                  <strong>True</strong> and <strong>False</strong>. Set effect for each
-                  value and the element displays as configured when the
-                  collected data changes.
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Set limits and corresponding visible effects, or switch value and
-              corresponding visible effects, and then click{" "}
-              <strong>OK</strong>.
-            </span>
-            <div>
-              <p>
-                As shown in the following figure, when the collected value is
-                between 0-20, the element is visible, and when it is between
-                20-40, it is invisible.
-              </p>
+Controls whether the graphic element is visible when the collected data changes.
+1. Double-click a graphic element or right-click a grouped element, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+2. Click <strong>Visible</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to select an object.
+:::info
+You can also select <strong>Expression</strong> from the drop-down list next to <strong>Data Source</strong> and write a script.
+:::
+3. Select <strong>Type of Data</strong>.
 
+<ul>
+<ul>
+<li>
+  <strong>Analog</strong>: Select between <strong>Quantities</strong> and <strong>Percentage</strong>. You need to set
+  lower and upper limits as conditions for dynamic effect of the
+  graphic element.
+</li>
+<li>
+  <strong>Switch</strong>: Only{" "}
+  <strong>True</strong> and <strong>False</strong>. Set effect for each
+  value and the element displays as configured when the
+  collected data changes.
+</li>
+  </ul>
+  </ul>
+
+4. Set limits and corresponding visible effects, or switch value and corresponding visible effects, and then click <strong>OK</strong>.<br/>
+As shown in the following figure, when the collected value is between 0-20, the element is visible, and when it is between 20-40, it is invisible.
 
 :::info
-
-<strong>True</strong> and{" "}
-                <strong>False</strong> configurations are for <strong>
-                  Switch
-                </strong>{" "}
-                only.
+<strong>True</strong> and <strong>False</strong> configurations are for <strong>Switch</strong> only.
 :::
 
-<figure className="fignone" id="visible__fig_sy5_qsm_k5b">
-                <img id="visible__image_ty5_qsm_k5b" src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/53.png" />
-              </figure>
-            </div>
-          </li>
-        </ol>
-      </section>
-    </div>
-  </article>
-  <article
-    className="nested3"
-    aria-labelledby="ariaid-title25"
-    id="horizontal_movement"
-  >
-
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/53.png" />
 
 ## Movement
 
+Controls the horizontal or vertical movement of an element.
 
-<div>
-      <p>Controls the horizontal or vertical movement of an element.</p>
-      <section
-        className="section"
-        id="horizontal_movement__context_fgn_2tm_k5b"
-      >
-        <p>
-          In this section,{" "}
-          <strong>Horizontal Movement</strong> is used as an
-          example.
-        </p>
-      </section>
-      <section id="horizontal_movement__steps_py5_qsm_k5b">
-        <ol id="horizontal_movement__steps_py5_qsm_k5b">
-          <li className="stepexpand">
-            <span>
-              Double-click a graphic element or right-click a grouped element,
-              and then click <strong>Dynamic</strong> to open dynamic effect
-              configuration window.
-            </span>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Click <strong>Horizontal Move</strong>, and then
-              click <img
-                id="horizontal_movement__image_qy5_qsm_k5b"
-                src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png"
-              /> to select an object.
-            </span>
-            <div>
-              Normally the object is a property of a collector instance. You can
-              also select <strong>Expression</strong> from the drop-down
-              list next to <strong>Data Source</strong> and write a script.
-            </div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Select <strong>Positioning</strong>.
-            </span>
-            <div>
-              <ul id="horizontal_movement__ul_ry5_qsm_k5b">
-                <li>
-                  <strong>Absolute</strong>: Use the current
-                  position of the element as position 0. It is selected by
-                  default.
-                </li>
-                <li>
-                  <strong>Relative</strong>: Presently
-                  unavailable.
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Select <strong>Value Type</strong> between <strong>Quantities</strong> and{" "}
-              <strong>Percentage</strong>, and then set the
-              minimum and maximum values and corresponding positions of the
-              element.
-            </span>
-            <div>
-              When the set data range is exceeded, the element can only move
-              between the set position range.
-            </div>
-            <div>
-              <figure
-                className="fignone"
-                id="horizontal_movement__fig_sy5_qsm_k5b"
-              >
-                <img
-                  id="horizontal_movement__image_ty5_qsm_k5b"
-                  src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/54.png"
-                />
-              </figure>
-            </div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Click <strong>OK</strong>.
-            </span>
-          </li>
-        </ol>
-      </section>
-    </div>
-  </article>
-  <article className="nested3" aria-labelledby="ariaid-title26" id="flicker">
+:::info
+In this section, <strong>Horizontal Movement</strong> is used as an example.
+:::
 
+1. Double-click a graphic element or right-click a grouped element, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+2. Click <strong>Horizontal Move</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png"/> to select an object.
+3. Select <strong>Positioning</strong>.
+- <strong>Absolute</strong>: Use the current position of the element as position 0. It is selected by default.
+- <strong>Relative</strong>: Presently unavailable.
+4. Select <strong>Value Type</strong> between <strong>Quantities</strong> and <strong>Percentage</strong>, and then set the minimum and maximum values and corresponding positions of the element.
+:::info
+When the set data range is exceeded, the element can only move between the set position range.
+:::
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/54.png"/>
+
+5. Click <strong>OK</strong>.
 
 ## Flicker
 
-
-<div>
-      <p>Controls the dynamic flashing and flashing color of the element.</p>
-      <section id="flicker__steps_py5_qsm_k5b">
-        <ol id="flicker__steps_py5_qsm_k5b">
-          <li className="stepexpand">
-            <span>
-              Double-click a graphic element or right-click a grouped element,
-              and then click <strong>Dynamic</strong> to open dynamic effect
-              configuration window.
-            </span>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Click <strong>Flicker</strong>, and then click{" "}
-              <img id="flicker__image_qy5_qsm_k5b" src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to
-              select an object.
-            </span>
-            <div>
-              Normally the object is a property of a collector instance. You can
-              also select <strong>Expression</strong> from the drop-down
-              list next to <strong>Data Source</strong> and write a script.
-            </div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Select <strong>Type of Data</strong>.
-            </span>
-            <div>
-              <ul id="flicker__ul_ry5_qsm_k5b">
-                <li>
-                  <strong>Analog</strong>: Select between <strong>Quantities</strong> and <strong>Percentage</strong>. You need to set
-                  lower and upper limits as conditions for flashing effect of
-                  the element.
-                </li>
-                <li>
-                  <strong>Switch</strong>: Only{" "}
-                  <strong>True</strong> and <strong>False</strong>. Set flashing effect
-                  for each value and the element displays as configured when the
-                  collected data changes.
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Set limits and corresponding flashing effects, or switch value and
-              corresponding flashing effects, and then click{" "}
-              <strong>OK</strong>.
-            </span>
-            <div>
-              <p>
-                As shown in the following figure, when the collected value is
-                between 0-20, the element is flashing between green and red at a
-                frequency of 500, and when it is between 20-40, it is flashing
-                red and green at a frequency of .
-              </p>
-
+Controls the dynamic flashing and flashing color of the element.
+1. Double-click a graphic element or right-click a grouped element, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+2. Click <strong>Flicker</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to select an object.
+3. Select <strong>Type of Data</strong>.
+- <strong>Analog</strong>: Select between <strong>Quantities</strong> and <strong>Percentage</strong>. You need to set lower and upper limits as conditions for flashing effect of
+  the element.
+- <strong>Switch</strong>: Only <strong>True</strong> and <strong>False</strong>. Set flashing effect for each value and the element displays as configured when the collected data changes.
+4. Set limits and corresponding flashing effects, or switch value and corresponding flashing effects, and then click <strong>OK</strong>.<br/>
+As shown in the following figure, when the collected value is between 0-20, the element is flashing between green and red at a frequency of 500, and when it is between 20-40, it is flashing red and green at a frequency of .
 
 :::info
-
-<strong>True</strong> and{" "}
-                <strong>False</strong> configurations are for <strong>Switch</strong>{" "}
-                only.
-
+<strong>True</strong> and <strong>False</strong> configurations are for <strong>Switch</strong> only.
 :::
 
-<figure className="fignone" id="flicker__fig_sy5_qsm_k5b">
-                <img id="flicker__image_ty5_qsm_k5b" src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/55.png" />
-              </figure>
-            </div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Click <strong>OK</strong>.
-            </span>
-          </li>
-        </ol>
-      </section>
-    </div>
-  </article>
-  <article className="nested3" aria-labelledby="ariaid-title27" id="filling">
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/55.png" />
+
+5. Click <strong>OK</strong>.
 
 
 ## Filling
  
- 
- <div>
-      <p>Controls the dynamic filling and filling color of the element.</p>
-      <section id="filling__steps_py5_qsm_k5b">
-        <ol id="filling__steps_py5_qsm_k5b">
-          <li className="stepexpand">
-            <span>
-              Double-click a graphic element or right-click a grouped element,
-              and then click <strong>Dynamic</strong> to open dynamic effect
-              configuration window.
-            </span>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Click <strong>Filling</strong>, and then click{" "}
-              <img id="filling__image_qy5_qsm_k5b" src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to
-              select an object.
-            </span>
-            <div>
-              Normally the object is a property of a collector instance. You can
-              also select <strong>Expression</strong> from the drop-down
-              list next to <strong>Data Source</strong> and write a script.
-            </div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Select <strong>Value Type</strong> between <strong>Quantities</strong> and{" "}
-              <strong>Percentage</strong>, and then set the
-              minimum and maximum values and corresponding filling percentage
-              and direction.
-            </span>
-            <div>
-              <ul id="filling__ul_clf_xwm_k5b">
-                <li>
-                  The filling percentage moves along with the set value. For
-                  example, set <strong>Minimum Value</strong> to 20, and{" "}
-                  <strong>Minimum Fill Percentage</strong> to
-                  0, meaning the element starts filling the set color when the
-                  data value reaches 20.
-                </li>
-                <li>
-                  Select <strong>Fill Direction</strong>, and
-                  the element fills from the set direction.
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Set ranges and corresponding colors in different levels for clear
-              notification.
-            </span>
-            <div>
+Controls the dynamic filling and filling color of the element.
+1. Double-click a graphic element or right-click a grouped element, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+2. Click <strong>Filling</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to select an object.
+3. Select <strong>Value Type</strong> between <strong>Quantities</strong> and <strong>Percentage</strong>, and then set the minimum and maximum values and corresponding filling percentage and direction.
+- The filling percentage moves along with the set value. For example, set <strong>Minimum Value</strong> to 20, and <strong>Minimum Fill Percentage</strong> to 0, meaning the element starts filling the set color when the data value reaches 20.
+- Select <strong>Fill Direction</strong>, and the element fills from the set direction.
+4. Set ranges and corresponding colors in different levels for clear notification.
 
 :::info
-
-<ul id="filling__ul_wby_mxm_k5b">
-                  <li>
-                    We recommend set multiple ranges to improve alarm effect.
-                    From example, when the data value reaches a dangerous range,
-                    set the filling color to red.
-                  </li>
-                  <li>
-                    When the set data range is exceeded, the element filling is
-                    in default color.
-                  </li>
-                </ul>
+- We recommend set multiple ranges to improve alarm effect. Fro example, when the data value reaches a dangerous range, set the filling color to red.
+- When the set data range is exceeded, the element filling is in default color.
 :::
 
-</div>
-            <div>
-              <figure className="fignone" id="filling__fig_sy5_qsm_k5b">
-                <img id="filling__image_ty5_qsm_k5b" src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/56.png" />
-              </figure>
-            </div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Click <strong>OK</strong>.
-            </span>
-          </li>
-        </ol>
-      </section>
-    </div>
-  </article>
-  <article className="nested3" aria-labelledby="ariaid-title28" id="zoom">
 
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/56.png" />
+
+5. Click <strong>OK</strong>.
 
 ## Zoom
 
-
-<div>
-      <p>Controls the dynamic zoom ratio of the element.</p>
-      <section id="zoom__steps_py5_qsm_k5b">
-        <ol id="zoom__steps_py5_qsm_k5b">
-          <li className="stepexpand">
-            <span>
-              Double-click a graphic element or right-click a grouped element,
-              and then click <strong>Dynamic</strong> to open dynamic effect
-              configuration window.
-            </span>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Click <strong>Zoom</strong>, and then click{" "}
-              <img id="zoom__image_qy5_qsm_k5b" src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to
-              select an object.
-            </span>
-            <div>
-              Normally the object is a property of a collector instance. You can
-              also select <strong>Expression</strong> from the drop-down
-              list next to <strong>Data Source</strong> and write a script.
-            </div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Select <strong>Value Type</strong> between <strong>Quantities</strong> and{" "}
-              <strong>Percentage</strong>, and then set{" "}
-              <strong>Zoom Direction</strong>.
-            </span>
-            <div>The element zooms from the set direction.</div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Set the minimum and maximum values and corresponding zoom ratios.
-            </span>
-            <div>
-              The zoom ratio changes along with the set value. For example, set <strong>Minimum Value</strong> to 20, and
-              corresponding <strong>Zoom Ratio</strong> to 0, meaning the
-              element starts zooming in when the data value reaches 20.
-            </div>
-            <div>
+Controls the dynamic zoom ratio of the element.
+1. Double-click a graphic element or right-click a grouped element, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+2. Click <strong>Zoom</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to select an object.
+3. Select <strong>Value Type</strong> between <strong>Quantities</strong> and <strong>Percentage</strong>, and then set <strong>Zoom Direction</strong>.
+:::info
+The element zooms from the set direction.
+:::
+4. Set the minimum and maximum values and corresponding zoom ratios.<br/>
+The zoom ratio changes along with the set value. For example, set <strong>Minimum Value</strong> to 20, and corresponding <strong>Zoom Ratio</strong> to 0, meaning the element starts zooming in when the data value reaches 20.
 
 :::info
-
 The element can only be zoomed in based on the set ratio in equal proportions.
 :::
 
-</div>
-            <div>
-              <figure className="fignone" id="zoom__fig_sy5_qsm_k5b">
-                <img id="zoom__image_ty5_qsm_k5b" src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/57.png" />
-              </figure>
-            </div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Click <strong>OK</strong>.
-            </span>
-          </li>
-        </ol>
-      </section>
-    </div>
-  </article>
-  <article
-    className="nested3"
-    aria-labelledby="color__title_fmb_xzm_k5b"
-    id="color"
-  >
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/57.png" />
 
+5. Click <strong>OK</strong>.
+
+<span id="color"></span>
 
 ## Color
 
-
-<div>
-      <p>Controls the dynamic color of the graphic element.</p>
-      <section id="color__steps_py5_qsm_k5b">
-        <ol id="color__steps_py5_qsm_k5b">
-          <li className="stepexpand">
-            <span>
-              Double-click a graphic element or right-click a grouped element,
-              and then click <strong>Dynamic</strong> to open dynamic effect
-              configuration window.
-            </span>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Click <strong>Color</strong>, and then click{" "}
-              <img id="color__image_qy5_qsm_k5b" src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to
-              select an object.
-            </span>
-            <div>
-              Normally the object is a property of a collector instance. You can
-              also select <strong>Expression</strong> from the drop-down
-              list next to <strong>Data Source</strong> and write a script.
-            </div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Select <strong>Type of Data</strong>.
-            </span>
-            <div>
-              <ul id="color__ul_ry5_qsm_k5b">
-                <li>
-                  <strong>Analog</strong>: Select between <strong>Quantities</strong> and <strong>Percentage</strong>. You need to set
-                  lower and upper limits as conditions for dynamic effect of the
-                  graphic element.
-                </li>
-                <li>
-                  <strong>Switch</strong>: Only{" "}
-                  <strong>True</strong> and <strong>False</strong>. Set effect for each
-                  value and the element displays as configured when the
-                  collected data changes.
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Set limits and corresponding colors, or switch value and
-              corresponding colors, and then click{" "}
-              <strong>OK</strong>.
-            </span>
-            <div>
-              <p>
-                As shown in the following figure, when the collected value is
-                between 0-20, the element is green, and when it is between
-                20-40, it is red.
-              </p>
+Controls the dynamic color of the graphic element.
+1. Double-click a graphic element or right-click a grouped element, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+2. Click <strong>Color</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to select an object.
+3. Select <strong>Type of Data</strong>.
+- <strong>Analog</strong>: Select between <strong>Quantities</strong> and <strong>Percentage</strong>. You need to set lower and upper limits as conditions for dynamic effect of the graphic element.
+- <strong>Switch</strong>: Only <strong>True</strong> and <strong>False</strong>. Set effect for each value and the element displays as configured when the collected data changes.
+4. Set limits and corresponding colors, or switch value and corresponding colors, and then click <strong>OK</strong>.<br/>
+As shown in the following figure, when the collected value is between 0-20, the element is green, and when it is between 20-40, it is red.
 
 :::info
-
-<strong>True</strong> and{" "}
-                <strong>False</strong>
-                configurations are for <strong>
-                  Switch
-                </strong>{" "}
-                only.
+<strong>True</strong> and <strong>False</strong> configurations are for <strong>Switch</strong> only.
 :::
 
-<figure className="fignone" id="color__fig_sy5_qsm_k5b">
-                <img id="color__image_ty5_qsm_k5b" src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/58.png" />
-              </figure>
-            </div>
-          </li>
-        </ol>
-      </section>
-    </div>
-  </article>
-  <article className="nested3" aria-labelledby="ariaid-title30" id="line_0">
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/58.png" />
 
 
-
-
-<div>
-      <p>Controls the line color or border color of the graphic element.</p>
-      <section className="section" id="line_0__context_fwc_5zm_k5b">
-        <p>
-          The configuration of line or border color is similar to that of the
-          element color. For details, see{" "}
-          <a href="application_creation.html#color__title_fmb_xzm_k5b">Color</a>
-          .
-        </p>
-      </section>
-    </div>
-  </article>
-  <article
-    className="nested3"
-    aria-labelledby="tooltip__title_rhr_ys4_l5b"
-    id="tooltip"
-  >
-
+## Line
+Controls the line color or border color of the graphic element.
+:::info
+The configuration of line or border color is similar to that of the element color. For details, see <a href="#color">Color</a>.
+:::
 
 ## Tooltip
 
+Indicates data source information. You can point to the element and the tooltip appears in operation center.
+1. Double-click a graphic element or right-click a grouped element, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+2. Click <strong>Tooltip</strong>, and then select <strong>Value Type</strong> between <strong>Dynamic Data</strong> and <strong>Static Data</strong>.
+- <strong>Dynamic Data</strong>: Select a data source, and the tooltip displays the selected data.
+- <strong>Static Data</strong>: Set a tip and the tooltip displays the entered tip.
 
-<div>
-      <p>
-        Indicates data source information. You can point to the element and the
-        tooltip appears in operation center.
-      </p>
-      <section id="tooltip__steps_py5_qsm_k5b">
-        <ol id="tooltip__steps_py5_qsm_k5b">
-          <li className="stepexpand">
-            <span>
-              Double-click a graphic element or right-click a grouped element,
-              and then click <strong>Dynamic</strong> to open dynamic effect
-              configuration window.
-            </span>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Click <strong>Tooltip</strong>, and then select{" "}
-              <strong>Value Type</strong> between{" "}
-              <strong>Dynamic Data</strong> and <strong>Static Data</strong>.
-            </span>
-            <div>
-              <ul id="tooltip__ul_mmx_mbn_k5b">
-                <li>
-                  <strong>Dynamic Data</strong>: Select a data
-                  source, and the tooltip displays the selected data.
-                </li>
-                <li>
-                  <strong>Static Data</strong>: Set a tip and
-                  the tooltip displays the entered tip.
-                </li>
-              </ul>
-            </div>
-            <div>
-              <figure className="fignone" id="tooltip__fig_sy5_qsm_k5b">
-                <img id="tooltip__image_ty5_qsm_k5b" src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/60.png" />
-              </figure>
-            </div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Click <strong>OK</strong>.
-            </span>
-          </li>
-        </ol>
-      </section>
-    </div>
-  </article>
-  <article className="nested3" aria-labelledby="ariaid-title32" id="turn">
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/60.png" />
 
+3. Click <strong>OK</strong>.
 
 ## Turn
 
-
-<div>
-      <p>Controls the dynamic turning angle of the element.</p>
-      <section id="turn__steps_py5_qsm_k5b">
-        <ol id="turn__steps_py5_qsm_k5b">
-          <li className="stepexpand">
-            <span>
-              Double-click a graphic element or right-click a grouped element,
-              and then click <strong>Dynamic</strong> to open dynamic effect
-              configuration window.
-            </span>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Click <strong>Turn</strong>, and then click{" "}
-              <img id="turn__image_qy5_qsm_k5b" src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to
-              select an object.
-            </span>
-            <div>
-              Normally the object is a property of a collector instance. You can
-              also select <strong>Expression</strong> from the drop-down
-              list next to <strong>Data Source</strong> and write a script.
-            </div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Select <strong>Type of Data</strong>.
-            </span>
-            <div>
-              <ul id="turn__ul_ry5_qsm_k5b">
-                <li>
-                  <strong>Analog</strong>: Set the minimum and
-                  maximum values and corresponding turning angles. For example,
-                  set <strong>Minimum Value</strong> and{" "}
-                  <strong>Maximum Value</strong> to 20 and 100
-                  respectively, and corresponding{" "}
-                  <strong>Angle</strong> to 0 and 180, meaning
-                  the element stays the same when the data value reaches 20 and
-                  turns upside down when it reaches 100.
-                </li>
-                <li>
-                  <strong>Switch</strong>: Set{" "}
-                  <strong>Spinning Speed</strong>, and then
-                  select <strong>Rotation Timing</strong> and{" "}
-                  <strong>Rotate Direction</strong>. For
-                  example, in the figure below, the element rotates in clockwise
-                  at a speed of 30 seconds a cycle when the switch value is <strong>On</strong>.
-                </li>
-              </ul>
-            </div>
+Controls the dynamic turning angle of the element.
+1. Double-click a graphic element or right-click a grouped element, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+2. Click <strong>Turn</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to select an object.
+3. Select <strong>Type of Data</strong>.
+- <strong>Analog</strong>: Set the minimum and maximum values and corresponding turning angles. For example, set <strong>Minimum Value</strong> and <strong>Maximum Value</strong> to 20 and 100 respectively, and corresponding <strong>Angle</strong> to 0 and 180, meaning the element stays the same when the data value reaches 20 and turns upside down when it reaches 100.
+- <strong>Switch</strong>: Set <strong>Spinning Speed</strong>, and then select <strong>Rotation Timing</strong> and <strong>Rotate Direction</strong>. For example, in the figure below, the element rotates in clockwise at a speed of 30 seconds a cycle when the switch value is <strong>On</strong>.
 
 :::info
-
 <strong>Zoom</strong> and <strong>Turn</strong> cannot be enabled at the same time.
-
 :::
 
-<figure className="fignone" id="turn__fig_sy5_qsm_k5b">
-                <img id="turn__image_ty5_qsm_k5b" src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/61.png" />
-              </figure>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Click <strong>OK</strong>.
-            </span>
-          </li>
-        </ol>
-      </section>
-    </div>
-  </article>
-  <article
-    className="nested3"
-    aria-labelledby="ariaid-title33"
-    id="unique_1100285284"
-  >
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/61.png" />
 
+4. Click <strong>OK</strong>.
 
 ## Flow
 
+Controls the dynamic flow effect of the pipeline element.
+1. Double-click a pipeline, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+2. Click <strong>Flow</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to select an object.
+3. Select <strong>Type of Data</strong>.
+- <strong>Analog</strong>: Set value ranges, corresponding color, flow speed and direction.
+- <strong>Switch</strong>: Set corresponding color, flow speed and direction for <strong>True</strong> and <strong>False</strong>
+4. Set <strong>Line Length</strong> and <strong>Interval</strong>, and then click <strong>OK</strong>.
 
-<div>
-      <p>Controls the dynamic flow effect of the pipeline element.</p>
-      <section id="unique_1100285284__steps_py5_qsm_k5b">
-        <ol id="unique_1100285284__steps_py5_qsm_k5b">
-          <li className="stepexpand">
-            <span>
-              Double-click a pipeline, and then click{" "}
-              <strong>Dynamic</strong> to open dynamic effect
-              configuration window.
-            </span>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Click <strong>Flow</strong>, and then click{" "}
-              <img
-                id="unique_1100285284__image_qy5_qsm_k5b"
-                src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png"
-              />{" "}
-              to select an object.
-            </span>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Select <strong>Type of Data</strong>.
-            </span>
-            <div>
-              <ul id="unique_1100285284__ul_ry5_qsm_k5b">
-                <li>
-                  <strong>Analog</strong>: Set value ranges,
-                  corresponding color, flow speed and direction.
-                </li>
-                <li>
-                  <strong>Switch</strong>: Set corresponding
-                  color, flow speed and direction for{" "}
-                  <strong>True</strong> and <strong>False</strong>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Set <strong>Line Length</strong> and <strong>Interval</strong>, and then click{" "}
-              <strong>OK</strong>.
-            </span>
-            <div>
-              <figure
-                className="fignone"
-                id="unique_1100285284__fig_sy5_qsm_k5b"
-              >
-                <img
-                  id="unique_1100285284__image_ty5_qsm_k5b"
-                  src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/62.png"
-                />
-              </figure>
-            </div>
-          </li>
-          <li className="stepexpand">
-            <span>
-              Click <strong>OK</strong>.
-            </span>
-          </li>
-        </ol>
-      </section>
-    </div>
-  </article>
-  <article
-    className="nested3"
-    aria-labelledby="ariaid-title34"
-    id="unique_313289338">
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/62.png"/>
+
+5. Click <strong>OK</strong>.
 
 ## Text Dynamic Effect
 
+Controls the dynamic display effect of text element.
+1. Double-click a text element, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+- Word
 
-<div>
-      <p>Controls the dynamic display effect of text element.</p>
-      <section className="section" id="unique_313289338__context_fs5_2jn_k5b">
-        Double-click a text element, and then click <strong>Dynamic</strong> to open dynamic effect
-        configuration window.
-        <ul id="unique_313289338__ul_nrf_fjn_k5b">
-          <li>
-            Word
-            <ol id="unique_313289338__ol_hmt_hjn_k5b">
-              <li>
-                Click <strong>Word</strong>, and then click{" "}
-                <img
-                  id="unique_313289338__image_qy5_qsm_k5b"
-                  src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png"
-                /> to select an object and enter an expression.
-              </li>
-              <li>
-                Set ranges and corresponding text contents, and then click <strong>OK</strong>.
-                <p>
-                  When the data reaches the set limits, corresponding texts are
-                  displayed.
-                </p>
-              </li>
-            </ol>
-          </li>
-          <li>
-            Text display
-            <ol id="unique_313289338__ol_jmw_rkn_k5b">
-              <li>
-                Click <strong>Text Display</strong>, and then
-                click <img
-                  id="unique_313289338__image_kmw_rkn_k5b"
-                  src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png"
-                /> to select an object or enter an expression.
-              </li>
-              <li>
-                Select a color of the text, and then click <strong>OK</strong>.
-                <p>The text is displayed in the set color.</p>
-              </li>
-            </ol>
-          </li>
-          <li>
-            Analog display
-            <ol id="unique_313289338__ol_and_vkn_k5b">
-              <li>
-                Click <strong>Analog Display</strong>, and
-                then click <img
-                  id="unique_313289338__image_bnd_vkn_k5b"
-                  src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png"
-                /> to select an object and enter an expression.
-              </li>
-              <li>
-                Set ranges and corresponding text colors, and then click <strong>OK</strong>.
-                <p>
-                  When the data reaches the set limits, texts are displayed in
-                  set colors.
-                </p>
-              </li>
-            </ol>
-          </li>
-          <li>
-            Switch display
-            <ol id="unique_313289338__ol_hz4_jln_k5b">
-              <li>
-                Click <strong>Switch Display</strong>, and
-                then click <img
-                  id="unique_313289338__image_iz4_jln_k5b"
-                  src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png"
-                /> to select an object and enter an expression.
-              </li>
-              <li>
-                Set corresponding texts and colors for{" "}
-                <strong>TRUE</strong> and <strong>False</strong>, and then click <strong>OK</strong>.
-                <p>
-                  When the value is <strong>TRUE</strong> or{" "}
-                  <strong>False</strong>, set texts are
-                  displayed in set colors.
-                </p>
-              </li>
-            </ol>
-          </li>
-        </ul>
-      </section>
-    </div>
-  </article>
+<ol>
+<ol>
+  <li>
+Click <strong>Word</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png"/> to select an object and enter an expression.
+  </li>
+  <li>
+Set ranges and corresponding text contents, and then click <strong>OK</strong>.
+<p>
+  When the data reaches the set limits, corresponding texts are
+  displayed.
+</p>
+  </li>
+</ol>
+</ol>
+
+- Text display
+
+<ol>
+<ol>
+  <li>Click <strong>Text Display</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png"/> to select an object or enter an expression.
+  </li>
+  <li>
+Select a color of the text, and then click <strong>OK</strong>.
+<p>The text is displayed in the set color.</p>
+  </li>
+</ol>
+</ol>
+
+- Analog display
+
+<ol>
+<ol>
+  <li>
+Click <strong>Analog Display</strong>, and
+then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png"/> to select an object and enter an expression.
+  </li>
+  <li>
+Set ranges and corresponding text colors, and then click <strong>OK</strong>.
+<p>
+  When the data reaches the set limits, texts are displayed in
+  set colors.
+</p>
+  </li>
+</ol>
+</ol>
+
+- Switch display
+
+<ol>
+<ol>
+  <li>
+Click <strong>Switch Display</strong>, and
+then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png"/> to select an object and enter an expression.
+  </li>
+  <li>
+Set corresponding texts and colors for <strong>TRUE</strong> and <strong>False</strong>, and then click <strong>OK</strong>.
+<p>
+  When the value is <strong>TRUE</strong> or{" "}
+  <strong>False</strong>, set texts are
+  displayed in set colors.
+</p>
+  </li>
+</ol>
+</ol>

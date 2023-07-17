@@ -27,8 +27,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
 
-## Installing Grapgic Drive
-This section focuses on the installation of Nvidia graphic drive. Make sure you have prepared corresponding installation package.
+## Installing Grapgic Driver
+This section focuses on the installation of Nvidia graphic driver. Make sure you have prepared corresponding installation package.
 1. Open the blacklist.
 ```
 sudo vi /etc/modprobe.d/blacklist.conf
@@ -47,11 +47,10 @@ sudo reboot
 ```
 sudo lsmod | grep nouveau
 ```
-5. Download the .run file of the drive you need and put it under <b>/home</b>, make the file executable and then install the drive.
+5. Download the .run file of the driver you need and put it under <b>/home</b>, make the file executable and then install the driver.
 ```
 sudo chmod a+x NVIDIA-Linux-x86_64-460.84.run
-sudo ./NVIDIA-Linux-x86_64-460.84.run –no-opengl-files -no-x-check
--no-nouveau-check
+sudo ./NVIDIA-Linux-x86_64-460.84.run –no-opengl-files -no-x-check -no-nouveau-check
 ```
 :::info
 During the installation, when the nvidia-xconfig is propmted, install it if your computer has only one graphic card. You can use `lshw -numeric -c display` to check the graphic cards.
@@ -60,8 +59,11 @@ During the installation, when the nvidia-xconfig is propmted, install it if your
 ```
 nvidia-smi
 ```
+
+<img href="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supEdge/17.png"/>
+
 :::info
-If any issues come up during the installation, use `sudo ./NVIDIA-Linux-x86_64-430.40.run –uninstall` to uninstall the drive.
+If any issues come up during the installation, use `sudo ./NVIDIA-Linux-x86_64-430.40.run –uninstall` to uninstall the driver.
 :::
 7. Follow the instructions to install nvidia-docker2.
 ```
@@ -105,7 +107,6 @@ sudo docker load -i X-Edge-cuda11.tar
 # Installing X-Edge
 1. Copy the X-Edge installation package to your server and decompress it.
 ```
-cp /mnt/X-EdgeVXXXX-C-XX-XXX.tar /home/X-Edge
 sudo tar xvf X-EdgeVXXXX-C-XX-XXX.tar
 ```
 2. Enter the directory after decompression, and then access the <b>bin</b> file.
@@ -127,7 +128,8 @@ bash install.sh
 
 # Accessing X-Edge
 Now you can access X-Edge by entering the address <b>http://server IP:8181</b> in the browser.
+
 :::info
 Initial username and password are <b>admin</b> and <b>Supedge1234</b>.
-
+:::
 

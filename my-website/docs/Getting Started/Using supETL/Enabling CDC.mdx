@@ -7,7 +7,7 @@ hide_title: true
 MySQL version must be 5.7 or newer.
 :::
 
-1. Open the cinfiguration file of the MySQL.
+1. Open the configuration file of MySQL.
 2. Under **mysqld**, add the following content.
 ```
 [mysqld]
@@ -60,18 +60,18 @@ grant replication client,replication slave,select on DATABASE NAME.TABLE NAME to
 All operations need to be done with **sysdba** permission.
 :::
 
-Before start, check whether the archive mode is enabled.
+Check whether the archive mode is enabled.
 ```
 SQL> select log_mode from v$database;
 LOG_MODE
 ARCHIVELOG
 ```
 ### Archive Mode Enabled
-2. Check whether the redo log is created.
+1. Check whether the redo log is created.
 ```
 show parameter DB_RECOVERY_FILE_DEST
 ```
-3. Check whether the tablespace of the current user is permanent tablespace.
+2. Check whether the tablespace of the current user is permanent tablespace.
 :::info
 To enable CDC, the tablespace must be permanent tablespace.
 :::
@@ -83,7 +83,7 @@ select default_tablespace from dba_users where username='you_user_name';
 ```
 select * from dba_tablespaces;
 ```
-4. Create permanent tablespace file.
+3. Create permanent tablespace file.
 :::info
 The default created tablespace is **USERS** tablespace. To avoid it being too large, we recommend new users create their own tablespace.
 :::
@@ -99,16 +99,16 @@ SELECT t1.name, t2.name FROM v$tablespace t1, v$datafile t2 WHERE
 t1.ts#=t2.ts# order by t1.name;
 ```
 
-5. Check whether the supplymental log is enabled.
+4. Check whether the supplemental log is enabled.
 ```
 SELECT supplemental_log_data_min, supplemental_log_data_pk,
 supplemental_log_data_all FROM v$database;
 ```
-6. (optional) When the result of the last step is **NO NO**, run the following statement to enable supplymental log.
+5. (optional) When the result of the last step is **NO NO**, run the following statement to enable supplymental log.
 ```
 ALTER DATABASE ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;
 ```
-7. Grant CDC permission.
+6. Grant CDC permission.
 - Oracle 11g
 ```
 ALTER USER [YOU_USER_NAME] DEFAULT TABLESPACE LOGMINER_TBS QUOTA UNLIMITED
@@ -265,12 +265,12 @@ Supplemental logging contains **Identification key logging** which only covers p
 
 <ul>
 <ul>
-<li>Enable fro all tables:
+<li>Enable for all tables:
 <pre><code>
 ALTER DATABASE ADD SUPPLEMENTAL LOG DATA (PRIMARY KEY) COLUMNS;
 </code></pre>
 </li>
-<li>Enable fro specific table:
+<li>Enable for specific table:
 
 ```
 ALTER DATABASE ADD SUPPLEMENTAL LOG DATA;

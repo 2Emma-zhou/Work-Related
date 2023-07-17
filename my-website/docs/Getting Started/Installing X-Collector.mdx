@@ -1,223 +1,55 @@
 ---
-sidebar_position: 2
-
+hide_title: true
 ---
-<div style={{width:'655px'}}>
-  
-  <h1>Installation Preparation</h1>
-  
-  
-  <p>
-    Prepare the following before installation:
-  </p>
-  
-  
-  <ul>
-    <li>A server</li>
-    <li>
-      Installation package
-      (X-Collector-Vx.xx.xx.xx-xxxxxxxx-C.exe)
-    </li>
-    <li>Firewall (Recommended)</li>
-    <li>UPS (Recommended)</li>
-    <li>Local area network or Internet</li>
-  </ul>
-  
 
+## Before Installation
 
 :::info
-
-  <ul className="caution-list">
-    <li>
-      We recommend to prepare a server dedicated for X-Collector only.{" "}
-    </li>
-    <li>
-      Install servers and network devices in a dedicated computer room or
-      cabinet.
-    </li>
-    <li>UPS is recommended with electrostatic grounding.</li>
-    <li>
-      Make sure that servers and network devices are connected while using
-      X-Collector to avoid system operation interruptions or data loss due to accidental power failures.
-    </li>
-  </ul>
+We recommend to prepare a server dedicated for X-Collector only.
 :::
 
+- Disable the automatic update service of Windows on X-Collector server. For details, see <a href="Appendix/Disable Windows Update Service">Disable Windows Update Service</a>.
+- Download and install service packs before installing X-Collector on Windows Server 2012 system. For details, see <a href="Appendix/Update Error Solution">Update Error Solution</a>.
+- On Windows7（32-bit）or Windows Server 2008, .Net Framework cannot be automatically installed. In that case, refer to <a href="Appendix/Net Program Installation">Net Program Installation</a> before installing X-Collector.
+- Disable Windows firewall and third-party security software before installing X-Collector.
+:::tip if security is necessary
+You can add X-Collector IP to anti-virus software allowlist.
+:::
 
+## Installing X-Collector
 
-## X-Collector Installation
-
-  <p>
-    This chapter describes the installation procedures of X-Collector. Before
-    installation, confirm the server IP address, subnet mask, default
-    gateway and DNS server address.
-  </p>
-
-  
-  ### Notes
-  
-  
-  <ul>
-    <li>
-      Disable the automatic update service of Windows on X-Collector server.
-      For details, see{" "}
-      <a href="Appendix/Disable Windows Update Service">
-        Disable Windows Update Service
-      </a>
-      .
-    </li>
-    <li>
-      Download and install service packs before installing X-Collector on
-      Windows Server 2012 system. For details, see{" "}
-      <a href="Appendix/Update Error Solution">
-        Solutions for "You need to install Updates corresponding to KB2919355
-        first" at .Net installation
-      </a>
-      .
-    </li>
-    <li>
-      On Windows7（32-bit）or windows Server 2008, .Net Framework cannot be
-      automatically installed. In that case, refer to {" "}
-      <a href="Appendix/Net Program Installation">
-        Solutions for "A Certificate Chain Could Not be Built to a Trusted Root
-        Authority" at the installation of .Net Framework
-      </a>{" "}
-      before installing X-Collector.
-    </li>
-    <li>
-      Disable Windows firewall and third-party security software before
-      installing X-Collector. You can add it to anti-virus software allowlist
-      after installation.
-    </li>
-    <li>
-      Log in to X-Collector server locally with admin account and make sure it
-      stays online, to ensure the X-Collector works properly.
-    </li>
-  </ul>
-  
-
-
-### Installing X-Collector
-
-
-
-  <ol>
-    <li>
-      Double-click the installation file, and then follow instructions of the
-      installation wizard to install X-Collector.
-    </li>
-  </ol>
-  
-  {/* wp:list {"start":9} */}
-  <ul start={9}>
-    <li>
-      Make sure the installation path of X-Collector has no Chinese characters.
-    </li>
-    <li>
-      Make sure to select the right supOS platform version to which X-Collector
-      connects.
-    </li>
-    <li>
-      During installation, .Net Framework 4.6.2 will be automatically installed.
-      If it already exists, click <strong>Close</strong> or{" "}
-      <strong>Cancel</strong> to continue installation.
-    </li>
-  </ul>
-  
-  {/* wp:list {"ordered":true,"start":2} */}
-  <ol start={2}>
-    <li>Restart the system to complete installation.</li>
-  </ol>
-  
-
-
+1. Double-click the installation file, and then follow instructions of the installation wizard to install X-Collector.
+- Make sure the installation path of X-Collector has no Chinese characters.
+- During installation, .Net Framework 4.6.2 will be automatically installed. If it already exists, click <strong>Close</strong> or <strong>Cancel</strong> when asked to continue installation.
+2. Restart the system to complete installation.
 :::info
-
 If <strong>nginx</strong> is not enabled, check whether the IIS server on Windows occupies the port 80.
-
 :::
-  
+3. Open **Service** panel, and check whether the following services are running.
 
-
-### Restarting X-Collector Services
-  
-  
-  <p>After installation, make sure the following services are running.</p>
-  
-  
-  <ul>
-    <li>supos_breakpad: Supos breakpad service</li>
-    <li>supos_collector: Supos collector service </li>
-    <li>supos_nginx: Supos nginx service</li>
-    <li>supos_videocollector: Supos video collector service</li>
-    <li>supos_aecollector: Supos OPC AE collector service</li>
-  </ul>
-  
-  {/* wp:list {"ordered":true} */}
-  <ol>
-    <li>
-      On Windows <strong>Start</strong> menu, search for{" "}
-      <strong>Services</strong>, and then check the status of services mentioned
-      above.
-    </li>
-    <li>
-      If certain service is not running, right-click it and then click{" "}
-      <strong>Restart</strong>.
-    </li>
-  </ol>
-  
-  {/* wp:heading {"level":1} */}
+<ul>
+  <li>supos_breakpad: Supos breakpad service</li>
+  <li>supos_collector: Supos collector service </li>
+  <li>supos_nginx: Supos nginx service</li>
+  <li>supos_videocollector: Supos video collector service</li>
+  <li>supos_aecollector: Supos OPC AE collector service</li>
+</ul>
 
 ## Logging in to X-Collector
 
-
-
-  <ol>
-    <li>
-      Enter X-Collector server address http://<em>IP address</em> in browser
-      (Chrome V9 and above versions are recommended).
-    </li>
-    <li>
-      Enter the default login account and password (admin/admin) and then click{" "}
-      <strong>Login</strong>.
-    </li>
-    <li>Change password on the pop-up window after login.</li>
-  </ol>
-  
-
-
+1. Access http://<em>IP address</em>, and then enter the default login account and password (admin/admin) to login.
 :::info
-
-If the default port 80 for X-Collector is occupied, you can change it and then use the changed port and IP to log in. For details, see <a href="Appendix/Change Login Port"> Change Port</a>.
-
+If the default port 80 for X-Collector is occupied, you can change it and then use the changed port and IP to log in. For details, see <a href="Appendix/Change Login Port"> Change Login Port</a>.
 :::
+3. Change password on the pop-up window.
 
 ## Uninstalling X-Collector
 
-<ol>
-    <li>
-      &nbsp;Select <strong>Control Panel &gt; Uninstall Program</strong>.
-    </li>
-    <li>
-      Right-click <strong>X-Collector</strong> and then click{" "}
-      <strong>Uninstall</strong>.
-    </li>
-    <li>
-      Select whether to delete all X-Collector modules, and then click{" "}
-      <strong>Yes</strong>.
-    </li>
-    <li>
-      Configuration data of X-Collector will not be deleted because of
-      uninstallation of supOS.
-    </li>
-  </ol>
+1. Select **Control Panel** > **Uninstall Program**.
+2. Right-click <strong>X-Collector</strong> and then click <strong>Uninstall</strong>.
+3. Select whether to delete all X-Collector modules, and then click <strong>Yes</strong>.
   
-  
-
 :::info
-
-Design data of X-Collector will not be deleted after uninstallation.
-
+Configuration and design data of X-Collector will not be deleted after uninstallation.
 :::
 
-</div>

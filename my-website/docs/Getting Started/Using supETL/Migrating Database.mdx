@@ -19,8 +19,8 @@ When the target is MySQL5.6/5.7, only real-time synchronization is available; an
 :::
 <ul>
 <ul>
-<li>Real time incremental: Only table structure is synchronized for first-time execution, and when data sources update, changes will be incrementally synchronized in real time.</li>
-<li>One time full increment: Synchronize table sturcture and all data for first-time execution, and when data sources update, changes will be incrementally synchronized in real time.</li>
+<li><b>Real time incremental</b>: Only table structure is synchronized for first-time execution, and when data sources update, changes will be incrementally synchronized in real time.</li>
+<li><b>One full real-time increment</b>: Synchronize table structure and all data for first-time execution, and when data sources update, changes will be incrementally synchronized in real time.</li>
 </ul>
 </ul>
 - Offline
@@ -29,8 +29,8 @@ For tables without primary key, only offline synchronization is available, and d
 :::
 <ul>
 <ul>
-<li>Periodic increment: Synchronize all data for first-time execution, and when data sources update, changes will be incrementally synchronized as schedule.</li>
-<li>Periodic full amount: Synchronize all data as schedule.</li>
+<li><b>Periodic increment</b>: Synchronize all data for first-time execution, and when data sources update, changes will be incrementally synchronized as scheduled.</li>
+<li><b>Periodic full amount</b>: Synchronize all data as scheduled.</li>
 </ul>
 </ul>
 
@@ -40,10 +40,11 @@ For tables without primary key, only offline synchronization is available, and d
 <ol>
 <ol>
 <li>Select to synchronize all tables or partial tables.</li>
-<li>(optionl) Click <b>Add source table</b> to add tables you want to synchronize when selecting <b>Partial table</b>.</li>
+<li>(optional) Click <b>Add source table</b> to add tables you want to synchronize when selecting <b>Partial table</b>.</li>
 <li>Click <b>Create</b>.</li>
 </ol>
 </ol>
+
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/44.png)
 
 - Offline

@@ -23,8 +23,9 @@ Different types of driver corresponds to different information. For details, see
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supCollector/add1.png) 
 3.  Click **Import tags in batch** tab to synchronize tags connected to the source, and then click **Save**.
 
-<ul><ul><li>Click <strong>Synchronize</strong> to only synchronize new tags.
-
+<ul>
+<ul>
+<li>Click <strong>Synchronize</strong> to only synchronize new tags.
 
 :::info
 For first time synchronization, all related tags will be synchronized.
@@ -34,9 +35,11 @@ For first time synchronization, all related tags will be synchronized.
 <li>Click <strong>Enumerate tags</strong>, all tags connected to the source are listed.</li>
 <li>Select tags, and then click <strong>Import</strong> or <strong>Export CSV</strong> to import selected tags to X-Collector or export to local computer in .csv file.</li>
 <li>Select a tag, you can edit its parameters on the right side.</li>
-</ul></ul>
+</ul>
+</ul>
 
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supCollector/import.png)
+
 :::info
 - Some types of collector do not support tag synchronization.
 - Interfaces of tag synchronization are different depending on the driver type. This section uses **Simulator** as an example.
@@ -47,18 +50,19 @@ For first time synchronization, all related tags will be synchronized.
 - Under **Import tags in batch**, you can synchronize tags connected to the source as well.
 :::
 
+4. (optional) With the added sources, you can import sources in batches.
 
-
-4. (Optional) With the added sourcea, you can import sources in batches.
+<ol>
 <ol>
 <li>Click <b>Export</b> to download a .csv file of current sources.</li>
 <li>Use the exported file as a template and enter information of sources you want to import based on the file requirements.</li>
 <li>Click <b>Import</b>, select the file and import it to X-Collector.</li>
 </ol>
+</ol>
 
 ## Adding Tags
 
-  A tag is the smallest unit corresponding to a specific attribute of a source. Aside from tag synchronization, you can also manually add tags or import them in batches.
+A tag is the smallest unit corresponding to a specific attribute of a source. Aside from tag synchronization, you can also manually add tags or import them in batches.
 1. On X-Collector, select **RTD Collector** > **Tag**.
 2. Click **Add**, enter the tag information and then click **Save**.
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supCollector/2.png)
@@ -69,11 +73,11 @@ For writing data back to equipment, you need to set **R/W status** to **R/W**. F
 
 3. Select the tag you just added, click **Export**.
 4. Enter tag information on the .csv file exported, and then select an import method by clicking **Import**.<br />
-  - **Override import**: Imported tags replace original tags.
-  - **Incremental import**: Kepp tags with same aliases as original tags, and import new tags.
+- **Override import**: Imported tags replace original tags.
+- **Incremental import**: Keep tags with same aliases as original tags, and import new tags.
 
 :::info
-For fields with **Bool** data type, make sure to enter **true** or **false** in lower case for X-Collector to recongize.
+For fields with **Bool** data type, make sure to enter **true** or **false** in lower case for X-Collector to recognize.
 :::
 
 5. Select the file, and then click **Open** to import tags to X-Collector.

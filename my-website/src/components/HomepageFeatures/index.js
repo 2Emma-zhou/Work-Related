@@ -99,7 +99,7 @@ const FeatureList = [
         A comprehensive guide on how to use supOS' API with detailed instructions and examples.
       </>
     ),
-    link: "category/openapi",
+    link: "/api",
   },
   
 ]; 

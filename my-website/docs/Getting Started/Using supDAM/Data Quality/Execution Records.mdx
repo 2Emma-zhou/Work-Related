@@ -4,7 +4,7 @@ hide_title: true
 
 ### Execution Records
 
-Log in to supOS, and then Select **Data Intelligence** > **Data Governance** > **Data quality** > **Execution records**.
+Log in to supOS, and then select **Data Intelligence** > **Data Governance** > **Data quality** > **Execution records**.
 - You can check the records of QC tasks.
 - For failed tasks, click ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supDAM/31.png) to find out the reason for subsequent correction.
 - Click **View** under **Operation** to check the details.
@@ -14,9 +14,9 @@ Log in to supOS, and then Select **Data Intelligence** > **Data Governance** > *
 ### Quality Score Details
 In record details, you can see the number of executed and failed tasks, and quality score.
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supDAM/33.png)
-- Rules siabled or without weight will not be evaluated.
+- Rules disabled or without weight will not be evaluated.
 - Rule score = (Records - Number of error records)/Records*100
-- QC task quality score = Sum(rule score * weight)/Sum(rule weight)
+- QC task quality score = Sum(rule score*weight)/Sum(rule weight)
 
 For example:
 Task A, contains Rule A1, A2 and A3. According to the following table, calculate the task quality score.
@@ -69,4 +69,4 @@ Task A, contains Rule A1, A2 and A3. According to the following table, calculate
 </ul>
 </ul>
 
-- Task quality score: (90*80+87.5*50+85*30)/(80+50+30)=88
+- Task quality score: (90\*80+87.5\*50+85*30)/(80+50+30)=88
