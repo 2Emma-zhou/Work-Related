@@ -835,9 +835,10 @@ const sidebars = {
         'Getting Started/Using supLink/App Statistics',
         'Getting Started/Using supLink/Viewing Messages',
         'Getting Started/Using supLink/General Functions on Mobile',
+        
       ]
     },
-    
+    'Getting Started/Using supLink/supLink SDK',
   ],
    
 };

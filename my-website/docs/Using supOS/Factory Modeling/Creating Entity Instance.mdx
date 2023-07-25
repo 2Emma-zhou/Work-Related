@@ -17,11 +17,20 @@ Optional parameters can be left as empty.
 <ol>
 <ol>
 <li>Select an attribute (Humidity), click <strong>Setup</strong> next to <strong>Data Sources</strong> under <strong>Attribute Info</strong>, and then select a <strong>Type of Data Processing</strong>.
-<ul>
-<li><strong>Associative Binding</strong>: Click <b>Select attribute</b> and select the attribute that represents humidity to bind data source. You can also add formula to do initial data processing.
 
-<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/factoryModeling/11.png"  width={470}
-  height={864}/>
+:::tip
+By clicking **Binding Relationship** at the upper-right corner, you can quickly bind attributes in batches.
+:::
+
+<ul>
+<li><strong>Associative Binding</strong>: Click <b>Select attribute</b> and select the attribute that represents humidity to bind data source. You can also add formula and external attributes to do initial data processing.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/factoryModeling/11.png"  width={470}/>
+
+:::info details you should know
+- Compariosn operators: When comparison operators are used in a formula, a boolean value is returned. For example: `PROP(“system.Template_3623.Instance_429.system.Property_3941”)` returns the property value, and `PROP(“system.Template_3623.Instance_429.system.Property_3941”) < 5` returns **true** or **false**.
+- Condition expression: x=expression1?expression2:expression3. For example: `min=(a<b)?a:b` means if a < b, min = a, otherwise, min = b. a nd b must be the same data type.
+:::
 
 </li>
 <li><strong>Attribute Aggregation Statistics</strong>: Select the humidity attribute, and set rules of aggregate statistics to process the value.<br/>
@@ -145,6 +154,18 @@ On <strong>Attributes</strong> list, hover over the attribute <strong>Value</str
         </tr>
         <tr>
           <td>1000000000000000</td>
+          <td>
+            No permission
+          </td>
+        </tr>
+        <tr>
+          <td>800000000000000</td>
+          <td>
+            Only Keep-Alive messages are received
+          </td>
+        </tr>
+        <tr>
+          <td>100000000000000</td>
           <td>
             Time series data exceeds authorized limit and the current tag does
             not have authorized quota

@@ -98,7 +98,7 @@ Only available when setting <strong>Node type</strong> to <strong>Signal start</
 
 A timer event sets the deadline time of current task or the last task. It can be used in following ways:
 - Place it between two tasks, and the second task only starts when reaching the set time.
-- Place it on a task, and if the task is finished before the set time, the timer becomes invalid; if not, a branch task is triggered.
+- Place it on a task, and if the task is finished before the set time, the timer becomes invalid; if not, the subsequent branch task of the timer is triggered.
 
 <img width={450} height={300} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/23.png" />
 <table>
@@ -123,7 +123,7 @@ Event type
 </td>
 <td>
 
-- <strong>Interrupt</strong>: The current task executor cannot proceed the workflow after reaching the set time, and only branches can.
+- <strong>Interrupt</strong>: The current task executor cannot proceed the workflow after reaching the set time, and the subsequent branches of the timer proceed.
 - <strong>No interrupt</strong>: The current task executor can proceed the workflow after reaching the set time.
 
 :::info
