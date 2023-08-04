@@ -58,7 +58,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'supOS Industrial Operating System',
   tagline: 'Get started reshaping your future',
-  url: 'https://your_supOS.com',
+  url: 'https://your_supOS_url',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'ignore',
@@ -181,6 +181,10 @@ const config = {
           spec: 'openapi/User Management.yaml', 
           route: '/userManagement/',
         },
+        {
+          spec: 'openapi/supLink.yaml', 
+          route: '/supLink/',
+        },
       ],
       // Theme Options for modifying how redoc renders them
       theme: {
@@ -298,8 +302,8 @@ const config = {
                 label: 'Big Data Model Training',
                 to: '/bdModelTraining',
               },
-              {
-                label: 'Object Modeling',
+              {   
+                label: 'Object Modeling', 
                 to: '/objectModeling',
               },
               {
@@ -342,30 +346,34 @@ const config = {
                 label: 'Module Management', 
                 to: '/moduleManagement/',
               },
-              {
+              {  
                 label: 'Organization', 
                 to: '/organization/',
               },
-              {
+              { 
                 label: 'User Management', 
-                to: '/userManagement/',
+                to: '/userManagement/', 
+              },
+              {
+                label: 'supLink', 
+                to: '/supLink/',   
               },
             ]
-          },
+          }, 
           
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/facebook/docusaurus', 
             label: 'GitHub',
-            position: 'right',
+            position: 'right', 
           },
-          {
+          {  
             href: 'release_notes',
             label: 'Release Notes',
             position: 'right',
           },
        
-        ],
+        ], 
       },
       algolia: {
         appId: '29I8LAXY53',

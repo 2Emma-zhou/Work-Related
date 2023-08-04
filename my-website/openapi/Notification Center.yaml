@@ -233,7 +233,7 @@ paths:
         required: true
         description: 'Start time of the time range to query (the time format must
           include the time zone), format:"yyyy-MM-dd''T''HH:mm:ss.SSZ,for example:
-          UTC time:"2021-01-26T16:02:15.666+0000"；UTC+8 time:"2021-01-26T16:02:15.666+0800"。'
+          UTC time:"2021-01-26T16:02:15.666+0000"; UTC+8 time:"2021-01-26T16:02:15.666+0800"'
         schema:
           type: string
         example: '2021-01-26T16:02:15.666+0800'
@@ -241,8 +241,8 @@ paths:
         in: query
         required: true
         description: 'End time of the time range to query (the time format must include
-          the time zone), format:"yyyy-MM-dd''T''HH:mm:ss.SSZ, for example: UTC time:"2021-01-26T16:02:15.666+0000"；UTC+8
-          time:"2021-01-26T16:02:15.666+0800"。'
+          the time zone), format:"yyyy-MM-dd''T''HH:mm:ss.SSZ, for example: UTC time:"2021-01-26T16:02:15.666+0000"; UTC+8
+          time:"2021-01-26T16:02:15.666+0800".'
         schema:
           type: string
         example: '2021-07-01T16:02:15.666+0800'
@@ -350,7 +350,7 @@ paths:
     post:
       tags:
       - V2
-      summary: Message Sending V2 API Will Be Deprecated
+      summary: Message Sending V2 API 
       operationId: sendMessageV2ByStandard
       description: It will be migrated to /open-api/p/notification/v2/messages. Send
         messages based on specified recipient range and message content list. Returns
@@ -417,7 +417,7 @@ paths:
     post:
       tags:
       - V2
-      summary: Send Messages Based on a Topic Will Be Deprecated
+      summary: Send Messages Based on a Topic 
       operationId: sendMessageByTopicByStandard
       description: It will be migrated to /open-api/p/notification/v2/topic/messages.
         Send messages based on a Topic. If the recipient range and protocol type are
@@ -494,7 +494,7 @@ paths:
     get:
       tags:
       - V2
-      summary: Query Messages Received by the User Will Be Deprecated
+      summary: Query Messages Received by the User 
       deprecated: true
       description: 'It will be migrated to /open-api/p/notification/v2alpha1/users/{username}/messages*
         Query Messages Received by the User within a certain time range
@@ -513,7 +513,7 @@ paths:
         required: true
         description: 'Start time of the time range to query (the time format must
           include the time zone), format:"yyyy-MM-dd''T''HH:mm:ss.SSZ,for example:
-          UTC time:"2021-01-26T16:02:15.666+0000"；UTC+8 time:"2021-01-26T16:02:15.666+0800"。'
+          UTC time:"2021-01-26T16:02:15.666+0000"; UTC+8 time:"2021-01-26T16:02:15.666+0800".'
         schema:
           type: string
         example: '2021-01-26T16:02:15.666+0800'
@@ -521,8 +521,8 @@ paths:
         in: query
         required: true
         description: 'End time of the time range to query (the time format must include
-          the time zone), format:"yyyy-MM-dd''T''HH:mm:ss.SSZ, for example: UTC time:"2021-01-26T16:02:15.666+0000"；UTC+8
-          time:"2021-01-26T16:02:15.666+0800"。'
+          the time zone), format:"yyyy-MM-dd''T''HH:mm:ss.SSZ, for example: UTC time:"2021-01-26T16:02:15.666+0000"; UTC+8
+          time:"2021-01-26T16:02:15.666+0800".'
         schema:
           type: string
         example: '2021-07-01T16:02:15.666+0800'
@@ -916,7 +916,7 @@ components:
           description: |
             Optional. Use the current specified recipient range to send the message (multiple selections allowed).<br>
               * If the recipient range and protocol type are specified in the input parameters, they will override the original recipient range and protocol type of the topic.
-              *  If the recipient range and protocol type are not specified in the input parameters, the message will be sent according to the original recipient range and protocol type of the topic. If the recipient range is not configured in the topic, an error will be returned: Receiver cannot be empty。
+              *  If the recipient range and protocol type are not specified in the input parameters, the message will be sent according to the original recipient range and protocol type of the topic. If the recipient range is not configured in the topic, an error will be returned: Receiver cannot be empty.
           items:
             type: object
             required:
@@ -962,7 +962,7 @@ components:
           description: |
             Optional. Topic keywords (template variables) <br>
             * For example, the default template for a to-do message topic: You have received a ${orderName} created by ${orderMaker} on ${receiveTime}, with order number ${orderNumber}. The order is currently in ${orderStatus} status. Please check it in a timely manner.
-              * Template parameters are the variables inside ${}: receiveTime、orderMaker、orderName、orderNumber、orderStatus。
+              * Template parameters are the variables inside ${}: receiveTime、orderMaker、orderName、orderNumber、orderStatus.
               * When sending the message, the actual values corresponding to the message template variables should be specified. If not specified, the message template will be filled with empty values by default.
             * Built-in template variables include [openWith]
               * openWith: This field is only applicable when the protocol is stationLetter and is used to set the open method of the station letter. The openWith field should not be defined in the station letter template.
