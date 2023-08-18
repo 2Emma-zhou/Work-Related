@@ -7,7 +7,7 @@ Add the supOS platform to the trust list of the PI server for it to get data.
 2. Select <strong>Security</strong> > <b>Identities, Users, & Groups</b> > <strong>PI Users</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/60.png"/> to add a new user.
 3. Enter the username and password, and then click <strong>Create</strong>.
 4. Double-click the created username, select the <strong>Mappings&Trusts</strong> tab in the pop-up window.
-5. Click <strong>Add</strong> under <strong>Trust name</strong>, 
+5. Click <strong>Add</strong> under <strong>Trust name</strong>.
 
 <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/61.png"/>
 
@@ -63,7 +63,7 @@ PI tool kit connects the supOS platform and the PI database.
 1. Double-click "PiWebApi_XXX.exe" and follow the instructions to install the tool kit.
 2. Find the server.xml file under the installation path of the tool kit, and then open it with notepad.
 3. Change the file content and save it.
-```
+```xml
 <conf>
   <PI>
     <Address>server_ip</Address>

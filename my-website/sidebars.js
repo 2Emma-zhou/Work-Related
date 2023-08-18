@@ -840,7 +840,10 @@ const sidebars = {
     },
     'Getting Started/Using supLink/supLink SDK',
   ],
-   
+  appIntegration: [
+    'App Integration/Overview',
+    
+  ],
 };
 
 module.exports = sidebars;

@@ -21,7 +21,7 @@ const productList = [
     Svg: require('@site/static/img/etl.svg').default,
     desc: (
       <>
-        A flexible digital storage solution that securely stores and shares various types of data.
+        A flexible digital solution that efficiently connects, processes and exchanges various types of data.
       </>
     ),
     link: "Getting Started/System Requirements se",
@@ -31,7 +31,7 @@ const productList = [
     Svg: require('@site/static/img/dam.svg').default,
     desc: (
       <>
-        Efficiently organize and optimize your data assets with our comprehensive management solution.
+        Securely organize and optimize your data assets with our comprehensive management solution.
       </>
     ),
     link: "Getting Started/System Requirements sd",

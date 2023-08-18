@@ -230,7 +230,6 @@ const config = {
             position: 'left',
             label: 'supOS',
           },
-          
           {
             // type: 'dropdown',
             label: 'Applications',
@@ -360,7 +359,12 @@ const config = {
               },
             ]
           }, 
-          
+          {
+            type: 'docSidebar',
+            sidebarId: 'appIntegration',
+            position: 'left',
+            label: 'APP Integration',
+          },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/facebook/docusaurus', 
