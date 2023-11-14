@@ -2,11 +2,11 @@
 hide_title: true
 ---
 
-You can only log in to the platform after authorization.
+:::note what you should know about supOS license
 - A notification appears on the login page 60 days before expiration to remind you.
 - Within 30 days after the expiration date, the platform notifies you of a 10% reduction in online users.
 - 30 days after the expiration date, only admins can access the platform.
-
+:::
 
 ## Logging in to Operation Center 
 
@@ -16,35 +16,41 @@ Access the supOS platform with default account <strong>admin</strong> and passwo
 - The account (admin included) will be locked out after multiple wrong attempts. You can change the number of attempts from <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/7.png" /> > <strong>System Management</strong> > <strong>System Configuration</strong> > <strong>Password configuration</strong>. 
 :::
 
-<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/3.png"/>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/1.png"/>
 
 <table>
 <thead>
 <tr>
+<th>No.</th>
 <th>Section</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Function menu</td>
+<td>1</td>
+<td>Application list</td>
 <td>
-Contains main functions of the supOS platform in the operation center.
-<ul>
-<li>
-Switch to check workflows, processes, and tasks. Hover over each tab, and you can click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/78.png" /> to add the selected tab to <strong>Favorites</strong>.
-</li>
-<li>Search for workflows or tasks by keywords.</li>
-<li>
-Quickly find workflows and tasks in <strong>Favorites</strong>.
-</li>
-<li>
-Displays all published applications in the design center with permission granted. You can select applications to view corresponding effects and details.
-</li>
-</ul>
+Displays published applications that meet the following requirements:
+
+- The current account has permission to access.
+- Enabled from <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/7.png" /> > **System Configuratin** > **Menu Configuration**.
+
+:::info
+**Favorites** and **Workflow Management** are displayed by default.
+:::
+
 </td>
 </tr>
 <tr>
+<td>2</td>
+<td>Company name</td>
+<td>
+Displays the company name the current account belongs to.
+</td>
+</tr>
+<tr>
+<td>3</td>
 <td>Toolbar</td>
 <td>
 <ul>
@@ -67,6 +73,7 @@ Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/
 </td>
 </tr>
 <tr>
+<td>4</td>
 <td>Tab list</td>
 <td>
 Displays all open tabs. Up to 8 tabs are available.
@@ -81,18 +88,21 @@ Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/
 </td>
 </tr>
 <tr>
+<td>5</td>
 <td>Display</td>
 <td>
-Displays the list of workflows, processes, and tasks.
 <ul>
 <li>
-On <strong>Workflow</strong> tab, you can manage all workflows published on the design center.
+Manage all workflows of published applications on <strong>Workflow</strong>.
 </li>
 <li>
-On <strong>Process</strong> tab, you can view the progress of each process, pause and restart or stop processes.
+Delegate processes to selected agents on <strong>Agent Management</strong>.
 </li>
 <li>
-On <strong>Task</strong> tab, you can see all to-do tasks from the ongoing workflow.
+View the progress of each workflow process, pause, restart or stop processes on <strong>Process</strong>.
+</li>
+<li>
+View all to-do tasks from the ongoing workflow on <strong>Task</strong>.
 <span id="design-center"></span>
 </li>
 </ul>
@@ -101,14 +111,11 @@ On <strong>Task</strong> tab, you can see all to-do tasks from the ongoing workf
 </tbody>
 </table>
 
-
-
 ## Getting to Know Design Center
-
 
 Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/7.png" /> at the upper-right corner on the homepage to go to the design center.
 
-<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/10.png" />
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/2.png" />
 
 <table>
   <thead>
@@ -123,19 +130,22 @@ Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/
     <td>1</td>
       <td>Function menu</td>
       <td>
-        Contains main functions of the design center the supOS platform.
+      Main functions and installed modules are displayed.
       </td>
     </tr>
     <tr>
     <td>2</td>
       <td>Toolbar</td>
       <td>
-        <ul id="app_design__ul_yws_2jx_xtb">
+        <ul>
           <li>
             Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/5.png" /> to go back to the homepage.
           </li>
           <li>
-            Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/6.png" /> to configure the system information. For details, see <a href="../System Configuration/System Settings">System Settings</a>.
+            Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/3.png" /> to view the manuals and openAPI documents.
+          </li>
+          <li>
+            Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/6.png" /> to check the supOS version information.
           </li>
           <li>
             Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/8.png" /> to exit the current account.
@@ -145,24 +155,9 @@ Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/
     </tr>
     <tr>
     <td>3</td>
-      <td>Tab list</td>
-      <td>
-        Displays all open tabs. Up to 8 tabs are available.
-        <ul id="app_design__ul_mhc_h4x_xtb">
-          <li>
-            Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/9.png" /> to close tabs.
-          </li>
-          <li>
-            Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/11.png" /> to view in full screen.
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-    <td>4</td>
       <td>Display</td>
       <td>
-        Displays the details of the current module.
+        Displays the details of the selected module.
       </td>
     </tr>
   </tbody>

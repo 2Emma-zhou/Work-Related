@@ -83,6 +83,19 @@ const config = {
       // /** @type {import('@docusaurus/preset-classic').Options} */
       {
         docs: {
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: '4.2',
+              path: '4.2',
+              banner:'none',
+          },
+        //   4.0: {
+        //     label: '4.0',  
+        //     path: '4.0',
+        //     banner:'none',
+        // },
+        },
           breadcrumbs: false,
          sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
@@ -195,7 +208,7 @@ const config = {
   ],
 ],
   plugins: [
-    require.resolve("plugin-image-zoom")  //zoom images in document
+    require.resolve("plugin-image-zoom"),  //zoom images in document
   ],
 
   themeConfig:
@@ -230,6 +243,7 @@ const config = {
             position: 'left',
             label: 'supOS',
           },
+          
           {
             // type: 'dropdown',
             label: 'Applications',
@@ -238,43 +252,64 @@ const config = {
               {
                 type:'doc',
                 label: 'X-Collector',
-                docId: 'Getting Started/System Requirements sc',
+                docId: 'Using X-Collector/System Requirements sc',
               },
               {
                 type: 'doc',
                 label: 'X-DAM',
-                docId: 'Getting Started/System Requirements sd',
+                docId: 'Using supDAM/System Requirements sd',
               },
               {
                 type: 'doc',
                 label: 'X-ETL',
-                docId: 'Getting Started/System Requirements se',
+                docId: 'Using supETL/System Requirements se',
               },
               {
                 type: 'doc',
                 label: 'X-Edge',
-                docId: 'Getting Started/System Requirements sedge',
+                docId: 'Using supEdge/System Requirements sedge',
               },
               {
                 type:'doc',
                 label: 'X-BD',
-                docId: 'Getting Started/System Requirements sb',
+                docId: 'Using supBD/System Requirements sb',
               },
               {
                 type:'doc',
                 label: 'supLink',
-                docId: 'Getting Started/System Requirements sl',
+                docId: 'Using supLink/System Requirements sl',
               },
-              
+              // {
+              //   type:'doc',
+              //   label: '3D Designer',
+              //   docId: '3D Designer/System Requirements',
+              // },
             ],
             
           },
           {
-            type: 'docSidebar',
-            sidebarId: 'video',
+            // type: 'dropdown',
+            label: 'Demo',
             position: 'left',
-            label: 'Video Demonstration',
+            items: [
+              {
+                type:'doc',
+                label: 'Video Demo',
+                docId: 'demo/Dashboard/Dashboard Development Step by Step',
+              },
+              {
+                type: 'doc',
+                label: 'Image/Text Demo',
+                docId: 'demo/X-Collector Connection Demo/OPC DA',
+              },
+            ],
           },
+          // {
+          //   type: 'docSidebar',
+          //   sidebarId: 'demo', 
+          //   position: 'left',
+          //   label: 'Demo',
+          // },
           // {
           //   type: 'docSidebar',
           //   sidebarId: 'api',
@@ -359,23 +394,23 @@ const config = {
               },
             ]
           }, 
-          {
-            type: 'docSidebar',
-            sidebarId: 'appIntegration',
-            position: 'left',
-            label: 'APP Integration',
-          },
+          
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus', 
-            label: 'GitHub',
-            position: 'right', 
+            type: 'docsVersionDropdown',
+            position: 'left',
+            dropdownActiveClassDisabled: false,
           },
-          {  
-            href: 'release_notes',
-            label: 'Release Notes',
-            position: 'right',
-          },
+          // {
+          //   href: 'https://github.com/facebook/docusaurus', 
+          //   label: 'GitHub',
+          //   position: 'right', 
+          // },
+          // {  
+          //   href: '@site/release_notes',
+          //   label: 'Release Notes',
+          //   position: 'right', 
+          // },
        
         ], 
       },

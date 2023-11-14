@@ -1,0 +1,2422 @@
+---
+hide_title: true
+---
+
+## Designing Process
+
+The image below introduces the whole process of designing an application.
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/96.png"/>
+
+:::info
+When designing pages in an application, depending on different page layouts, different process and operations are required.
+:::
+
+## Creating an Application
+
+1. Log in to supOS, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/7.png" /> at the upper-right corner to go to the design center.
+2. Select **APP Management** > **Business Designer**, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/16.png" />.
+3. Enter information of the application, and then click <strong>OK</strong>.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/1.png" width={450} />
+
+4. Hover over the application you just created, and then click <strong>Edit Page</strong>.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/22.png" />
+
+<table>
+<tr>
+<th>Tab</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Basic Information</td>
+<td>Basic information of the current application.</td>
+</tr>
+<tr>
+<td>Object Model Management</td>
+<td>Object models inside the current application.
+
+:::tip
+When calling object attributes or services of the application, make sure you define the correct namesapce (app name).
+:::
+
+</td>
+</tr>
+<tr>
+<td>Interface Design</td>
+<td>Specific pages of the application.</td>
+</tr>
+<tr>
+<td>Component Design</td>
+<td>CUstom components that you design for future use.</td>
+</tr>
+<tr>
+<td>Workflow Management</td>
+<td>Together with created pages, company staff information and custom script to form complete workflows.</td>
+</tr>
+<tr>
+<td>Static Resource Management</td>
+<td>Media resources collected from app pages and external upload. You can copy the resource URL to use.</td>
+</tr>
+<tr>
+<td>Data Query Management</td>
+<td>Perform CRUD operations to data added from <b>Competence Center</b> > <b>Storage Resources</b> > <b>Resources Management</b>.</td>
+</tr>
+<tr>
+<td>Recycle Bin</td>
+<td>Deleted pages. You can recover or delete them completely.</td>
+</tr>
+</table>
+
+## Adding Page
+
+1. Inside the application, click **Interface Design**.
+2. Select <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap1.png" /> > **Blank Page** to add a new page.
+
+:::info Info about other icons
+- <img width={20} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap6.png" />: Add folders to categorize pages.
+- <img width={100} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap8.png" />: Level the selected page up/down or move it up/down.
+- <img width={150} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/35.png" />: Basic page operations in free layout, including preview, page settings, save current page as template, share the current page, import and export the page.
+- <img width={150} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/36.png" />: Basic page operations in grid layout, including preview, release the page, restore the previous step, save current page as template, share the current page, import and export the page.
+:::
+
+<img width={450} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/23.png" />
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blank Page</td>
+<td>Create a blank page.</td>
+</tr>
+<tr>
+<td>Connection Page</td>
+<td>Link an existing page from supOS.</td>
+</tr>
+<tr>
+<td>Connection URL</td>
+<td>
+
+Connect an external page by URL.
+- Click **Advance** to set whether the page is run inside the sandbox and running permissions.
+- Select whether the page is a PIMS page.
+
+</td>
+</tr>
+<tr>
+<td>Layout Kind
+</td>
+<td>
+
+- Free Layout: Freely arrange elements on the canvas.
+- Grid Layout: Elements can only be placed inside grids on the canvas.
+
+</td>
+</tr>
+<tr>
+<td>
+Keep Login
+</td>
+<td>
+Whether to allow the application to stay logged in after being inactive for the set period.
+
+:::info
+Pages during design are not restricted by <strong>Keep Login</strong> rules.
+:::
+
+</td>
+</tr>
+<tr>
+<td>Enabling Workflow</td>
+<td>Whether to allow the page to be linked with workflows.</td>
+</tr>
+<tr>
+<td>Menu bar display</td>
+<td>Set the page display on computer, mobile client (supLink) or desktop component (available for supOS v4.2 and newer).</td>
+</tr>
+</tbody>
+</table>
+
+3. Click **OK**.
+
+## Page Design in Free Layout
+In free layout, you can create multiple blocks and place them anywhere on the page.
+
+### Page Setting Description
+
+- Page settings: Click <strong>Settings</strong> at the upper-right corner.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/6.png"/>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apply on Block</td>
+<td>Select whether to set the page to contain only one block. If multiple blocks, set the block size.</td>
+</tr>
+<tr>
+<td>Layout Type</td>
+<td>
+<ul>
+<li><strong>Flow Layout</strong>: All blocks stretch or shrink to fit the actual screen.</li>
+<li><strong>Free Layout</strong>: All blocks are the set size.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Linkage</td>
+<td>Set the linkage between controls.
+<ul>
+<li><strong>Auto</strong>: Value changes trigger linked events automatically.
+</li>
+<li><strong>Manual</strong>: Click buttons to trigger linked events after values change.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Free Width/Free Height</td>
+<td>Set the block width and height. Only available for multiple blocks in free layout.
+</td>
+</tr>
+<tr>
+<td>Mobile Adaptation</td>
+<td>Set how the page adapts to mobile client screens. Only available for multiple blocks in free layout.</td>
+</tr>
+<tr>
+<td>Background Selection</td>
+<td>Set the background color.</td>
+</tr>
+</tbody>
+</table>
+
+:::tip how to add multiple blocks
+Point to a block, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/16.png"/> on four sides of the block to add blocks.
+:::
+
+- Block settings: Hover over a block and click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap10.png"/> at the upper-right corner: 
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/4.png"/>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td>Decides the block display size on the operation center.
+<ul>
+<li><strong>Flow Layout</strong>: Block size in operation
+center = Ratio between block width/height and page
+width/height × manually set size during design. You
+can also drag the block to change its size.
+</li>
+<li><strong>Free Layout</strong>: Block size in operation center
+= Manually set size during design. Make sure the block
+size is smaller than page size.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Width and Height Settings</td>
+<td>Block size.</td>
+</tr>
+<tr>
+<td>Transparency
+</td>
+<td>Block transparency. 100% means the block is transparent.</td>
+</tr>
+<tr>
+<td>Background Image</td>
+<td>Block background image.</td>
+</tr>
+<tr>
+<td>Background Type</td>
+<td>Select whether to stretch or shrink the background image
+vertically or horizontally to adapt to actual screen.</td>
+</tr>
+</tbody>
+</table>
+
+### Designing Page
+
+1. Double-click or hover over the page, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap9.png" /> at the upper-right corner.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/24.png" />
+
+<table>
+<tr>
+<th>No.</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Page operation</td>
+<td>Preview/save the page or copy the page URL for quick use in script.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Tool bar</td>
+<td>Tools used during page design.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Template library</td>
+<td>Template libraries that provide templates from Bluetron or your other low-code applications for quick design.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Element library</td>
+<td>
+
+- **Component Library**: Contains various elements you can use for your application development. **Custom Component Library** is the elements you downloaded to local from Bluetron store.
+- **Mapping Elements**: Custom templates from other low-code appplications.
+- **Extension Library**: General industrial equipment elements provided by supOS.
+
+</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Canvas</td>
+<td>The place where you design your application.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Design operation</td>
+<td>
+
+- **Attribute**: Attributes of the canvas, or the selected element.
+- **Interaction**: Select event type of the selected element, and set the event to form interaction effect on the page.
+- **Right-click Menu**: Set functions when right-click the selected element.
+
+</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Page functions</td>
+<td>Select elements, change element relations, view page effect and edit page through script.</td>
+</tr>
+</table>
+
+2. Click on the canvas, and on the right side, change the canvas attributes as needed.
+- Attribute
+
+<ul>
+<ul>
+<li>Basic Settings <br/>
+
+<img width={350} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/31.png"/>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Canvas size</td>
+<td>Displays the canvas size set during block layout settings. If the block is <strong>Flow Layout</strong>, you can change its size, and if it is <strong>Free Layout</strong>, the size is fixed.
+</td>
+</tr>
+<tr>
+<td>Background</td>
+<td>Edit the block background color.</td>
+</tr>
+<tr>
+<td>Wheel Scaling</td>
+<td>
+<ul>
+<li>Enable it, and then when you scroll the wheel in operation center, the page zooms in or out.
+</li>
+<li>Disable it, and then when you scroll the wheel in operation center, the page scrolls up or down.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Adaptive to the screen</td>
+<td>
+<ul>
+<li>Enable it, when elements exceed block margins, the block will adapt its size to contain all elements in operation center.
+</li>
+<li>Disable it, when elements exceed block margins, elements that outside the block will be hidden in operation center.
+</li>
+</ul>
+
+:::info
+Only available for free layout.
+:::
+
+</td>
+</tr>
+<tr>
+<td>Support playback</td>
+<td>Enable it, and then you can playback data in operation center by right-clicking the page and selecting playback.
+
+:::info
+Make sure datalink elements are added and <strong>History</strong> is enabled. 
+:::
+
+</td>
+</tr>
+<tr>
+<td>Support dragging</td>
+<td>Set whether you can drag the block in operation center.</td>
+</tr>
+<tr>
+<td>Display center point</td>
+<td>Set whether to display the middle point of elements.
+
+:::info
+We recommend hiding the middle point to avoid moving it during dragging.
+:::
+
+</td>
+</tr>
+<tr>
+<td>Touch-screen Optimization</td>
+<td>Set whether to optimize the page display on touch screens.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>Grid settings
+Set <strong>Color shade change at intervals</strong> to 5, and the grid line switches between <strong>Grid Color</strong> and <strong>Dark Line Color</strong> every 5 grids.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/32.png"/>
+
+:::tip how to display grids
+Click <img width={20} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap16.png"/> on the top tool bar to display or hide grids.
+:::
+
+</li>
+</ul>
+</ul>
+
+- Interaction
+
+<ol>
+<ol>
+<li>
+Click the drop-down list, and then select an event.
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Page Initialization</td>
+<td>Interactions during page initialization.</td>
+</tr>
+<tr>
+<td>Content Change</td>
+<td>Events triggered when the current block content changes.
+</td>
+</tr>
+<tr>
+<td>Content Loading</td>
+<td>Events triggered when the current block is loading.
+</td>
+</tr>
+<tr>
+<td>Retrieve/Submit/Reject workflow data</td>
+<td>Get data of the last node on the workflow.</td>
+</tr>
+<tr>
+<td>Submit workflow data</td>
+<td>Events triggered when submitting workflow.</td>
+</tr>
+<tr>
+<td>Reject workflow data</td>
+<td>Events triggered when workflow is rejected.</td>
+</tr>
+<tr>
+<td>Selected</td>
+<td>Events triggered when selecting the current block.
+</td>
+</tr>
+<tr>
+<td>Single-click</td>
+<td>Events triggered when clicking the current block.
+</td>
+</tr>
+<tr>
+<td>Double-click</td>
+<td>Events triggered when double-clicking the current block.
+</td>
+</tr>
+<tr>
+<td>Interface loaded</td>
+<td>Events triggered when interface loaded.
+</td>
+</tr>
+<tr>
+<td>Component loaded</td>
+<td>Events triggered when component loaded.
+</td>
+</tr>
+<tr>
+<td>OnFocus</td>
+<td>Events triggered when pointing to the current block.
+</td>
+</tr>
+<tr>
+<td>LostFocus</td>
+<td>Events triggered when the cursor leaving the current block.
+</td>
+</tr>
+<tr>
+<td>Upload Complete</td>
+<td>Events triggered when upload is complete.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/33.png" />, set event details.
+<ul>
+<li><strong>Open Link</strong>: Open the link in different types of pages or windows when the event is triggered.</li>
+<li><strong>Close The Window</strong>: Directly close the current window when the event is triggered.</li>
+<li><b>Script</b>: Write a script to realize certain functions when the event is triggered.</li>
+</ul>
+
+:::info
+All custom scripts in <strong>Business Designer</strong> provide detailed error notifications when errors happen in preview
+or operation center, including page name, error control,script event name and error information.
+:::
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/21.png"/>
+
+</li>
+<li>Click <strong>Finish</strong>.</li>
+</ol>
+</ol>
+
+- Right-click Menu
+
+<ol>
+<ol>
+<li>Click <b>Add options</b>, and then set the right-click event information.
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/34.png"/>
+</li>
+<li>Click <b>Confirm</b>.</li>
+</ol>
+</ol>
+
+3. Click on an element from the left list, and then click on the canvas.
+4. Select the element and then set its attributes, events and other functions on the right side.
+:::info
+Different elements require different attribute settings.
+:::
+5. Adjust elements using the tool bar to achieve best visual effect.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/24.png" />
+
+<table>
+<thead>
+<tr>
+<th>Icon</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap13.png"/>
+</td>
+<td>
+Click the icon and then click elements on the canvas to select
+them.
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap14.png"/>
+</td>
+<td>
+Go back to the last step or go to the next.
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap15.png"/>
+</td>
+<td>
+Display or hide the scale.
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap16.png"/>
+</td>
+<td>
+Display or hide the grid on canvas.
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap17.png"/>
+</td>
+<td>
+Adjust the canvas size.
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap18.png"/>
+</td>
+<td>
+Display the whole block on the canvas or display the block in
+full screen.
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap19.png"/>
+</td>
+<td>
+Press the ctrl key and select multiple elements, and then make
+them the same width, height or same size.
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap20.png"/>
+</td>
+<td>
+Enable format brush or dynamic format brush, and then select
+elements to make them the same format. Only available for
+graphic elements.
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap23.png"/>
+</td>
+<td>
+Select three or more elements, and arrange them horizontally
+or vertically equidistant.
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap24.png"/>
+</td>
+<td>
+Select two or more elements, and change their alignment.
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap25.png"/>
+</td>
+<td>
+Ungroup or group the selected elements.
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap26.png"/>
+</td>
+<td>
+Check connections of all tags on the current page.
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap27.png"/>
+</td>
+<td>
+Find and replace.
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap28.png"/>
+</td>
+<td>
+Add data link controls in batches.
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap29.png"/>
+</td>
+<td>
+Search for dynamic data sources related to the current page.
+Data sources bound with graphic elements are excluded.
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/26.png"/>
+</td>
+<td>
+Display elements that have configured with interaction scripts.
+</td>
+</tr>
+</tbody>
+</table>
+
+- Check tags connection.
+
+<ol>
+<ol>
+<li>Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap26.png"/>, and then click <strong>Start Inspection</strong> on the pop-up window.
+
+<img width={450} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/12.png"/>
+
+</li>
+<li>(Optional) Click <strong>Edit</strong> next to errors after inspection, replace the data source and then check again.
+
+:::info
+- **Inspection finished** is displayed when the connection is normal.
+- No results are displayed when there is no bound data source.
+:::
+
+</li>
+</ol>
+</ol>
+
+- Find and replace.
+
+<ol>
+<ol>
+<li>Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap27.png"/>, and then enter content you want to find or replace in the pop-up window.
+
+:::info
+Data link controls are not available for text replacement.
+:::
+
+:::tip
+You can also click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/14.png"/> in the textbox to select a tag or property to be replaced.
+:::
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/27.png"/>
+</li>
+<li>Set filters as needed and then click <strong>Search</strong>.</li>
+<li>Set the replacement.</li>
+<li>Select a replacement mode and then click <strong>Replace Preview</strong> to view the effect.</li>
+<li>Select the found object, and then click <strong>Replace Selected</strong>.</li>
+</ol>
+</ol>
+
+- Add datalink in batches.
+
+<ol>
+<ol>
+<li>Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap28.png"/>, and then click <strong>Add Object Properties</strong> to select properties.
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/28.png"/>
+</li>
+<li>Set the display of selected attributes on the canvas, and then click <strong>Confirm</strong>.
+
+:::info
+When the set <strong>Integer Digits</strong> are more than that of the selected data, the data will be compensated with 0. If less, the data will be displayed as it is. For example, the data is 352.69, <strong>Integer Digits</strong> is set to 5, the data is displayed as 00352.69. If <strong>Integer Digits</strong> is set to 2, the data is displayed as 352.69.
+:::
+
+</li>
+</ol>
+</ol>
+
+- Data source list.
+
+<ol>
+<ol>
+<li>Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap29.png"/>, enter keywords, and then click <strong>Query</strong>.
+
+:::info
+Select a result, the corresponding element is highlighted on the canvas.
+:::
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/29.png"/>
+</li>
+<li>Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png"/> next to the data source, and then select another data source to replace.
+
+:::info
+You can also directly enter a data source name following the naming rules similar to `system:Template_550:Instance_551:system:Property_554`.
+:::
+
+</li>
+<li>Click <strong>Confirm</strong>.</li>
+</ol>
+</ol>
+
+- Script management.
+
+<ol>
+<ol>
+<li>Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/26.png"/>.
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/30.png"/>
+</li>
+<li>Select a component from the list, and then click <b>Edit Script</b> to edit the event script.
+</li>
+</ol>
+</ol>
+
+6. Click <strong>Save</strong> to finish design.
+
+### Quick Operations
+
+This section introduces some quick operations for designing a page.
+
+<ul>
+<li>
+Click and drag on an empty space to move the canvas, and click and
+drag an element to move the element.
+</li>
+<li>Scroll the wheel to zoom in or out the canvas.</li>
+<li>
+Press ctrl and draw on the canvas to select elements inside the drawn
+area.
+</li>
+<li>
+Press ctrl and select multiple elements, and then you can configure
+properties of the same type elements.
+</li>
+<li>
+Select an element. move to the element edge, and then click{" "}
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/24.png"/> to rotate it.
+</li>
+<li>
+Double-click an element to open and set the <b>Dynamic Configuration</b>.
+</li>
+</ul>
+<p>Right-click an element, you can perform simple operations on it.</p>
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/25.png" />
+
+<table>
+<thead>
+<tr>
+<th>
+Parameter
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Bring to Front/Send to Back
+</td>
+<td>
+Move an element to the first or the last on the canvas.
+</td>
+</tr>
+<tr>
+<td>
+Bring Forward/Send Backward
+</td>
+<td>
+Move an element forward or backward on the canvas.
+</td>
+</tr>
+<tr>
+<td>
+Block/Unblock
+</td>
+<td>
+Select multiple elements and group them or cancel grouping.
+
+:::info
+**Ungroup** only appears for group elements.
+:::
+
+</td>
+</tr>
+<tr>
+<td>
+Dynamic
+</td>
+<td>
+Configure the dynamic effect of elements.
+
+:::info
+Only available for datalink controls, graphic or group elements.
+:::
+
+</td>
+</tr>
+<tr>
+<td>
+Save As Template
+</td>
+<td>
+Save selected elements as a template under <b>Custom Template</b>.
+</td>
+</tr>
+</tbody>
+</table>
+
+## Page Design in Grid Layout
+### Designing Page
+
+:::info difference from free layout
+Elements can only be placed inside grids on the canvas.
+:::
+
+1. Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap1.png"/> to add a page in grid layout, double-click or point to the page, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/Snap9.png"/> at the upper-right corner to start page design.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/37.png"/>
+
+<table>
+<thead>
+<tr>
+<th>
+No.
+</th>
+<th>
+Module
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+1
+</td>
+<td>
+Element Library
+</td>
+<td>
+<ul>
+<li><strong>Component Library</strong>: Contains various elements you can use for your application development.</li>
+<li>
+<strong>Layout Library</strong>: Provides block and grid to
+form different layouts.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+Development Tools
+</td>
+<td>
+Displays tools you can use during designing.
+<ul>
+<li>
+<strong>Full Screen</strong>: Displays the
+canvas in full screen. Press Exit to return to normal view.
+</li>
+<li>
+<strong>Undo</strong>/
+<strong>Redo</strong>: Undo or redo the current operation.
+</li>
+<li>
+<strong>Left</strong>/
+<strong>Centered</strong>/
+<strong>Right</strong>: Adjust the alignment of elements.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+Page Operations
+</td>
+<td>
+Preview and save the current page, copy the page URL for use in scripts, and exit page designing.
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+Canvas
+</td>
+<td>
+The place where you design your application.
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+Attribute
+</td>
+<td>
+Set canvas properties to achieve effects you need.
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+Level
+</td>
+<td>
+Indicates hierarchical relations among added elements or
+layouts. You can quickly select elements on the list.
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+Bread Crumb
+</td>
+<td>
+Displays the selected layout block path.
+</td>
+</tr>
+</tbody>
+</table>
+
+2. Click on the canvas, and edit canvas attributes as needed.
+- Root block attributes
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/38.png"/>
+
+<ul>
+<ul>
+<li>
+<strong>Adapt To The Content</strong>: Canvas
+size adjusts according to content and element size.
+</li>
+<li>
+<strong>Fixed Width And Height</strong>: Select
+it and set the width and height of the canvas. Unit can be
+percentage or pixel.
+</li>
+<li>
+<strong>Number of Columns</strong>: Set the
+number of columns on the canvas. Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/35.png"/> to add or delete columns.
+
+:::info
+Select units of columns from <strong>Ratio</strong> and <strong>Pixel</strong>, the supOS platform arranges the width of each column based on units and number of columns.
+:::
+
+</li>
+</ul>
+</ul>
+
+- Sub-block attributes<br/>
+You can set the padding, background color and image of the grid, background image display and elements alignment inside the grid.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/39.png"/>
+
+3. Select **Layout Library**, and drag **Grid** or **Block** onto the canvas to build various layouts.
+- Layout block attributes
+
+:::info
+Layout block is under **Layout Libray**.
+:::
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/40.png"/>
+
+<table>
+<thead>
+<tr>
+<th>
+Parameter
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Column Number
+</td>
+<td>
+Enter the number of columns inside the block. You can select
+different units of each column.
+</td>
+</tr>
+<tr>
+<td>
+Default Position
+</td>
+<td>
+The block is at the upper-left corner of the column and adapts
+to screen resolution.
+</td>
+</tr>
+<tr>
+<td>
+Absolute Position
+</td>
+<td>
+<ul>
+<li>
+The block takes up a whole column without setting specific
+width and height.
+</li>
+<li>
+With set width and height smaller than the column, you can
+select the block from <strong>Level</strong> list, point to it
+and click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/39.png"/> to move it anywhere inside the column.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Fixed Width And Height
+</td>
+<td>
+Set block size and when content is larger than the size,
+scroll bars are displayed.
+</td>
+</tr>
+<tr>
+<td>
+Fit Window
+</td>
+<td>
+Block size is the same as the left area of its parent block.
+</td>
+</tr>
+<tr>
+<td>
+Adapt To The Content
+</td>
+<td>
+Block size adjusts according to content and element size. You
+need to set the width and height of elements inside the block.
+</td>
+</tr>
+<tr>
+<td>
+Display Level
+</td>
+<td>
+Set the display level (Z-index) of the block. The higher the level, the
+more front it is displayed.
+</td>
+</tr>
+<tr>
+<td>
+Background Color
+</td>
+<td>
+Set the block background color.
+</td>
+</tr>
+<tr>
+<td>
+Upload Icon
+</td>
+<td>
+Upload an image to be the block background image.
+</td>
+</tr>
+<tr>
+<td>
+Aspect Ratio
+</td>
+<td>
+Select the background image display.
+<ul>
+<li>
+<strong>No Zoom</strong>: Displays the
+image as it is.
+</li>
+<li>
+<strong>Subject to Width/Height</strong>:
+Stretches the image in equal proportion with the same
+width/height as the block.
+</li>
+<li>
+<strong>Filled with</strong>: The
+background image covers the whole block.
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/42.png"/>
+
+- Layout grid attributes<br/>
+
+:::info
+Layout grid is under **Layout Libray**.
+:::
+
+You can set rows and columns of the grid, and set the width of each column.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/41.png"/>
+
+4. Under **Element Library**, drag and drop elements into the layout blocks you set based on your design requirements.
+5. Click **Save** and **Exit** to finish design.
+
+### Quick Operations
+
+This section introduces basic operations on the canvas in grid layout.
+- Add elements: Click an element from the library, and then drag it onto the canvas.
+:::info
+Elements are added inside the grid displayed as red during dragging, and a layout block is added below the block displayed as red.
+:::
+- Delete/copy/move an element: Point to an element, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/41.png" /> in order from left to right to delete, copy and move the element.
+- Select an element: You can select an element from <strong>Level</strong> list on the right, or through bread crumb at the bottom.
+- Data linkage: Press ctrl and then select multiple elements to set data linkage.
+
+## Designing Custom Component
+Custom templates can be designed and applied in application pages under **Mapping Elements**.
+
+1. Click **Component Design** on the left side, and then add a new page.
+2. Double-click the canvas, and then edit the canvas attributes on the right side.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/43.png" />
+
+<ol>
+<ol>
+<li>Set the component background color.</li>
+<li>Under <b>Grid Settings</b>, set the grid size, grid line color and color change intervals.</li>
+<li>Under <b>Custom Events</b>, click <b>Add options</b> to add a new event.
+
+:::tip how to use the event
+- Edit the event: Add the component to your application page, and then write the event script under **Custom Event**.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/44.png" />
+
+- Call the event in script: Use **custom.event alias** to call.
+:::
+
+</li>
+<li>Under <b>API</b>, click <b>Add API</b>, and write the script for API function.
+</li>
+
+:::tip how to use the API
+- The defined function name in your script will be the API name.
+- View the API: Add the component to your application page, and then view it under **API**.
+- Call the API in script: Use **component name.API.API name** to call.
+:::
+
+
+<li>Add events to the component under <b>Interaction</b>.</li>
+</ol>
+</ol>
+
+3. Select elements from the left side to start designing.
+
+## Workflow Management
+
+### Process
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/1.png" />
+<ol>
+<li>Create pages that you need to link with in the workflow.</li>
+<li>Draw a workflow based on actual business requirements, link pages you have created to corresponding steps in the workflow.</li>
+<li>Create another page that links with the workflow and contains a to-do list for visualized process display.</li>
+</ol>
+
+### Creating Workflow
+
+This chapter demonstrates the detailed process of workflow creation with an example of sales order.<br/>
+
+Make sure you have completed the following preparations.
+- Complete the organization structure with correct companies, departments, posts and personnels.
+- Create object templates, instances and their attributes, services and events.
+- Make sure object instances are bound with correct data sources.
+
+#### Creating Related Pages
+  
+Create pages that relate to your workflow, and make sure to link them during workflow creation. 
+  
+1. In the application, click <strong>Interface Design</strong>.
+2. Add a new page
+
+:::info
+Check <strong>Enabling Workflow</strong> checkbox to link the page in the workflow.
+:::
+
+<img width={450} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/45.png"/>
+
+3. Design the page and then save it.
+
+#### Creating Workflow
+
+Draw a workflow to demonstrate actual business flow with related pages and personnels.
+  
+:::tip
+For details of each node provided by supOS, see <a href="#workflow-node-description">Workflow Node Description</a>.
+:::
+
+1. In <strong>Business Designer</strong>, click the <strong>Workflow Management</strong> tab.
+2. Click <strong>New</strong>, enter workflow information and then click <strong>Confirm</strong>.
+3. Click the <strong>Start Event</strong> icon, and then select nodes from the left side to draw your workflow.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/46.png" />
+
+4. Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/9.png" /> next to the last step to end the workflow.
+5. Click <strong>Publish</strong> at the upper-right corner.
+
+:::tip
+To edit a published workflow, you need to upgrade it by clicking <strong>Upgrade</strong> at the upper-right corner.
+:::
+
+#### Creating Workflow Page
+
+Create another page to which the workflow applies.
+
+1. In <strong>Business Designer</strong>, click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/16.png"/> to add a new page.
+
+:::info
+Make sure to check <strong>Enabling Workflow</strong> checkbox to be able to link a workflow.
+:::
+
+2. Add a button and a to-do list on the page, and then configure the button attribute as needed.
+3. Click <strong>Interaction</strong> on the right side, add a <strong>Single-click</strong> event to the button, and then click <strong>Setting</strong> to configure the event.
+4. Add the drawn workflow to the page.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/10.png"/>
+
+5. Click <strong>Finish</strong>.
+
+
+#### Running the Workflow
+:::info
+The running process is from an example.
+:::
+
+1. Inside the application, go to <strong>Interface Design</strong> to preview the workflow page.
+2. Click the button, and you are directed to the bound page of this button.
+3. Enter the information as the workflow requires, and then click <strong>Submit</strong>.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/11.png"/>
+
+4. The page is redirected to workflow page, and a new record is added to the to-do list for approval.
+5. Click the first record, check the information and then click <strong>Submit</strong>.
+
+:::info
+If you have bound a service to add the approved data to the database, you can check the database to see whether the data is successfully added.
+:::
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/12.png"/>
+
+### Workflow Page Description
+
+This chapter introduces general interfaces you might see during workflow creation.
+
+:::info
+This section only describes simple pages that are related to simple workflows, and more complicated interfaces might appear when it comes to a more complicated workflow.
+:::
+
+
+#### Workflow Management Page
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/13.png" />
+
+<table>
+<thead>
+<tr>
+<th>
+Parameter
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+New
+</td>
+<td>
+Add a new workflow.
+</td>
+</tr>
+<tr>
+<td>
+Import/Export
+</td>
+<td>
+Import or select and export workflows.
+
+:::info
+Export first and then use the exported file as a template for import.
+:::
+
+</td>
+</tr>
+<tr>
+<td>
+Delete/<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/17.png"/>
+</td>
+<td>
+Click <strong>Delete</strong> or <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/17.png"/> to delete the corresponding workflow or selected workflows.
+</td>
+</tr>
+<tr>
+<td>
+Rename
+</td>
+<td>
+Rename the workflow.
+</td>
+</tr>
+<tr>
+<td>
+Stop/Set as current version
+</td>
+<td>
+Stop the workflow, and then you can click <strong>Set as current version</strong> to start the workflow again.
+
+:::info
+<strong>Set as current version</strong> is only available when <strong>Show historical versions</strong> is enabled.
+:::
+
+</td>
+</tr>
+<tr>
+<td>
+Upgrade
+</td>
+<td>
+Upgrade the workflow.
+</td>
+</tr>
+<tr>
+<td>
+Show historical versions
+</td>
+<td>
+Select it and workflows that are stopped are displayed.
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/18.png"/>
+</td>
+<td>
+Select items to be displayed on the workflow list.
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Workflow Creation Page
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/48.png" />
+
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>
+Parameter
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>
+Workflow information
+</td>
+<td>
+Displays the workflow name, version and current status.
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td>
+Element library
+</td>
+<td>
+All elements you can use when drawing a workflow.
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td>
+Operation bar
+</td>
+<td>
+Open, save, download and download image of the workflow.
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td>
+Tool bar
+</td>
+<td>
+Tools you can use when drawing a workflow, such as undo/redo the last step, full screen, and adjust elements sequence.
+</td>
+</tr>
+<tr>
+<td>5</td>
+<td>
+Canvas
+</td>
+<td>
+The area where you draw a workflow.
+</td>
+</tr>
+<tr>
+<td>6</td>
+<td>
+Publish
+</td>
+<td>
+Publish or upgrade the current workflow.
+</td>
+</tr>
+<tr>
+<td>7</td>
+<td>
+Property
+</td>
+<td>
+Set properties of the selected element.
+</td>
+</tr>
+<tr>
+<td>8</td>
+<td>
+Function
+</td>
+<td>
+Different ways of viewing the workflow, including list, bird view and code.
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Workflow Approval Page
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/15.png" />
+
+<table>
+<thead>
+<tr>
+<th>
+Parameter
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Save
+</td>
+<td>
+Temporarily save changes on the current page.
+</td>
+</tr>
+<tr>
+<td>
+Delegate
+</td>
+<td>
+Delegate the current workflow node to others.
+
+:::info
+Make sure you have added corresponding personnel under <strong>Organizational Structure</strong>.
+:::
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/19.png"/>
+</td>
+<td>
+View the corresponding workflow and the current step is displayed with a yellow frame.
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/20.png"/>
+</td>
+<td>
+View the workflow log, which indicates operations, operation time and submitter.
+</td>
+</tr>
+<tr>
+<td>
+Workflow information
+</td>
+<td>
+Displays the workflow name and basic information, and the linked page is displayed in the middle.
+</td>
+</tr>
+<tr>
+<td>
+Submit
+</td>
+<td>
+Enter a memo and then click <strong>Submit</strong> to finish the approval.
+</td>
+</tr>
+</tbody>
+</table>
+
+## Adding Data Query
+
+You can add data queries based on databases added to supOS under **Competence Center** > **Storage Resources** > **Resources Management** to be used for elements like table, report as data sources in application page design.
+
+:::info
+Only MySQL, Oracle and SQL Server are available for data query.
+:::
+
+1. Click **Data Query Management** on the left side, and then click **New**.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/49.png"/>
+
+<ol>
+<ol>
+<li>Enter the basic information of the data query.</li>
+<li>Under <b>Information input</b>, click <b>Add</b> top add input fields for the query script if necessary.</li>
+<li>Under <b>Script</b>, click the drop-down list to select a database added to supOS.</li>
+<li>Write the query script on the right.
+
+:::tip
+Double-click table name or field name on the list on the left side to select them to the script.
+:::
+
+</li>
+<li>Click <b>Debug</b> to check whether the script can run correctly.</li>
+</ol>
+</ol>
+
+2. After debugging, go back to the data query creation page, click **Confirm**.
+
+## Dynamic Effect
+
+Dynamic effects display real-time status of equipment to simulate production process going inside the plant.
+
+
+### Visible
+
+Controls whether the graphic element is visible when the collected data changes.
+1. Double-click a graphic element or right-click a grouped element, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+2. Click <strong>Visible</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to select an object.
+:::info
+You can also select <strong>Expression</strong> from the drop-down list next to <strong>Data Source</strong> and write a script.
+:::
+3. Select <strong>Type of Data</strong>.
+
+<ul>
+<ul>
+<li>
+  <strong>Analog</strong>: Select between <strong>Quantities</strong> and <strong>Percentage</strong>. You need to set
+  lower and upper limits as conditions for dynamic effect of the
+  graphic element.
+</li>
+<li>
+  <strong>Switch</strong>: Only{" "}
+  <strong>True</strong> and <strong>False</strong>. Set effect for each
+  value and the element displays as configured when the
+  collected data changes.
+</li>
+  </ul>
+  </ul>
+
+4. Set limits and corresponding visible effects, or switch value and corresponding visible effects, and then click <strong>OK</strong>.<br/>
+As shown in the following figure, when the collected value is between 0-20, the element is visible, and when it is between 20-40, it is invisible.
+
+:::info
+<strong>True</strong> and <strong>False</strong> configurations are for <strong>Switch</strong> only.
+:::
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/53.png" />
+
+### Movement
+
+Controls the horizontal or vertical movement of an element.
+
+:::info
+In this section, <strong>Horizontal Movement</strong> is used as an example.
+:::
+
+1. Double-click a graphic element or right-click a grouped element, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+2. Click <strong>Horizontal Move</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png"/> to select an object.
+3. Select <strong>Positioning</strong>.
+- <strong>Absolute</strong>: Use the current position of the element as position 0. It is selected by default.
+- <strong>Relative</strong>: Presently unavailable.
+4. Select <strong>Value Type</strong> between <strong>Quantities</strong> and <strong>Percentage</strong>, and then set the minimum and maximum values and corresponding positions of the element.
+:::info
+When the set data range is exceeded, the element can only move between the set position range.
+:::
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/54.png"/>
+
+5. Click <strong>OK</strong>.
+
+### Flicker
+
+Controls the dynamic flashing and flashing color of the element.
+1. Double-click a graphic element or right-click a grouped element, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+2. Click <strong>Flicker</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to select an object.
+3. Select <strong>Type of Data</strong>.
+- <strong>Analog</strong>: Select between <strong>Quantities</strong> and <strong>Percentage</strong>. You need to set lower and upper limits as conditions for flashing effect of
+  the element.
+- <strong>Switch</strong>: Only <strong>True</strong> and <strong>False</strong>. Set flashing effect for each value and the element displays as configured when the collected data changes.
+4. Set limits and corresponding flashing effects, or switch value and corresponding flashing effects, and then click <strong>OK</strong>.<br/>
+As shown in the following figure, when the collected value is between 0-20, the element is flashing between green and red at a frequency of 500, and when it is between 20-40, it is flashing red and green at a frequency of .
+
+:::info
+<strong>True</strong> and <strong>False</strong> configurations are for <strong>Switch</strong> only.
+:::
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/55.png" />
+
+5. Click <strong>OK</strong>.
+
+
+### Filling
+ 
+Controls the dynamic filling and filling color of the element.
+1. Double-click a graphic element or right-click a grouped element, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+2. Click <strong>Filling</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to select an object.
+3. Select <strong>Value Type</strong> between <strong>Quantities</strong> and <strong>Percentage</strong>, and then set the minimum and maximum values and corresponding filling percentage and direction.
+- The filling percentage moves along with the set value. For example, set <strong>Minimum Value</strong> to 20, and <strong>Minimum Fill Percentage</strong> to 0, meaning the element starts filling the set color when the data value reaches 20.
+- Select <strong>Fill Direction</strong>, and the element fills from the set direction.
+4. Set ranges and corresponding colors in different levels for clear notification.
+
+:::info
+- We recommend set multiple ranges to improve alarm effect. Fro example, when the data value reaches a dangerous range, set the filling color to red.
+- When the set data range is exceeded, the element filling is in default color.
+:::
+
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/56.png" />
+
+5. Click <strong>OK</strong>.
+
+### Zoom
+
+Controls the dynamic zoom ratio of the element.
+1. Double-click a graphic element or right-click a grouped element, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+2. Click <strong>Zoom</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to select an object.
+3. Select <strong>Value Type</strong> between <strong>Quantities</strong> and <strong>Percentage</strong>, and then set <strong>Zoom Direction</strong>.
+:::info
+The element zooms from the set direction.
+:::
+4. Set the minimum and maximum values and corresponding zoom ratios.<br/>
+The zoom ratio changes along with the set value. For example, set <strong>Minimum Value</strong> to 20, and corresponding <strong>Zoom Ratio</strong> to 0, meaning the element starts zooming in when the data value reaches 20.
+
+:::info
+The element can only be zoomed in based on the set ratio in equal proportions.
+:::
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/57.png" />
+
+5. Click <strong>OK</strong>.
+
+<span id="color"></span>
+
+### Color
+
+Controls the dynamic color of the graphic element.
+1. Double-click a graphic element or right-click a grouped element, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+2. Click <strong>Color</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to select an object.
+3. Select <strong>Type of Data</strong>.
+- <strong>Analog</strong>: Select between <strong>Quantities</strong> and <strong>Percentage</strong>. You need to set lower and upper limits as conditions for dynamic effect of the graphic element.
+- <strong>Switch</strong>: Only <strong>True</strong> and <strong>False</strong>. Set effect for each value and the element displays as configured when the collected data changes.
+4. Set limits and corresponding colors, or switch value and corresponding colors, and then click <strong>OK</strong>.<br/>
+As shown in the following figure, when the collected value is between 0-20, the element is green, and when it is between 20-40, it is red.
+
+:::info
+<strong>True</strong> and <strong>False</strong> configurations are for <strong>Switch</strong> only.
+:::
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/58.png" />
+
+
+### Line
+Controls the line color or border color of the graphic element.
+:::info
+The configuration of line or border color is similar to that of the element color. For details, see <a href="#color">Color</a>.
+:::
+
+### Tooltip
+
+Indicates data source information. You can point to the element and the tooltip appears in operation center.
+1. Double-click a graphic element or right-click a grouped element, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+2. Click <strong>Tooltip</strong>, and then select <strong>Value Type</strong> between <strong>Dynamic Data</strong> and <strong>Static Data</strong>.
+- <strong>Dynamic Data</strong>: Select a data source, and the tooltip displays the selected data.
+- <strong>Static Data</strong>: Set a tip and the tooltip displays the entered tip.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/60.png" />
+
+3. Click <strong>OK</strong>.
+
+### Turn
+
+Controls the dynamic turning angle of the element.
+1. Double-click a graphic element or right-click a grouped element, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+2. Click <strong>Turn</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to select an object.
+3. Select <strong>Type of Data</strong>.
+- <strong>Analog</strong>: Set the minimum and maximum values and corresponding turning angles. For example, set <strong>Minimum Value</strong> and <strong>Maximum Value</strong> to 20 and 100 respectively, and corresponding <strong>Angle</strong> to 0 and 180, meaning the element stays the same when the data value reaches 20 and turns upside down when it reaches 100.
+- <strong>Switch</strong>: Set <strong>Spinning Speed</strong>, and then select <strong>Rotation Timing</strong> and <strong>Rotate Direction</strong>. For example, in the figure below, the element rotates in clockwise at a speed of 30 seconds a cycle when the switch value is <strong>On</strong>.
+
+:::info
+<strong>Zoom</strong> and <strong>Turn</strong> cannot be enabled at the same time.
+:::
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/61.png" />
+
+4. Click <strong>OK</strong>.
+
+### Flow
+
+Controls the dynamic flow effect of the pipeline element.
+1. Double-click a pipeline, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+2. Click <strong>Flow</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png" /> to select an object.
+3. Select <strong>Type of Data</strong>.
+- <strong>Analog</strong>: Set value ranges, corresponding color, flow speed and direction.
+- <strong>Switch</strong>: Set corresponding color, flow speed and direction for <strong>True</strong> and <strong>False</strong>
+4. Set <strong>Line Length</strong> and <strong>Interval</strong>, and then click <strong>OK</strong>.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/62.png"/>
+
+5. Click <strong>OK</strong>.
+
+### Text Dynamic Effect
+
+Controls the dynamic display effect of text element.
+1. Double-click a text element, and then click <strong>Dynamic</strong> to open dynamic effect configuration window.
+- Word
+
+<ol>
+<ol>
+  <li>
+Click <strong>Word</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png"/> to select an object and enter an expression.
+  </li>
+  <li>
+Set ranges and corresponding text contents, and then click <strong>OK</strong>.
+<p>
+  When the data reaches the set limits, corresponding texts are
+  displayed.
+</p>
+  </li>
+</ol>
+</ol>
+
+- Text display
+
+<ol>
+<ol>
+  <li>Click <strong>Text Display</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png"/> to select an object or enter an expression.
+  </li>
+  <li>
+Select a color of the text, and then click <strong>OK</strong>.
+<p>The text is displayed in the set color.</p>
+  </li>
+</ol>
+</ol>
+
+- Analog display
+
+<ol>
+<ol>
+  <li>
+Click <strong>Analog Display</strong>, and
+then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png"/> to select an object and enter an expression.
+  </li>
+  <li>
+Set ranges and corresponding text colors, and then click <strong>OK</strong>.
+<p>
+  When the data reaches the set limits, texts are displayed in
+  set colors.
+</p>
+  </li>
+</ol>
+</ol>
+
+- Switch display
+
+<ol>
+<ol>
+  <li>
+Click <strong>Switch Display</strong>, and
+then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/18.png"/> to select an object and enter an expression.
+  </li>
+  <li>
+Set corresponding texts and colors for <strong>TRUE</strong> and <strong>False</strong>, and then click <strong>OK</strong>.
+<p>
+  When the value is <strong>TRUE</strong> or <strong>False</strong>, set texts are
+  displayed in set colors.
+</p>
+  </li>
+</ol>
+</ol>
+
+## Workflow Node Description
+This section introduces all elements the supOS platform provides for
+workflow creation.
+
+### Start
+
+Starts the workflow.
+<img width={450} height={300} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/21.png" />
+<table>
+<colgroup>
+<col style={{ width: "27.027027027027025%" }} />
+<col style={{ width: "72.97297297297297%" }} />
+</colgroup>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Node type</td>
+<td>
+<ul>
+<li>
+<strong>Start event</strong>: Directly start the workflow.
+</li>
+<li>
+<strong>Signal start</strong>: Binds with an event and the
+workflow is triggered when the event takes place.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Start on mobile
+</td>
+<td>
+Enable it and then you can initiate the workflow on mobile
+clients.
+
+:::info
+Only available when setting <strong>Node type</strong> to <strong>Start event</strong>.
+:::
+
+</td>
+</tr>
+<tr>
+<td>Event type</td>
+<td>
+<ul>
+<li>
+<strong>Interrupt</strong>: When the bound event takes place,
+the sub-process which contains the signal start is triggered,
+and the main process is interrupted.
+</li>
+<li>
+<strong>No interrupt</strong>: When the bound event takes
+place, the sub-process which contains the signal start is
+triggered, and the main process continues.
+</li>
+</ul>
+
+:::info
+Only available when setting <strong>Node type</strong> to <strong>Signal start</strong>.
+:::
+
+</td>
+</tr>
+<tr>
+<td>Signal source</td>
+<td>
+Select an event that triggers the workflow.
+
+:::info
+Only available when setting <strong>Node type</strong> to <strong>Signal start</strong>.
+:::
+
+</td>
+</tr>
+</tbody>
+</table>
+
+:::info
+- For <strong>Start event</strong>, the workflow is directly initiated. We recommend to start a user task with the initiator as the executor for the next step. When the workflow is started, the user task is executed by default.
+- If the executor of the next step after <strong>Start event</strong> is not the initiator, when starting the workflow, the form of the step after.
+:::
+
+
+### Intermediate
+
+#### Timer Event
+
+A timer event sets the deadline time of current task or the last task. It can be used in following ways:
+- Place it between two tasks, and the second task only starts when reaching the set time.
+- Place it on a task, and if the task is finished before the set time, the timer becomes invalid; if not, the subsequent branch task of the timer is triggered.
+
+<img width={450} height={300} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/23.png" />
+<table>
+<colgroup>
+<col style={{ width: "27.027027027027025%" }} />
+<col style={{ width: "72.97297297297297%" }} />
+</colgroup>
+<thead>
+<tr>
+<th>
+Parameter
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Event type
+</td>
+<td>
+
+- <strong>Interrupt</strong>: The current task executor cannot proceed the workflow after reaching the set time, and the subsequent branches of the timer proceed.
+- <strong>No interrupt</strong>: The current task executor can proceed the workflow after reaching the set time.
+
+:::info
+Only available when placing the timer on a task.
+:::
+
+</td>
+</tr>
+<tr>
+<td>
+Page
+</td>
+<td>
+Select a page that links with the timer and when reaching the
+set time, the linked page is triggered.
+</td>
+</tr>
+<tr>
+<td>
+Time Variable
+</td>
+<td>
+Select a time field from the linked page to be the trigger time
+of the timer.
+
+:::info
+Only effective for times between tasks.
+:::
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Signal Event
+
+Normally it is used in pairs between main and sub processes with the same signal source bound. One event throws a signal after completing the current workflow and another event catches the signal and starts corresponding workflow.
+
+<img width={450} height={300} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/22.png" />
+<table>
+<colgroup>
+<col style={{ width: "27.027027027027025%" }} />
+<col style={{ width: "72.97297297297297%" }} />
+</colgroup>
+<thead>
+<tr>
+<th>
+Parameter
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Event type
+</td>
+<td>
+<ul>
+<li>
+<strong>Throw</strong>: The event throws a signal when the
+current workflow finishes.
+</li>
+<li>
+<strong>Catch</strong>: The event catches the signal from
+another signal event and starts corresponding workflow.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Signal source
+</td>
+<td>
+Select an event that triggers the workflow.
+
+:::info
+Only available when setting <strong>Node type</strong> to <strong>Signal start</strong>.
+:::
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### Task
+
+#### Task Description
+
+
+Set specific tasks in the workflow.
+<img width={450} height={300} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/25.png" />
+<table>
+<colgroup>
+<col style={{ width: "20%" }} />
+<col style={{ width: "80%" }} />
+</colgroup>
+<thead>
+<tr>
+<th>
+Parameter
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Node type
+</td>
+<td>
+<ul>
+<li>
+<strong>User task</strong>: Specific tasks in the workflow.
+</li>
+<li>
+<strong>Countersign task</strong>: Used for approval where
+multiple personnels are involved. The workflow will only
+proceed when all personnels submit the task.
+</li>
+<li>
+<strong>Service task</strong>: Binds and executes object
+services.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Page
+</td>
+<td>
+Select a page that links with the task and when the workflow
+proceeds to the step, the linked page is triggered.
+</td>
+</tr>
+<tr>
+<td>
+Read Only
+</td>
+<td>
+Enable it and the linked page of this task cannot be edited.
+</td>
+</tr>
+<tr>
+<td>
+Ignore condition
+</td>
+<td>
+Select fields from the last step to set conditions, and when
+
+:::info
+The first task cannot set <strong>Ignore condition</strong>.
+:::
+</td>
+</tr>
+<tr>
+<td>
+Executor
+</td>
+<td>
+Click <strong>Config</strong> and select executors and their
+types.
+
+:::info
+When setting multiple people as executors, all of them will receive a to do event. One of them submits the event and all to-do events are done.
+:::
+
+</td>
+</tr>
+<tr>
+<td>
+Event binding
+</td>
+<td>
+Select an event, and the workflow proceeds to the next step when
+the event is triggered.
+</td>
+</tr>
+<tr>
+<td>
+Enable comment
+</td>
+<td>
+Select whether to display the remark input box at the bottom of
+linked pages.
+</td>
+</tr>
+<tr>
+<td>
+Display remarks
+</td>
+<td>
+Select whether to display process log icon at the upper-right
+corner of linked pages during approval.
+</td>
+</tr>
+<tr>
+<td>
+Revocable
+</td>
+<td>
+Select whether to enable recalling complete processes by
+displaying a <strong>Recall</strong> button at the upper-left
+
+:::info
+Only available for <strong>User task</strong>.
+:::
+
+</td>
+</tr>
+<tr>
+<td>
+View on mobile
+</td>
+<td>
+Enable it and then you can view the workflow on mobile clients.
+</td>
+</tr>
+<tr>
+<td>
+New countersign
+</td>
+<td>
+Select whether to allow submitter to add more personnel to
+countersign the current task.
+
+:::info
+Only available for <strong>Countersign task</strong>.
+:::
+
+</td>
+</tr>
+<tr>
+<td>
+Async
+</td>
+<td>
+Enable it, the service task is executed independently at the
+backend and the workflow proceeds. We recommend enabling it for
+
+:::info
+Only available for <strong>Service task</strong>.
+:::
+
+</td>
+</tr>
+<tr>
+<td>
+Service
+</td>
+<td>
+Select an object service, it will be executed when the task is
+submitted and if the service fails, the task cannot be
+successfully submitted.
+</td>
+</tr>
+<tr>
+<td>
+Mail
+</td>
+<td>
+Enable notification mails sent to users of the last step after
+submitting the task.
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Task Executor Configuration
+
+This section demonstrates the process of configuring task executors.
+
+1. Click <strong>Config</strong> next to <strong>Executor</strong>, and then click <strong>New</strong>.
+2. On the added record, click the drop-down list under <strong>Type</strong>, and then click <strong>Select</strong> to select executors.
+
+<ul>
+<ul>
+<li>When selecting <strong>Staff</strong>, if cross company is enabled for the workflow, you can select staff from other companies.</li>
+<li>When selecting <strong>Role</strong>, <strong>Department</strong> and <strong>Position</strong>, all staff linked to the role, department and position are set to the task executors.</li>
+</ul>
+</ul>
+
+3. Set restrictions to executors.
+
+<ul>
+<ul>
+<li><strong>Post restrictions</strong>: Enable it and the executor can only process forms submitted by corresponding subordinates. For example, in the figure below, when <strong>Post restrictions</strong> are enabled for B and C, then forms submitted by A can only be reviewed by B and C.
+<img width={450} height={300} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/30.png"/>
+</li>
+<li><strong>Designated position</strong>: Select a position and grant corresponding permissions to the executor. For example, assign department manager of R&amp;D to D in test department, then D can review forms submitted by A and B.
+<img width={450} height={300} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/31.png"/>
+</li>
+<li><strong>Designated staff</strong>: Select a staff, and then the executor can only review forms submitted by the designated staff.</li>
+<li><strong>Unlimited</strong>: No restrictions on the executor.</li>
+</ul>
+</ul>
+
+4. Select executor types.
+
+:::info
+The task will be sent to both selected types of and designated executors.
+:::
+
+5. Click <strong>Confirm</strong>.
+
+<img width={450} height={300} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/29.png"/>
+
+
+### Subprocess
+
+A subprocess is a part of a workflow. It is generally started with a signal event and triggered by signals thrown by multiple tasks in main process.
+
+### Gateway
+
+#### Definition
+Gateway decides how subsequent process is proceeded based on different gateway types.
+
+- <strong>Exclusive</strong>: Execute only one subsequent branch process that meets the requirements.
+
+:::info
+Branches after an exclusive gateway must be configured with conditions.
+:::
+
+- <strong>Parallel</strong>: Execute all subsequent branch processes without any conditions.
+
+:::info
+Multiple branches before parallel gateway are available and subsequent processes will only be executed after all pre-branches are finished.
+:::
+
+- <strong>Inclusive</strong>: Execute subsequent branch processes that either meet the requirements or without any conditions.
+
+<img width={450} height={300} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/28.png" />
+
+#### Setting Condition
+
+Click the connection lines after the gateway to set conditions of corresponding branch.
+
+- <strong>Assignee</strong>: Allows you to select a receiver for the subsequent process on the linked page of last step.
+- <strong>Expression</strong>: Set conditions to decide whether to execute subsequent processes.
+
+<img width={450} height={300} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/32.png" />
+
+### End
+
+The element that ends the workflow.
+- <strong>End event</strong>: End the current branch process.
+- <strong>Terminate event</strong>: Terminate the whole workflow. When used in a sub-process, enable <strong>Terminate all</strong> to end the whole process. Otherwise, only the sub-process is ended.
+
+## Connection Line
+
+Connects steps and tasks to make sure the workflow proceeds in correct order.
+
+:::info
+A task can be connected to one or more tasks, and when necessary, subsequent reviewer can revoke the task to previous submitter.
+:::
+
+<img width={450} height={300} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/workflow/33.png" />
+
+<table>
+<colgroup>
+<col style={{ width: "27.027027027027025%" }} />
+<col style={{ width: "72.97297297297297%" }} />
+</colgroup>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Assignee
+</td>
+<td>
+Allows you to select a receiver for the subsequent process on the
+linked page of last step.
+</td>
+</tr>
+<tr>
+<td>
+Reject line
+</td>
+<td>
+Enable it and the reviewer can revoke the process to previous
+submitter.
+
+:::info
+When there are multiple executors on the last task, enabling <strong>Reject line</strong> ensures that only the previous submitter receives the revoked task.
+:::
+
+</td>
+</tr>
+<tr>
+<td>
+Order
+</td>
+<td>
+Available for connecting multiple subsequent tasks. You can set the order of each subsequent task.
+</td>
+</tr>
+</tbody>
+</table>
+
+
+

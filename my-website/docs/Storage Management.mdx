@@ -1,0 +1,281 @@
+---
+hide_title: true
+---
+
+supOS rpovides a comprehensive datalake which supports heterogeneous data sources. You can apply resources for future use or register external databases to supOS.
+
+## Applying Resource
+1. Log in to supOS, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/7.png" /> at the upper-right corner to go to the design center.
+2. Select **Competence Center** > **Storage Resources** > **Resources Management**, and then click **Add**.
+
+<img width={400} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/50.png" />
+
+3. Under **apply resource**, select a type of data resource.
+4. Enter the name of the resource, and then click **OK**.
+
+<img width={400} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/52.png" />
+
+:::info
+- mariaDB is used as an example.
+- **database name** is optional. Leave it empty and supOS assign a random name for your resource.
+:::
+
+## Registering Data Source
+
+1. Click **New**, and then under **register resource**, select athe type of the database you want to register.
+
+<img width={400} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/51.png" />
+
+2. Select a type of data source, and then enter the data source information in the pop-up window.
+
+:::info
+MySQL is used as an example.
+:::
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/53.png"/>
+
+<table>
+<thead>
+<tr>
+<th>
+Parameter
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+source name
+</td>
+<td>
+Enter the name of the data source. The maximum length is 20 characters.
+</td>
+</tr>
+<tr>
+<td>
+search address/port
+</td>
+<td>
+The IP address and port of the database server.
+</td>
+</tr>
+<tr>
+<td>
+database name/username/password
+</td>
+<td>Enter the name of the database, and the username and password to log in to the database.</td>
+</tr>
+<tr>
+<td>
+timezone
+</td>
+<td>
+Enter the time zone of the data source.
+</td>
+</tr>
+</tbody>
+</table>
+
+4. Click <strong>link test</strong>.
+5. Click <strong>OK</strong> after the successful connection notification pops up.
+
+
+:::info
+The data source that has been using cannot be deleted by .
+:::
+
+## PI Service Registration
+To access PI database of the industrial control system and read the data in real time.
+
+### Configuring PI Server
+
+Add the supOS platform to the trust list of the PI server for it to get data.
+1. Log in to the PI database server.
+2. Select <strong>Security</strong> > <b>Identities, Users, & Groups</b> > <strong>PI Users</strong>, and then click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/60.png"/> to add a new user.
+3. Enter the username and password, and then click <strong>Create</strong>.
+4. Double-click the created username, select the <strong>Mappings&Trusts</strong> tab in the pop-up window.
+5. Click <strong>Add</strong> under <strong>Trust name</strong>.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/61.png"/>
+
+6. Enter the trust information, and then click <strong>OK</strong>.
+
+<ul>
+<ul>
+<li>
+<strong>Trust Name</strong>: The trust name for supOS.
+</li>
+<li>
+<strong>IP Address</strong>: The IP address on which the PI tool kit runs and has access to the PI server.
+
+:::info
+Enable port 5450 of the PI server when the computer cannot access the server under normal network.
+:::
+
+</li>
+<li><strong>NetMask</strong>: Subnet mask.
+</li>
+</ul>
+</ul>
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/62.png"/>
+
+7. Select <strong>Security Settings</strong> on the main page, and then change the level to **Disable explicit login for pi**.
+:::info
+It takes effect upon restarting the PI server.
+:::
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/63.png"/>
+
+8. (Optional) Set the value of update queue when there are more than 5000 data points access.
+
+<ol>
+<ol>
+<li>Select <strong>Tuning Parameters</strong> on the main page.</li>
+<li>Under the <strong>Update Manager</strong> tab, double-click <strong>MaxUpdateQueue</strong>.</li>
+<li>Set the value higher than the access points, and then click <strong>OK</strong>.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/64.png"/>
+
+</li>
+</ol>
+</ol>
+
+### Configuring PI Tool Kit
+
+PI tool kit connects the supOS platform and the PI database.
+- Get the PI tool kit from technical support.
+- A computer that can access the PI server with Windows10 or Windows Server 2016 operating system.
+
+1. Double-click "PiWebApi_XXX.exe" and follow the instructions to install the tool kit.
+2. Find the server.xml file under the installation path of the tool kit, and then open it with notepad.
+3. Change the file content and save it.
+```xml
+<conf>
+  <PI>
+    <Address>server_ip</Address>
+    <Account>trusted_Username</Account>
+    <Password>Password_of_the_trusted_username</Password>
+  </PI>
+  <Server>
+    <Address>127.0.0.1</Address>
+    <Port>8087</Port>
+  </Server>
+  <History>
+    <Port>30257</Port>
+    <Port>30258</Port>
+    <Port>30259</Port>
+  </History>
+</conf>
+```
+4. Double-click the "meta.csv" file, and change the content to match with the <strong>Digital States</strong> on the PI server, so the supOS platform can recognize the converted
+digital type.
+
+:::info
+Presently, the PI server only supports to convert <strong>Digital States</strong> to <strong>Boolean</strong>.
+:::
+
+<ul>
+<ul>
+<li><strong>Name</strong>: Same with that in the PI server.</li>
+<li><strong>Sno</strong>: The <strong>State Number</strong> on the PI server.</li>
+<li><strong>State</strong>: The <strong>State Name</strong> on the PI server, and corresponds with <strong>Sno</strong>.</li>
+<li><strong>Vtype</strong>: Leave it as default.<br/>
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/platform/66.png"/>
+
+</li>
+</ul>
+</ul>
+
+5. Double-click the start.bat file to start the tool kit service.
+
+:::tip
+Double-click the stop.bat file to stop the service when necessary.
+:::
+
+### Registering PI Database
+
+1. In **Resources Management**, click **Add**.
+2. Under **register resource**, select **PI database**.
+3. Enter the information.
+
+<ul>
+<ul>
+<li><strong>Heterogeneous Library Address/Port</strong>: Enter the IP and port of the PI server.</li>
+<li><strong>supOS Address</strong>: Enter the IP address of the supOS server for standalone deployment and the IP of k8sworkermain node server for cluster deployment.</li>
+</ul>
+</ul>
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/54.png"/>
+
+3. Click <strong>OK</strong>.
+4. Select <strong>Object Model Management</strong> > <strong>Object Instance</strong> > <strong>Entity Template</strong> > <strong>Link Template</strong>, check whether the added PI database is listed.
+
+## Standard Data Service Registration
+### Registering Data Service
+Access a server and read the data in real time.
+
+1. In **Resources Management**, click **Add**.
+2. Under **register resource**, select **DataServices**.
+3. Enter the information.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/55.png"/>
+
+<ul>
+<ul>
+<li><strong>Heterogeneous Library Address/Port</strong>: Enter the IP and port of the server.
+
+:::info
+The port is 6081 by default when setting the port of the data source to 2800 in standard data service, and keept it the same as the default port ion **Web.config**. The binding method is **WebHttpBinding**.
+:::
+
+</li>
+<li><strong>supOS address</strong>: Enter the IP address of the supOS server for standalone deployment and the IP of nginx_vip for cluster deployment. </li>
+</ul>
+</ul>
+
+4. Click <strong>OK</strong>.
+
+### Syncing Tags
+
+1. Select the data service you added, and then click <strong>sync number</strong>.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/56.png"/>
+
+2. Click **enumeration** to get all public tags of the data service.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/57.png"/>
+
+3. Select tags, and then click **synchronous resource** to synchronize the selected tags to supOS.
+
+:::info what happens when tags are deleted
+- For synchronized tags, they will be marked as **Invalid** under **Synchronized**.
+- For unsynchronized tags, they will be deleted from **unsynchronized**.
+:::
+4. Select  <strong>Object Model Management</strong> > <strong>Object Instance</strong> > <strong>Entity Template</strong> > <strong>Link Template</strong>, check whether the added data service is listed.
+
+:::info
+After adding the data service, a new object instance with the same name is added with the connected data, and only synchronized tags can create corresponding attributes under the instance.
+:::
+
+### Resource List Description
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/58.png"/>
+
+- **origin**: The source of the data resource.
+
+<ul>
+<ul>
+<li><b>Internal</b>: Resources applied from the datalake.</li>
+<li><b>Heterogeneous</b>: External PI and data services registered on supOS.</li>
+<li><b>Register</b>: External databases registered on supOS.</li>
+<li><b>System</b>: Reserved.</li>
+</ul>
+</ul>
+
+- **Access Address**: Automatically generated access address of the resource.
+- **release**: Delete the corresponding resource.

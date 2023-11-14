@@ -4,6 +4,9 @@ import styles from './styles.module.css';
 import Layout from '@theme/Layout';
 
 
+<div class="pagination-nav__item--next">
+  <a href="your-next-page">Next</a>
+</div>
 
 const productList = [
   {
@@ -41,7 +44,7 @@ const productList = [
     Svg: require('@site/static/img/edge.svg').default,
     desc: (
       <>
-        Unlock new insights from your data with our diverse collection of pre-built and custom algorithm integration.
+        Unlock new insights from your video streams with our diverse collection of pre-built and custom algorithm integration.
       </>
     ),
     link: "Getting Started/System Requirements sedge",
@@ -51,7 +54,7 @@ const productList = [
     Svg: require('@site/static/img/bd.svg').default,
     desc: (
       <>
-        Seamlessly manage and process large volumes of data with our all-inclusive big data solution.
+        Seamlessly manage and process large volumes of data with our embedded and custom ML algorithms.
       </>
     ),
     link: "Getting Started/System Requirements sb",
@@ -78,7 +81,7 @@ const FeatureList = [
       </>
       
     ),
-    link: "intro",
+    link: "/4.2/intro",
   },
   {
     title: 'Video Demonstration',
