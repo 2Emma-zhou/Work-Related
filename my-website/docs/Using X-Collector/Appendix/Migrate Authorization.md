@@ -52,7 +52,7 @@ Once the migration file is generated, the authorization on the original server b
 :::
 
 ### Uploading Authorization File
-Upload the generated authorization file to a server where the supOS platform is installed or where a Ubuntu system is installed that can connect with supOS.
+Upload the generated authorization file to a server where supOS is installed or where a Ubuntu system is installed that can connect with supOS.
 
 1. Enter https://&lt;supOS IP&gt;:1947 on a browser to log in to the authorization backend.
 2. Select **Update/Attach** tab, and then click **Choose File**.

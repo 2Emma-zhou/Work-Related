@@ -90,11 +90,11 @@ const config = {
               path: '4.2',
               banner:'none',
           },
-        //   4.0: {
-        //     label: '4.0',  
-        //     path: '4.0',
-        //     banner:'none',
-        // },
+          '4.0': {
+            label: '4.0',  
+            path: '4.0',
+            banner:'none',
+        },
         },
           breadcrumbs: false,
          sidebarPath: require.resolve('./sidebars.js'),
@@ -243,7 +243,6 @@ const config = {
             position: 'left',
             label: 'supOS',
           },
-          
           {
             // type: 'dropdown',
             label: 'Applications',
@@ -279,13 +278,12 @@ const config = {
                 label: 'supLink',
                 docId: 'Using supLink/System Requirements sl',
               },
-              // {
-              //   type:'doc',
-              //   label: '3D Designer',
-              //   docId: '3D Designer/System Requirements',
-              // },
+              {
+                type:'doc',
+                label: '3D Designer',
+                docId: '3D Designer/System Requirements',
+              },
             ],
-            
           },
           {
             // type: 'dropdown',
@@ -304,6 +302,12 @@ const config = {
               },
             ],
           },
+          {
+            type: 'doc',
+            docId: 'Data Integration/MQTT Integration',
+            label: 'Data Integration',
+            position: 'left',
+          },
           // {
           //   type: 'docSidebar',
           //   sidebarId: 'demo', 
@@ -317,7 +321,7 @@ const config = {
           //   label: 'API Reference',
           // },
           {
-            position: 'left',
+            position: 'right',
             label: 'API Reference',
             items: [
               {
@@ -398,7 +402,7 @@ const config = {
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
             type: 'docsVersionDropdown',
-            position: 'left',
+            position: 'right',
             dropdownActiveClassDisabled: false,
           },
           // {

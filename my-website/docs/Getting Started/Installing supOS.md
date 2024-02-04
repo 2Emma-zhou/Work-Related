@@ -253,7 +253,7 @@ Once you uninstall the programme, the original configuration files such as “en
 :::
 
 - Uninstall supOS platform.
-1. Switch to the bin directory under the supOS platform installation path.
+1. Switch to the bin directory under supOS installation path.
     
       `cd /home/supos/supos/opt/supos/bin`
 
@@ -263,7 +263,7 @@ Once you uninstall the programme, the original configuration files such as “en
 
 - Uninstall the programme and clear all data.
 
-1. Switch to the bin directory under the supOS platform installation path.
+1. Switch to the bin directory under supOS installation path.
 
       `cd /home/supos/supos/opt/supos/bin`
 

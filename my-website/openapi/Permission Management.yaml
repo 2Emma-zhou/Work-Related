@@ -2249,7 +2249,7 @@ components:
             * `0` - Configuration link page, that is, the page designed and developed through the "Tianfang (supIDE)" platform configuration design, such as large screen, flow chart, form, etc.
             * `1` - external link page, that is, a page that is not designed and developed through the "Tianfang (supIDE)" platform configuration, and is a page imported from the outside
 
-            Tianfang (supIDE), an efficient and low-code development system provided by the supOS platform, supports user-defined development of large screens, reports, form business and industrial flow charts. For detailed functions, please consult Lanzhuo Company.
+            Tianfang (supIDE), an efficient and low-code development system provided by supOS, supports user-defined development of large screens, reports, form business and industrial flow charts. For detailed functions, please consult Lanzhuo Company.
           example: 1
           default: 1
         url:

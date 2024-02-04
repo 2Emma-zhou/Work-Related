@@ -46,7 +46,7 @@ Functions of the report are similar to excel and only special features are liste
 
 ### Start
 
-- Cell Format: Aside from general functions, **Report** provides other different features.
+- **Cell Format**: Aside from general functions, **Report** provides other different features.
 
 <ul>
 <li>Type: Select the cell type from a drop-down list and an edit box, and you can set the options of the drop-down list.<br/>
@@ -59,17 +59,17 @@ users in operation center.
 </li>
 </ul>
 
-- Simulation Analysis
+- **Simulation Analysis**
 
-- Filling/Data Entry Template
-- Table Style: Select the style of the table, and you can customize new styles under **Customize**.
-- Clear Panes: 
+- **Filling/Data Entry Template**: Edit data sources, including form template and data query.
+- **Table Style**: Select the style of the table, and you can customize new styles under **Customize**.
+- **Clear Panes**: Clear all parent cells settings.
 
 ### Insert
 You can insert charts, rows and columns, images and data sources to the table. For details on inserting data sources, see <a href="">Data Source Management</a>.
 
 ### Customize
-- Right-Click Menu: You can select actions and click **Edit** to write function script, import, and export the menu to JSON file and call it in other report elements.<br/>
+- **Right-Click Menu**: You can select actions and click **Edit** to write function script, import, and export the menu to JSON file and call it in other report elements.<br/>
 Example codes:
 ```js
 // Reset the target cell
@@ -97,7 +97,7 @@ const cellValue = curCell.value(); // cell value
 const formul = curCell.formula(); // cell formula
 const config = {
 modalTitle: '', // title
-url: '' // page url
+url: '' // page url3
 }; // modal window configuration
 window.scriptUtil.renderModal(config);
 /** __ACTION__END__ **/
@@ -105,7 +105,7 @@ window.scriptUtil.renderModal(config);
 
 <img width={450} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/174.png"/>
 
-- Event Extensions: Customize events such as edit cell, click and finish editing. You can export the event to JSON file and call it in other report elements.<br/>
+- **Event Extensions**: Customize events such as edit cell, click and finish editing. You can export the event to JSON file and call it in other report elements.<br/>
 Example codes:
 ```js
 // Edit cells
@@ -147,7 +147,7 @@ A <strong>key</strong> field is generated after adding object data. It adds a co
 
 ### Adding Object Model
 
-You can add object template, instance and service by selecting <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/43.png" /> > <strong>Object Model</strong> under <strong>Data Source Management</strong>. Data type can be real-time and history.
+You can add object template, instance and service by selecting <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/43.png" /> > <strong>Object Model</strong> under <strong>Data Source Management</strong>.
 
 :::info
 - Only the first 200 attributes can be displayed of each instance. You can right-click the cell, select <strong>Insert Formula</strong> > <strong>Data Source</strong> to add more.
@@ -159,10 +159,10 @@ You can add object template, instance and service by selecting <img src="https:/
 <ol>
 <ol>
 <li>Select <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/43.png"/> > <strong>Object Instance</strong> under <strong>Data Source Management</strong>.</li>
-<li>Select an object instance under the <strong> Object instance-property</strong>tab in the pop-up window, and then click <strong>Save</strong>.</li>
-<li>Drag the added instance from the list to the report, and then select the cell, configure its properties under <strong>Property Configuration</strong> at the lower-right corner.<br/>
+<li>Select an object instance under the <strong> Object instance-attribute</strong> tab in the pop-up window, and then click <strong>Save</strong>.</li>
+<li>Drag the added instance from the data source list to the report, and then select the cell, configure its properties under <strong>Attribute Configuration</strong> at the lower-right corner.<br/>
 
-<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/83.png"/>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/176.png"/>
 
 <table>
 <thead>
@@ -185,10 +185,23 @@ You can add object template, instance and service by selecting <img src="https:/
 <td>Select calculation methods which are applied to the data collected according to the set <strong>Time Granularity</strong>.</td>
 </tr>
 <tr>
+<td>Sorting</td>
+<td>Sorting method of the selected cell.
+
+- When the cell has parent cells: Follows the top parent cell sorting. For example, A1 ascending, B1 none, C1 descending, A1 is the parent cell of B1 and B1 is the parent cell of C1, then B1 and C1 are all ascending sorting, same as A1.
+- When the cell has no parent cells: Follows the set sorting.
+
+</td>
+</tr>
+<tr>
+<td>Group Key Value</td>
+<td>Set a field to group the data source.</td>
+</tr>
+<tr>
 <td>Fill Type</td>
 <td>Select the data to fill in the report.
 
-- **Autofill**: Select fill direction and maximum number (1-500) of data to be displayed.
+- **Autofill**: Select data filling direction and maximum number (1-500) of data to be displayed.
 - **Fixed**: Get the data of a fixed index from 1 to 500.
 
 </td>
@@ -199,7 +212,7 @@ You can add object template, instance and service by selecting <img src="https:/
 </ol>
 </ol>
 
-- Add object property or service
+- Add template attribute or service
 
 <ol>
 <ol>
@@ -207,7 +220,7 @@ You can add object template, instance and service by selecting <img src="https:/
 <li>Select an object property or service under the <strong>Object Template</strong> or <strong>Object Instance-Service</strong> tab in the pop-up window, and then click <strong>Save</strong>.</li>
 <li>Drag the added property or service from the list to the report, and then click the cell, configure its properties under <strong>Property Configuration</strong> at the lower-right corner.
 
-<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/84.png"/>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/177.png"/>
 
 <table>
 <thead>
@@ -219,10 +232,10 @@ You can add object template, instance and service by selecting <img src="https:/
 <tbody>
 <tr>
 <td>Data Source</td>
-<td>Switch to other output parameters of the data source.</td>
+<td>Select fields of the data source to fill in the cell.</td>
 </tr>
 <tr>
-<td>Filling Orientation</td>
+<td>Fill Direction</td>
 <td>Select data filling direction.</td>
 </tr>
 <tr>
@@ -230,7 +243,20 @@ You can add object template, instance and service by selecting <img src="https:/
 <td>The maximum number of data that can be displayed. It ranges from 0-200.</td>
 </tr>
 <tr>
-<td>Fill and Merge</td>
+<td>Sorting</td>
+<td>Sorting method of the selected cell.
+
+- When the cell has parent cells: Follows the top parent cell sorting. For example, A1 ascending, B1 none, C1 descending, A1 is the parent cell of B1 and B1 is the parent cell of C1, then B1 and C1 are all ascending sorting, same as A1.
+- When the cell has no parent cells: Follows the set sorting.
+
+</td>
+</tr>
+<tr>
+<td>Group Key Value</td>
+<td>Set a field to group the data source.</td>
+</tr>
+<tr>
+<td>Fill Merge</td>
 <td>Enable it and then when filling a cell, adjacent cells on the filling direction will be merged together.</td>
 </tr>
 </tbody>
@@ -239,24 +265,25 @@ You can add object template, instance and service by selecting <img src="https:/
 </ol>
 </ol>
 
-
 ### Adding Data Query
 
 Search results of third party data sources such as mysql, oracle, sqlserver and AHNA.
 
-1. Select <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/43.png"/> > <strong>Data Search</strong> under <strong>Data Source Management</strong>.
-2. Select a data source from databases that have been added under <strong>Global Configuration</strong>.
-3. Enter SQL commands.You can preview search results.
+1. Select <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/43.png"/> > <strong>Data Query</strong> under <strong>Data Source Management</strong>.
+2. Select a data source from databases that have been registered under **Storage Resources** > **Resources Management**.
+3. Enter SQL commands and click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/178.png"/> to preview search results.
 
 :::info
 ${<em>param</em>} can be used as a unspecific parameter when entering SQL commands. Make sure  the ${<em>param</em>} is displayed the same as the real parameter. For example, the original parameter is 'zhangsan' (string), and the command can be <code>select * from <em>tablename</em> where user='${<em>param</em>}'</code>.
 :::
 
+<img  width={450} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/101.png"/>
+
 4. Enter <strong>Data Source Name</strong> as the data set for search results.
 5. Click <strong>OK</strong>, and then the result data set is displayed under <strong>Data Source Management</strong>.
-6. Drag a field to the report, and then click the cell to configure properties.
+6. Drag a field to the report, and then click the cell to configure its properties.
 
-<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/101.png"/>
+<img width={250} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/179.png"/>
 
 <table>
 <thead>
@@ -267,7 +294,7 @@ ${<em>param</em>} can be used as a unspecific parameter when entering SQL comman
 </thead>
 <tbody>
 <tr>
-<td>Assign Primary Key</td>
+<td>Specify Primary Key</td>
 <td>Set a filed in the table to be the primary key. You can also select and combine multiple fields to be a primary key to ensure its uniqueness.</td>
 </tr>
 <tr>
@@ -289,53 +316,59 @@ Input format example
 
 ### Parent Cell
 Bind the selected cell with custom parent cell.
-- Set one parent cell: Set only one parent cell, the sub cells copy filling direction and number of parent cell and the relative position stays the same.
-- Set both cells: Data generated on sub cells will be filtered according to its parent cell to produce result sets that conform to report logics.
+- Set one parent cell: Set only one parent cell, the sub cells copy filling direction and number of displayed data from the parent cell, and the relative position stays the same.
+- Set both parent cells: Data filled in sub cells is filtered according to its parent cells.
 
-Following operations use left parent cell as an example.
+#### Relational Data
+Relational data, after sorting, can only be correctly displayed with parent cell settings.
 1. Set the <strong>Fill Type</strong> of the report to <strong>Insert</strong>.
-2. Select a cell to be the sub cell, and then select <strong>Customize</strong> under  <strong>Left Parent Cell</strong>.
-3. Select a parent cell for the set sub cell, and enter the cell row and column number.
-
-Generally, select a parent cell with formulas, such as formulas of history data, table data, service data and date function.
-
-<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/85.png"/>
-
+2. Darg data source to the report.
+3. Select a cell to be the sub cell, and then select <strong>Customize</strong> under <strong>Left Parent Pane</strong>.
+4. Set the left cell to be the parent cell, and enter the cell row and column number.
 :::info
-After setting parent cells, data on the table is automatically deduplicated and reorganized evenly. No relations between columns by default and relational data can only be correctly displayed after parent cell settings.
+In this example, the first cell is the parent cell of the second one, and the second cell is the parent cell of the last cell.
 :::
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/180.png"/>
+
+5. Set the parent cell sorting, and check the preview effect.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/181.png"/>
+
+#### Cell Merge
+
+Sub cells will merge according to the parent cell after parent cell settings.
+1. Select data source and set parent cells.
+5. Set the parent cell and sub cell merge, and check the preview effect.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/182.png"/>
 
 ### Aggregation Formula
 
-Calculate cells set with formulas.
-1. Drag data into a cell, and set the <strong>Data Type</strong> to <strong>History Data</strong> under <strong>Property Configuration</strong>.
-2. Select another cell, and then set a formula to it which relates to the cell with history data.
+Calculate cells set with provided formulas.
+1. Drag data into a cell, and then select another cell and click **Basic Function** on the top tool bar.
+2. Select a function, and select the first cell to be the calculation target.
 3. Click <strong>Aggregation Formula</strong> at the lower-right corner.
-4. Select <strong>Customize</strong>, and then enter the location of the cell with a formula.
+4. Select <strong>Customize</strong>, and then enter the location of the cell set with a function.
 
-<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/86.png"/>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/183.png"/>
 
-5. Save settings, and then click <strong>Preview</strong>.<br/>
+5. Save settings, and then click <strong>Preview</strong>.
+:::info
+In the example, the calculation target is the cell with age field.
+:::
 
-You can see the cell with a formula is displaying calculation results of corresponding formula and hirtory data.
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/184.png"/>
 
 ### Operation
 
-You can update and delete data in relational database through setting a cell as a save or delete button under <strong>Operation</strong>.
+Add update and delete funtions to the report to edit data from relational database.
 
-1. Select an empty cell on the report, select <strong>Data Search</strong> and enter sql commands to obtain a data source for the cell with execution results.
+1. Add a data source from **Data Query** to the report.
+2. Select another cell next to the data cell, and then click <strong>Operation</strong> at the lower-right corner.
+3. Set the cell operation.
 
-:::tip
-For details, see <a href="#data_source_management">Data Source Management</a>.
-:::
-2. Select another empty cell to be the operation button.
-3. Click <strong>Operation</strong> at the power-right corner, and then set the operation.
-
-:::info
-The operation button can only be correctly displayed after setting it parent cells.
-:::
-
-<img width={350} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/87.png"/>
+<img width={350} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/185.png"/>
 
 <table>
 <thead>
@@ -347,109 +380,200 @@ The operation button can only be correctly displayed after setting it parent cel
 <tbody>
 <tr>
 <td>Table Name</td>
-<td>The table name corresponding to fields you want to change.</td>
+<td>Name of the table used in data query.</td>
 </tr>
 <tr>
 <td>Data Source</td>
-<td>The data source corresponding to fields you want to change.</td>
+<td>Name you set for the data query.</td>
 </tr>
 <tr>
 <td>Operation Type</td>
 <td>
 
-- <strong>Renew</strong>: You can save the edited cell in operation center.
-- <strong>Delete</strong>: You can delete the selected cell in operation center.
+- <strong>Update</strong>: Update the edited cell in operation center.
+- <strong>Delete</strong>: Delete the selected cell in operation center.
 
 </td>
 </tr>
 <tr>
 <td>Operating Range</td>
-<td>Select ranges for the operation to apply to.</td>
+<td>Select the range to which the operation applies.</td>
 </tr>
 <tr>
 <td>Text</td>
-<td>The text for the operation button.</td>
+<td>The text displayed on the operation button.</td>
 </tr>
 </tbody>
 </table>
 
-4. Select <strong>Format</strong> > <strong>Cell Format</strong> > <strong>Authority</strong> on the report, and then grant read and write permission of the selected cell to users.
+4. Select <strong>Cell Format</strong> > <strong>Permission</strong> on the top tool bar, and then grant read and write permission of the selected cell to a role.
 
-<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/88.png"/>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/186.png"/>
 
-5. Enable <strong>Run Edit</strong> for the report under <strong>Property</strong>.
-6. Save settings, and then click <strong>Preview</strong>.
+5. Enable <strong>Runtime Editing</strong> for the report under <strong>Attribute</strong>.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/187.png"/>
+
+6. Set a primary key for fields to be operated on, and preview the report.
 
 :::info
 If the primary key of the data source is changed and saved, you need to refresh the current page for further changes.
 :::
 
-<span id="report_linkage"></span>
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/188.gif"/>
 
+### Conditional Format
+Set different styles for the selected cells based on the set conditions. The function is similar to Excel.
 
-### Report Linkage
+### Filling/Data Entry Format
+Set a template for adding to, updating or deleting data from form template or relational data table.
 
-You can link the report to other elements such as button, search box and input box to integrate, search for and export important data. In the report, each data source has a corresponding linkage button.
+1. Click **Filling/Data Entry Template** at the top tool bar.
+2. Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/197.png"/> and select **Built-in SQL** to add a data change template.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/196.png"/>
+
+<ol>
+<ol>
+<li>Select the edit mode of data change from insert, update and delete next to <b>Select the submission type</b>.</li>
+<li>Select the data source from the added relational database or form template.</li>
+<li>Specify the edit fields.
+
+- Make sure you set the field data type the same as the target data source field.
+- For string, integer, float, boolean and date type pf data, the set value is filled in the selected field.
+- For cell, the selected cell value is filled in the selected field.
+- For cell group, enter **A1,A2,A3** to insert the corresponding values to the selected field and only for inserting data in batches.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/199.png"/>
+
+:::tip
+You can use cell/cell group to move data from one data source to another.
+:::
+
+</li>
+<li>(optional) Click <b>Set submission conditions</b> to set the conditions of the operation, such as delete and update.
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/200.png"/>
+</li>
+</ol>
+</ol>
+
+3. Select a cell on the report, and then click **Filling/Data Entry** at the lower-right corner.
+4. Select the template you just added.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/196.png"/>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Filling/Data Entry Template</td>
+<td>Select the data change template.</td>
+</tr>
+<tr>
+<td>Trigger action</td>
+<td>Actions to the cell to trigger the data change.</td>
+</tr>
+<tr>
+<td>Operation Range</td>
+<td>The range of the data change. For insert and delete operations, the range can only be <b>Row</b>.</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>Text displayed on the cell.</td>
+</tr>
+</tbody>
+</table>
+
+5. Save and preview the page, and click the set cell to check whether the data is changed.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/201.gif"/>
+
+### Page Link
+Set the click event for the selected cell to redirect to another page.
+
+1. Select a cell on the report, and then click **Page Link** at the lower-right corner.
+2. Click **Add Event**, and select **Cell Clcik** event.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/189.png"/>
+
+3. Click <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/33.png"/> to set the link details.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/190.png"/>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Link to</td>
+<td>When clicking the cell, the set page or URL is redirected to.</td>
+</tr>
+<tr>
+<td>Open Mode</td>
+<td>Set the window type to display the linked page. You can set the style of the modal window.</td>
+</tr>
+</tbody>
+</table>
+
+## Report Linkage
+
+You can link the report to other elements such as button, search box and input box to integrate, search for and export important data. Each data source added to the report has a corresponding linkage button under **Linkage**.
+
+<img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/192.png"/>
 
 :::info
 This chapter demonstrates data linkage of report in free layout.
 :::
 
-- History Data Linkage
+### History Data Linkage
 
-<ol>
-<ol>
-<li>Add a data source.</li>
-<li>Add two date elements and set them to start and end date respectively.
-
-:::info
-Make sure to change the name of both elements. Otherwise, they cannot be bound to the report.
+1. Add a history data source to the report, and add 2 date picker elements to the page.
+2. Set them to start and end date respectively.
+:::tip
+Change the name of both elements for easy recognition.
 :::
+3. Select the report and then click <strong>Linkage</strong> next to <strong>Date Binding</strong> under <strong>Linkage</strong>.
+4. Bind <strong>minDate</strong> and <strong>maxDate</strong> to corresponding start and end date elements, and then click <strong>Save</strong>.
 
-</li>
-<li>Select the report and then click <strong>Open</strong> next to <strong>Date Binding</strong> under <strong>Parameter</strong>.</li>
-<li>Bind <strong>minDate</strong> and <strong>maxDate</strong> to corresponding start and end date elements, and then click <strong>Save</strong>.
-<img width={500} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/102.png"/>
+<img width={500} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/193.png"/>
 
-</li>
-</ol>
-</ol>
+5. Preview the page, and select a period to check the corresponding results.
 
-- Form Data Linkage
-:::info
-This section uses <strong>Data Search</strong> to be the data source as an example.
-:::
+### Form Data Linkage
 
-<ol>
-<ol>
-<li>Double-click the report, and then under <strong>Data Source Management</strong>, click <strong>Data Search</strong> to add a data source with the result of the sql commands.</li>
-<li>Write a sql command and use `${"{"}parameter{"}"}` as the input field that can link with the report.
+1. Double-click the report, and then under <strong>Data Source Management</strong>, click <strong>Data Query</strong> to add a data source with the result of the sql commands.
+2. Write a sql command and use <code>${"{"}parameter{"}"}</code> as the input parameter that can link with the report.
 
-<img width={500} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/103.png"/>
+<img width={500} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/194.png"/>
 
-</li>
-<li>Drag data fields to the report, and then save the table and go back to the page canvas.</li>
-<li>Add an input box to the canvas, and the click <strong>Open</strong> next to the data source name you set after writing sql commands, to link the input box to the report.
+3. Drag data fields to the report, and then save the table and go back to the page canvas.
+4. Add an input box to the canvas, and then click <strong>Linkage</strong> next to the data source name , to link the input box to the report.
 
-<img width={500} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/104.png"/>
+<img width={500} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/195.png"/>
 
-</li>
-<li>Click <strong>Save</strong>, and then preview the page. <br/>
+5. Click <strong>Save</strong>, and then preview the page. <br/>
 
 Enter a parameter in the input box, and then the report displays data filtered based on the input content.
 
 <img width={300} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/105.png"/>
 
-</li>
-</ol>
-</ol>
+### Service Data Linkage
 
+For details on this part, see <a href="Sales Order Report Demo">Sales Order Report Demo</a>.
 
 ## Report Group
 
 Group the report to display data by time or field.
 
-1. Drag object properties to cells from the data source list, and then set cells that contain the property based on which the report data is grouped to be the parent cell and join them.
+1. Drag fields to cells from the data source list, and then set cells that contain the property based on which the report data is grouped to be the parent cell and join them.
 
 <img src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/90.png"/>
 
@@ -558,8 +682,8 @@ and <strong>Filling Orientation</strong> to <strong>Vertical Padding</strong>.
 Add a button in the design center, add a click event and write a script for the button to print the report in the operation center.
 
 ```js
-var report = scriptUtil.getRegisterReactDom('
-{component ID}').report;{"\n"}report.doPrint();
+var report = scriptUtil.getRegisterReactDom('{component ID}').report;
+report.doPrint();
 ```
 
 - Export Report <br/>
@@ -567,8 +691,7 @@ var report = scriptUtil.getRegisterReactDom('
 Add a button in the design center, add a click event and write a script for the button to export the report in the operation center.
 
 ```js
-var report = scriptUtil.getRegisterReactDom('
-{component ID}').report;{"\n"}
+var report = scriptUtil.getRegisterReactDom('{component ID}').report;
 report.doExport('xlsx');
 ```
 
@@ -577,7 +700,7 @@ report.doExport('xlsx');
 Advanced filter for service or relational data. You can add one or more filtering conditions to view the filtered data in the operation center.
 
 <ol >
-<li>Select a cell with data, and then select <strong>Filter</strong> > <strong>Advanced Filter</strong> from the toolbar.</li>
+<li>Select a cell with data, and then select <strong>Filter</strong> > <strong>Advanced Filtering</strong> from the toolbar.</li>
 <li>Set filtering conditions in the pop-up window.<ol>
 <li>Select whether to apply filtering conditions of the parent cell to the selected cell. If applied, the result conforms to filtering conditions of both cells.
 
@@ -597,7 +720,7 @@ available.</li>
 
 You can add more conditions and set their relations.
 
-<img width={450} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/appDesign/89.png"/>
+<img width={450} src="https://wordpressfreezonex.oss-accelerate.aliyuncs.com/4.2/supos/191.png"/>
 
 </li>
 </ol>

@@ -11,22 +11,22 @@ Parameters needed for source connection for SQL Server, Oracle, PostgreSQL and D
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/6.png)
 
 <table>
-  <thead>
-    <tr>
+<thead>
+<tr>
  <th>Parameter</th>
  <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+</tr>
+</thead>
+<tbody>
+<tr>
  <td>Affiliated business system</td>
  <td>Display category of data sources under <b>Business system</b> on <b>Data Connection</b> page. You can add custom systems as you need.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Auto creation of metadata collection task</td>
  <td>Whether to generate a metadata collection task automatically in X-DAM. It is enabled and the collection is set to 1:00 by default.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Connection type</td>
  <td>
  <ul>
@@ -34,8 +34,8 @@ Parameters needed for source connection for SQL Server, Oracle, PostgreSQL and D
  <li>JDBC: Enter JDBC connection string for connection.</li>
  </ul>
  </td>
-    </tr>
-  </tbody>
+</tr>
+</tbody>
 </table>
 
 
@@ -45,34 +45,34 @@ Parameters needed for source connection for SQL Server, Oracle, PostgreSQL and D
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/10.png)
 
 <table>
-  <thead>
-    <tr>
+<thead>
+<tr>
  <th>Parameter</th>
  <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+</tr>
+</thead>
+<tbody>
+<tr>
  <td>Affiliated business system</td>
  <td>Display category of data sources under <b>Business system</b> on <b>Data Connection</b> page. You can add custom systems as you need.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Address</td>
  <td>WebService interface address. Click <b>Parse</b> after entering the address, and then X-ETL automatically starts parsing the address.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Http authorization</td>
  <td>Enable HTTP authorization and enter username and password if the interface needs authentication.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Method</td>
  <td>Select corresponding methods based on the address parsing results.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Parse path</td>
  <td>Data path in response data XML file. For example: Body/OutputParameters/P_OUT_CONTENT/HEADERS/HEADER.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Input mode</td>
  <td>Displays corresponding input parameters based on the selected mode.
 
@@ -92,7 +92,7 @@ Parameters needed for source connection for SQL Server, Oracle, PostgreSQL and D
 
 </td>
 </tr>
-  </tbody>
+</tbody>
 </table>
 
 - Restful
@@ -100,26 +100,26 @@ Parameters needed for source connection for SQL Server, Oracle, PostgreSQL and D
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/11.png)
 
 <table>
-  <thead>
-    <tr>
+<thead>
+<tr>
  <th>Parameter</th>
  <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+</tr>
+</thead>
+<tbody>
+<tr>
  <td>Affiliated business system</td>
  <td>Display category of data sources under <b>Business system</b> on <b>Data Connection</b> page. You can add custom systems as you need.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Address</td>
  <td>RESTful interface address.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Http method</td>
  <td>Select request methods.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Max. single transfer data volume</td>
  <td>The maximum data volume returned at one time.</td>
 </tr>
@@ -175,7 +175,7 @@ When parsing the response data, comparison between result and response data star
  <td>Output result</td>
  <td>Arrays or objects you selected from response result to be the ultimate output results.</td>
 </tr>
-  </tbody>
+</tbody>
 </table>
 
 ## Object Model Data Source
@@ -183,20 +183,20 @@ When parsing the response data, comparison between result and response data star
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/12.png)
 
 <table>
-  <thead>
-    <tr>
+<thead>
+<tr>
  <th>Parameter</th>
  <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td>
-    Local Data Source
-  </td>
-  <td>
-    Enable it to set data source to the current supOS platform.
-  </td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Local Data Source
+</td>
+<td>
+Enable it to set data source to the current supOS platform.
+</td>
 </tr>
 <tr>
 <td>Affiliated business system</td>
@@ -205,32 +205,32 @@ When parsing the response data, comparison between result and response data star
 <tr>
 <td>Auto creation of metadata collection task</td>
 <td>Enable it to automatically generate a metadata collection task in X-DAM. It is enabled and the collection is set to 1:00 by default.</td>
-    </tr>
-    <tr>
-  <td>
-    supOS Address
-  </td>
-  <td>
-    Source supOS address and port.
-  </td>
 </tr>
 <tr>
-  <td>
-    supOS Tenant
-  </td>
-  <td>
-    Enter tenant name when the supOS is multi-tenant version.
-  </td>
+<td>
+supOS Address
+</td>
+<td>
+Source supOS address and port.
+</td>
 </tr>
 <tr>
-  <td>
-    supOS Auth
-  </td>
-  <td>
+<td>
+supOS Tenant
+</td>
+<td>
+Enter tenant name when the supOS is multi-tenant version.
+</td>
+</tr>
+<tr>
+<td>
+supOS Auth
+</td>
+<td>
 Use the generated AK/SK credential on the source supOS for data acquisition.
-  </td>
+</td>
 </tr>
-  </tbody>
+</tbody>
 </table>
 
 ## File Data Source
@@ -239,22 +239,33 @@ Use the generated AK/SK credential on the source supOS for data acquisition.
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/13.png)
 
 <table>
-  <thead>
-    <tr>
- <th>Parameter</th>
- <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
- <td>Affiliated business system</td>
- <td>Display category of data sources under <b>Business system</b> on <b>Data Connection</b> page. You can add custom systems as you need.</td>
-    </tr>
-    <tr>
- <td>Database file path</td>
- <td>Enter the absolute path under /volumes/supfiles/ in local storage. If the path does not exist, the platform will create it automatically.</td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Affiliated business system</td>
+<td>Display category of data sources under <b>Business system</b> on <b>Data Connection</b> page. You can add custom systems as you need.</td>
+</tr>
+<tr>
+<td>Database file path</td>
+<td>Enter the absolute path under /volumes/supfiles/ in local storage. If the path does not exist, the platform will create it automatically.
+
+:::tip
+The path is created under the **dam-etl-xxxxx** pod, and you can use the following commands to view files inside.
+```
+kubectl get po |grep dam-etl   //find the pod
+kubectl exec -it dam-etl-xxxx bash    //log in to the pod
+cd /volumes/supfiles/your_path    //view the files
+```
+:::
+
+</td>
+</tr>
+</tbody>
 </table>
 
 - SMB
@@ -262,32 +273,32 @@ Use the generated AK/SK credential on the source supOS for data acquisition.
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/14.png)
 
 <table>
-  <thead>
-    <tr>
+<thead>
+<tr>
  <th>Parameter</th>
  <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+</tr>
+</thead>
+<tbody>
+<tr>
  <td>Affiliated business system</td>
  <td>Display category of data sources under <b>Business system</b> on <b>Data Connection</b> page. You can add custom systems as you need.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Service address</td>
  <td>IP address of the data source server.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Smb file path</td>
  <td>The absolute path of the data source file to be connected.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Username/Password</td>
  <td>
  The username and password to log in to the data source.
  </td>
-    </tr>
-  </tbody>
+</tr>
+</tbody>
 </table>
 
 - HDFS
@@ -295,27 +306,27 @@ Use the generated AK/SK credential on the source supOS for data acquisition.
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/15.png)
 
 <table>
-  <thead>
-    <tr>
+<thead>
+<tr>
  <th>Parameter</th>
  <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+</tr>
+</thead>
+<tbody>
+<tr>
  <td>Affiliated business system</td>
  <td>Display category of data sources under <b>Business system</b> on <b>Data Connection</b> page. You can add custom systems as you need.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Server address/port/Username</td>
  <td>The IP and port of the Hadoop server and the username used for login.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Relative file path</td>
  <td>Directory relative path on the Hadoop server. HDFS file generated during data transfer from Hive is stored under it.
  </td>
-    </tr>
-  </tbody>
+</tr>
+</tbody>
 </table>
 
 - FTP
@@ -323,34 +334,34 @@ Use the generated AK/SK credential on the source supOS for data acquisition.
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/16.png)
 
 <table>
-  <thead>
-    <tr>
+<thead>
+<tr>
  <th>Parameter</th>
  <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+</tr>
+</thead>
+<tbody>
+<tr>
  <td>Affiliated business system</td>
  <td>Display category of data sources under <b>Business system</b> on <b>Data Connection</b> page. You can add custom systems as you need.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Server address</td>
  <td>IP address of the FTP server.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Ftp file path</td>
  <td>
  The absolute path of the data file to be connected.
  </td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Username/Password</td>
  <td>
  The username and password used for login.
  </td>
-    </tr>
-  </tbody>
+</tr>
+</tbody>
 </table>
 
 - MINIO
@@ -358,40 +369,40 @@ Use the generated AK/SK credential on the source supOS for data acquisition.
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/17.png)
 
 <table>
-  <thead>
-    <tr>
+<thead>
+<tr>
  <th>Parameter</th>
  <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+</tr>
+</thead>
+<tbody>
+<tr>
  <td>Affiliated business system</td>
  <td>Display category of data sources under <b>Business system</b> on <b>Data Connection</b> page. You can add custom systems as you need.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Service address</td>
  <td>IP address of the MINIO server.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Bucket name</td>
  <td>
 Name of the MINIO bucket to be connected.
  </td>
-    </tr>
-     <tr>
+</tr>
+ <tr>
  <td>File path</td>
  <td>
 The absolute path of the data file to be connected.
  </td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Username/Password</td>
  <td>
  The username and password used for login.
  </td>
-    </tr>
-  </tbody>
+</tr>
+</tbody>
 </table>
 
 - OSS
@@ -399,40 +410,40 @@ The absolute path of the data file to be connected.
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/18.png)
 
 <table>
-  <thead>
-    <tr>
+<thead>
+<tr>
  <th>Parameter</th>
  <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+</tr>
+</thead>
+<tbody>
+<tr>
  <td>Affiliated business system</td>
  <td>Display category of data sources under <b>Business system</b> on <b>Data Connection</b> page. You can add custom systems as you need.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Service address</td>
  <td>IP address of the OSS server.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Bucket name</td>
  <td>
 Name of the OSS bucket to be connected.
  </td>
-    </tr>
-     <tr>
+</tr>
+ <tr>
  <td>File path</td>
  <td>
 The absolute path of the data file to be connected.
  </td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Username/Password</td>
  <td>
  The username and password used for login.
  </td>
-    </tr>
-  </tbody>
+</tr>
+</tbody>
 </table>
 
 ## Big Data Storage
@@ -441,18 +452,18 @@ The absolute path of the data file to be connected.
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/19.png)
 
 <table>
-  <thead>
-    <tr>
+<thead>
+<tr>
  <th>Parameter</th>
  <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+</tr>
+</thead>
+<tbody>
+<tr>
  <td>Affiliated business system</td>
  <td>Display category of data sources under <b>Business system</b> on <b>Data Connection</b> page. You can add custom systems as you need.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Connection type</td>
  <td>
  <ul>
@@ -460,14 +471,14 @@ The absolute path of the data file to be connected.
  <li>JDBC: Enter JDBC connection string for connection.</li>
  </ul>
  </td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Username/Password</td>
  <td>
  The username and password used for database login.
  </td>
-    </tr>
-  </tbody>
+</tr>
+</tbody>
 </table>
 
 - HBase
@@ -475,34 +486,34 @@ The absolute path of the data file to be connected.
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/20.png)
 
 <table>
-  <thead>
-    <tr>
+<thead>
+<tr>
  <th>Parameter</th>
  <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+</tr>
+</thead>
+<tbody>
+<tr>
  <td>Affiliated business system</td>
  <td>Display category of data sources under <b>Business system</b> on <b>Data Connection</b> page. You can add custom systems as you need.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Zookeeper IP/Host/Port</td>
  <td>IP address of Zookeeper. Use comma to separate IPs for cluster deployment.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Master IP/Host</td>
  <td>
 Master IP or hostname of Zookeeper cluster. Leave it empty for independent deployment.
  </td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Special auth method</td>
  <td>
 File path of Kerberos authentication is necessary when selecting <b>Kerberos</b>.
  </td>
-    </tr>
-  </tbody>
+</tr>
+</tbody>
 </table>
 
 :::info
@@ -551,24 +562,24 @@ cat /etc/hosts
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/21.png)
 
 <table>
-  <thead>
-    <tr>
+<thead>
+<tr>
  <th>Parameter</th>
  <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+</tr>
+</thead>
+<tbody>
+<tr>
  <td>Affiliated business system</td>
  <td>Display category of data sources under <b>Business system</b> on <b>Data Connection</b> page. You can add custom systems as you need.</td>
-    </tr>
-    <tr>
+</tr>
+<tr>
  <td>Server address</td>
  <td>
 IP address and port of the Kafka server.
  </td>
-    </tr>
-  </tbody>
+</tr>
+</tbody>
 </table>
 
 - MQTT
@@ -576,24 +587,24 @@ IP address and port of the Kafka server.
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/22.png)
 
 <table>
-  <thead>
-    <tr>
+<thead>
+<tr>
  <th>Parameter</th>
  <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+</tr>
+</thead>
+<tbody>
+<tr>
  <td>Affiliated business system</td>
  <td>Display category of data sources under <b>Business system</b> on <b>Data Connection</b> page. You can add custom systems as you need.</td>
-    </tr>
-      <tr>
+</tr>
+<tr>
  <td>Server address</td>
  <td>
 IP address and port of the MQTT server in the format of <b>tcp://ip:port</b>.
  </td>
-    </tr>
-  </tbody>
+</tr>
+</tbody>
 </table>
 
 - RocketMQ
@@ -601,28 +612,28 @@ IP address and port of the MQTT server in the format of <b>tcp://ip:port</b>.
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supETL/23.png)
 
 <table>
-  <thead>
-    <tr>
+<thead>
+<tr>
  <th>Parameter</th>
  <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+</tr>
+</thead>
+<tbody>
+<tr>
  <td>Affiliated business system</td>
  <td>Display category of data sources under <b>Business system</b> on <b>Data Connection</b> page. You can add custom systems as you need.</td>
-    </tr>
-      <tr>
+</tr>
+<tr>
  <td>RacketMQ host</td>
  <td>
 Host IP and port of the RocketMQ to be connected.
  </td>
-    </tr>
-      <tr>
+</tr>
+<tr>
  <td>Timeout</td>
  <td>
 Specified connection timeout duration. The default is 5,000 ms.
  </td>
-    </tr>
-  </tbody>
+</tr>
+</tbody>
 </table>

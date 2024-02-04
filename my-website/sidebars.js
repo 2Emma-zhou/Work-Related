@@ -17,8 +17,6 @@ const sidebars = {
 
   
   tutorialSidebar: [
-    'Business Designer',
-    'Storage Management',
     'intro',
     'Getting Started/System Requirements',
     'Getting Started/Installing supOS',
@@ -179,7 +177,6 @@ const sidebars = {
                 'Using supOS/User Center/Role Management',
                 'Using supOS/User Center/Viewing Permission',
                 'Using supOS/User Center/Viewing Online User',
-                'Using supOS/User Center/Setting Whitelist and Blacklist',
           ]
         },
         {
@@ -203,7 +200,20 @@ const sidebars = {
                 'Using supOS/Competence Center/Message Management/Managing Messages',
               ]
             },
-            'Using supOS/Competence Center/Computing Task',
+            {
+              type: 'category',
+              label: 'Task Management',
+              link: {
+                  type: 'generated-index',
+              },
+              items: [
+                'Using supOS/Competence Center/Task Management/Viewing Subscription Tasks',
+                'Using supOS/Competence Center/Task Management/Viewing Object Service Tasks',
+                'Using supOS/Competence Center/Task Management/Data Dump',
+                'Using supOS/Competence Center/Task Management/Viewing Webhook Tasks',
+                'Using supOS/Competence Center/Task Management/Scheduling Tasks',
+              ]
+            },
             {
               type: 'category',
               label: 'Storage Resources',
@@ -211,57 +221,57 @@ const sidebars = {
                   type: 'generated-index',
               },
               items: [
-                'Using supOS/Competence Center/Storage Resources/Adding Data Source',
+                'Using supOS/Competence Center/Storage Resources/Applying Resource',
+                'Using supOS/Competence Center/Storage Resources/Registering Data Source',
+                'Using supOS/Competence Center/Storage Resources/PI Service Registration',
+                'Using supOS/Competence Center/Storage Resources/Standard Data Service Registration',
                 'Using supOS/Competence Center/Storage Resources/Data Source Description',
-                'Using supOS/Competence Center/Storage Resources/Adding Standard Data Service',
-                'Using supOS/Competence Center/Storage Resources/Adding PI Database',
-                'Using supOS/Competence Center/Storage Resources/Adding Local Resource',
+                
+                
               ]
             },
             'Using supOS/Competence Center/Log Management/Viewing Logs',
           ]
         },
+        
+    {
+      type: 'category',
+      label: 'System Configuration',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        'Using supOS/System Management/Configuring Menu',
         {
           type: 'category',
-          label: 'Operation Center Monitoring',
+          label: 'System Settings',
           link: {
               type: 'generated-index',
           },
           items: [
+            'Using supOS/System Management/System Configuration/Basic System Settings',
+            'Using supOS/System Management/System Configuration/Extension System Settings',
             
-            'Using supOS/Monitoring/Overview',
+            
+          ]
+        },
+          ]
+        },
+    {
+      type: 'category',
+      label: 'Operation Center',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        
+        'Using supOS/Monitoring/Overview',
 'Using supOS/Monitoring/Business Process',
 'Using supOS/Monitoring/Trend Chart Operations',
 'Using supOS/Monitoring/Dashboard',
 'Using supOS/Monitoring/Alarm',
 'Using supOS/Monitoring/Video',
 'Using supOS/Monitoring/Production Report',
-          ]
-        },
-    {
-      type: 'category',
-      label: 'System Management',
-      link: {
-          type: 'generated-index',
-      },
-      items: [
-        'System Configuration/Configuring Menu',
-        'System Configuration/System Settings',
-        {
-          type: 'category',
-          label: 'System Management',
-          link: {
-              type: 'generated-index',
-          },
-          items: [
-            'System Configuration/System Management',
-            'System Configuration/Setting International Management',
-            'System Configuration/Authenticating SSO',
-          ]
-        },
-        
-        
-        
       ]
     },
    
@@ -509,7 +519,7 @@ const sidebars = {
   textDemo: [ 
     {
       type: 'category',
-      label: 'X-Collector Connection Demo',
+      label: 'Data Connection Demo',
       link: {
           type: 'generated-index',
       },
@@ -517,6 +527,7 @@ const sidebars = {
         'demo/X-Collector Connection Demo/OPC DA',
         'demo/X-Collector Connection Demo/Modbus',
         'demo/X-Collector Connection Demo/Third-party Database Connection',
+        'demo/X-Collector Connection Demo/MQTT',
       ]
     },
     {
@@ -565,6 +576,30 @@ const sidebars = {
       ]
     },
   ],
+  dataIntegration: [ 
+    {
+      type: 'category',
+      label: 'MQTT Integration',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        'Data Integration/MQTT Integration',
+        'Data Integration/MQTT Data Protocol',
+      ]
+    },
+    {
+      type: 'category',
+      label: 'GRPC Integration',
+      link: {
+          type: 'generated-index',
+      },
+      items: [
+        'Data Integration/GRPC Integration',
+        'Data Integration/GRPC Data Protocol',
+      ]
+    },
+  ],
   supCollector: [
     'Using X-Collector/System Requirements sc',
         'Using X-Collector/Installing X-Collector',  
@@ -578,7 +613,7 @@ const sidebars = {
           'Using X-Collector/Collector Type',
           'Using X-Collector/Configuring X-Collector',
           // 'Using X-Collector/Connecting Simulate Collector',
-          'Using X-Collector/Connecting RTD Collector',
+          'Using X-Collector/Connecting TSD Collector',
           // 'Using X-Collector/Connecting Cascading Collector',
           // 'Using X-Collector/Connecting Third-party Collector',
           // 'Using X-Collector/Supported Driver',

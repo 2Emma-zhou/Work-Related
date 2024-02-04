@@ -17,7 +17,7 @@ const productList = [
         A versatile product capable of collecting diverse data types from edge devices, databases, and third-party systems.
       </>
     ),
-    link: "Getting Started/System Requirements sc",
+    link: "/4.2/Using X-Collector/System Requirements sc",
   },
   {
     type: 'X-ETL',
@@ -27,7 +27,7 @@ const productList = [
         A flexible digital solution that efficiently connects, processes and exchanges various types of data.
       </>
     ),
-    link: "Getting Started/System Requirements se",
+    link: "/4.2/Using supETL/System Requirements se",
   },
   {
     type: 'X-DAM',
@@ -37,7 +37,7 @@ const productList = [
         Securely organize and optimize your data assets with our comprehensive management solution.
       </>
     ),
-    link: "Getting Started/System Requirements sd",
+    link: "/4.2/Using supDAM/System Requirements sd",
   },
   {
     type: 'X-Edge',
@@ -47,7 +47,7 @@ const productList = [
         Unlock new insights from your video streams with our diverse collection of pre-built and custom algorithm integration.
       </>
     ),
-    link: "Getting Started/System Requirements sedge",
+    link: "/4.2/Using supEdge/System Requirements sedge",
   },
   {
     type: 'X-BD',
@@ -57,7 +57,7 @@ const productList = [
         Seamlessly manage and process large volumes of data with our embedded and custom ML algorithms.
       </>
     ),
-    link: "Getting Started/System Requirements sb",
+    link: "/4.2/Using supBD/System Requirements sb",
   },
   {
     type: 'supLink',
@@ -67,7 +67,7 @@ const productList = [
        Efficiently manage your supOS platform on-the-go with our mobile app designed for seamless operation.
       </>
     ),
-    link: "Getting Started/System Requirements sl",
+    link: "/4.2/Using supLink/System Requirements sl",
   },
 ];
 
@@ -92,7 +92,7 @@ const FeatureList = [
       </>
       
     ),
-    link: "Video/Dashboard Development Step by Step",
+    link: "/4.2/demo/Dashboard/Dashboard Development Step by Step",
   },
   {
     title: 'API Reference',
