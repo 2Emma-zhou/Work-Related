@@ -68,7 +68,7 @@ A tag is the smallest unit corresponding to a specific attribute of a source. As
 ![](https://wordpressfreezonex.oss-accelerate.aliyuncs.com/supCollector/2.png)
 
 :::info
-For writing data back to equipment, you need to set **R/W status** to **R/W**. For details on data writing back, see <a href="Data Write Back">Data Write Back</a>.
+For writing data back to equipment, you need to set **R/W status** to **R/W**. For details on data writing back, see <a href="../demo/Low%20Code%20Development/Data%20Write%20Back">Data Write Back</a>.
 :::
 
 3. Select the tag you just added, click **Export**.

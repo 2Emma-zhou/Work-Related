@@ -69,6 +69,16 @@ const productList = [
     ),
     link: "/4.2/Using supLink/System Requirements sl",
   },
+  {
+    type: '3D Designer',
+    Svg: require('@site/static/img/3ddesigner.svg').default,
+    desc: (
+      <>
+        Revolutionary digital twin software: precision, real-time analytics, immersive simulations—transform your world.
+      </>
+    ),
+    link: "/4.2/3D Designer/System Requirements",
+  },
 ];
 
 const FeatureList = [
