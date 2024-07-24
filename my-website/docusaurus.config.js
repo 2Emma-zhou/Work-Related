@@ -82,34 +82,39 @@ const config = {
       
       // /** @type {import('@docusaurus/preset-classic').Options} */
       {
-        docs: {
-          lastVersion: 'current',
-          versions: {
-            current: {
-              label: '4.2',
-              path: '4.2',
-              banner:'none',
-          },
-          '4.0': {
-            label: '4.0',  
-            path: '4.0',
-            banner:'none',
-        },
-        },
-          breadcrumbs: false,
-         sidebarPath: require.resolve('./sidebars.js'),
+        docs: false,
+        // {
+        //   lastVersion: 'current',
+        //   versions: {
+        //     current: {
+        //       label: '4.2',
+        //       path: '4.2',
+        //       banner:'none',
+        //   },
+        //   '4.0': {
+        //     label: '4.0',  
+        //     path: '4.0',
+        //     banner:'none',
+        // },
+        // },
+        //   breadcrumbs: false,
+        //  sidebarPath: require.resolve('./sidebars.js'),
+        //   // Please change this to your repo.
+        //   // Remove this to remove the "edit this page" links.
+        //   routeBasePath: '/',
+        //   // editUrl:
+        //   //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+        // },
+        blog: {
+          routeBasePath: '/',
+          showReadingTime: true,
+          postsPerPage: 5,
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          routeBasePath: '/',
           // editUrl:
           //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         }, 
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -237,77 +242,77 @@ const config = {
           src: 'img/supOS.svg',
         },
         items: [
-          {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'supOS',
-          },
-          {
-            // type: 'dropdown',
-            label: 'Applications',
-            position: 'left',
-            items: [
-              {
-                type:'doc',
-                label: 'X-Collector',
-                docId: 'Using X-Collector/System Requirements sc',
-              },
-              {
-                type: 'doc',
-                label: 'X-DAM',
-                docId: 'Using supDAM/System Requirements sd',
-              },
-              {
-                type: 'doc',
-                label: 'X-ETL',
-                docId: 'Using supETL/System Requirements se',
-              },
-              {
-                type: 'doc',
-                label: 'X-Edge',
-                docId: 'Using supEdge/System Requirements sedge',
-              },
-              {
-                type:'doc',
-                label: 'X-BD',
-                docId: 'Using supBD/System Requirements sb',
-              },
-              {
-                type:'doc',
-                label: 'supLink',
-                docId: 'Using supLink/System Requirements sl',
-              },
-              {
-                type:'doc',
-                label: '3D Designer',
-                docId: '3D Designer/System Requirements',
-              },
-            ],
-          },
-          {
-            // type: 'dropdown',
-            label: 'Demo',
-            position: 'left',
-            items: [
-              {
-                type:'doc',
-                label: 'Video Demo',
-                docId: 'demo/Dashboard/Dashboard Development Step by Step',
-              },
-              {
-                type: 'doc',
-                label: 'Image/Text Demo',
-                docId: 'demo/X-Collector Connection Demo/OPC DA',
-              },
-            ],
-          },
-          {
-            type: 'doc',
-            docId: 'Data Integration/MQTT Integration',
-            label: 'Data Integration',
-            position: 'left',
-          },
+          // {
+          //   type: 'doc',
+          //   docId: 'intro',
+          //   position: 'left',
+          //   label: 'supOS',
+          // },
+          // {
+          //   // type: 'dropdown',
+          //   label: 'Applications',
+          //   position: 'left',
+          //   items: [
+          //     {
+          //       type:'doc',
+          //       label: 'X-Collector',
+          //       docId: 'Using X-Collector/System Requirements sc',
+          //     },
+          //     {
+          //       type: 'doc',
+          //       label: 'X-DAM',
+          //       docId: 'Using supDAM/System Requirements sd',
+          //     },
+          //     {
+          //       type: 'doc',
+          //       label: 'X-ETL',
+          //       docId: 'Using supETL/System Requirements se',
+          //     },
+          //     {
+          //       type: 'doc',
+          //       label: 'X-Edge',
+          //       docId: 'Using supEdge/System Requirements sedge',
+          //     },
+          //     {
+          //       type:'doc',
+          //       label: 'X-BD',
+          //       docId: 'Using supBD/System Requirements sb',
+          //     },
+          //     {
+          //       type:'doc',
+          //       label: 'supLink',
+          //       docId: 'Using supLink/System Requirements sl',
+          //     },
+          //     {
+          //       type:'doc',
+          //       label: '3D Designer',
+          //       docId: '3D Designer/System Requirements',
+          //     },
+          //   ],
+          // },
+          // {
+          //   // type: 'dropdown',
+          //   label: 'Demo',
+          //   position: 'left',
+          //   items: [
+          //     {
+          //       type:'doc',
+          //       label: 'Video Demo',
+          //       docId: 'demo/Dashboard/Dashboard Development Step by Step',
+          //     },
+          //     {
+          //       type: 'doc',
+          //       label: 'Image/Text Demo',
+          //       docId: 'demo/X-Collector Connection Demo/OPC DA',
+          //     },
+          //   ],
+          // },
+          // {
+          //   type: 'doc',
+          //   docId: 'Data Integration/MQTT Integration',
+          //   label: 'Data Integration',
+          //   position: 'left',
+          // },
           // {
           //   type: 'docSidebar',
           //   sidebarId: 'demo', 
@@ -320,91 +325,91 @@ const config = {
           //   position: 'left',
           //   label: 'API Reference',
           // },
-          {
-            position: 'right',
-            label: 'API Reference',
-            items: [
-              {
-                label: 'APP Management',
-                to: '/api/',
-              },
-              {
-                label: 'APP Config',
-                to: '/appConfig/',
-              },
-              {
-                label: 'Big Data Model Inference',
-                to: '/bdModelInference',
-              },
-              {
-                label: 'Big Data Model Training',
-                to: '/bdModelTraining',
-              },
-              {   
-                label: 'Object Modeling', 
-                to: '/objectModeling',
-              },
-              {
-                label: 'Workflow',
-                to: '/workflow',
-              },
-              {
-                label: 'Config Info',
-                to: '/configInfo',
-              },
-              {
-                label: 'Notification Center',
-                to: '/notificationCenter',
-              },
-              {
-                label: 'System Code',
-                to: '/systemCode',
-              },
-              {
-                label: 'Permission Management', 
-                to: '/permissionManagement',
-              },
-              {
-                label: 'Authorization Management', 
-                to: '/authorizationManagement',
-              },
-              {
-                label: 'Identity Oauth2', 
-                to: '/identityOauth2',
-              },
-              {
-                label: 'Identity Authentication', 
-                to: '/identityAuthentication',
-              },
-              {
-                label: 'Data Push', 
-                to: '/dataPush/',
-              },
-              {
-                label: 'Module Management', 
-                to: '/moduleManagement/',
-              },
-              {  
-                label: 'Organization', 
-                to: '/organization/',
-              },
-              { 
-                label: 'User Management', 
-                to: '/userManagement/', 
-              },
-              {
-                label: 'supLink', 
-                to: '/supLink/',   
-              },
-            ]
-          }, 
+          // {
+          //   position: 'right',
+          //   label: 'API Reference',
+          //   items: [
+          //     {
+          //       label: 'APP Management',
+          //       to: '/api/',
+          //     },
+          //     {
+          //       label: 'APP Config',
+          //       to: '/appConfig/',
+          //     },
+          //     {
+          //       label: 'Big Data Model Inference',
+          //       to: '/bdModelInference',
+          //     },
+          //     {
+          //       label: 'Big Data Model Training',
+          //       to: '/bdModelTraining',
+          //     },
+          //     {   
+          //       label: 'Object Modeling', 
+          //       to: '/objectModeling',
+          //     },
+          //     {
+          //       label: 'Workflow',
+          //       to: '/workflow',
+          //     },
+          //     {
+          //       label: 'Config Info',
+          //       to: '/configInfo',
+          //     },
+          //     {
+          //       label: 'Notification Center',
+          //       to: '/notificationCenter',
+          //     },
+          //     {
+          //       label: 'System Code',
+          //       to: '/systemCode',
+          //     },
+          //     {
+          //       label: 'Permission Management', 
+          //       to: '/permissionManagement',
+          //     },
+          //     {
+          //       label: 'Authorization Management', 
+          //       to: '/authorizationManagement',
+          //     },
+          //     {
+          //       label: 'Identity Oauth2', 
+          //       to: '/identityOauth2',
+          //     },
+          //     {
+          //       label: 'Identity Authentication', 
+          //       to: '/identityAuthentication',
+          //     },
+          //     {
+          //       label: 'Data Push', 
+          //       to: '/dataPush/',
+          //     },
+          //     {
+          //       label: 'Module Management', 
+          //       to: '/moduleManagement/',
+          //     },
+          //     {  
+          //       label: 'Organization', 
+          //       to: '/organization/',
+          //     },
+          //     { 
+          //       label: 'User Management', 
+          //       to: '/userManagement/', 
+          //     },
+          //     {
+          //       label: 'supLink', 
+          //       to: '/supLink/',   
+          //     },
+          //   ]
+          // }, 
           
           // {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownActiveClassDisabled: false,
-          },
+          // {
+          //   type: 'docsVersionDropdown',
+          //   position: 'right',
+          //   dropdownActiveClassDisabled: false,
+          // },
           // {
           //   href: 'https://github.com/facebook/docusaurus', 
           //   label: 'GitHub',
